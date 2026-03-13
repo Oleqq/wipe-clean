@@ -1,0 +1,891 @@
+﻿РЕГЛАМЕНТ
+Интеграция вёрстки с WordPress
+Сайты услуг
+DS-ART Интегратор
+Версия 1.0 | 2026
+________________
+
+
+Содержание
+1. Введение
+2. Структура темы
+3. Подключение стилей и скриптов
+4. Advanced Custom Fields (ACF)
+5. Custom Post Types и таксономии
+6. Шаблоны страниц
+7. Header и Footer
+8. Меню навигации
+9. AJAX-функционал
+10. Формы и Contact Form 7
+11. SEO и метаданные
+12. Безопасность
+13. Оптимизация
+14. Плагины
+15. Финальная проверка
+16. Документация проекта
+________________
+
+
+1. Введение
+Этот регламент описывает стандарты интеграции HTML/CSS/JS вёрстки с WordPress для сайтов услуг (без WooCommerce). Цель — обеспечить единообразие, качество и поддерживаемость кода.
+1.1. Применимость
+* Корпоративные сайты
+* Сайты-визитки
+* Лендинги
+* Многостраничные сайты услуг
+* Портфолио и блоги
+1.2. Базовые требования
+* Тема создаётся с нуля на базе Starter-темы Underscores (_s)
+* ACF Pro — обязательный плагин для кастомных полей
+* Код соответствует WordPress Coding Standards
+* БЭМ-методология для CSS-классов
+________________
+
+
+2. Структура темы
+Тема создаётся на базе Underscores (https://underscores.me). Это стандартная стартовая тема, рекомендованная WordPress.
+2.1. Файловая структура
+theme-name/
+├── css/                    # Скомпилированные CSS
+│   ├── style-global.css    # Глобальные стили
+│   ├── header.css
+│   ├── footer.css
+│   └── [page-name].css     # Стили отдельных страниц
+├── js/
+│   ├── script.js           # Основной скрипт
+│   └── [module].js         # Отдельные модули
+├── fonts/                  # Локальные шрифты (woff2, woff)
+├── img/                    # Иконки, SVG-спрайт
+├── image/                  # Статичные изображения темы
+├── inc/                    # PHP-модули
+│   ├── template-functions.php
+│   └── template-tags.php
+├── template-parts/         # Переиспользуемые части
+│   ├── section/            # Секции для Flexible Content
+│   └── [component].php
+├── functions.php           # Основной файл функций
+├── header.php
+├── footer.php
+├── index.php               # Главная страница
+├── page.php                # Стандартная страница
+├── page-[slug].php         # Кастомные шаблоны страниц
+├── single.php              # Одиночная запись
+├── single-[cpt].php        # Шаблон для CPT
+├── archive.php
+├── 404.php
+├── search.php
+└── style.css               # Метаданные темы
+2.2. Файл style.css
+Содержит только метаданные темы, не стили:
+/*
+Theme Name: Название проекта
+Theme URI: https://ds-art.ru
+Author: DS-ART
+Author URI: https://ds-art.ru
+Description: Тема для сайта [название]
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: theme-slug
+*/
+________________
+
+
+3. Подключение стилей и скриптов
+Все стили и скрипты подключаются через wp_enqueue_* в functions.php.
+3.1. Базовое подключение
+function theme_scripts() {
+    // Глобальные стили (на всех страницах)
+    wp_enqueue_style('theme-global', get_template_directory_uri() . '/css/style-global.css');
+    wp_enqueue_style('theme-header', get_template_directory_uri() . '/css/header.css');
+    wp_enqueue_style('theme-footer', get_template_directory_uri() . '/css/footer.css');
+
+
+    // Библиотеки (если используются)
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.css');
+    wp_enqueue_style('fancybox-css', get_template_directory_uri() . '/css/fancybox.css');
+
+
+    // Скрипты
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.js', [], null, true);
+    wp_enqueue_script('theme-script', get_template_directory_uri() . '/js/script.js', [], null, true);
+}
+add_action('wp_enqueue_scripts', 'theme_scripts');
+3.2. Условная загрузка по шаблонам
+Для оптимизации загружаем стили только там, где они нужны:
+function theme_conditional_styles() {
+    // Главная страница
+    if (is_front_page()) {
+        wp_enqueue_style('theme-index', get_template_directory_uri() . '/css/style.css');
+    }
+
+
+    // По шаблону страницы
+    if (is_page_template('page-contacts.php')) {
+        wp_enqueue_style('theme-contacts', get_template_directory_uri() . '/css/contacts.css');
+    }
+
+
+    if (is_page_template('page-about.php')) {
+        wp_enqueue_style('theme-about', get_template_directory_uri() . '/css/about.css');
+    }
+
+
+    // Для CPT
+    if (is_singular('blogs')) {
+        wp_enqueue_style('theme-single-blog', get_template_directory_uri() . '/css/single.css');
+    }
+
+
+    // Страница 404
+    if (is_404()) {
+        wp_enqueue_style('theme-404', get_template_directory_uri() . '/css/page-404.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'theme_conditional_styles');
+3.3. Передача данных в JavaScript (wp_localize_script)
+Для передачи PHP-данных в JS используем wp_localize_script:
+function theme_localize_scripts() {
+    wp_localize_script('theme-script', 'theme_ajax', [
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('theme_nonce'),
+        'home_url' => home_url(),
+    ]);
+}
+add_action('wp_enqueue_scripts', 'theme_localize_scripts');
+В JavaScript данные доступны через глобальный объект:
+// В JS файле
+console.log(theme_ajax.ajax_url); // /wp-admin/admin-ajax.php
+console.log(theme_ajax.nonce);    // abc123...
+________________
+
+
+4. Advanced Custom Fields (ACF)
+ACF Pro — основной инструмент для создания кастомных полей. Все редактируемые данные сайта хранятся в ACF-полях.
+4.1. ACF Options (Глобальные настройки)
+Данные, общие для всего сайта (контакты, соцсети, логотипы), выносим в Options Page:
+// Регистрация страницы настроек
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page([
+        'page_title' => 'Настройки сайта',
+        'menu_title' => 'Настройки сайта',
+        'menu_slug'  => 'theme-settings',
+        'capability' => 'edit_posts',
+        'redirect'   => false,
+        'icon_url'   => 'dashicons-admin-generic',
+        'position'   => 2,
+    ]);
+}
+Типичные поля для Options:
+* Логотип (header и footer варианты)
+* Контакты: телефон, email, адрес
+* Ссылки на соцсети
+* Ссылки на политику конфиденциальности
+* Копирайт
+* Настройки поп-апов (заголовки, описания)
+Получение данных из Options:
+// Используем второй параметр 'option'
+$logo = get_field('logotip', 'option');
+$phone = get_field('nomer_telefona', 'option');
+$email = get_field('email', 'option');
+
+
+// Очистка телефона от символов для href="tel:"
+$phone_clean = preg_replace('![^0-9]+!', '', $phone);
+
+
+// Использование в шаблоне
+<a href="tel:+<?php echo $phone_clean; ?>"><?php echo $phone; ?></a>
+4.2. Flexible Content (Секции страниц)
+Для главной и других страниц с множеством секций используем Flexible Content:
+// index.php или page-home.php
+<?php
+get_header();
+
+
+if (have_rows('page_content')): // Имя поля Flexible Content
+    while (have_rows('page_content')): the_row();
+        
+        // Секция Hero
+        if (get_row_layout() == 'hero_section'):
+            get_template_part('template-parts/section/hero');
+        
+        // Секция Услуги
+        elseif (get_row_layout() == 'services_section'):
+            get_template_part('template-parts/section/services');
+        
+        // Секция FAQ
+        elseif (get_row_layout() == 'faq_section'):
+            get_template_part('template-parts/section/faq');
+        
+        endif;
+    endwhile;
+endif;
+
+
+get_footer();
+Структура файла секции (template-parts/section/hero.php):
+<?php
+// Получаем поля текущего layout
+$title = get_sub_field('zagolovok');
+$description = get_sub_field('opisanie');
+$button_text = get_sub_field('tekst_knopki');
+$button_link = get_sub_field('ssylka_knopki');
+$image = get_sub_field('izobrazhenie');
+?>
+
+
+<section class="hero">
+    <div class="hero__container _container">
+        <?php if ($title): ?>
+        <h1><?php echo esc_html($title); ?></h1>
+        <?php endif; ?>
+        
+        <?php if ($description): ?>
+        <p><?php echo $description; ?></p>
+        <?php endif; ?>
+        
+        <?php if ($button_text): ?>
+        <a href="<?php echo esc_url($button_link); ?>" class="btn">
+            <?php echo esc_html($button_text); ?>
+        </a>
+        <?php endif; ?>
+    </div>
+</section>
+4.3. Repeater (Повторяющиеся элементы)
+Для списков, слайдеров, преимуществ используем Repeater:
+<?php if (have_rows('preimushhestva')): ?>
+<div class="advantages__grid">
+    <?php while (have_rows('preimushhestva')): the_row();
+        $icon = get_sub_field('ikonka');
+        $title = get_sub_field('zagolovok');
+        $text = get_sub_field('tekst');
+    ?>
+    <div class="advantages__item">
+        <?php if ($icon): ?>
+        <img src="<?php echo esc_url($icon['url']); ?>" 
+             alt="<?php echo esc_attr($icon['alt']); ?>"
+             width="64" height="64">
+        <?php endif; ?>
+        <h3><?php echo esc_html($title); ?></h3>
+        <p><?php echo esc_html($text); ?></p>
+    </div>
+    <?php endwhile; ?>
+</div>
+<?php endif; ?>
+4.4. Оптимизация ACF-запросов
+Внутри циклов кешируем повторяющиеся вызовы get_field:
+// ❌ Плохо — вызов на каждой итерации
+while (have_rows('items')): the_row();
+    echo get_field('global_setting', 'option'); // Каждый раз запрос
+endwhile;
+
+
+// ✅ Хорошо — кешируем перед циклом
+$global_setting = get_field('global_setting', 'option');
+while (have_rows('items')): the_row();
+    echo $global_setting;
+endwhile;
+________________
+
+
+5. Custom Post Types и таксономии
+Регистрируем CPT и таксономии через код в functions.php.
+5.1. Регистрация Custom Post Type
+function theme_register_post_types() {
+    // CPT Статьи (Блог)
+    register_post_type('blogs', [
+        'labels' => [
+            'name'          => 'Статьи',
+            'singular_name' => 'Статья',
+            'add_new'       => 'Добавить статью',
+            'add_new_item'  => 'Добавить новую статью',
+            'edit_item'     => 'Редактировать статью',
+            'view_item'     => 'Смотреть статью',
+            'search_items'  => 'Искать статьи',
+            'not_found'     => 'Статей не найдено',
+        ],
+        'public'       => true,
+        'has_archive'  => false, // или true если нужен архив
+        'rewrite'      => ['slug' => 'blog'],
+        'supports'     => ['title', 'editor', 'thumbnail', 'author'],
+        'menu_icon'    => 'dashicons-admin-post',
+        'menu_position' => 5,
+    ]);
+
+
+    // CPT Портфолио
+    register_post_type('portfolio', [
+        'labels' => [
+            'name'          => 'Портфолио',
+            'singular_name' => 'Работа',
+        ],
+        'public'       => true,
+        'has_archive'  => true,
+        'rewrite'      => ['slug' => 'works'],
+        'supports'     => ['title', 'thumbnail'],
+        'menu_icon'    => 'dashicons-portfolio',
+    ]);
+}
+add_action('init', 'theme_register_post_types');
+5.2. Регистрация таксономии
+function theme_register_taxonomies() {
+    // Категории для блога
+    register_taxonomy('blog_category', ['blogs'], [
+        'labels' => [
+            'name'          => 'Категории',
+            'singular_name' => 'Категория',
+            'search_items'  => 'Поиск категории',
+            'all_items'     => 'Все категории',
+            'edit_item'     => 'Редактировать категорию',
+            'add_new_item'  => 'Добавить категорию',
+        ],
+        'public'            => true,
+        'hierarchical'      => true, // Как рубрики (древовидная)
+        'show_admin_column' => true,
+        'rewrite'           => ['slug' => 'blog-category'],
+    ]);
+}
+add_action('init', 'theme_register_taxonomies');
+5.3. Шаблоны для CPT
+WordPress автоматически ищет шаблоны по имени:
+* single-blogs.php — одиночная запись CPT blogs
+* archive-blogs.php — архив CPT blogs
+* taxonomy-blog_category.php — архив таксономии
+* taxonomy-blog_category-news.php — конкретный терм
+________________
+
+
+6. Шаблоны страниц
+6.1. Кастомный шаблон страницы
+Создаём файл page-[slug].php с комментарием Template Name:
+<?php
+/*
+Template Name: Контакты
+*/
+
+
+get_header();
+
+
+// ACF поля этой страницы
+$title = get_field('zagolovok');
+$address = get_field('adres');
+$map_code = get_field('kod_karty');
+?>
+
+
+<section class="contacts">
+    <div class="contacts__container _container">
+        <h1><?php echo esc_html($title); ?></h1>
+        <p><?php echo esc_html($address); ?></p>
+        <div class="contacts__map">
+            <?php echo $map_code; ?>
+        </div>
+    </div>
+</section>
+
+
+<?php get_footer(); ?>
+6.2. Шаблон одиночной записи CPT
+<?php
+// single-blogs.php
+get_header();
+
+
+$post_id = get_the_ID();
+$title = get_field('zagolovok') ?: get_the_title();
+$content = get_field('opisanie');
+$image = get_the_post_thumbnail_url($post_id, 'full');
+
+
+// Получаем категории записи
+$categories = get_the_terms($post_id, 'blog_category');
+?>
+
+
+<article class="single-post">
+    <div class="single-post__container _container">
+        <h1><?php echo esc_html($title); ?></h1>
+        
+        <div class="single-post__meta">
+            <span><?php echo get_the_date('j F Y'); ?></span>
+            <?php if ($categories && !is_wp_error($categories)): ?>
+            <span>
+                <?php echo implode(', ', wp_list_pluck($categories, 'name')); ?>
+            </span>
+            <?php endif; ?>
+        </div>
+        
+        <?php if ($image): ?>
+        <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>">
+        <?php endif; ?>
+        
+        <div class="single-post__content">
+            <?php the_content(); ?>
+        </div>
+    </div>
+</article>
+
+
+<?php get_footer(); ?>
+________________
+
+
+7. Header и Footer
+7.1. Структура header.php
+<?php
+// Получаем глобальные настройки один раз
+$logo = get_field('logotip', 'option');
+$phone = get_field('nomer_telefona', 'option');
+$phone_clean = preg_replace('![^0-9]+!', '', $phone);
+$email = get_field('email', 'option');
+$whatsapp = get_field('ssylka_na_votsap', 'option');
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+
+
+<header class="header">
+    <div class="header__container _container">
+        <a href="/" class="header__logo">
+            <img src="<?php echo esc_url($logo['url']); ?>" 
+                 alt="<?php echo esc_attr($logo['alt']); ?>"
+                 width="135" height="36">
+        </a>
+        
+        <nav class="header__nav">
+            <!-- Меню через ACF Repeater -->
+        </nav>
+        
+        <div class="header__contacts">
+            <a href="tel:+<?php echo $phone_clean; ?>"><?php echo $phone; ?></a>
+            <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+        </div>
+        
+        <button class="header__burger burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+
+<main>
+7.2. Структура footer.php
+<?php
+$logo_footer = get_field('logotip_podval', 'option');
+$copyright = get_field('kopirajt', 'option');
+$policy_link = get_field('ssylka_na_politiku', 'option');
+?>
+</main>
+
+
+<footer class="footer">
+    <div class="footer__container _container">
+        <a href="/" class="footer__logo">
+            <img src="<?php echo esc_url($logo_footer['url']); ?>" 
+                 alt="<?php echo esc_attr($logo_footer['alt']); ?>">
+        </a>
+        
+        <nav class="footer__nav">
+            <!-- Меню footer -->
+        </nav>
+        
+        <div class="footer__bottom">
+            <p><?php echo $copyright; ?></p>
+            <a href="<?php echo esc_url($policy_link); ?>">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Поп-апы -->
+<?php get_template_part('template-parts/popups'); ?>
+
+
+<?php wp_footer(); ?>
+</body>
+</html>
+________________
+
+
+8. Меню навигации
+Меню строим через ACF Repeater вместо стандартного wp_nav_menu(). Это даёт полный контроль над разметкой и позволяет добавлять кастомные поля.
+8.1. Структура ACF-полей для меню
+В ACF Options создаём Repeater с полями:
+* nazvanie (Text) — текст ссылки
+* ssylka (URL или Page Link) — ссылка
+* est_podmenyu (True/False) — есть ли подменю
+* podmenyu (Repeater) — вложенные пункты
+8.2. Вывод меню
+<?php if (have_rows('glavnoe_menyu', 'option')): ?>
+<nav class="header__nav">
+    <ul class="header__menu">
+        <?php while (have_rows('glavnoe_menyu', 'option')): the_row();
+            $name = get_sub_field('nazvanie');
+            $link = get_sub_field('ssylka');
+            $has_submenu = get_sub_field('est_podmenyu');
+        ?>
+        <li class="header__menu-item<?php echo $has_submenu ? ' has-dropdown' : ''; ?>">
+            <a href="<?php echo esc_url($link); ?>"><?php echo esc_html($name); ?></a>
+            
+            <?php if ($has_submenu && have_rows('podmenyu')): ?>
+            <ul class="header__submenu">
+                <?php while (have_rows('podmenyu')): the_row();
+                    $sub_name = get_sub_field('nazvanie');
+                    $sub_link = get_sub_field('ssylka');
+                ?>
+                <li>
+                    <a href="<?php echo esc_url($sub_link); ?>"><?php echo esc_html($sub_name); ?></a>
+                </li>
+                <?php endwhile; ?>
+            </ul>
+            <?php endif; ?>
+        </li>
+        <?php endwhile; ?>
+    </ul>
+</nav>
+<?php endif; ?>
+________________
+
+
+9. AJAX-функционал
+Все AJAX-запросы проходят через admin-ajax.php с обязательной проверкой nonce.
+9.1. Регистрация AJAX-обработчика
+// PHP: functions.php
+
+
+// Для авторизованных и неавторизованных пользователей
+add_action('wp_ajax_filter_posts', 'ajax_filter_posts');
+add_action('wp_ajax_nopriv_filter_posts', 'ajax_filter_posts');
+
+
+function ajax_filter_posts() {
+    // 1. Проверка nonce — ОБЯЗАТЕЛЬНО
+    if (!check_ajax_referer('theme_nonce', 'nonce', false)) {
+        wp_send_json_error(['message' => 'Ошибка безопасности']);
+    }
+    
+    // 2. Получение и санитизация данных
+    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+    $page = isset($_POST['page']) ? absint($_POST['page']) : 1;
+    
+    // 3. Формируем запрос
+    $args = [
+        'post_type'      => 'blogs',
+        'posts_per_page' => 9,
+        'paged'          => $page,
+        'post_status'    => 'publish',
+    ];
+    
+    if ($category && $category !== 'all') {
+        $args['tax_query'] = [[
+            'taxonomy' => 'blog_category',
+            'field'    => 'term_id',
+            'terms'    => intval($category),
+        ]];
+    }
+    
+    $query = new WP_Query($args);
+    
+    // 4. Рендерим HTML
+    ob_start();
+    if ($query->have_posts()):
+        while ($query->have_posts()): $query->the_post();
+            get_template_part('template-parts/blog', 'card');
+        endwhile;
+        wp_reset_postdata();
+    else:
+        echo '<p class="no-posts">Записей не найдено</p>';
+    endif;
+    $html = ob_get_clean();
+    
+    // 5. Отправляем ответ
+    wp_send_json_success([
+        'html'      => $html,
+        'max_pages' => $query->max_num_pages,
+        'found'     => $query->found_posts,
+    ]);
+}
+9.2. JavaScript AJAX-запрос
+// JS: script.js
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter__btn');
+    const postsContainer = document.querySelector('.posts__grid');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            fetch(theme_ajax.ajax_url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'filter_posts',
+                    nonce: theme_ajax.nonce,
+                    category: category,
+                    page: 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    postsContainer.innerHTML = data.data.html;
+                } else {
+                    console.error(data.data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+9.3. Подгрузка "Показать ещё"
+// PHP: Обработчик для load more
+add_action('wp_ajax_load_more', 'ajax_load_more');
+add_action('wp_ajax_nopriv_load_more', 'ajax_load_more');
+
+
+function ajax_load_more() {
+    check_ajax_referer('theme_nonce', 'nonce');
+    
+    $page = absint($_POST['page']);
+    $category = sanitize_text_field($_POST['category']);
+    
+    $args = [
+        'post_type'      => 'blogs',
+        'posts_per_page' => 9,
+        'paged'          => $page,
+    ];
+    
+    if ($category !== 'all') {
+        $args['tax_query'] = [[
+            'taxonomy' => 'blog_category',
+            'field'    => 'term_id',
+            'terms'    => intval($category),
+        ]];
+    }
+    
+    $query = new WP_Query($args);
+    
+    ob_start();
+    while ($query->have_posts()): $query->the_post();
+        get_template_part('template-parts/blog', 'card');
+    endwhile;
+    wp_reset_postdata();
+    $html = ob_get_clean();
+    
+    wp_send_json_success([
+        'html'      => $html,
+        'max_pages' => $query->max_num_pages,
+    ]);
+}
+⚠️ Всегда используйте check_ajax_referer() или wp_verify_nonce() для проверки безопасности AJAX-запросов.
+________________
+
+
+10. Формы и Contact Form 7
+Стандарт для форм — Contact Form 7. Допускается WPForms по согласованию.
+10.1. Вставка формы
+// Через шорткод
+<?php echo do_shortcode('[contact-form-7 id="abc123" title="Обратная связь"]'); ?>
+10.2. Кастомная разметка формы
+CF7 оборачивает элементы в теги <p> и <span>. Для полного контроля над разметкой можно их удалить:
+// Удаление <p> и <span> из Contact Form 7
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<span[^>]*>(.*?)<\/span>/', '$1', $content);
+    $content = preg_replace('/<p\b[^>]*>/', '', $content);
+    $content = str_replace('</p>', '', $content);
+    return $content;
+});
+10.3. Защита от спама
+Обязательно подключаем reCAPTCHA v3 ко всем формам:
+1. Contact Form 7 → Интеграция → reCAPTCHA
+2. Вставить Site Key и Secret Key из Google reCAPTCHA Admin
+3. В форму добавить тег [recaptcha]
+10.4. Уведомления в Telegram (опционально)
+Для отправки заявок в Telegram используем корпоративный плагин DS-ART. Запросите его у менеджера проекта.
+Для интернет-магазинов (WooCommerce) интеграция реализуется через код в functions.php — там плагина пока нет.
+________________
+
+
+11. SEO и метаданные
+11.1. SEO-плагин
+Стандартные варианты: Rank Math Pro, Yoast SEO, All in One SEO. Выбор согласовывается с менеджером проекта.
+Плагин должен настроить:
+* XML Sitemap
+* Open Graph и Twitter Cards
+* Schema.org разметку
+* Хлебные крошки
+11.2. ACF-поле для ключевых слов
+Добавляем поле keywords на страницы для ручного ввода:
+// Вывод в header.php
+<?php
+$keywords = get_field('keywords');
+if ($keywords):
+?>
+<meta name="keywords" content="<?php echo esc_attr($keywords); ?>">
+<?php endif; ?>
+11.3. Требования к контенту
+* Один <h1> на страницу
+* Иерархия заголовков: h1 → h2 → h3
+* alt-атрибуты у всех изображений
+* aria-label для кнопок без текста
+* Семантическая разметка (header, nav, main, section, footer)
+________________
+
+
+12. Безопасность
+12.1. На этапе разработки
+* Сайт закрыт плагином Password Protected
+* Пароль снимается только после полной готовности к сдаче
+* Перед снятием: проверить метрики, Вебвизор, все формы
+12.2. Защита форм
+* reCAPTCHA v3 на всех формах
+* Honeypot-поля (дополнительно)
+* Валидация и санитизация данных на сервере
+12.3. Общие требования
+* HTTPS везде, без mixed content
+* Ограничение попыток входа (Limit Login Attempts)
+* API-ключи и пароли — в wp-config.php, не в коде темы
+* DISALLOW_FILE_EDIT = true в wp-config.php
+12.4. Санитизация данных
+// Всегда санитизируем входящие данные
+$email = sanitize_email($_POST['email']);
+$text = sanitize_text_field($_POST['text']);
+$number = absint($_POST['number']);
+$url = esc_url_raw($_POST['url']);
+
+
+// При выводе — экранируем
+echo esc_html($text);
+echo esc_attr($attribute);
+echo esc_url($url);
+________________
+
+
+13. Оптимизация
+13.1. Изображения
+* Формат WebP для фото
+* SVG для иконок
+* loading="lazy" для изображений ниже первого экрана
+* fetchpriority="high" для hero-изображений
+* Указывать width и height для предотвращения CLS
+13.2. CSS/JS
+* Минификация через плагин кэша
+* Условная загрузка по страницам
+* Критический CSS inline (опционально)
+13.3. Кэширование
+Используем ОДИН плагин кэша. Двойная оптимизация запрещена.
+Варианты: LiteSpeed Cache, W3 Total Cache, WP Super Cache, Autoptimize.
+13.4. Целевые показатели
+* Google PageSpeed: мобильная версия ≥ 75, десктоп ≥ 94
+________________
+
+
+14. Плагины
+14.1. Обязательные плагины
+* Advanced Custom Fields PRO — кастомные поля
+* Contact Form 7 — формы
+* SEO-плагин (Rank Math / Yoast / AIOSEO)
+* Плагин кэша (один)
+* SMTP-плагин (Easy WP SMTP / Post SMTP)
+* Classic Editor
+14.2. Рекомендуемые плагины
+* Cyr-To-Lat — транслитерация URL
+* SVG Support — загрузка SVG
+* Lazy Load — ленивая загрузка
+* Post Duplicator — дублирование записей
+* ACF: Better Search — поиск по ACF-полям
+14.3. Для разработки (удалить перед запуском)
+* Query Monitor
+* Password Protected
+14.4. Запрещено
+* Два SEO-плагина одновременно
+* Два плагина кэша
+* Плагины с дублирующим функционалом
+* Устаревшие плагины без поддержки
+________________
+
+
+15. Финальная проверка перед запуском
+15.1. Адаптивность
+* 1920px, 1440px, 1366px, 1024px (десктоп)
+* 768px (планшет)
+* 414px, 375px, 320px (мобильные)
+15.2. Кроссбраузерность
+* Chrome, Firefox, Safari, Edge (десктоп)
+* iOS Safari, Android Chrome (мобильные)
+15.3. Формы
+* Все формы отправляются
+* Письма доходят, не попадают в спам
+* Автоответы настроены (если требуется)
+* Telegram-уведомления работают (если требуется)
+15.4. SEO
+* Sitemap.xml генерируется и доступен
+* robots.txt корректен
+* title и description на всех страницах
+* Микроразметка без ошибок (Schema Validator)
+15.5. Аналитика
+* Google Analytics (GA4) подключён
+* Google Search Console настроен
+* Яндекс.Метрика и Вебвизор работают
+15.6. Производительность
+* PageSpeed Insights проверен
+* Критические ошибки устранены
+15.7. Перед снятием пароля
+4. Все плагины и ядро WP обновлены
+5. Dev-плагины удалены (Query Monitor и т.д.)
+6. HTTPS работает без mixed content
+7. Вебвизор и метрики работают
+8. Менеджер проекта согласовал запуск
+________________
+
+
+16. Документация проекта
+По завершении проекта разработчик обязан предоставить документацию. Формат (видео или текст) определяет менеджер проекта.
+16.1. Структура документации
+9. Описание структуры сайта — какие страницы, CPT, таксономии
+10. Инструкция по редактированию контента через ACF
+11. Управление меню
+12. SEO-настройки — как менять title, description
+16.2. Передача доступов
+* Доступ к хостингу (панель управления)
+* FTP/SFTP
+* Админка WordPress
+* API-ключи сервисов (reCAPTCHA, SMTP и т.д.)
+* Доступы к аналитике
+________________
+
+
+Приложение: Чеклист разработчика
+Перед началом работы
+* ☐ Получил ТЗ и макет
+* ☐ Получил доступы к хостингу/серверу
+* ☐ Установил WordPress и основные плагины
+* ☐ Настроил Password Protected
+В процессе разработки
+* ☐ Создал тему на базе Underscores
+* ☐ Настроил ACF Options
+* ☐ Зарегистрировал CPT (если нужны)
+* ☐ Интегрировал вёрстку
+* ☐ Настроил формы с reCAPTCHA
+* ☐ Проверил AJAX (nonce, валидация)
+Перед сдачей
+* ☐ Проверил адаптивность
+* ☐ Проверил кроссбраузерность
+* ☐ Настроил SEO-плагин
+* ☐ Подключил аналитику
+* ☐ Проверил PageSpeed
+* ☐ Обновил все плагины
+* ☐ Удалил dev-плагины
+* ☐ Подготовил документацию
+* ☐ Снял пароль (после согласования)

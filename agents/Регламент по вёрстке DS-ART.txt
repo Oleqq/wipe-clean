@@ -1,0 +1,402 @@
+﻿РЕГЛАМЕНТ
+по разработке вёрстки
+DS-ART Интегратор
+Версия 1.0 | 2025
+________________
+
+
+Содержание
+1. Введение
+2. Структура проекта
+3. HTML
+4. CSS / SCSS
+5. JavaScript
+6. Анимации и hover-эффекты
+7. Типовые компоненты
+8. Оптимизация
+9. Тестирование
+10. Сборка проекта
+11. Сдача вёрстки
+________________
+
+
+1. Введение
+Этот документ фиксирует правила, которых мы придерживаемся при вёрстке. Цель — держать проекты в порядке, упростить поддержку и сделать результат максимально качественным и современным.
+Регламент содержит конкретные примеры из реальных проектов, чтобы исполнитель мог сразу понять, что от него требуется.
+✅ Все правила обязательны к соблюдению. При возникновении вопросов — обращайтесь к руководителю проекта.
+________________
+
+
+2. Структура проекта
+2.1. Логичная структура директорий
+Файлы должны быть разложены так, чтобы даже новый человек в проекте быстро разобрался. Стандартная структура:
+project/
+├── css/              — скомпилированные CSS-файлы
+├── scss/             — исходники стилей (SCSS)
+│   ├── global/       — глобальные стили (header, footer, переменные)
+│   └── section/      — стили для конкретных секций/страниц
+├── js/               — скрипты
+├── fonts/            — локальные шрифты
+├── images/           — изображения (с разбивкой по секциям)
+├── img/              — SVG-иконки и спрайты
+└── template-parts/   — отдельные HTML-шаблоны страниц
+2.2. Наименование файлов и папок
+* Используем kebab-case: header.scss, cat-catalog.scss, o-nas.html
+* Название должно отражать назначение файла
+* Избегаем транслита, кроме случаев, когда это часть URL (o-nas вместо about-us допустимо)
+2.3. Шрифты
+* Форматы: woff2 + woff (обязательно)
+* Предзагрузка критичных шрифтов через <link rel="preload">
+* Обязательно: font-display: swap — чтобы текст показывался сразу
+* Шрифты хранятся локально в папке fonts/, без CDN
+2.4. Иконки
+Используем два подхода:
+* SVG-спрайт — для повторяющихся иконок (меню, соцсети, интерфейс). Файл icons.svg в папке img/
+* Инлайн SVG — для уникальных иконок или когда нужна анимация
+Пример использования спрайта в HTML:
+<svg class="icon" width="22" height="22">
+  <use href="../img/icons.svg#icon-phone"></use>
+</svg>
+✅ Используем stroke="currentColor" в SVG, чтобы цвет иконки можно было менять через CSS (свойство color).
+________________
+
+
+3. HTML
+3.1. Семантика
+Используем семантические теги по назначению:
+* <header> — шапка сайта
+* <nav> — навигация
+* <main> — основной контент страницы
+* <section> — логический раздел
+* <article> — самостоятельный контент (новость, товар)
+* <footer> — подвал сайта
+3.2. Заголовки
+* На странице только один <h1>
+* Иерархия строгая: h1 → h2 → h3 (нельзя пропускать уровни)
+* Заголовки секций — h2, подзаголовки — h3
+3.3. Изображения
+Каждое изображение должно иметь:
+* alt — описание для скринридеров и SEO
+* title — заголовок при наведении
+* width и height — для предотвращения сдвигов при загрузке (CLS)
+* Формат: WebP для фото, SVG для иконок и графики
+Пример:
+<img src="../image/cat-catalog/01.webp" 
+     alt="Описание изображения" 
+     title="Заголовок" 
+     width="240" height="180">
+3.4. Кнопки и ссылки
+* <button> — для действий на странице (открыть попап, отправить форму)
+* <a> — для переходов между страницами
+* У <button> всегда указываем type="button" или type="submit"
+Примеры:
+<button type="button" class="btn" data-popup="#popup_callback">
+  Консультация
+</button>
+
+
+<a href="/catalog" class="btn">Перейти в каталог</a>
+3.5. Доступность (a11y)
+* Интерактивные элементы должны иметь aria-атрибуты
+* Бургер-меню: aria-label="Открыть меню", aria-expanded="false/true"
+* Код должен проходить W3C Validator без ошибок
+________________
+
+
+4. CSS / SCSS
+4.1. Методология БЭМ
+Используем БЭМ (Блок-Элемент-Модификатор) для именования классов:
+* Блок — самостоятельный компонент: .header, .card, .form
+* Элемент — часть блока, через __: .header__logo, .card__title
+* Модификатор — вариация, через --: .btn--primary, .header__action--cart
+Пример HTML с БЭМ:
+<header class="header">
+  <div class="header__container _container">
+    <a href="/" class="header__logo">...</a>
+    <nav class="header__nav">...</nav>
+    <a class="header__action header__action--cart">...</a>
+  </div>
+</header>
+Пример SCSS с БЭМ:
+.header {
+  position: fixed;
+  width: 100%;
+  
+  &__container { ... }
+  &__logo { ... }
+  &__action {
+    &--cart { background: #444; }
+    &--wa { background: #FFB700; }
+  }
+}
+4.2. Организация SCSS-файлов
+Разделяем стили по файлам:
+* tex.scss — сброс стилей, базовая типографика, переменные, миксины
+* header.scss, footer.scss — глобальные компоненты
+* style.scss — главный файл страницы, импортирует секции
+* section/*.scss — отдельные секции страницы
+Пример главного файла style.scss:
+@import '../section/home/global.scss';
+@import '../section/home/cat-catalog.scss';
+@import '../section/home/why-two.scss';
+@import '../section/home/faq.scss';
+4.3. Адаптивная вёрстка
+Обязательно используем миксин адаптивного шрифта:
+@mixin adaptive-font($minSize, $maxSize, $minWidth: 360, $maxWidth: 1440) {
+  $slope: ($maxSize - $minSize) / ($maxWidth - $minWidth);
+  $intersect: $minSize - $slope * $minWidth;
+  font-size: clamp(
+    #{$minSize}px,
+    calc(#{$slope * 100}vw + #{$intersect}px),
+    #{$maxSize}px
+  );
+}
+
+
+// Использование:
+h1 { @include adaptive-font(27, 44); }
+h2 { @include adaptive-font(20, 40); }
+p  { @include adaptive-font(14, 16); }
+Основные брейкпоинты:
+* 1200px — переход на десктоп
+* 991px — планшет
+* 768px — большой мобильный
+* 650px — мобильный
+4.4. Единицы измерения
+* rem, em — для размеров шрифтов и отступов
+* %, vw, vh — для ширины/высоты
+* px — только для мелких деталей (border, shadow)
+* !important — только в крайнем случае
+4.5. Контейнер
+Стандартный контейнер для ограничения ширины контента:
+._container {
+  max-width: 1440px;
+  padding: 0 60px;
+  margin: 0 auto;
+  
+  @media (max-width: 1400px) { padding: 0 20px; }
+  @media (max-width: 650px) { padding: 0 16px; }
+}
+________________
+
+
+5. JavaScript
+5.1. Общие принципы
+* Синтаксис ES6+ (const, let, arrow functions, template literals)
+* Код разбиваем на модули по функционалу
+* Понятные имена переменных и функций
+* Комментарии только для сложной логики
+5.2. Структура JS-файлов
+Разделяем код по файлам:
+* script.js — главный файл с общей логикой
+* swiper.js — библиотека слайдера
+* fancybox.js — библиотека галереи
+* catalog.js, cart.js — логика конкретных страниц
+Подключаем в HTML перед </body> в правильном порядке: сначала библиотеки, потом свои скрипты.
+5.3. Типовые компоненты
+Бургер-меню:
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.bottom-header');
+
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('_active');
+  menu.classList.toggle('_active');
+  document.body.classList.toggle('lock');
+});
+Попапы:
+// Открытие по data-popup
+const popupButtons = document.querySelectorAll('[data-popup]');
+popupButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const popup = document.querySelector(btn.dataset.popup);
+    popup.classList.add('open');
+    document.body.classList.add('lock');
+  });
+});
+
+
+// + Закрытие по крестику и клику вне контента
+// + Закрытие по Escape
+Аккордеон:
+const accordionItems = document.querySelectorAll('.accordion__item');
+
+
+accordionItems.forEach(item => {
+  const header = item.querySelector('.accordion__header');
+  header.addEventListener('click', () => {
+    item.classList.toggle('_active');
+  });
+});
+________________
+
+
+6. Анимации и hover-эффекты
+6.1. Общие правила
+* Длительность: 200-300ms (максимум 500ms)
+* Используем transform и opacity — они не вызывают repaint
+* cubic-bezier для плавности: cubic-bezier(0.22, 1, 0.36, 1)
+* Анимации не должны мешать пользователю
+6.2. Анимация появления при скролле
+Используем класс _anim-items для элементов и добавляем _active при попадании в viewport:
+.text-animate-2 {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.text-animate-2._active {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+6.3. Hover-эффекты
+Hover должен показывать, что элемент интерактивен:
+.btn {
+  transition: transform 0.2s ease;
+  
+  @media (min-width: 1200px) {
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  
+  &:active {
+    transform: translateY(1px) scale(0.98);
+  }
+}
+✅ Hover только для десктопа (@media min-width: 1200px), чтобы не залипало на тач-устройствах.
+________________
+
+
+7. Типовые компоненты
+7.1. Кнопки
+Два основных типа: основная (жёлтая) и вторичная (серая).
+.btn {
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, #FFB700 30%, #FFCC49 100%);
+  color: #0F0F0F;
+}
+
+
+.btn-grey {
+  background: linear-gradient(0deg, #A6A6A6 20%, #E6E6E6 100%);
+  color: #0F0F0F;
+}
+7.2. Формы
+Стандартные стили для инпутов:
+.form__input input,
+.form__input textarea {
+  width: 100%;
+  padding: 10px 18px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background: transparent;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  
+  &:focus { border-color: #FFB700; }
+  &::placeholder { color: #898989; }
+}
+7.3. Попапы
+Структура попапа:
+<div id="popup_callback" class="popup">
+  <div class="popup__body">
+    <div class="popup__content">
+      <div class="popup__close close-popup">×</div>
+      <div class="popup__title">Заголовок</div>
+      <!-- контент -->
+    </div>
+  </div>
+</div>
+Клик по .popup__body (затемнение) закрывает попап. Клик по .popup__content — нет.
+7.4. Слайдеры (Swiper)
+Используем Swiper.js. Типовая структура:
+<div class="order__swiper swiper-order">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">...</div>
+    <div class="swiper-slide">...</div>
+  </div>
+</div>
+<div class="pag__arrow prev-order">←</div>
+<div class="pag__arrow next-order">→</div>
+Инициализация:
+new Swiper('.swiper-order', {
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.next-order',
+    prevEl: '.prev-order'
+  },
+  breakpoints: {
+    0: { slidesPerView: 1.3, spaceBetween: 16 },
+    768: { slidesPerView: 2 },
+    1300: { slidesPerView: 4 }
+  }
+});
+________________
+
+
+8. Оптимизация
+8.1. Изображения
+* Формат: WebP для всех фото
+* SVG для иконок и векторной графики
+* Сжимаем без видимой потери качества
+* Размеры изображений соответствуют реальному использованию
+8.2. Библиотеки
+* Используем только необходимое
+* Разрешённые: Swiper (слайдеры), Fancybox (галереи)
+* Подключаем локально, без CDN
+* Если задачу можно решить кастомно — решаем кастомно
+________________
+
+
+9. Тестирование
+9.1. Кроссбраузерность
+Проверяем в:
+* Chrome, Firefox, Safari, Edge (десктоп)
+* iOS Safari, Android Chrome (мобильные)
+9.2. Устройства
+Обязательно тестируем на:
+* Десктоп (1920px, 1440px, 1366px)
+* Планшет (1024px, 768px)
+* Смартфон (414px, 375px, 320px)
+________________
+
+
+10. Сборка проекта
+Основной инструмент: Prepros — для компиляции SCSS, автообновления браузера, сборки HTML из Kit-шаблонов.
+Допустимые альтернативы:
+* Gulp — для более сложных проектов с множеством задач
+* Webpack — если требуется модульность JS
+⚠️ Выбор сборщика согласовывается с руководителем проекта.
+________________
+
+
+11. Сдача вёрстки
+11.1. Процесс сдачи
+1. Агентство DS-ART предоставляет доступы FTP
+2. Проект заливается для проверки командой
+3. Сайт должен быть закрыт: robots noindex, все страницы под паролем
+4. После сдачи возможны корректировки — это нормальная часть работы
+11.2. Командное взаимодействие
+* Верстальщик должен быть в курсе изменений ещё на этапе дизайна
+* Доработки после сдачи согласуются отдельно
+11.3. Связка с бэкендом
+* Если бэкендеру нужны изменения — даём быстрый и качественный результат
+* Спорные моменты обсуждаем заранее
+________________
+
+
+Заключение
+Этот регламент создан не для того, чтобы ограничивать, а чтобы упростить жизнь. Понятная структура, единые правила и современные подходы делают разработку быстрее, а результат — чище и качественнее.
+✅ При возникновении вопросов — обращайтесь к руководителю проекта.
