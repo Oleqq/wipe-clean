@@ -1,0 +1,55 @@
+include ../../components/team-member-card/team-member-card
+
+-
+    var teamPreviewMembers = [
+        {
+            name: "Имя сотрудника",
+            image: ""
+        },
+        {
+            name: "Имя сотрудника",
+            image: ""
+        },
+        {
+            name: "Имя сотрудника",
+            image: ""
+        },
+        {
+            name: "Имя сотрудника",
+            image: ""
+        },
+        {
+            name: "Имя сотрудника",
+            image: ""
+        },
+        {
+            name: "Имя сотрудника",
+            image: ""
+        }
+    ]
+
+section.team-preview
+    ._container
+        .team-preview__wrapper
+            .team-preview__top
+                .team-preview__head.ui-section-head
+                    h2.ui-title.team-preview__title Наша команда
+                    p.ui-text.team-preview__text Основой нашего успеха являются люди, поэтому клининговая компания в Москве ВАЙП–Клин уделяет внимание подготовке персонала. Каждый кандидат проходит многоступенчатый отбор, проверку безопасности и обучение стандартам организации до допуска к работе. На объекте присутствует старший клинер, который не только участвует в процессе, но и ведет постоянный мониторинг качества.
+
+                .team-preview__nav.ui-slider-nav.ui-slider-nav--desktop-only
+                    button.team-preview__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Предыдущий сотрудник" data-team-preview-prev)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                    button.team-preview__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Следующий сотрудник" data-team-preview-next)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+
+            .team-preview__slider.swiper(data-team-preview-swiper)
+                .team-preview__track.swiper-wrapper
+                    each item in teamPreviewMembers
+                        .team-preview__slide.swiper-slide
+                            +teamMemberCard(item)

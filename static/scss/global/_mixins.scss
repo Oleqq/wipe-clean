@@ -1,0 +1,141 @@
+@use "sass:math";
+@use "sass:map";
+
+@mixin adaptive-font($min-size, $max-size, $min-width: 360, $max-width: 1440) {
+  $slope: math.div($max-size - $min-size, $max-width - $min-width);
+  $intersect: $min-size - $slope * $min-width;
+
+  font-size: clamp(
+    #{$min-size}px,
+    calc(#{$slope * 100}vw + #{$intersect}px),
+    #{$max-size}px
+  );
+}
+
+@mixin below-desktop {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin below-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin below-mobile-lg {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin below-mobile {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin text-body($size: 16px, $color: $color-text, $weight: 400) {
+  font-family: $font-body;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  color: $color;
+}
+
+@mixin text-title($size: 36px, $weight: 800) {
+  font-family: $font-heading;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $color-heading;
+}
+
+@mixin section-space($top: $section-space-desktop, $bottom: $section-space-desktop) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+
+  @include below-tablet {
+    padding-top: $section-space-tablet;
+    padding-bottom: $section-space-tablet;
+  }
+
+  @include below-mobile {
+    padding-top: $section-space-mobile;
+    padding-bottom: $section-space-mobile;
+  }
+}
+
+@mixin ui-card-surface($radius: $radius-2xl) {
+  background: linear-gradient(180deg, $color-surface 0%, $color-bg-soft 100%);
+  border: 2px solid $color-border-soft;
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+}
+
+@mixin ui-field-surface($radius: $radius-pill) {
+  background-color: $color-surface;
+  border: 2px solid $color-border-field;
+  border-radius: $radius;
+  box-shadow: $shadow-field;
+}
+
+
+
+// ========================================
+// ADAPTIVE VALUES MIXIN (Improved version)
+// ========================================
+
+@mixin adaptive-value($property, $start-size, $min-size, $width-from: 1920px, $width-to: 320px) {
+  // Проверка на отрицательные значения
+  @if $min-size <= 0 {
+    $min-size: 0.0001;
+  }
+  @if $start-size <= 0 {
+    $start-size: 0.0001;
+  }
+
+  // Преобразуем в rem
+  $start-size-rem: math.div($start-size, 16);
+  $min-size-rem: math.div($min-size, 16);
+  $width-from-rem: math.div($width-from, 16);
+  $width-to-rem: math.div($width-to, 16);
+
+  // Формула для адаптивного значения
+  $slope: math.div($start-size - $min-size, $width-from - $width-to);
+  $y-intersection: -$width-to * $slope + $min-size;
+
+  // Плавное изменение размера
+  $fly-value: calc(#{$y-intersection} + #{$slope * 100} * 1vw);
+  $property-value: clamp(#{$min-size-rem}rem, #{$fly-value}, #{$start-size-rem}rem);
+
+  // Применяем адаптивное значение
+  @media (min-width: $width-from) {
+    #{$property}: $start-size;
+  }
+
+  @media (min-width: $width-to) and (max-width: $width-from) {
+    @supports (#{$property}: #{$property-value}) {
+      #{$property}: $property-value;
+    }
+    @supports not (#{$property}: #{$property-value}) {
+      #{$property}: calc(#{$min-size} + (100vw - #{$width-to}) * #{$slope});
+    }
+  }
+
+  @media (max-width: $width-to) {
+    #{$property}: $min-size;
+  }
+}

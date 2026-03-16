@@ -1,0 +1,13 @@
+.service-page {
+    &__price-wave {
+        margin-top: 180px;
+
+        @include below-tablet {
+            margin-top: 120px;
+        }
+
+        @include below-mobile {
+            margin-top: 80px;
+        }
+    }
+}

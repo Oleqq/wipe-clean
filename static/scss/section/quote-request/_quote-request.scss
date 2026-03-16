@@ -1,0 +1,122 @@
+.quote-request {
+    padding: 40px 0 120px;
+
+    @include below-tablet {
+        padding-top: 24px;
+        padding-bottom: 96px;
+    }
+
+    @include below-mobile {
+        padding-top: 20px;
+        padding-bottom: 64px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(320px, 584px) minmax(320px, 100%);
+        gap: 66px;
+        align-items: end;
+
+        @include below-desktop {
+            gap: 40px;
+        }
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+    }
+
+    &__visual {
+        @include below-tablet {
+            order: 2;
+            margin: 0 auto;
+        }
+    }
+
+    &__visual-media {
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        display: grid;
+        gap: 32px;
+        align-self: center;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
+    &__title {
+        max-width: 630px;
+
+        @include below-mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        max-width: 610px;
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__form {
+        gap: 20px;
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+        }
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__field {
+        .ui-field__label {
+            margin-left: 8px;
+        }
+    }
+
+    &__checkbox {
+        max-width: 315px;
+    }
+
+    &__submit {
+        width: 315px;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+include ../../components/check-list-item/check-list-item
+
+-
+    var servicePriceDefaults = {
+        titleAccent: "Стоимость",
+        titleMain: "уборки",
+        titleBreak: "под ключ",
+        text: "Расценки на клининг зависят от прозрачных факторов, понятных без долгих объяснений. Каждая уборка квартир в Москве считается персонально: это исключает переплату за лишний сервис. При расчете всегда учитывают реальную загрязненность комнат и особые запросы заказчика.",
+        leadText: "Факторы, влияющие на ценообразование:",
+        factors: [
+            {
+                text: "суммарная площадь объекта и фактическое количество комнат",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "выбранный тип обслуживания: разовая и регулярная уборка",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "степень загрязненности и текущее состояние жилого пространства",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "дополнительные опции, такие как мытье окон или химчистка",
+                icon: "/static/images/ui/check-badge-icon.png"
+            }
+        ],
+        noteText: "Для тех, кому требуется уборка квартиры профессионально, предусмотрена гибкая сетка тарифов. Окончательный расчет стоимости производится персонально. Это гарантирует нашу честность.",
+        accentText: "Цена на уборку начинается от 10 000 рублей",
+        button: {
+            label: "Ознакомиться с ценами на уборку",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        image: {
+            src: "/static/images/section/service-price/service-price-cleaning-kit.png",
+            alt: "Стоимость уборки квартиры под ключ"
+        }
+    }
+
+-
+    var servicePriceData = typeof servicePriceSection === "object" && servicePriceSection ? servicePriceSection : {}
+    var servicePriceButtonData = typeof servicePriceData.button === "object" && servicePriceData.button ? servicePriceData.button : {}
+    var servicePriceImageData = typeof servicePriceData.image === "object" && servicePriceData.image ? servicePriceData.image : {}
+    var servicePriceOptions = Object.assign({}, servicePriceDefaults, servicePriceData)
+    var servicePriceButton = Object.assign({}, servicePriceDefaults.button, servicePriceButtonData)
+    var servicePriceImage = Object.assign({}, servicePriceDefaults.image, servicePriceImageData)
+
+section.service-price
+    ._container
+        .service-price__wrapper
+            .service-price__visual(aria-hidden="true")
+                .service-price__visual-media
+                    img(src=servicePriceImage.src alt=servicePriceImage.alt loading="lazy")
+
+            .service-price__content
+                .service-price__body
+                    h2.service-price__title.ui-title
+                        span.service-price__title-inline
+                            span.service-price__title-accent= servicePriceOptions.titleAccent
+                            |  #{servicePriceOptions.titleMain}
+                        span.service-price__title-break= servicePriceOptions.titleBreak
+
+                    p.service-price__text.ui-text= servicePriceOptions.text
+                    p.service-price__lead.ui-text= servicePriceOptions.leadText
+
+                    ul.service-price__list
+                        each item in servicePriceOptions.factors
+                            +checkListItem(item)
+
+                    p.service-price__note.ui-text= servicePriceOptions.noteText
+                    p.service-price__accent.ui-accent-value= servicePriceOptions.accentText
+
+                a.service-price__action.ui-btn(class=servicePriceButton.className href=servicePriceButton.href)
+                    span.ui-btn__content= servicePriceButton.label

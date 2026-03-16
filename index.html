@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wipe Clean</title>
+    <link rel="stylesheet" href="/static/css/vendor/fancybox.css">
+    <link rel="stylesheet" href="/static/css/vendor/swiper-bundle.css">
+    <link rel="stylesheet" href="/static/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="main">
+      <section class="home-hero">
+        <div class="_container">
+          <div class="home-hero__wrapper">
+            <div class="home-hero__top">
+              <div class="home-hero__intro ui-section-head"><span class="ui-kicker">Уборка любых помещений в любом районе Москвы по доступным ценам</span>
+                <h1 class="ui-title ui-title--hero">Клининговая компания по уборке квартир и домов в Москве и МО</h1>
+                <p class="ui-text home-hero__text">Мечтаете о безупречном порядке?<br>Начните с расчёта стоимости — форма ниже ждёт вас!</p>
+                <div class="home-hero__calculator">
+                  <form class="home-hero__form" action="#" method="post" novalidate>
+                    <fieldset class="home-hero__area">
+                      <legend class="home-hero__area-title">Площадь</legend>
+                      <div class="home-hero__area-slider swiper" data-hero-area-swiper>
+                        <div class="ui-choice-group home-hero__area-options swiper-wrapper">
+                          <button class="ui-choice ui-choice--active home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">однокомнатная</span></button>
+                          <button class="ui-choice home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">2-х комнатная</span></button>
+                          <button class="ui-choice home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">3/4-х комнатная</span></button>
+                          <button class="ui-choice home-hero__choice home-hero__choice--meter swiper-slide" type="button"><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="home-hero__form-grid">
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-service">Услуги</label>
+                        <button class="ui-field__control home-hero__select-control" type="button" id="hero-service" aria-label="Выбор услуги"><span class="home-hero__select-value">Поддерживающая уборка</span><span class="home-hero__select-icon" aria-hidden="true">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></span></button>
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-frequency">Регулярность</label>
+                        <button class="ui-field__control home-hero__select-control" type="button" id="hero-frequency" aria-label="Выбор регулярности"><span class="home-hero__select-value">Разовая</span><span class="home-hero__select-icon" aria-hidden="true">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></span></button>
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-name">Ваше имя</label>
+                        <input id="hero-name" type="text" name="name" placeholder="Введите имя и фамилию">
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-phone">Номер телефона</label>
+                        <input id="hero-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                      </div>
+                    </div>
+                    <div class="home-hero__actions">
+                      <label class="ui-checkbox home-hero__checkbox">
+                        <input class="ui-checkbox__input" type="checkbox" name="agreement"><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                      </label>
+                      <button class="ui-btn ui-btn--primary ui-btn--full home-hero__submit" type="button"><span class="ui-btn__content">Рассчитать стоимость</span></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="home-hero__visual" aria-hidden="true">
+                <div class="home-hero__visual-tools"><img src="/static/images/section/home-hero/hero-tools.png" alt=""></div>
+                <div class="home-hero__visual-shadow"></div>
+                <div class="home-hero__visual-room"><img src="/static/images/section/home-hero/hero-room.png" alt=""></div>
+                <div class="home-hero__visual-cleaner"><img src="/static/images/section/home-hero/hero-cleaner.png" alt=""></div>
+              </div>
+            </div>
+            <div class="home-hero__benefits">
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.3333 20L17.7778 24.4444L26.6667 15.5555" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 3.33334L24.5667 7.90001L30.9 9.10001L32.1 15.4333L36.6667 20L32.1 24.5667L30.9 30.9L24.5667 32.1L20 36.6667L15.4333 32.1L9.1 30.9L7.9 24.5667L3.33334 20L7.9 15.4333L9.1 9.10001L15.4333 7.90001L20 3.33334Z" stroke="white" stroke-width="2.8" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">Выгодные предложения</p>
+              </article>
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.1667 17.5C17.3883 17.5 20 14.8883 20 11.6667C20 8.44501 17.3883 5.83334 14.1667 5.83334C10.945 5.83334 8.33334 8.44501 8.33334 11.6667C8.33334 14.8883 10.945 17.5 14.1667 17.5Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M5 31.6667C5 26.6041 9.10405 22.5 14.1667 22.5C19.2293 22.5 23.3333 26.6041 23.3333 31.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M26.6667 16.6667C28.9679 16.6667 30.8333 14.8012 30.8333 12.5C30.8333 10.1988 28.9679 8.33334 26.6667 8.33334" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M35 31.6667C35 27.5245 31.6419 24.1667 27.5 24.1667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">Квалифицированная команда</p>
+              </article>
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 11.6667V15" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 25V28.3333" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M13.3333 20H16.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M23.3333 20H26.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M16.2 23.8L23.8 16.2" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">Скидки постоянным клиентам</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services-preview">
+        <div class="_container">
+          <div class="services-preview__wrapper">
+            <div class="services-preview__head ui-section-head ui-section-head--center">
+              <h2 class="ui-title">Наши услуги по уборке</h2>
+              <p class="ui-text">Мы выполняем клининг под разные задачи — от регулярной уборки квартиры до комплексной генеральной уборки после переезда. Все работы выполняются штатными клинерами по чек-листу, с контролем старшего специалиста.</p>
+            </div>
+            <div class="services-preview__grid services-preview__grid--featured"><a class="service-card service-card--lg" href="#" aria-label="Поддерживающая уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">Поддерживающая уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 3 500 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Срочная уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">Срочная уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 7 000 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Уборка квартир"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">Уборка квартир</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 10 000 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Уборка домов и коттеджей"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">Уборка домов и коттеджей</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 17 000 ₽</span></span></span></a>
+            </div>
+            <div class="services-preview__grid services-preview__grid--secondary"><a class="service-card service-card--sm" href="#" aria-label="Уборка квартир по суточно"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">Уборка квартир по суточно</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 5 000 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Мытьё окон"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">Мытьё окон</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 2 500 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Уборка офисов"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-office.png" alt="" style="--service-layer-order:4"></span><span class="service-card__body"><span class="service-card__title">Уборка офисов</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 19 000 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Генеральная уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"></span><span class="service-card__body"><span class="service-card__title">Генеральная уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 12 000 ₽</span></span></span></a><a class="service-card service-card--sm service-card--after-repair" href="#" aria-label="Уборка после ремонта"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:6"></span><span class="service-card__body"><span class="service-card__title">Уборка после ремонта</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 12 000 ₽</span></span></span></a>
+            </div>
+            <div class="ui-banner services-preview__note">
+              <p class="ui-text services-preview__note-text">Итоговая стоимость зависит от площади помещения, необходимых услуг и индивидуальных предпочтений. Заполните заявку на сайте или свяжитесь с нами по телефону или в мессенджер, чтобы мы рассчитали стоимость клиринговых услуг.</p>
+            </div>
+            <div class="services-preview__actions"><a class="ui-btn ui-btn--primary ui-btn--full" href="#"><span class="ui-btn__content">Ознакомиться со всеми услугами</span></a><a class="ui-btn ui-btn--secondary ui-btn--full" href="#"><span class="ui-btn__content">Рассчитать стоимость уборки</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="ui-wave-group">
+        <section class="price-preview">
+          <div class="_container">
+            <div class="price-preview__wrapper">
+              <div class="price-preview__visual" aria-hidden="true"><img src="/static/images/section/price-preview/price-preview-bucket.png" alt=""></div>
+              <div class="price-preview__content">
+                <div class="price-preview__head ui-section-head ui-section-head--compact">
+                  <h2 class="price-preview__title ui-title"><span class="price-preview__title-accent">Цены на</span> клининг в Москве</h2>
+                  <p class="price-preview__text ui-text">Мы придерживаемся прозрачного ценообразования: стоимость клининга зависит от площади, состояния помещения и выбранного формата уборки. Никаких скрытых доплат — итоговая цена согласовывается заранее.</p>
+                </div>
+                <ul class="price-preview__list ui-price-list">
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Уборка квартир</span><span class="price-preview__value ui-price-list__value">от 80 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Уборка домов и коттеджей</span><span class="price-preview__value ui-price-list__value">от 80 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Уборка офисов</span><span class="price-preview__value ui-price-list__value">от 30 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Генеральная уборка</span><span class="price-preview__value ui-price-list__value">от 140 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Уборка после ремонта</span><span class="price-preview__value ui-price-list__value">от 160 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Поддерживающая уборка</span><span class="price-preview__value ui-price-list__value">от 80 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Срочная уборка</span><span class="price-preview__value ui-price-list__value">от 140 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Уборка перед въездом / после переезда</span><span class="price-preview__value ui-price-list__value">от 80 руб./м²</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Мытьё окон</span><span class="price-preview__value ui-price-list__value">от 300 руб./м²</span></li>
+                </ul>
+                <div class="price-preview__actions"><a class="price-preview__action ui-btn ui-btn--primary" href="#"><span class="ui-btn__content"><span class="price-preview__btn-label price-preview__btn-label--desktop">Ознакомиться со всеми ценами</span><span class="price-preview__btn-label price-preview__btn-label--mobile">Связаться с нами</span></span></a><a class="price-preview__action ui-btn ui-btn--secondary" href="#"><span class="ui-btn__content"><span class="price-preview__btn-label price-preview__btn-label--desktop">Заказать клининг</span><span class="price-preview__btn-label price-preview__btn-label--mobile">Наши услуги</span></span></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="work-steps">
+          <div class="_container">
+            <div class="work-steps__wrapper">
+              <div class="work-steps__head ui-section-head ui-section-head--compact ui-section-head--narrow">
+                <h2 class="ui-title">Этапы нашей работы</h2>
+                <p class="ui-text">Мы выстроили процесс клининга так, чтобы для клиента он был максимально простым и понятным — от первого обращения до приёмки результата.</p>
+              </div>
+              <div class="work-steps__slider swiper" data-work-steps-swiper>
+                <div class="work-steps__grid swiper-wrapper">
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">01</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Заявка и консультация</h3>
+                      <p class="work-steps__item-text ui-text">Вы оставляете заявку, а наш менеджер уточняет детали уборки и отвечает на ваши вопросы.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">02</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Расчёт стоимости и согласование</h3>
+                      <p class="work-steps__item-text ui-text">Мы рассчитываем стоимость клининга и согласовываем её с вами до начала работ.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">03</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Согласование даты выезда</h3>
+                      <p class="work-steps__item-text ui-text">Подбираем удобную для вас дату и время проведения уборки.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">04</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Прибытие команды в день уборки со всеми средствами</h3>
+                      <p class="work-steps__item-text ui-text">В назначенный день команда приезжает вовремя со всем необходимым инвентарём и безопасной химией.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">05</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Уборка по чек-листу</h3>
+                      <p class="work-steps__item-text ui-text">Клинеры выполняют уборку по чек-листу под контролем старшего специалиста.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">06</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Приёмка работ и оплата</h3>
+                      <p class="work-steps__item-text ui-text">Вы принимаете результат, и после этого производится оплата удобным для вас способом.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="quote-request">
+          <div class="_container">
+            <div class="quote-request__wrapper">
+              <div class="quote-request__visual" aria-hidden="true">
+                <div class="quote-request__visual-media"><img src="/static/images/section/quote-request/Mask group.png" alt=""></div>
+              </div>
+              <div class="quote-request__content">
+                <div class="quote-request__head ui-section-head ui-section-head--compact">
+                  <h2 class="quote-request__title ui-title">Рассчитайте стоимость клининга в Москве уже сейчас</h2>
+                  <p class="quote-request__text ui-text">Оставьте заявку, и наш менеджер свяжется с вами в течение 5–15 минут, уточнит детали и рассчитает точную стоимость клининговых услуг под вашу задачу.</p>
+                </div>
+                <form class="quote-request__form ui-form" action="#" method="post" novalidate>
+                  <div class="quote-request__fields">
+                    <div class="ui-field quote-request__field">
+                      <label class="ui-field__label" for="quote-request-name">Ваше имя</label>
+                      <input id="quote-request-name" type="text" name="name" placeholder="Введите имя и фамилию">
+                    </div>
+                    <div class="ui-field quote-request__field">
+                      <label class="ui-field__label" for="quote-request-phone">Номер телефона</label>
+                      <input id="quote-request-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                    </div>
+                  </div>
+                  <label class="ui-checkbox quote-request__checkbox">
+                    <input class="ui-checkbox__input" type="checkbox" name="agreement"><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                  </label>
+                  <button class="ui-btn ui-btn--primary ui-btn--full quote-request__submit" type="submit"><span class="ui-btn__content">Рассчитать стоимость</span></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="company-preview">
+        <div class="_container">
+          <div class="company-preview__wrapper">
+            <div class="company-preview__top">
+              <div class="company-preview__content">
+                <div class="company-preview__head">
+                  <h2 class="ui-title company-preview__title">Клининговая компания ВАЙП–Клин, ваш надёжный помощник</h2>
+                  <p class="ui-text company-preview__text">Мы подходим к уборке как к заботе о доме. Для нас важно не просто навести чистоту, а сделать это аккуратно, безопасно и с уважением к вашему пространству. Именно поэтому все работы выполняются штатной командой, прошедшей обучение и внутреннюю проверку качества.</p>
+                  <p class="ui-text company-preview__text">Каждая уборка контролируется старшим клинером, а если результат вас не устроит — мы переделаем работу за свой счёт. Такой подход позволяет нам выстраивать долгосрочные и доверительные отношения с клиентами.</p>
+                </div>
+              </div>
+              <div class="company-preview__visual">
+                <div class="company-preview__media"><img src="/static/images/section/company-preview/company-preview-media.png" alt="Команда ВАЙП–Клин за работой"></div>
+                <div class="company-preview__brand-card"><img src="/static/images/section/company-preview/Group 19.png" alt="ВАЙП–Клин"></div>
+              </div>
+            </div>
+            <div class="company-preview__benefits swiper" data-company-preview-benefits-swiper>
+              <div class="company-preview__benefits-track swiper-wrapper">
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-experience.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Опытные клинеры</h3>
+                            <p class="company-benefit-card__text">Штатные специалисты с регулярным обучением</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-guarantee.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Гарантия на клининг</h3>
+                            <p class="company-benefit-card__text">Переделка за наш счёт</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-quality.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Высокое качество услуг</h3>
+                            <p class="company-benefit-card__text">Уборка по чек-листу</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-discounts.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Акции и скидки</h3>
+                            <p class="company-benefit-card__text">Для новых и постоянных клиентов</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-pricing.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Прозрачные цены</h3>
+                            <p class="company-benefit-card__text">Честные цены без сюрпризов</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-chemistry.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Безопасная химия</h3>
+                            <p class="company-benefit-card__text">Гипоаллергенные средства для детей и животных</p>
+                          </div>
+                        </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reviews-preview">
+        <div class="_container">
+          <div class="reviews-preview__wrapper">
+            <div class="reviews-preview__head ui-section-head ui-section-head--center">
+              <h2 class="ui-title">Отзывы наших клиентов</h2>
+              <p class="ui-text">Нам доверяют уборку квартир, домов и офисов в Москве, а многие клиенты обращаются к нам регулярно и рекомендуют ВАЙП–Клин своим близким.</p>
+            </div>
+            <div class="reviews-preview__slider swiper" data-reviews-preview-swiper>
+              <div class="reviews-preview__track swiper-wrapper">
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--xl" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">Имя клиента</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--xl" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">Имя клиента</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--xl" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--md" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span><span class="review-card__star review-card__star--sm" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round"></path>
+                              </svg></span></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">Имя клиента</p>
+                          </div>
+                        </article>
+                </div>
+              </div>
+            </div>
+            <div class="reviews-preview__footer">
+              <div class="reviews-preview__actions"><a class="ui-btn ui-btn--primary" href="#"><span class="ui-btn__content">Ознакомиться с другими отзывами</span></a><a class="ui-btn ui-btn--secondary" href="#"><span class="ui-btn__content">Оставить отзыв о компании</span></a>
+              </div>
+              <div class="reviews-preview__nav ui-slider-nav ui-slider-nav--desktop-only">
+                <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="Предыдущий отзыв" data-reviews-preview-prev><span class="ui-btn__content">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span></button>
+                <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="Следующий отзыв" data-reviews-preview-next><span class="ui-btn__content">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-preview">
+        <div class="_container">
+          <div class="gallery-preview__wrapper">
+            <div class="gallery-preview__head">
+              <h2 class="ui-title gallery-preview__title">Галерея наших работ по уборке квартир, домов и офисов</h2>
+            </div>
+            <div class="gallery-preview__marquees">
+              <div class="gallery-preview__row" data-gallery-marquee-row data-direction="-1" data-speed="36">
+                <div class="gallery-preview__track" data-gallery-marquee-track><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" data-gallery-item-id="gallery-top-1" aria-label="Уборка кухни крупным планом" data-fancybox="gallery-preview" data-caption="Работа команды ВАЙП–Клин"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" alt="Уборка кухни крупным планом" loading="lazy"></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" data-gallery-item-id="gallery-top-2" aria-label="Влажная уборка дома" data-fancybox="gallery-preview" data-caption="Уборка квартир и домов"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" alt="Влажная уборка дома" loading="lazy"></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" data-gallery-item-id="gallery-top-3" aria-label="Светлая гостиная после клининга" data-fancybox="gallery-preview" data-caption="Результат уборки квартиры"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" alt="Светлая гостиная после клининга" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--video" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-top-4" aria-label="Видео процесса уборки" data-fancybox="gallery-preview" data-caption="Видео процесса уборки" data-type="html5video" data-html5video-format="video/mp4" data-width="1280" data-height="720"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-video-poster.png" alt="Видео процесса уборки" loading="lazy"></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" data-gallery-item-id="gallery-top-1" aria-label="Уборка кухни крупным планом" data-gallery-clone="" data-gallery-target="gallery-top-1" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" alt="Уборка кухни крупным планом" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" data-gallery-item-id="gallery-top-2" aria-label="Влажная уборка дома" data-gallery-clone="" data-gallery-target="gallery-top-2" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" alt="Влажная уборка дома" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" data-gallery-item-id="gallery-top-3" aria-label="Светлая гостиная после клининга" data-gallery-clone="" data-gallery-target="gallery-top-3" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" alt="Светлая гостиная после клининга" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--video gallery-preview__item--clone" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-top-4" aria-label="Видео процесса уборки" data-gallery-clone="" data-gallery-target="gallery-top-4" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-1-video-poster.png" alt="Видео процесса уборки" loading="lazy"></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a>
+                </div>
+              </div>
+              <div class="gallery-preview__row gallery-preview__row--reverse" data-gallery-marquee-row data-direction="1" data-speed="38">
+                <div class="gallery-preview__track" data-gallery-marquee-track><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" data-gallery-item-id="gallery-bottom-1" aria-label="Гостиная после уборки" data-fancybox="gallery-preview" data-caption="Чистый интерьер после клининга"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" alt="Гостиная после уборки" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--video" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-bottom-2" aria-label="Видео работы клинеров" data-fancybox="gallery-preview" data-caption="Видео работы команды ВАЙП–Клин" data-type="html5video" data-html5video-format="video/mp4" data-width="1280" data-height="720"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-video-poster.png" alt="Видео работы клинеров" loading="lazy"></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" data-gallery-item-id="gallery-bottom-3" aria-label="Химчистка мягкой мебели" data-fancybox="gallery-preview" data-caption="Химчистка и глубокая уборка"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" alt="Химчистка мягкой мебели" loading="lazy"></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" data-gallery-item-id="gallery-bottom-4" aria-label="Инвентарь для клининга" data-fancybox="gallery-preview" data-caption="Профессиональный инвентарь и безопасная химия"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" alt="Инвентарь для клининга" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" data-gallery-item-id="gallery-bottom-1" aria-label="Гостиная после уборки" data-gallery-clone="" data-gallery-target="gallery-bottom-1" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" alt="Гостиная после уборки" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--video gallery-preview__item--clone" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-bottom-2" aria-label="Видео работы клинеров" data-gallery-clone="" data-gallery-target="gallery-bottom-2" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-video-poster.png" alt="Видео работы клинеров" loading="lazy"></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" data-gallery-item-id="gallery-bottom-3" aria-label="Химчистка мягкой мебели" data-gallery-clone="" data-gallery-target="gallery-bottom-3" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" alt="Химчистка мягкой мебели" loading="lazy"></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" data-gallery-item-id="gallery-bottom-4" aria-label="Инвентарь для клининга" data-gallery-clone="" data-gallery-target="gallery-bottom-4" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" alt="Инвентарь для клининга" loading="lazy"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq">
+        <div class="_container">
+          <div class="faq__wrapper">
+            <div class="faq__head">
+              <h2 class="ui-title faq__title">Ответы на вопросы о клининге в Москве</h2>
+            </div>
+            <div class="faq__columns faq__columns--desktop">
+              <div class="faq__column" data-faq-group>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-0" aria-expanded="false" aria-controls="faq-desktop-answer-0" data-faq-toggle><span class="faq__question">Как рассчитывается стоимость клининга квартиры в Москве?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-0" role="region" aria-labelledby="faq-desktop-question-0" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Итоговая стоимость зависит от площади, степени загрязнения и выбранного набора услуг. Финальную цену мы рассчитываем заранее и согласовываем с вами до выезда команды.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-1" aria-expanded="false" aria-controls="faq-desktop-answer-1" data-faq-toggle><span class="faq__question">Можно ли находиться дома во время уборки квартиры?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-1" role="region" aria-labelledby="faq-desktop-question-1" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Да, конечно. Вы можете оставаться дома во время клининга или передать доступ удобным для вас способом. Все детали согласовываем заранее.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-2" aria-expanded="false" aria-controls="faq-desktop-answer-2" data-faq-toggle><span class="faq__question">Сколько времени занимает уборка квартиры или дома?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-2" role="region" aria-labelledby="faq-desktop-question-2" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Срок зависит от площади помещения, формата уборки и количества дополнительных задач. После уточнения деталей мы заранее ориентируем вас по времени до подтверждения заказа.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-3" aria-expanded="false" aria-controls="faq-desktop-answer-3" data-faq-toggle><span class="faq__question">Какие средства используются при уборке?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-3" role="region" aria-labelledby="faq-desktop-question-3" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Мы используем профессиональные и безопасные средства, подходящие для жилых помещений. При необходимости подбираем деликатную химию для детей, животных и чувствительных поверхностей.</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+              <div class="faq__column" data-faq-group>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-4" aria-expanded="false" aria-controls="faq-desktop-answer-4" data-faq-toggle><span class="faq__question">Что делать, если результат уборки не устроил?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-4" role="region" aria-labelledby="faq-desktop-question-4" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Если у вас останутся замечания, сообщите нам сразу после приемки. Мы оперативно вернемся и исправим недочеты за свой счет.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-5" aria-expanded="false" aria-controls="faq-desktop-answer-5" data-faq-toggle><span class="faq__question">Работаете ли вы в выходные и праздники?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-5" role="region" aria-labelledby="faq-desktop-question-5" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Да, мы принимаем заказы на выходные и праздничные дни. Лучше бронировать дату заранее, особенно в периоды высокой загрузки.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-6" aria-expanded="false" aria-controls="faq-desktop-answer-6" data-faq-toggle><span class="faq__question">Возможна ли срочная уборка в Москве?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-6" role="region" aria-labelledby="faq-desktop-question-6" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Да, при наличии свободной команды можем организовать срочный выезд в ближайшее доступное время. Уточнить возможность можно по телефону или через форму заявки.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-7" aria-expanded="false" aria-controls="faq-desktop-answer-7" data-faq-toggle><span class="faq__question">Как производится оплата клининга?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-7" role="region" aria-labelledby="faq-desktop-question-7" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Оплатить можно удобным для вас способом после согласования стоимости и выполнения работ. Все условия оплаты озвучиваем заранее, без скрытых доплат.</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="faq__mobile" data-faq-group>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-0" aria-expanded="false" aria-controls="faq-mobile-answer-0" data-faq-toggle><span class="faq__question">Как рассчитывается стоимость клининга квартиры в Москве?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-0" role="region" aria-labelledby="faq-mobile-question-0" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Итоговая стоимость зависит от площади, степени загрязнения и выбранного набора услуг. Финальную цену мы рассчитываем заранее и согласовываем с вами до выезда команды.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-1" aria-expanded="false" aria-controls="faq-mobile-answer-1" data-faq-toggle><span class="faq__question">Можно ли находиться дома во время уборки квартиры?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-1" role="region" aria-labelledby="faq-mobile-question-1" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Да, конечно. Вы можете оставаться дома во время клининга или передать доступ удобным для вас способом. Все детали согласовываем заранее.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-2" aria-expanded="false" aria-controls="faq-mobile-answer-2" data-faq-toggle><span class="faq__question">Сколько времени занимает уборка квартиры или дома?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-2" role="region" aria-labelledby="faq-mobile-question-2" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Срок зависит от площади помещения, формата уборки и количества дополнительных задач. После уточнения деталей мы заранее ориентируем вас по времени до подтверждения заказа.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-3" aria-expanded="false" aria-controls="faq-mobile-answer-3" data-faq-toggle><span class="faq__question">Какие средства используются при уборке?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-3" role="region" aria-labelledby="faq-mobile-question-3" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Мы используем профессиональные и безопасные средства, подходящие для жилых помещений. При необходимости подбираем деликатную химию для детей, животных и чувствительных поверхностей.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-4" aria-expanded="false" aria-controls="faq-mobile-answer-4" data-faq-toggle><span class="faq__question">Что делать, если результат уборки не устроил?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-4" role="region" aria-labelledby="faq-mobile-question-4" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Если у вас останутся замечания, сообщите нам сразу после приемки. Мы оперативно вернемся и исправим недочеты за свой счет.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-5" aria-expanded="false" aria-controls="faq-mobile-answer-5" data-faq-toggle><span class="faq__question">Работаете ли вы в выходные и праздники?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-5" role="region" aria-labelledby="faq-mobile-question-5" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Да, мы принимаем заказы на выходные и праздничные дни. Лучше бронировать дату заранее, особенно в периоды высокой загрузки.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-6" aria-expanded="false" aria-controls="faq-mobile-answer-6" data-faq-toggle><span class="faq__question">Возможна ли срочная уборка в Москве?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-6" role="region" aria-labelledby="faq-mobile-question-6" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Да, при наличии свободной команды можем организовать срочный выезд в ближайшее доступное время. Уточнить возможность можно по телефону или через форму заявки.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-7" aria-expanded="false" aria-controls="faq-mobile-answer-7" data-faq-toggle><span class="faq__question">Как производится оплата клининга?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-7" role="region" aria-labelledby="faq-mobile-question-7" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Оплатить можно удобным для вас способом после согласования стоимости и выполнения работ. Все условия оплаты озвучиваем заранее, без скрытых доплат.</p>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <section class="contacts">
+              <div class="_container">
+                <div class="contacts__wrapper">
+                  <div class="contacts__head">
+                    <h2 class="ui-title contacts__title">Контакты клининговой компании ВАЙП–Клин</h2>
+                  </div>
+                  <div class="contacts__content">
+                    <div class="contacts__aside">
+                      <div class="contacts__cards">
+                        <div class="contacts__cards-row">
+                                <div class="contacts__card">
+                                  <p class="contacts__card-label">Номер телефона</p><a class="contacts__card-value contacts__card-value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                                </div>
+                                <div class="contacts__card contacts__card--socials">
+                                  <p class="contacts__card-label">Электронная почта</p>
+                                  <div class="contacts__socials"><a class="contacts__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contacts__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contacts__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                                  </div>
+                                </div>
+                        </div>
+                              <div class="contacts__card">
+                                <p class="contacts__card-label">Электронная почта</p><a class="contacts__card-value contacts__card-value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                              </div>
+                      </div>
+                    </div>
+                    <div class="contacts__form-block">
+                      <h3 class="contacts__form-title">Форма заявки</h3>
+                      <form class="contacts__form ui-form" action="#" method="post" novalidate>
+                        <div class="contacts__fields">
+                          <div class="ui-field contacts__field">
+                            <label class="ui-field__label" for="home-contacts-name">Ваше имя</label>
+                            <input class="ui-field__control" id="home-contacts-name" type="text" name="name" placeholder="Введите имя и фамилию">
+                          </div>
+                          <div class="ui-field contacts__field">
+                            <label class="ui-field__label" for="home-contacts-phone">Номер телефона</label>
+                            <input class="ui-field__control" id="home-contacts-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                          </div>
+                        </div>
+                        <div class="contacts__form-actions">
+                          <label class="ui-checkbox contacts__checkbox" for="home-contacts-agreement">
+                            <input class="ui-checkbox__input" id="home-contacts-agreement" type="checkbox" name="agreement"><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                          </label>
+                          <button class="ui-btn ui-btn--primary contacts__submit" type="submit"><span class="ui-btn__content"><span class="contacts__submit-text contacts__submit-text--desktop">Узнать стоимость клининга</span><span class="contacts__submit-text contacts__submit-text--mobile">Рассчитать стоимость</span></span></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+    </main>
+    <script src="/static/js/vendor/fancybox.umd.js"></script>
+    <script src="/static/js/vendor/swiper-bundle.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
+  </body>
+</html>

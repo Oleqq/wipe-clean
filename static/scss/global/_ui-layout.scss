@@ -1,0 +1,240 @@
+.ui-section {
+  position: relative;
+  @include section-space();
+}
+
+.ui-section--compact {
+  @include section-space(96px, 96px);
+}
+
+.ui-section--wave {
+  position: relative;
+  background-color: $color-wave;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.ui-section--wave::before,
+.ui-section--wave::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  width: 106%;
+  height: 96px;
+  background-color: $color-bg;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ui-section--wave::before {
+  top: 0;
+  transform: translateY(-60%);
+}
+
+.ui-section--wave::after {
+  bottom: 0;
+  transform: translateY(60%);
+}
+
+.ui-section--wave > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ui-wave-group {
+  position: relative;
+  background-color: $color-wave;
+  isolation: isolate;
+  // overflow: hidden;
+}
+
+.ui-wave-group::before,
+.ui-wave-group::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ui-wave-group::before {
+  top: 0;
+  height: 100px;
+  background-image: url("/static/images/ui/wave-group-top.svg");
+  transform: translate(-50%, -100%);
+}
+
+.ui-wave-group::after {
+  bottom: 0;
+  height: 100px;
+  background-image: url("/static/images/ui/wave-group-bottom.svg");
+  transform: translate(-50%, 100%);
+}
+
+.ui-wave-group > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .ui-wave-group::before,
+  .ui-wave-group::after {
+    height: 72px;
+  }
+}
+
+@media (max-width: 650px) {
+  .ui-wave-group::before,
+  .ui-wave-group::after {
+    height: 40px;
+  }
+}
+
+.ui-stack {
+  display: grid;
+}
+
+.ui-stack--xs {
+  gap: $gap-2xs;
+}
+
+.ui-stack--sm {
+  gap: $gap-xs;
+}
+
+.ui-stack--md {
+  gap: $gap-sm;
+}
+
+.ui-stack--lg {
+  gap: $gap-md;
+}
+
+.ui-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $gap-sm;
+}
+
+.ui-cluster--center {
+  justify-content: center;
+}
+
+.ui-grid {
+  display: grid;
+  gap: $gap-md;
+}
+
+.ui-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ui-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ui-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1199px) {
+  .ui-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .ui-grid--3,
+  .ui-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .ui-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ui-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-2xl;
+  background-color: rgba($color-heading, 0.08);
+}
+
+.ui-media--soft {
+  border-radius: $radius-xl;
+}
+
+.ui-media img,
+.ui-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ui-icon-badge {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: $radius-md;
+  background-color: $color-accent-dark;
+  box-shadow: $shadow-accent;
+}
+
+.ui-icon-badge__inner {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+  border: 2px solid $color-accent;
+  border-radius: $radius-sm;
+  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+}
+
+.ui-icon-badge--primary {
+  background-color: $color-primary;
+  box-shadow: $shadow-primary;
+}
+
+.ui-icon-badge--primary .ui-icon-badge__inner {
+  border-color: $color-primary-border;
+  background: linear-gradient(180deg, $color-primary-top 0%, $color-primary-border 100%);
+}
+
+.ui-icon-badge--sm .ui-icon-badge__inner {
+  width: 56px;
+  height: 56px;
+}
+
+.ui-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ui-socials--spaced {
+  gap: 16px;
+}
+
+.ui-banner {
+  padding: 16px 20px 20px;
+  border: 1px solid $color-accent;
+  border-radius: $radius-xl;
+  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+  color: $color-bg;
+  text-align: center;
+  box-shadow: $shadow-accent;
+}
+
+.ui-banner .ui-text,
+.ui-banner .ui-text--sm {
+  color: inherit;
+}

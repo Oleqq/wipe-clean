@@ -1,0 +1,18 @@
+mixin serviceCard(item, size)
+    - var cardSize = size || "lg"
+    - var cardHref = item.href || "#"
+    a.service-card(class=["service-card--" + cardSize, item.className] href=cardHref aria-label=item.title)
+        span.service-card__media(aria-hidden="true")
+            each layer, index in item.layers
+                - var layerClass = layer.modifier ? "service-card__layer--" + layer.modifier : ""
+                img.service-card__layer(
+                    class=layerClass
+                    src=layer.src
+                    alt=""
+                    style="--service-layer-order:" + (index + 1)
+                )
+        span.service-card__body
+            span.service-card__title= item.title
+            span.service-card__meta
+                span.service-card__label Цена:
+                span.service-card__price= item.price

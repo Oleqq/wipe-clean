@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block header
+
+block footer
+
+block content
+    .prices-page
+        include ../section/prices-hero/prices-hero
+        -
+            var servicesPreviewSection = {
+                className: "services-preview--prices",
+                bodyId: "prices-services-preview-text",
+                title: "Стоимость наведения порядка в Москве",
+                text: "Оформить заявку на чистоту в столице станет легче, если ориентироваться на открытый прайс без лишних комиссий. Наши доступные цены на уборку в Москве гарантируют вам профессиональный клининг, а продуманный подход строится на индивидуальном расчете стоимости.",
+                noteText: "Итоговая стоимость зависит от площади помещения, необходимых услуг и индивидуальных предпочтений. Заполните заявку на сайте или свяжитесь с нами по телефону или в мессенджер, чтобы мы рассчитали стоимость клиринговых услуг.",
+                actions: [
+                    {
+                        label: "Рассчитать стоимость уборки",
+                        href: "#",
+                        className: "ui-btn--primary ui-btn--full"
+                    },
+                    {
+                        label: "Все услуги",
+                        href: "#",
+                        className: "ui-btn--secondary ui-btn--full"
+                    }
+                ]
+            }
+        .ui-wave-group
+            include ../section/services-preview/services-preview
+            include ../section/area-pricing/area-pricing
+            include ../section/price-factors/price-factors
+            include ../section/price-advantages/price-advantages
+        include ../section/company-highlight/company-highlight
+        -
+            var contactsSectionData = {
+                idPrefix: "prices-contacts",
+                title: "Рассчитать стоимость клининга",
+                formTitle: "Форма заявки",
+                text: "Мы рассчитываем стоимость на клининг под ваш объект — от маленькой студии до огромного дома. Команда быстро примет заявку, чтобы вы скорее насладились чистотой без долгих ожиданий. С нами вы получаете не только личный подход, но и полную уверенность в качестве результата. Мы стремимся к лучшим ценам клининговых услуг и уборки в Москве, сохраняя честность с каждым клиентом."
+            }
+        include ../section/contacts/contacts

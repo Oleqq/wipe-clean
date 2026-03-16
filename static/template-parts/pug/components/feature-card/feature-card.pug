@@ -1,0 +1,8 @@
+mixin featureCard(item)
+    article.feature-card(class=item.className)
+        .feature-card__head
+            .feature-card__icon
+                span.feature-card__icon-box
+                    img(src=item.icon alt="" aria-hidden="true" loading="lazy")
+            h3.feature-card__title= item.title
+        p.feature-card__text= item.text

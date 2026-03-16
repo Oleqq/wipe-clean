@@ -1,0 +1,35 @@
+-
+    var serviceHeroData = typeof serviceHeroData !== "undefined" ? serviceHeroData : {
+        kicker: "Уборка квартир",
+        title: "Уборка квартир под ключ в Москве",
+        text: "Поддерживающая уборка квартир под ключ в Москве гарантирует чистоту. При этом личное участие владельца не требуется. Профильные мастера быстро ликвидируют налет и мусор, создавая приятную среду в комнатах. Такой сервис сохраняет свежесть. Он обеспечивает соблюдение санитарных норм.",
+        imageSrc: "/static/images/section/service-hero/service-hero-apartment-cleaning.png",
+        imageAlt: "Уборка квартиры под ключ в Москве",
+        actions: [
+            {
+                label: "Заказать уборку квартиры",
+                href: "#",
+                className: "ui-btn--primary"
+            },
+            {
+                label: "Проконсультироваться",
+                href: "#",
+                className: "ui-btn--secondary"
+            }
+        ]
+    }
+
+section.service-hero
+    ._container
+        .service-hero__wrapper
+            .service-hero__media
+                img(src=serviceHeroData.imageSrc alt=serviceHeroData.imageAlt loading="eager" fetchpriority="high")
+            .service-hero__head.ui-section-head
+                span.ui-kicker.service-hero__kicker= serviceHeroData.kicker
+                h1.ui-title.ui-title--hero.service-hero__title= serviceHeroData.title
+            .service-hero__content
+                p.ui-text.service-hero__text= serviceHeroData.text
+                .service-hero__actions
+                    each action in serviceHeroData.actions
+                        a.ui-btn.service-hero__action(class=action.className href=action.href)
+                            span.ui-btn__content= action.label

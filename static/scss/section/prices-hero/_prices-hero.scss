@@ -1,0 +1,129 @@
+.prices-hero {
+    padding: 24px 0 0;
+    overflow-x: clip;
+
+    @include below-tablet {
+        padding-top: 20px;
+    }
+
+    &__wrapper {
+        position: relative;
+        min-height: 468px;
+
+        @include below-tablet {
+            display: grid;
+            row-gap: 12px;
+            min-height: 0;
+        }
+    }
+
+    &__head {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        justify-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 725px;
+        margin: 0 auto;
+        padding-top: 88px;
+        text-align: center;
+
+        @include below-desktop {
+            padding-top: 72px;
+        }
+
+        @include below-tablet {
+            gap: 12px;
+            padding-top: 68px;
+        }
+    }
+
+    &__kicker {
+        @include below-mobile {
+            min-height: 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 725px;
+
+        @include adaptive-font(32, 48);
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 725px;
+        color: rgba(0, 46, 61, 0.8);
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.035em;
+        }
+    }
+
+    &__action {
+        width: 280px;
+        margin-top: 28px;
+
+        @include below-tablet {
+            width: 360px;
+            max-width: 100%;
+            margin-top: 8px;
+        }
+    }
+
+    &__media {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+
+        @include below-tablet {
+            position: relative;
+            inset: auto;
+            width: min(100%, 560px);
+            aspect-ratio: 360 / 303;
+            margin: 0 auto;
+            margin-top: 0;
+        }
+    }
+
+    &__image {
+        position: absolute;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        &--left {
+            top: 18px;
+            left: 22.6515%;
+            width: 37.4242%;
+        }
+
+        &--right {
+            top: 28px;
+            right: -7.1212%;
+            width: 47.8788%;
+        }
+
+        @include below-tablet {
+            &--left {
+                top: 15px;
+                left: 0;
+                width: 68.8889%;
+            }
+
+            &--right {
+                top: 30px;
+                right: -12.5%;
+                width: 81.6667%;
+            }
+        }
+    }
+}

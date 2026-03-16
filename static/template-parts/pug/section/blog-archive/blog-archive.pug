@@ -1,0 +1,189 @@
+include ../../components/blog-card/blog-card
+
+-
+    var blogArchiveDefaults = {
+        titleLines: ["Статьи и новости", "в сфере уборки"],
+        textTop: "В этом разделе вы найдёте актуальные статьи и новости из мира профессиональной уборки: разбираем тренды, делимся экспертными советами и рассказываем о современных средствах и технологиях клининга.",
+        textBottom: "Материалы помогут оптимизировать процесс уборки, выбрать подходящие решения для любых задач и быть в курсе последних достижений отрасли.",
+        heroImageSrc: "/static/images/section/blog-archive/blog-archive-hero.png",
+        heroImageAlt: "Инвентарь и средства для профессиональной уборки",
+        button: {
+            label: "Показать ещё",
+            loadingLabel: "Загрузка..."
+        },
+        initialDesktop: 10,
+        initialMobile: 6,
+        stepDesktop: 4,
+        stepMobile: 3,
+        items: [
+            {
+                title: "Как поддерживать чистоту в квартире между генеральными уборками",
+                excerpt: "Разбираем понятный домашний режим, который помогает сохранять порядок без перегруза и не доводить квартиру до авральной уборки.",
+                dateLabel: "29 / 01 / 2025",
+                dateTime: "2025-01-29",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о поддерживающей уборке"
+            },
+            {
+                title: "Какие ошибки чаще всего совершают при уборке кухни",
+                excerpt: "Показываем, какие привычные действия мешают добиться чистоты на кухне и почему профессиональный подход экономит время и силы.",
+                dateLabel: "24 / 01 / 2025",
+                dateTime: "2025-01-24",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи об уборке кухни"
+            },
+            {
+                title: "Чем отличается генеральная уборка от поддерживающего клининга",
+                excerpt: "Сравниваем два формата уборки, чтобы было проще выбрать подходящий сценарий под ваш объект, график и текущий уровень загрязнений.",
+                dateLabel: "18 / 01 / 2025",
+                dateTime: "2025-01-18",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о форматах клининга"
+            },
+            {
+                title: "Как подготовить квартиру к приезду клининговой службы",
+                excerpt: "Короткий чек-лист перед выездом команды: что лучше убрать заранее, а что можно спокойно оставить на специалистов.",
+                dateLabel: "13 / 01 / 2025",
+                dateTime: "2025-01-13",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о подготовке квартиры к клинингу"
+            },
+            {
+                title: "Безопасная химия для дома: что важно знать заказчику",
+                excerpt: "Объясняем, как выбираются составы для разных поверхностей и почему грамотная химия важна для семей с детьми и питомцами.",
+                dateLabel: "09 / 01 / 2025",
+                dateTime: "2025-01-09",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о безопасной бытовой химии"
+            },
+            {
+                title: "5 признаков, что офису уже нужна профессиональная уборка",
+                excerpt: "Рассказываем, по каким сигналам становится понятно, что регулярной поверхностной уборки уже недостаточно для рабочего пространства.",
+                dateLabel: "05 / 01 / 2025",
+                dateTime: "2025-01-05",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи об уборке офисов"
+            },
+            {
+                title: "Как ухаживать за окнами, чтобы реже заказывать мойку",
+                excerpt: "Собрали простые рекомендации по уходу за стеклом, рамами и фурнитурой, которые реально помогают дольше сохранять чистоту.",
+                dateLabel: "28 / 12 / 2024",
+                dateTime: "2024-12-28",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о мойке окон"
+            },
+            {
+                title: "Почему срочная уборка требует отдельной организации",
+                excerpt: "Разбираем, как формируется срочный выезд, что влияет на скорость выполнения работ и как заранее согласовать реалистичные сроки.",
+                dateLabel: "22 / 12 / 2024",
+                dateTime: "2024-12-22",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о срочной уборке"
+            },
+            {
+                title: "Как сократить время на уборку в большом доме",
+                excerpt: "Советы по зонированию, графику и последовательности действий, которые помогают поддерживать порядок даже на большой площади.",
+                dateLabel: "16 / 12 / 2024",
+                dateTime: "2024-12-16",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи об уборке домов"
+            },
+            {
+                title: "Что входит в уборку после ремонта и почему это отдельный формат",
+                excerpt: "Пыль после стройки, следы смесей, мусор и чувствительные покрытия требуют другого подхода, чем обычная бытовая уборка.",
+                dateLabel: "11 / 12 / 2024",
+                dateTime: "2024-12-11",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи об уборке после ремонта"
+            },
+            {
+                title: "Как не испортить деликатные поверхности при самостоятельной уборке",
+                excerpt: "Показываем, с какими материалами чаще всего возникают проблемы и какие ошибки обходятся дороже всего.",
+                dateLabel: "06 / 12 / 2024",
+                dateTime: "2024-12-06",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о деликатных поверхностях"
+            },
+            {
+                title: "Регулярная уборка или разовые выезды: что выгоднее в долгую",
+                excerpt: "Сравниваем два сценария обслуживания и объясняем, когда регулярный формат помогает реально снизить расходы на чистоту.",
+                dateLabel: "30 / 11 / 2024",
+                dateTime: "2024-11-30",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о регулярном клининге"
+            },
+            {
+                title: "Как выбрать клининговую компанию и не пожалеть",
+                excerpt: "Собрали список критериев, на которые стоит смотреть до оформления заявки: от прозрачности сметы до контроля качества работ.",
+                dateLabel: "25 / 11 / 2024",
+                dateTime: "2024-11-25",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о выборе клининговой компании"
+            },
+            {
+                title: "Что влияет на итоговую стоимость клининга и как считать честно",
+                excerpt: "Поясняем, как формируется стоимость уборки и почему открытый расчёт помогает избежать неприятных сюрпризов в смете.",
+                dateLabel: "19 / 11 / 2024",
+                dateTime: "2024-11-19",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о расчёте стоимости уборки"
+            }
+        ]
+    }
+
+-
+    var blogArchiveData = typeof blogArchiveSection === "object" && blogArchiveSection ? blogArchiveSection : {}
+    var blogArchiveButtonData = typeof blogArchiveData.button === "object" && blogArchiveData.button ? blogArchiveData.button : {}
+    var blogArchiveOptions = Object.assign({}, blogArchiveDefaults, blogArchiveData)
+    var blogArchiveButton = Object.assign({}, blogArchiveDefaults.button, blogArchiveButtonData)
+    var blogArchiveItems = Array.isArray(blogArchiveData.items) && blogArchiveData.items.length ? blogArchiveData.items : blogArchiveDefaults.items
+
+section.blog-archive(
+    data-blog-archive
+    data-initial-desktop=blogArchiveOptions.initialDesktop
+    data-initial-mobile=blogArchiveOptions.initialMobile
+    data-step-desktop=blogArchiveOptions.stepDesktop
+    data-step-mobile=blogArchiveOptions.stepMobile
+)
+    ._container
+        .blog-archive__wrapper
+            .blog-archive__hero
+                .blog-archive__content
+                    .blog-archive__head
+                        h1.blog-archive__title.ui-title
+                            each line, index in blogArchiveOptions.titleLines
+                                | #{line}
+                                if index !== blogArchiveOptions.titleLines.length - 1
+                                    br
+                    .blog-archive__copy
+                        p.blog-archive__text.ui-text= blogArchiveOptions.textTop
+                        p.blog-archive__text.ui-text= blogArchiveOptions.textBottom
+                .blog-archive__hero-media
+                    img(src=blogArchiveOptions.heroImageSrc alt=blogArchiveOptions.heroImageAlt loading="lazy")
+
+            .blog-archive__grid
+                each item, index in blogArchiveItems
+                    .blog-archive__item(data-blog-item data-item-index=index)
+                        +blogCard(item)
+
+            .blog-archive__footer(data-blog-footer)
+                .blog-archive__loader(data-blog-loader aria-hidden="true")
+                    img(src="/static/images/section/blog-archive/blog-archive-loader.svg" alt="" loading="lazy")
+                button.blog-archive__more.ui-btn.ui-btn--primary(type="button" data-blog-more)
+                    span.ui-btn__content
+                        span.blog-archive__more-label.blog-archive__more-label--default= blogArchiveButton.label
+                        span.blog-archive__more-label.blog-archive__more-label--loading= blogArchiveButton.loadingLabel

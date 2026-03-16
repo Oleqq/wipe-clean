@@ -1,0 +1,36 @@
+-
+    var aboutHero = {
+        kicker: "О компании",
+        title: "Клининговая компания ВАЙП–Клин",
+        text: "Профессиональный клининг — это продуманная система создания здоровой микросреды. Это требует экспертных знаний. Наша клининговая компания в Москве трансформирует привычное представление о порядке. Мы превращаем уборку в технологичный процесс с идеальным итогом.",
+        actions: [
+            {
+                label: "Задать вопросы",
+                href: "#",
+                className: "ui-btn--primary"
+            },
+            {
+                label: "Клининговые услуги",
+                href: "#",
+                className: "ui-btn--secondary"
+            }
+        ]
+    }
+
+section.about-hero
+    ._container
+        .about-hero__wrapper
+            .about-hero__media(aria-hidden="true")
+                .about-hero__decor
+                    img(src="/static/images/section/about-hero/about-hero-decor.png" alt="")
+                .about-hero__image
+                    img(src="/static/images/section/about-hero/about-hero-image.png" alt="Иллюстрация клининговой компании ВАЙП–Клин" loading="eager" fetchpriority="high")
+            .about-hero__head.ui-section-head
+                span.ui-kicker.about-hero__kicker= aboutHero.kicker
+                h1.ui-title.ui-title--hero.about-hero__title= aboutHero.title
+            .about-hero__content
+                p.ui-text.about-hero__text= aboutHero.text
+                .about-hero__actions
+                    each action in aboutHero.actions
+                        a.ui-btn.about-hero__action(class=action.className href=action.href)
+                            span.ui-btn__content= action.label

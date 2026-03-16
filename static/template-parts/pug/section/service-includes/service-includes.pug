@@ -1,0 +1,374 @@
+mixin serviceIncludesArrow()
+    svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M7 7H17V17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M17 7L7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+
+-
+    var defaultServiceIncludesImage = "/static/images/section/service-includes/service-includes-room.png"
+
+    var serviceIncludesData = typeof serviceIncludesData !== "undefined" ? serviceIncludesData : {
+        idPrefix: "service-includes",
+        title: "Что входит в уборку квартиры под ключ?",
+        text: "Комплексная забота о жилье включает скрупулезную чистку всех участков по утвержденному списку задач. Мастера планомерно избавляют объект от наслоений грязи, четко соблюдая технические правила и последовательность действий.",
+        tabs: [
+            {
+                id: "living-space",
+                label: "Жилое пространство",
+                imageSrc: defaultServiceIncludesImage,
+                imageAlt: "Жилое пространство после уборки",
+                activeHotspotId: "floors",
+                hotspots: [
+                    {
+                        id: "windows",
+                        xDesktop: 27,
+                        yDesktop: 22,
+                        xMobile: 34,
+                        yMobile: 16,
+                        tooltipXDesktop: 17,
+                        tooltipYDesktop: 12,
+                        tooltipXMobile: 11,
+                        tooltipYMobile: 10,
+                        tooltipWidthDesktop: 236,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Аккуратная протирка рам, подоконников и доступных стеклянных поверхностей."
+                    },
+                    {
+                        id: "soft-furniture",
+                        xDesktop: 10,
+                        yDesktop: 45,
+                        xMobile: 10,
+                        yMobile: 50,
+                        tooltipXDesktop: 3,
+                        tooltipYDesktop: 31,
+                        tooltipXMobile: 4,
+                        tooltipYMobile: 34,
+                        tooltipWidthDesktop: 244,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Удаление пыли с мягкой мебели, открытых полок и декоративных элементов."
+                    },
+                    {
+                        id: "surfaces",
+                        xDesktop: 50,
+                        yDesktop: 41,
+                        xMobile: 50,
+                        yMobile: 43,
+                        tooltipXDesktop: 43,
+                        tooltipYDesktop: 25,
+                        tooltipXMobile: 38,
+                        tooltipYMobile: 22,
+                        tooltipWidthDesktop: 230,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Чистка столиков, тумб и доступных бытовых поверхностей в зоне отдыха."
+                    },
+                    {
+                        id: "floors",
+                        xDesktop: 81,
+                        yDesktop: 86,
+                        xMobile: 81,
+                        yMobile: 85,
+                        tooltipXDesktop: 74,
+                        tooltipYDesktop: 64,
+                        tooltipXMobile: 55,
+                        tooltipYMobile: 57,
+                        tooltipWidthDesktop: 240,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Бережное мытье напольных материалов и всех прилегающих плинтусов."
+                    }
+                ]
+            },
+            {
+                id: "kitchen",
+                label: "Кухня",
+                imageSrc: defaultServiceIncludesImage,
+                imageAlt: "Кухня в квартире после уборки",
+                activeHotspotId: "facades",
+                hotspots: [
+                    {
+                        id: "facades",
+                        xDesktop: 18,
+                        yDesktop: 32,
+                        xMobile: 16,
+                        yMobile: 31,
+                        tooltipXDesktop: 4,
+                        tooltipYDesktop: 17,
+                        tooltipXMobile: 4,
+                        tooltipYMobile: 17,
+                        tooltipWidthDesktop: 244,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Удаление жирового налета с фасадов, ручек и кухонного фартука."
+                    },
+                    {
+                        id: "countertop",
+                        xDesktop: 45,
+                        yDesktop: 24,
+                        xMobile: 42,
+                        yMobile: 22,
+                        tooltipXDesktop: 36,
+                        tooltipYDesktop: 10,
+                        tooltipXMobile: 31,
+                        tooltipYMobile: 8,
+                        tooltipWidthDesktop: 232,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Тщательная обработка рабочих зон, столешниц и обеденных поверхностей."
+                    },
+                    {
+                        id: "sink",
+                        xDesktop: 67,
+                        yDesktop: 46,
+                        xMobile: 66,
+                        yMobile: 47,
+                        tooltipXDesktop: 58,
+                        tooltipYDesktop: 31,
+                        tooltipXMobile: 48,
+                        tooltipYMobile: 31,
+                        tooltipWidthDesktop: 236,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Очистка мойки, смесителя и участков, где быстрее всего накапливается налет."
+                    },
+                    {
+                        id: "floor-kitchen",
+                        xDesktop: 80,
+                        yDesktop: 83,
+                        xMobile: 80,
+                        yMobile: 83,
+                        tooltipXDesktop: 71,
+                        tooltipYDesktop: 62,
+                        tooltipXMobile: 53,
+                        tooltipYMobile: 55,
+                        tooltipWidthDesktop: 242,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Финишная влажная уборка пола с учетом типа покрытия и стыков."
+                    }
+                ]
+            },
+            {
+                id: "bathroom",
+                label: "Санузел",
+                imageSrc: defaultServiceIncludesImage,
+                imageAlt: "Санузел в квартире после уборки",
+                activeHotspotId: "sanitaryware",
+                hotspots: [
+                    {
+                        id: "sanitaryware",
+                        xDesktop: 19,
+                        yDesktop: 35,
+                        xMobile: 17,
+                        yMobile: 32,
+                        tooltipXDesktop: 4,
+                        tooltipYDesktop: 19,
+                        tooltipXMobile: 4,
+                        tooltipYMobile: 17,
+                        tooltipWidthDesktop: 242,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Деликатная очистка сантехники, смесителей и зон с известковым налетом."
+                    },
+                    {
+                        id: "mirrors",
+                        xDesktop: 47,
+                        yDesktop: 20,
+                        xMobile: 44,
+                        yMobile: 18,
+                        tooltipXDesktop: 38,
+                        tooltipYDesktop: 7,
+                        tooltipXMobile: 31,
+                        tooltipYMobile: 7,
+                        tooltipWidthDesktop: 220,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Полировка зеркал и глянцевых поверхностей без разводов."
+                    },
+                    {
+                        id: "tile-joints",
+                        xDesktop: 65,
+                        yDesktop: 49,
+                        xMobile: 66,
+                        yMobile: 49,
+                        tooltipXDesktop: 57,
+                        tooltipYDesktop: 33,
+                        tooltipXMobile: 46,
+                        tooltipYMobile: 33,
+                        tooltipWidthDesktop: 228,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Проработка плитки, стыков и проблемных участков с повышенной влажностью."
+                    },
+                    {
+                        id: "bathroom-floor",
+                        xDesktop: 79,
+                        yDesktop: 84,
+                        xMobile: 79,
+                        yMobile: 84,
+                        tooltipXDesktop: 70,
+                        tooltipYDesktop: 63,
+                        tooltipXMobile: 53,
+                        tooltipYMobile: 56,
+                        tooltipWidthDesktop: 238,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Завершающее мытье пола и нижних зон, где обычно скапливается влага."
+                    }
+                ]
+            },
+            {
+                id: "additional-zones",
+                label: "Добавочные зоны",
+                imageSrc: defaultServiceIncludesImage,
+                imageAlt: "Дополнительные зоны квартиры после уборки",
+                activeHotspotId: "hallway",
+                hotspots: [
+                    {
+                        id: "hallway",
+                        xDesktop: 14,
+                        yDesktop: 47,
+                        xMobile: 11,
+                        yMobile: 48,
+                        tooltipXDesktop: 2,
+                        tooltipYDesktop: 33,
+                        tooltipXMobile: 4,
+                        tooltipYMobile: 34,
+                        tooltipWidthDesktop: 228,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Прихожая, входная группа и зоны интенсивного прохода прорабатываются отдельно."
+                    },
+                    {
+                        id: "balcony",
+                        xDesktop: 28,
+                        yDesktop: 22,
+                        xMobile: 34,
+                        yMobile: 17,
+                        tooltipXDesktop: 18,
+                        tooltipYDesktop: 10,
+                        tooltipXMobile: 11,
+                        tooltipYMobile: 10,
+                        tooltipWidthDesktop: 220,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Балконные блоки, откосы и прилегающие поверхности очищаются по запросу."
+                    },
+                    {
+                        id: "storage",
+                        xDesktop: 51,
+                        yDesktop: 42,
+                        xMobile: 50,
+                        yMobile: 43,
+                        tooltipXDesktop: 43,
+                        tooltipYDesktop: 26,
+                        tooltipXMobile: 37,
+                        tooltipYMobile: 24,
+                        tooltipWidthDesktop: 234,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Ниши, шкафы, стеллажи и труднодоступные зоны включаются в маршрут уборки."
+                    },
+                    {
+                        id: "switches",
+                        xDesktop: 81,
+                        yDesktop: 85,
+                        xMobile: 81,
+                        yMobile: 85,
+                        tooltipXDesktop: 71,
+                        tooltipYDesktop: 63,
+                        tooltipXMobile: 54,
+                        tooltipYMobile: 56,
+                        tooltipWidthDesktop: 234,
+                        tooltipWidthMobile: 149,
+                        tooltip: "Аккуратная очистка выключателей, плинтусов и зон локального контакта."
+                    }
+                ]
+            }
+        ]
+    }
+
+    function getHotspotStyle(item) {
+        return "--hotspot-x-desktop:" + item.xDesktop + "%;" +
+            "--hotspot-y-desktop:" + item.yDesktop + "%;" +
+            "--hotspot-x-mobile:" + item.xMobile + "%;" +
+            "--hotspot-y-mobile:" + item.yMobile + "%;"
+    }
+
+    function getTooltipStyle(item) {
+        return "--tooltip-x-desktop:" + item.tooltipXDesktop + "%;" +
+            "--tooltip-y-desktop:" + item.tooltipYDesktop + "%;" +
+            "--tooltip-x-mobile:" + item.tooltipXMobile + "%;" +
+            "--tooltip-y-mobile:" + item.tooltipYMobile + "%;" +
+            "--tooltip-width-desktop:" + item.tooltipWidthDesktop + "px;" +
+            "--tooltip-width-mobile:" + item.tooltipWidthMobile + "px;"
+    }
+
+section.service-includes(data-service-includes)
+    ._container
+        .service-includes__wrapper
+            .service-includes__content
+                .service-includes__head
+                    h2.ui-title.service-includes__title= serviceIncludesData.title
+                    p.ui-text.service-includes__text= serviceIncludesData.text
+
+                .service-includes__tabs(role="tablist" aria-label=serviceIncludesData.title)
+                    each tab, index in serviceIncludesData.tabs
+                        -
+                            var tabId = serviceIncludesData.idPrefix + "-tab-" + tab.id
+                            var panelId = serviceIncludesData.idPrefix + "-panel-" + tab.id
+                            var isActiveTab = index === 0
+                        button.service-includes__tab(
+                            id=tabId
+                            class=isActiveTab ? "is-active" : ""
+                            type="button"
+                            role="tab"
+                            data-service-includes-tab
+                            data-tab-id=tab.id
+                            aria-selected=isActiveTab ? "true" : "false"
+                            aria-controls=panelId
+                            tabindex=isActiveTab ? "0" : "-1"
+                        )
+                            span.service-includes__tab-label= tab.label
+                            span.service-includes__tab-icon(aria-hidden="true")
+                                +serviceIncludesArrow()
+
+            .service-includes__visual
+                .service-includes__visual-stage
+                    each tab, tabIndex in serviceIncludesData.tabs
+                        -
+                            var panelId = serviceIncludesData.idPrefix + "-panel-" + tab.id
+                            var labelledBy = serviceIncludesData.idPrefix + "-tab-" + tab.id
+                            var activeHotspotId = tab.activeHotspotId || tab.hotspots[0].id
+                            var isActivePanel = tabIndex === 0
+                        .service-includes__panel(
+                            id=panelId
+                            class=isActivePanel ? "is-active" : ""
+                            role="tabpanel"
+                            data-service-includes-panel
+                            data-tab-id=tab.id
+                            aria-labelledby=labelledBy
+                            aria-hidden=isActivePanel ? "false" : "true"
+                        )
+                            .service-includes__panel-image
+                                img(src=tab.imageSrc alt=tab.imageAlt loading="lazy")
+
+                            each hotspot, hotspotIndex in tab.hotspots
+                                -
+                                    var hotspotButtonId = serviceIncludesData.idPrefix + "-hotspot-" + tab.id + "-" + hotspot.id
+                                    var tooltipId = serviceIncludesData.idPrefix + "-tooltip-" + tab.id + "-" + hotspot.id
+                                    var isActiveHotspot = hotspot.id === activeHotspotId
+                                button.service-includes__hotspot(
+                                    id=hotspotButtonId
+                                    class=isActiveHotspot ? "is-active" : ""
+                                    type="button"
+                                    data-service-includes-hotspot
+                                    data-hotspot-id=hotspot.id
+                                    aria-controls=tooltipId
+                                    aria-expanded=isActiveHotspot ? "true" : "false"
+                                    tabindex=isActivePanel ? "0" : "-1"
+                                    style=getHotspotStyle(hotspot)
+                                )
+                                    span.service-includes__hotspot-core(aria-hidden="true")
+
+                            .service-includes__tooltips
+                                each hotspot in tab.hotspots
+                                    -
+                                        var tooltipId = serviceIncludesData.idPrefix + "-tooltip-" + tab.id + "-" + hotspot.id
+                                        var isActiveHotspot = hotspot.id === activeHotspotId
+                                    .service-includes__tooltip(
+                                        id=tooltipId
+                                        class=isActiveHotspot ? "is-active" : ""
+                                        role="tooltip"
+                                        data-service-includes-tooltip
+                                        data-hotspot-id=hotspot.id
+                                        aria-hidden=isActiveHotspot ? "false" : "true"
+                                        style=getTooltipStyle(hotspot)
+                                    )
+                                        p.service-includes__tooltip-text= hotspot.tooltip

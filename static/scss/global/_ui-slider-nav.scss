@@ -1,0 +1,20 @@
+.ui-slider-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ui-slider-nav--desktop-only {
+    @include below-mobile {
+        display: none;
+    }
+}
+
+.ui-slider-nav__btn {
+    .ui-btn__content {
+        width: 60px;
+        min-height: 44px;
+        padding: 4px 12px;
+        color: #ffffff;
+    }
+}

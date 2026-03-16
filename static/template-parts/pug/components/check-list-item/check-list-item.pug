@@ -1,0 +1,11 @@
+mixin checkListItem(item)
+    li.ui-check-item
+        span.ui-check-item__icon(aria-hidden="true")
+            span.ui-check-item__icon-inner
+                img(src=item.icon alt="" loading="lazy")
+        span.ui-check-item__text
+            if item.mobileText
+                span.ui-check-item__text-desktop= item.text
+                span.ui-check-item__text-mobile= item.mobileText
+            else
+                = item.text

@@ -1,0 +1,90 @@
+section.home-hero
+    ._container
+        .home-hero__wrapper
+            .home-hero__top
+                .home-hero__intro.ui-section-head
+                    span.ui-kicker Уборка любых помещений в любом районе Москвы по доступным ценам
+                    h1.ui-title.ui-title--hero Клининговая компания по уборке квартир и домов в Москве и МО
+                    p.ui-text.home-hero__text Мечтаете о безупречном порядке?<br>Начните с расчёта стоимости — форма ниже ждёт вас!
+
+                    .home-hero__calculator
+                        form.home-hero__form(action="#" method="post" novalidate)
+                            fieldset.home-hero__area
+                                legend.home-hero__area-title Площадь
+                                .home-hero__area-slider.swiper(data-hero-area-swiper)
+                                    .ui-choice-group.home-hero__area-options.swiper-wrapper
+                                        button.ui-choice.ui-choice--active.home-hero__choice.swiper-slide(type="button")
+                                            span.ui-choice__label однокомнатная
+                                        button.ui-choice.home-hero__choice.swiper-slide(type="button")
+                                            span.ui-choice__label 2-х комнатная
+                                        button.ui-choice.home-hero__choice.swiper-slide(type="button")
+                                            span.ui-choice__label 3/4-х комнатная
+                                        button.ui-choice.home-hero__choice.home-hero__choice--meter.swiper-slide(type="button")
+                                            span.ui-choice__label
+                                                | _ _ _ _ M
+                                                sup 2
+                            .home-hero__form-grid
+                                .ui-field.home-hero__field
+                                    label.ui-field__label(for="hero-service") Услуги
+                                    button.ui-field__control.home-hero__select-control(type="button" id="hero-service" aria-label="Выбор услуги")
+                                        span.home-hero__select-value Поддерживающая уборка
+                                        span.home-hero__select-icon(aria-hidden="true")
+                                            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                .ui-field.home-hero__field
+                                    label.ui-field__label(for="hero-frequency") Регулярность
+                                    button.ui-field__control.home-hero__select-control(type="button" id="hero-frequency" aria-label="Выбор регулярности")
+                                        span.home-hero__select-value Разовая
+                                        span.home-hero__select-icon(aria-hidden="true")
+                                            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                .ui-field.home-hero__field
+                                    label.ui-field__label(for="hero-name") Ваше имя
+                                    input#hero-name(type="text" name="name" placeholder="Введите имя и фамилию")
+                                .ui-field.home-hero__field
+                                    label.ui-field__label(for="hero-phone") Номер телефона
+                                    input#hero-phone(type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _")
+                            .home-hero__actions
+                                label.ui-checkbox.home-hero__checkbox
+                                    input.ui-checkbox__input(type="checkbox" name="agreement")
+                                    span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
+                                button.ui-btn.ui-btn--primary.ui-btn--full.home-hero__submit(type="button")
+                                    span.ui-btn__content Рассчитать стоимость
+
+                .home-hero__visual(aria-hidden="true")
+                    .home-hero__visual-tools
+                        img(src="/static/images/section/home-hero/hero-tools.png" alt="")
+                    .home-hero__visual-shadow
+                    .home-hero__visual-room
+                        img(src="/static/images/section/home-hero/hero-room.png" alt="")
+                    .home-hero__visual-cleaner
+                        img(src="/static/images/section/home-hero/hero-cleaner.png" alt="")
+
+            .home-hero__benefits
+                article.ui-card.ui-card--compact.home-hero__benefit
+                    .ui-icon-badge.home-hero__benefit-icon
+                        .ui-icon-badge__inner
+                            svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M13.3333 20L17.7778 24.4444L26.6667 15.5555" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 3.33334L24.5667 7.90001L30.9 9.10001L32.1 15.4333L36.6667 20L32.1 24.5667L30.9 30.9L24.5667 32.1L20 36.6667L15.4333 32.1L9.1 30.9L7.9 24.5667L3.33334 20L7.9 15.4333L9.1 9.10001L15.4333 7.90001L20 3.33334Z" stroke="white" stroke-width="2.8" stroke-linejoin="round")
+                    p.home-hero__benefit-title Выгодные предложения
+                article.ui-card.ui-card--compact.home-hero__benefit
+                    .ui-icon-badge.home-hero__benefit-icon
+                        .ui-icon-badge__inner
+                            svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M14.1667 17.5C17.3883 17.5 20 14.8883 20 11.6667C20 8.44501 17.3883 5.83334 14.1667 5.83334C10.945 5.83334 8.33334 8.44501 8.33334 11.6667C8.33334 14.8883 10.945 17.5 14.1667 17.5Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M5 31.6667C5 26.6041 9.10405 22.5 14.1667 22.5C19.2293 22.5 23.3333 26.6041 23.3333 31.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M26.6667 16.6667C28.9679 16.6667 30.8333 14.8012 30.8333 12.5C30.8333 10.1988 28.9679 8.33334 26.6667 8.33334" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M35 31.6667C35 27.5245 31.6419 24.1667 27.5 24.1667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                    p.home-hero__benefit-title Квалифицированная команда
+                article.ui-card.ui-card--compact.home-hero__benefit
+                    .ui-icon-badge.home-hero__benefit-icon
+                        .ui-icon-badge__inner
+                            svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 11.6667V15" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 25V28.3333" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M13.3333 20H16.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M23.3333 20H26.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M16.2 23.8L23.8 16.2" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
+                    p.home-hero__benefit-title Скидки постоянным клиентам

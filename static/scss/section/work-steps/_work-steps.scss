@@ -1,0 +1,122 @@
+.work-steps {
+    padding: 80px 0 100px;
+
+    @include below-tablet {
+        padding-top: 64px;
+        padding-bottom: 80px;
+    }
+
+    @include below-mobile {
+        padding-top: 56px;
+        padding-bottom: 64px;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        max-width: 650px;
+
+        @include below-mobile {
+            gap: 10px;
+
+            .ui-title {
+                font-size: 24px;
+            }
+
+            .ui-text {
+                font-size: 14px;
+                letter-spacing: -0.04em;
+            }
+        }
+    }
+
+    &__slider {
+        min-width: 0;
+        overflow: visible;
+
+        @include below-mobile {
+            overflow: hidden;
+            margin: unset;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+
+        @include below-tablet {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include below-mobile {
+            display: flex;
+            grid-template-columns: none;
+            gap: 0;
+        }
+    }
+
+    &__item {
+        height: 100%;
+        gap: 16px;
+        padding: 20px;
+        border-radius: $radius-2xl;
+
+        @include below-mobile {
+            gap: 12px;
+            min-height: 190px;
+            padding: 16px;
+            border-radius: $radius-xl;
+            width: 260px;
+        }
+    }
+
+    &__number {
+        width: 100%;
+        font-size: 48px;
+        line-height: 0.9;
+        letter-spacing: 0.02em;
+
+        @include below-mobile {
+            font-size: 40px;
+        }
+    }
+
+    &__item-body {
+        display: grid;
+        gap: 8px;
+
+        @include below-mobile {
+            gap: 6px;
+        }
+    }
+
+    &__item-title {
+        margin: 0;
+        font-family: $font-heading;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $color-heading;
+
+        @include below-mobile {
+            font-size: 18px;
+        }
+    }
+
+    &__item-text {
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+}

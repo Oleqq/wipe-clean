@@ -1,0 +1,76 @@
+mixin contactsCard(card)
+    if card && card.type == "socials"
+        .contacts__card.contacts__card--socials
+            p.contacts__card-label= card.label
+            .contacts__socials
+                each social in card.items
+                    -
+                        var socialAttrs = {
+                            href: social.href || "#",
+                            "aria-label": social.label
+                        };
+
+                        if (socialAttrs.href !== "#") {
+                            socialAttrs.target = "_blank";
+                            socialAttrs.rel = "noopener noreferrer";
+                        }
+
+                    a.contacts__social-link.ui-btn.ui-btn--primary&attributes(socialAttrs)
+                        span.ui-btn__content
+                            img(src=social.iconSrc alt="" aria-hidden="true" loading="lazy")
+    else if card
+        .contacts__card
+            p.contacts__card-label= card.label
+            if card.href
+                a.contacts__card-value.contacts__card-value--link(href=card.href)= card.value
+            else
+                p.contacts__card-value= card.value
+
+mixin contactsSection(data)
+    -
+        var sectionClassName = "contacts";
+        var idPrefix = data.idPrefix || "contacts";
+        var nameFieldId = idPrefix + "-name";
+        var phoneFieldId = idPrefix + "-phone";
+        var agreementFieldId = idPrefix + "-agreement";
+        var formAction = data.formAction || "#";
+        var formMethod = data.formMethod || "post";
+        var submitTextMobile = data.submitTextMobile || data.submitText;
+        var hasIntro = !!data.text;
+
+        if (data.modifier) {
+            sectionClassName += " contacts--" + data.modifier;
+        }
+
+    section(class=sectionClassName)
+        ._container
+            .contacts__wrapper
+                .contacts__head
+                    h2.ui-title.contacts__title= data.title
+                    if hasIntro
+                        p.ui-text.contacts__text= data.text
+                .contacts__content
+                    .contacts__aside
+                        .contacts__cards
+                            .contacts__cards-row
+                                +contactsCard(data.phoneCard)
+                                +contactsCard(data.socialCard)
+                            +contactsCard(data.emailCard)
+                    .contacts__form-block
+                        h3.contacts__form-title= data.formTitle
+                        form.contacts__form.ui-form(action=formAction method=formMethod novalidate)
+                            .contacts__fields
+                                .ui-field.contacts__field
+                                    label.ui-field__label(for=nameFieldId)= data.nameLabel
+                                    input.ui-field__control(id=nameFieldId type="text" name="name" placeholder=data.namePlaceholder)
+                                .ui-field.contacts__field
+                                    label.ui-field__label(for=phoneFieldId)= data.phoneLabel
+                                    input.ui-field__control(id=phoneFieldId type="tel" name="phone" placeholder=data.phonePlaceholder)
+                            .contacts__form-actions
+                                label.ui-checkbox.contacts__checkbox(for=agreementFieldId)
+                                    input.ui-checkbox__input(id=agreementFieldId type="checkbox" name="agreement")
+                                    span.ui-checkbox__label= data.agreementText
+                                button.ui-btn.ui-btn--primary.contacts__submit(type="submit")
+                                    span.ui-btn__content
+                                        span.contacts__submit-text.contacts__submit-text--desktop= data.submitText
+                                        span.contacts__submit-text.contacts__submit-text--mobile= submitTextMobile

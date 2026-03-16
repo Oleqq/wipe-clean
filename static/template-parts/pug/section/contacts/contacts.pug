@@ -1,0 +1,59 @@
+include ../../components/contacts-section/contacts-section
+
+-
+    var contactsDefaults = {
+        idPrefix: "home-contacts",
+        title: "Контакты клининговой компании ВАЙП–Клин",
+        formTitle: "Форма заявки",
+        phoneCard: {
+            label: "Номер телефона",
+            value: "+7 980 163 6101",
+            href: "tel:+79801636101"
+        },
+        socialCard: {
+            type: "socials",
+            label: "Электронная почта",
+            items: [
+                {
+                    label: "Telegram",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/akar-icons_telegram-fill.png"
+                },
+                {
+                    label: "WhatsApp",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/Vector.png"
+                },
+                {
+                    label: "VK",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/Vector (1).png"
+                }
+            ]
+        },
+        emailCard: {
+            label: "Электронная почта",
+            value: "MAILBOX@WIPECLEAN.RU",
+            href: "mailto:mailbox@wipeclean.ru"
+        },
+        nameLabel: "Ваше имя",
+        namePlaceholder: "Введите имя и фамилию",
+        phoneLabel: "Номер телефона",
+        phonePlaceholder: "+7 _ _ _ _ _ _ _ _ _ _",
+        agreementText: "Заполняя форму вы даете согласие на обработку персональных данных",
+        submitText: "Узнать стоимость клининга",
+        submitTextMobile: "Рассчитать стоимость"
+    };
+
+-
+    var contactsData = typeof contactsSectionData === "object" && contactsSectionData ? contactsSectionData : {}
+    var contactsPhoneCardData = typeof contactsData.phoneCard === "object" && contactsData.phoneCard ? contactsData.phoneCard : {}
+    var contactsSocialCardData = typeof contactsData.socialCard === "object" && contactsData.socialCard ? contactsData.socialCard : {}
+    var contactsEmailCardData = typeof contactsData.emailCard === "object" && contactsData.emailCard ? contactsData.emailCard : {}
+    var contactsOptions = Object.assign({}, contactsDefaults, contactsData)
+
+    contactsOptions.phoneCard = Object.assign({}, contactsDefaults.phoneCard, contactsPhoneCardData)
+    contactsOptions.socialCard = Object.assign({}, contactsDefaults.socialCard, contactsSocialCardData)
+    contactsOptions.emailCard = Object.assign({}, contactsDefaults.emailCard, contactsEmailCardData)
+
++contactsSection(contactsOptions)

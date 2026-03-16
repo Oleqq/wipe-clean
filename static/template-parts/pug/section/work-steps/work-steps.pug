@@ -1,0 +1,48 @@
+-
+    var workSteps = [
+        {
+            number: "01",
+            title: "Заявка и консультация",
+            text: "Вы оставляете заявку, а наш менеджер уточняет детали уборки и отвечает на ваши вопросы."
+        },
+        {
+            number: "02",
+            title: "Расчёт стоимости и согласование",
+            text: "Мы рассчитываем стоимость клининга и согласовываем её с вами до начала работ."
+        },
+        {
+            number: "03",
+            title: "Согласование даты выезда",
+            text: "Подбираем удобную для вас дату и время проведения уборки."
+        },
+        {
+            number: "04",
+            title: "Прибытие команды в день уборки со всеми средствами",
+            text: "В назначенный день команда приезжает вовремя со всем необходимым инвентарём и безопасной химией."
+        },
+        {
+            number: "05",
+            title: "Уборка по чек-листу",
+            text: "Клинеры выполняют уборку по чек-листу под контролем старшего специалиста."
+        },
+        {
+            number: "06",
+            title: "Приёмка работ и оплата",
+            text: "Вы принимаете результат, и после этого производится оплата удобным для вас способом."
+        }
+    ];
+
+section.work-steps
+    ._container
+        .work-steps__wrapper
+            .work-steps__head.ui-section-head.ui-section-head--compact.ui-section-head--narrow
+                h2.ui-title Этапы нашей работы
+                p.ui-text Мы выстроили процесс клининга так, чтобы для клиента он был максимально простым и понятным — от первого обращения до приёмки результата.
+            .work-steps__slider.swiper(data-work-steps-swiper)
+                .work-steps__grid.swiper-wrapper
+                    each step in workSteps
+                        article.ui-card.work-steps__item.swiper-slide
+                            span.work-steps__number.ui-title--number= step.number
+                            .work-steps__item-body
+                                h3.work-steps__item-title= step.title
+                                p.work-steps__item-text.ui-text= step.text

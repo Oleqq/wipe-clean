@@ -1,0 +1,127 @@
+include ../../components/service-card/service-card
+
+-
+    var otherServicesDefaults = {
+        title: "Другие услуги нашей компании",
+        text: "Мы оказываем полный спектр работ. Этого достаточно для восстановления эстетики интерьера. Если необходима уборка квартир в Москве после праздников, специалисты подберут оптимальный пакет. Услуги включают чистку мебели и сложных покрытий для полного решения задач клиента.",
+        button: {
+            labelDesktop: "Заказать клининговые услуги",
+            labelMobile: "Ознакомиться с ценами на уборку",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        cards: [
+            {
+                title: "Поддерживающая уборка",
+                price: "от 3 500 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-base.png", modifier: "fill" }
+                ]
+            },
+            {
+                title: "Срочная уборка",
+                price: "от 7 000 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" }
+                ]
+            },
+            {
+                title: "Уборка офисов",
+                price: "от 19 000 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                    { src: "/static/images/services/service-preview-apartments.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-daily.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-office.png", modifier: "shift-right" }
+                ]
+            },
+            {
+                title: "Уборка домов и коттеджей",
+                price: "от 17 000 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" }
+                ]
+            },
+            {
+                title: "Уборка квартир по суточно",
+                price: "от 5 000 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                    { src: "/static/images/services/service-preview-apartments.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-daily.png", modifier: "fill" }
+                ]
+            },
+            {
+                title: "Мытьё окон",
+                price: "от 2 500 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                    { src: "/static/images/services/service-preview-windows.png", modifier: "flip" }
+                ]
+            },
+            {
+                title: "Генеральная уборка",
+                price: "от 12 000 ₽",
+                href: "#",
+                className: "other-services__card",
+                layers: [
+                    { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                    { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                    { src: "/static/images/services/service-preview-windows.png", modifier: "flip" },
+                    { src: "/static/images/services/service-preview-after-repair.png", modifier: "overlay" }
+                ]
+            },
+            {
+                title: "Уборка после ремонта",
+                price: "от 12 000 ₽",
+                href: "#",
+                className: "other-services__card service-card--after-repair",
+                layers: [
+                    { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                    { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                    { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                    { src: "/static/images/services/service-preview-windows.png", modifier: "flip" },
+                    { src: "/static/images/services/service-preview-after-repair.png", modifier: "overlay" },
+                    { src: "/static/images/services/service-preview-after-repair.png", modifier: "fill" }
+                ]
+            }
+        ]
+    }
+
+-
+    var otherServicesData = typeof otherServicesSection === "object" && otherServicesSection ? otherServicesSection : {}
+    var otherServicesButtonData = typeof otherServicesData.button === "object" && otherServicesData.button ? otherServicesData.button : {}
+    var otherServicesOptions = Object.assign({}, otherServicesDefaults, otherServicesData)
+    var otherServicesButton = Object.assign({}, otherServicesDefaults.button, otherServicesButtonData)
+    var otherServicesCards = Array.isArray(otherServicesData.cards) && otherServicesData.cards.length ? otherServicesData.cards : otherServicesDefaults.cards
+
+section.other-services
+    ._container
+        .other-services__wrapper
+            .other-services__head.ui-section-head.ui-section-head--center
+                h2.other-services__title.ui-title= otherServicesOptions.title
+                p.other-services__text.ui-text= otherServicesOptions.text
+
+            .other-services__grid
+                each item in otherServicesCards
+                    +serviceCard(item, "lg")
+
+            a.other-services__action.ui-btn(class=otherServicesButton.className href=otherServicesButton.href)
+                span.ui-btn__content
+                    span.other-services__action-label.other-services__action-label--desktop= otherServicesButton.labelDesktop
+                    span.other-services__action-label.other-services__action-label--mobile= otherServicesButton.labelMobile

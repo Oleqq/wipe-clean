@@ -1,0 +1,16 @@
+mixin serviceTeaserCard(item)
+    - var cardHref = item.href || "#"
+    a.service-teaser-card(class=item.className href=cardHref aria-label=item.title)
+        span.service-teaser-card__media(aria-hidden="true")
+            each image in item.images
+                img.service-teaser-card__image(class=image.className src=image.src alt="")
+        span.service-teaser-card__body
+            span.service-teaser-card__title= item.title
+            span.service-teaser-card__text= item.text
+        span.service-teaser-card__footer
+            span.service-teaser-card__link= item.linkLabel || "Узнать об услуге"
+            span.service-teaser-card__arrow.ui-btn.ui-btn--primary.ui-btn--icon(aria-hidden="true")
+                span.ui-btn__content
+                    svg(width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M6 14H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                        path(d="M15 7L22 14L15 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")

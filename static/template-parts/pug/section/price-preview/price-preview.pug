@@ -1,0 +1,38 @@
+-
+    var pricePreviewItems = [
+        { label: "Уборка квартир", value: "от 80 руб./м²" },
+        { label: "Уборка домов и коттеджей", value: "от 80 руб./м²" },
+        { label: "Уборка офисов", value: "от 30 руб./м²" },
+        { label: "Генеральная уборка", value: "от 140 руб./м²" },
+        { label: "Уборка после ремонта", value: "от 160 руб./м²" },
+        { label: "Поддерживающая уборка", value: "от 80 руб./м²" },
+        { label: "Срочная уборка", value: "от 140 руб./м²" },
+        { label: "Уборка перед въездом / после переезда", value: "от 80 руб./м²" },
+        { label: "Мытьё окон", value: "от 300 руб./м²" }
+    ];
+
+section.price-preview
+    ._container
+        .price-preview__wrapper
+            .price-preview__visual(aria-hidden="true")
+                img(src="/static/images/section/price-preview/price-preview-bucket.png" alt="")
+            .price-preview__content
+                .price-preview__head.ui-section-head.ui-section-head--compact
+                    h2.price-preview__title.ui-title
+                        span.price-preview__title-accent Цены на
+                        |  клининг в Москве
+                    p.price-preview__text.ui-text Мы придерживаемся прозрачного ценообразования: стоимость клининга зависит от площади, состояния помещения и выбранного формата уборки. Никаких скрытых доплат — итоговая цена согласовывается заранее.
+                ul.price-preview__list.ui-price-list
+                    each item in pricePreviewItems
+                        li.price-preview__row.ui-price-list__row
+                            span.price-preview__label.ui-price-list__label= item.label
+                            span.price-preview__value.ui-price-list__value= item.value
+                .price-preview__actions
+                    a.price-preview__action.ui-btn.ui-btn--primary(href="#")
+                        span.ui-btn__content
+                            span.price-preview__btn-label.price-preview__btn-label--desktop Ознакомиться со всеми ценами
+                            span.price-preview__btn-label.price-preview__btn-label--mobile Связаться с нами
+                    a.price-preview__action.ui-btn.ui-btn--secondary(href="#")
+                        span.ui-btn__content
+                            span.price-preview__btn-label.price-preview__btn-label--desktop Заказать клининг
+                            span.price-preview__btn-label.price-preview__btn-label--mobile Наши услуги

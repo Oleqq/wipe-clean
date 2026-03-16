@@ -1,0 +1,185 @@
+.about-hero {
+    padding: 24px 0 120px;
+
+    @include below-tablet {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    @include below-mobile {
+        padding-bottom: 80px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 650px);
+        grid-template-areas:
+            "media head"
+            "media content";
+        align-items: start;
+        column-gap: 20px;
+        row-gap: 48px;
+
+        @include adaptive-value(row-gap, 48px, 24px, $bp-desktop, $bp-mobile);
+
+        @include below-desktop {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "head"
+                "media"
+                "content";
+            row-gap: 20px;
+        }
+    }
+
+    &__media {
+        position: relative;
+        grid-area: media;
+        min-height: 560px;
+        isolation: isolate;
+
+        @include below-desktop {
+            min-height: 520px;
+        }
+
+        @include below-tablet {
+            min-height: 280px;
+            overflow-x: clip;
+            overflow-y: visible;
+        }
+
+        @include below-mobile {
+            min-height: 238px;
+        }
+    }
+
+    &__decor,
+    &__image {
+        position: absolute;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__decor {
+        top: -46px;
+        left: 66.5%;
+        width: min(110%, 715px);
+        max-width: 715px;
+        opacity: 0.32;
+        z-index: 1;
+
+        @include below-desktop {
+            top: -24px;
+            left: 56%;
+            width: min(104%, 560px);
+        }
+
+        @include below-tablet {
+            top: -78px;
+            right: -10px;
+            left: auto;
+            width: min(88vw, 313px);
+            max-width: 313px;
+        }
+
+        @include below-mobile {
+            top: -80px;
+            right: -20px;
+        }
+    }
+
+    &__image {
+        top: 0;
+        left: 27.1%;
+        width: min(62.31%, 405px);
+        max-width: 405px;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+        z-index: 2;
+
+        @include below-desktop {
+            left: 18%;
+            width: min(64%, 360px);
+        }
+
+        @include below-tablet {
+            left: 32px;
+            width: min(56vw, 201px);
+            max-width: 201px;
+        }
+
+        @include below-mobile {
+            left: 28px;
+        }
+    }
+
+    &__head {
+        grid-area: head;
+        max-width: 650px;
+        padding-top: 20px;
+        gap: 20px;
+
+        @include below-tablet {
+            max-width: none;
+            padding-top: 0;
+            gap: 12px;
+        }
+    }
+
+    &__kicker {
+        @include below-mobile {
+            min-height: 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        max-width: 650px;
+        @include adaptive-font(26, 48);
+    }
+
+    &__content {
+        display: grid;
+        grid-area: content;
+        max-width: 650px;
+        gap: 48px;
+
+        @include below-tablet {
+            max-width: none;
+        }
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__text {
+        @include adaptive-font(14, 16);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @include below-mobile {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    &__action {
+        width: 240px;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+}

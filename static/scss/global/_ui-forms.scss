@@ -1,0 +1,134 @@
+.ui-form {
+  display: grid;
+  gap: $gap-sm;
+}
+
+.ui-form__row {
+  display: grid;
+  gap: $gap-sm;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ui-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $gap-sm;
+}
+
+@media (max-width: 768px) {
+  .ui-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ui-field {
+  display: grid;
+  gap: 8px;
+}
+
+.ui-field__label {
+  @include text-body(14px, $color-text, 400);
+}
+
+.ui-field__control,
+.ui-field input,
+.ui-field select,
+.ui-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 16px 12px;
+  @include ui-field-surface();
+  @include text-body(16px, $color-text-soft, 400);
+}
+
+.ui-field textarea {
+  min-height: 140px;
+  border-radius: $radius-xl;
+  resize: vertical;
+}
+
+.ui-field input::placeholder,
+.ui-field textarea::placeholder {
+  color: $color-placeholder;
+}
+
+.ui-choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ui-choice {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: $radius-pill;
+  background-color: $color-surface;
+  box-shadow: $shadow-field;
+  transition: transform $transition-base, box-shadow $transition-base;
+}
+
+.ui-choice__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px 10px;
+  border: 2px solid $color-border-field;
+  border-radius: $radius-pill;
+  text-align: center;
+  white-space: nowrap;
+  @include text-body(14px, $color-text-soft, 400);
+}
+
+.ui-choice--active {
+  background-color: $color-primary;
+  box-shadow: $shadow-primary;
+}
+
+.ui-choice--active .ui-choice__label {
+  border-color: $color-primary-border;
+  background: linear-gradient(180deg, $color-primary-top 0%, $color-primary-border 100%);
+  text-shadow: 0 2px 4px rgba(1, 112, 150, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ui-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ui-checkbox__input {
+  position: relative;
+  appearance: none;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  border: 1px solid $color-heading;
+  border-radius: $radius-xs;
+  background-color: transparent;
+}
+
+.ui-checkbox__input:checked {
+  border-color: $color-primary;
+  background-color: $color-primary;
+}
+
+.ui-checkbox__input:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.ui-checkbox__label {
+  @include text-body(14px, $color-text, 400);
+}

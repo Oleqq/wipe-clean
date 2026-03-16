@@ -1,0 +1,67 @@
+.ui-check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__icon-inner {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 2px;
+        border-radius: 12px;
+        background-color: $color-accent-dark;
+        box-shadow: $shadow-accent;
+
+        img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: 2px solid $color-accent;
+            border-radius: 10px;
+            background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+            object-fit: contain;
+        }
+    }
+
+    &__text {
+        min-width: 0;
+        font-family: $font-body;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: rgba($color-heading, 0.8);
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__text-desktop,
+    &__text-mobile {
+        display: inline;
+    }
+
+    &__text-mobile {
+        display: none;
+
+        @include below-mobile {
+            display: inline;
+        }
+    }
+
+    &__text-desktop {
+        @include below-mobile {
+            display: none;
+        }
+    }
+}

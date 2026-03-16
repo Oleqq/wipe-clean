@@ -1,0 +1,42 @@
+mixin galleryPreviewItem(item, isClone)
+    -
+        var itemClassName = "gallery-preview__item";
+
+        if (item.type === "video") {
+            itemClassName += " gallery-preview__item--video";
+        }
+
+        if (isClone) {
+            itemClassName += " gallery-preview__item--clone";
+        }
+
+        var itemAttrs = {
+            class: itemClassName,
+            href: item.lightboxSrc,
+            "data-gallery-item-id": item.id,
+            "aria-label": item.alt
+        };
+
+        if (isClone) {
+            itemAttrs["data-gallery-clone"] = "";
+            itemAttrs["data-gallery-target"] = item.id;
+            itemAttrs["aria-hidden"] = "true";
+            itemAttrs["tabindex"] = "-1";
+        } else {
+            itemAttrs["data-fancybox"] = "gallery-preview";
+            itemAttrs["data-caption"] = item.caption;
+
+            if (item.type === "video") {
+                itemAttrs["data-type"] = "html5video";
+                itemAttrs["data-html5video-format"] = "video/mp4";
+                itemAttrs["data-width"] = "1280";
+                itemAttrs["data-height"] = "720";
+            }
+        }
+
+    a&attributes(itemAttrs)
+        span.gallery-preview__item-media
+            img(src=item.src alt=item.alt loading="lazy")
+        if item.type === "video"
+            span.gallery-preview__item-badge(aria-hidden="true")
+                img(src="/static/images/section/gallery-preview/gallery-play.svg" alt="")

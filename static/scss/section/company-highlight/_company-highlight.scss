@@ -1,0 +1,210 @@
+.company-highlight {
+    padding: 20px 0 100px;
+
+    @include below-tablet {
+        padding-top: 24px;
+        padding-bottom: 72px;
+    }
+
+    @include below-mobile {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 650px) minmax(0, 650px);
+        justify-content: space-between;
+        align-items: start;
+        gap: 40px 20px;
+        min-width: 0;
+
+        @include below-desktop {
+            grid-template-columns: minmax(280px, 48.5%) minmax(0, 1fr);
+            gap: 32px 24px;
+        }
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__content {
+        order: 2;
+        display: grid;
+        gap: 16px;
+        min-width: 0;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+
+        @include below-tablet {
+            order: 1;
+        }
+    }
+
+    &__head {
+        display: grid;
+    }
+
+    &__title {
+        max-width: 650px;
+
+        @include below-mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__copy {
+        display: grid;
+        gap: 16px;
+
+        &.is-expanded {
+            .company-highlight__summary {
+                @include below-mobile {
+                    display: none;
+                }
+            }
+
+            .company-highlight__body {
+                @include below-mobile {
+                    display: grid;
+                    animation: company-highlight-reveal 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+            }
+        }
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
+    &__summary {
+        display: none;
+
+        @include below-mobile {
+            display: block;
+        }
+    }
+
+    &__summary-text {
+        margin: 0;
+    }
+
+    &__more {
+        display: inline-flex;
+        align-items: center;
+        padding: 0;
+        border: 0;
+        background: linear-gradient(180deg, $color-primary-border 0%, $color-primary-top 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        cursor: pointer;
+        font-family: $font-body;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+        vertical-align: baseline;
+        transition: opacity $transition-base;
+
+        @include hover {
+            opacity: 0.72;
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: 16px;
+
+        @include below-mobile {
+            display: none;
+            gap: 10px;
+        }
+    }
+
+    &__text {
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__note {
+        padding: 16px 20px 20px;
+        border: 1px solid $color-accent;
+        border-radius: $radius-xl;
+        background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+
+        @include below-mobile {
+            padding: 14px 16px 16px;
+        }
+    }
+
+    &__note-text {
+        margin: 0;
+        @include text-body(16px, $color-bg, 600);
+
+        @include below-mobile {
+            font-size: 14px;
+        }
+    }
+
+    &__media {
+        position: relative;
+        order: 1;
+        min-width: 0;
+        min-height: 501px;
+
+        @include below-tablet {
+            order: 2;
+        }
+
+        @include below-mobile {
+            min-height: 277px;
+        }
+    }
+
+    &__media-main {
+        width: 100%;
+        margin-top: 73px;
+
+        @include below-mobile {
+            margin-top: 40px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__media-badge {
+        position: absolute;
+        top: 0;
+        left: 27.85%;
+        width: 31.23%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@keyframes company-highlight-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

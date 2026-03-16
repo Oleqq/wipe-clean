@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-bg: #{$color-bg};
+  --color-bg-soft: #{$color-bg-soft};
+  --color-surface: #{$color-surface};
+  --color-wave: #{$color-wave};
+  --color-heading: #{$color-heading};
+  --color-text: #{$color-text};
+  --color-primary: #{$color-primary};
+  --color-primary-border: #{$color-primary-border};
+  --color-accent: #{$color-accent};
+  --radius-pill: #{$radius-pill};
+  --radius-2xl: #{$radius-2xl};
+  --radius-xl: #{$radius-xl};
+  --section-space: #{$section-space-desktop};
+}
+
+body {
+  min-width: 320px;
+  font-family: $font-main;
+  color: $color-heading;
+  background-color: $color-bg;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  
+}
+
+main {
+  display: block;
+  overflow: clip;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+::selection {
+  color: $color-surface;
+  background-color: $color-primary;
+}

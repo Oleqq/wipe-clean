@@ -1,0 +1,16 @@
+doctype html
+html(lang="ru")
+    head
+        include ../includes/head
+        block styles
+    body
+        block header
+            include ../includes/header
+        main.main
+            block content
+        block footer
+            include ../includes/footer
+        script(src="/static/js/vendor/fancybox.umd.js")
+        script(src="/static/js/vendor/swiper-bundle.js")
+        script(type="module" src="/static/js/script.js")
+        block scripts

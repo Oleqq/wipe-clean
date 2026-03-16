@@ -1,0 +1,54 @@
+-
+    var orderCtaDefaults = {
+        className: "",
+        title: "Закажите клининг в Москве прямо сейчас",
+        titleLines: ["Закажите клининг", "в Москве прямо сейчас"],
+        text: "Уборка с гарантией качества – это очень просто. Достаточно написать в нашу клининговую компанию в Москве на сайте или просто позвонить. Наш менеджер перезвонит за пару минут, чтобы честно рассчитать цену и обсудить все важные детали. Мы ценим ваш график и отвечаем за результат. Услуги клининга будут организованы быстро и в то время, когда вам удобно.",
+        button: {
+            label: "Заказать клининг",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        image: {
+            src: "/static/images/section/order-cta/order-cta-cleaning-kit.png",
+            alt: "Набор для клининга ВАЙП–Клин"
+        }
+    }
+
+-
+    var orderCtaData = typeof orderCtaSection === "object" && orderCtaSection ? orderCtaSection : {}
+    var orderCtaButtonData = typeof orderCtaData.button === "object" && orderCtaData.button ? orderCtaData.button : {}
+    var orderCtaImageData = typeof orderCtaData.image === "object" && orderCtaData.image ? orderCtaData.image : {}
+    var orderCtaOptions = Object.assign({}, orderCtaDefaults, orderCtaData)
+    var orderCtaButton = Object.assign({}, orderCtaDefaults.button, orderCtaButtonData)
+    var orderCtaImage = Object.assign({}, orderCtaDefaults.image, orderCtaImageData)
+    var orderCtaTitle = orderCtaOptions.title
+    var orderCtaTitleLines = Array.isArray(orderCtaOptions.titleLines) && orderCtaOptions.titleLines.length ? orderCtaOptions.titleLines : orderCtaDefaults.titleLines
+    var orderCtaButtons = [orderCtaButton]
+
+    if (Array.isArray(orderCtaData.buttons) && orderCtaData.buttons.length) {
+        orderCtaButtons = orderCtaData.buttons.map(function(button) {
+            return Object.assign({}, orderCtaDefaults.button, button)
+        })
+    }
+
+section.order-cta(class=orderCtaOptions.className)
+    ._container
+        .order-cta__wrapper
+            .order-cta__content
+                .order-cta__head.ui-section-head.ui-section-head--compact
+                    h2.order-cta__title.ui-title
+                        span.order-cta__title-desktop
+                            each line, index in orderCtaTitleLines
+                                | #{line}
+                                if index !== orderCtaTitleLines.length - 1
+                                    br
+                        span.order-cta__title-mobile= orderCtaTitle
+                    p.order-cta__text.ui-text= orderCtaOptions.text
+                .order-cta__actions
+                    each action in orderCtaButtons
+                        a.ui-btn.order-cta__action(class=action.className href=action.href)
+                            span.ui-btn__content= action.label
+            .order-cta__visual(aria-hidden="true")
+                .order-cta__visual-media
+                    img(src=orderCtaImage.src alt=orderCtaImage.alt loading="lazy")

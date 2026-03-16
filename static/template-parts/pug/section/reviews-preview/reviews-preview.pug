@@ -1,0 +1,67 @@
+include ../../components/review-card/review-card
+
+-
+    var reviewsPreviewDefaults = {
+        className: "",
+        title: "Отзывы наших клиентов",
+        text: "Нам доверяют уборку квартир, домов и офисов в Москве, а многие клиенты обращаются к нам регулярно и рекомендуют ВАЙП–Клин своим близким.",
+        items: [
+            {
+                author: "Имя клиента",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                author: "Имя клиента",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                author: "Имя клиента",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }
+        ],
+        actions: [
+            {
+                label: "Ознакомиться с другими отзывами",
+                href: "#",
+                className: "ui-btn--primary"
+            },
+            {
+                label: "Оставить отзыв о компании",
+                href: "#",
+                className: "ui-btn--secondary"
+            }
+        ]
+    }
+
+-
+    var reviewsPreviewData = typeof reviewsPreviewSection === "object" && reviewsPreviewSection ? reviewsPreviewSection : {}
+    var reviewsPreviewOptions = Object.assign({}, reviewsPreviewDefaults, reviewsPreviewData)
+    var reviewsPreviewItems = Array.isArray(reviewsPreviewOptions.items) && reviewsPreviewOptions.items.length ? reviewsPreviewOptions.items : reviewsPreviewDefaults.items
+
+section.reviews-preview(class=reviewsPreviewOptions.className)
+    ._container
+        .reviews-preview__wrapper
+            .reviews-preview__head.ui-section-head.ui-section-head--center
+                h2.ui-title= reviewsPreviewOptions.title
+                p.ui-text= reviewsPreviewOptions.text
+            .reviews-preview__slider.swiper(data-reviews-preview-swiper)
+                .reviews-preview__track.swiper-wrapper
+                    each item in reviewsPreviewItems
+                        .reviews-preview__slide.swiper-slide
+                            +reviewCard(item)
+            .reviews-preview__footer
+                .reviews-preview__actions
+                    each action in reviewsPreviewOptions.actions
+                        a.ui-btn(class=action.className href=action.href)
+                            span.ui-btn__content= action.label
+                .reviews-preview__nav.ui-slider-nav.ui-slider-nav--desktop-only
+                    button.reviews-preview__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Предыдущий отзыв" data-reviews-preview-prev)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                    button.reviews-preview__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Следующий отзыв" data-reviews-preview-next)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")

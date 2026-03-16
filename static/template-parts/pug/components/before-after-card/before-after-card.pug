@@ -1,0 +1,34 @@
+mixin beforeAfterCard(item)
+    -
+        var beforeAfterId = item.id ? item.id : "before-after-card"
+        var beforeAfterStart = typeof item.start === "number" ? item.start : 50
+        var beforeAfterMobileStart = typeof item.mobileStart === "number" ? item.mobileStart : beforeAfterStart
+        var beforeAfterStyle = "--before-after-position: " + beforeAfterStart + "%;"
+        var beforeAfterLabel = item.controlLabel ? item.controlLabel : "Сравнить состояние до и после уборки"
+
+    .before-after-card(
+        data-before-after
+        data-start=beforeAfterStart
+        data-start-mobile=beforeAfterMobileStart
+        style=beforeAfterStyle
+    )
+        .before-after-card__media
+            img.before-after-card__image.before-after-card__image--before(src=item.beforeSrc alt=item.alt loading="lazy")
+            img.before-after-card__image.before-after-card__image--after(src=item.afterSrc alt="" aria-hidden="true" loading="lazy")
+
+            .before-after-card__divider(aria-hidden="true")
+                span.before-after-card__handle(data-before-after-handle)
+                    span.before-after-card__handle-inner
+                        img(src="/static/images/ui/before-after-handle-icon.svg" alt="" loading="lazy")
+
+            label._visually-hidden(for=beforeAfterId)= beforeAfterLabel
+            input.before-after-card__range(
+                id=beforeAfterId
+                type="range"
+                min="0"
+                max="100"
+                step="0.1"
+                value=beforeAfterStart
+                aria-label=beforeAfterLabel
+                data-before-after-range
+            )

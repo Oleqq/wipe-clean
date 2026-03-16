@@ -1,0 +1,37 @@
+.about-page {
+    .services-preview {
+        padding-top: 0;
+
+        @include below-mobile {
+            padding-bottom: 50px;
+        }
+    }
+
+    .reviews-preview {
+        padding-top: 0;
+        padding-bottom: 100px;
+
+        @include below-tablet {
+            padding-bottom: 72px;
+        }
+
+        @include below-mobile {
+            padding-bottom: 50px;
+        }
+    }
+
+    .order-cta {
+        padding-top: 0;
+    }
+
+    .contacts {
+        padding-top: 0;
+    }
+
+    @include below-mobile {
+        .team-preview,
+        .why-us {
+            padding-bottom: 50px;
+        }
+    }
+}

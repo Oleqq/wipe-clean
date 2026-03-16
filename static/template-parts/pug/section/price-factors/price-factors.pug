@@ -1,0 +1,64 @@
+include ../../components/number-card/number-card
+
+-
+    var priceFactorsDefaults = {
+        title: "Что влияет на цену за уборку",
+        text: "Многие клиенты задаются вопросом, из чего складывается итоговый чек уборки? Им интересно почему на одинаковые по площади объекты цена клининга часто различается. Мы всегда объясняем заказчикам, что все зависит от параметров жилплощади и специфики клининга, которые стоят перед нашими мастерами.",
+        button: {
+            label: "Хочу индивидуальный рассчет",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        items: [
+            {
+                number: "01",
+                title: "Площадь помещения",
+                text: "Это фундаментальный критерий, от которого напрямую зависит время работы бригады и общее количество используемого инвентаря на выезде. Логично, что актуальные расценки на клининговые услуги для просторной студии и загородного особняка будут отличаться."
+            },
+            {
+                number: "02",
+                title: "Тип уборки",
+                text: "Поддерживающий клининг обходится дешевле, тогда как генеральные работы или наведение порядка после стройки требуют гораздо больших ресурсов. Выбирая формат, помните, что итоговая стоимость клининга всегда коррелирует с глубиной и тщательностью очистки."
+            },
+            {
+                number: "03",
+                title: "Уровень загрязнений",
+                text: "Если жилплощадь долго не убирали или требуется удаления сложных пятен, это значительно увеличивает общую трудоемкость процесса. Стоимость рассчитывается индивидуально и учитывает реальное состояние объекта, чтобы обеспечить честный клининг."
+            },
+            {
+                number: "04",
+                title: "Количество санузлов",
+                text: "Данные зоны являются самыми сложными. Им требуется глубокая дезинфекция и борьба с известковым налетом на кафеле. Чем больше таких узлов в помещении, тем выше будет итоговая стоимость клининга в вашем конкретном случае при оформлении заказа."
+            },
+            {
+                number: "05",
+                title: "Дополнительные работы",
+                text: "Химическая чистка мягкой обивки, мытье бытовой техники внутри или чистка жалюзи оплачиваются отдельно от основного выбранного пакета. Такие клининговые услуги цены, на которые зафиксированы в прайсе, позволяют гибко настроить индивидуальный расчёт."
+            },
+            {
+                number: "06",
+                title: "Срочность",
+                text: "Если вам нужно навести идеальную чистоту прямо сейчас, мы быстро отправим к вам мобильную бригаду. Учтите, что расценки клининга при срочном выезде могут немного вырасти. Это обусловлено нагрузкой на персонал и темпом уборки."
+            }
+        ]
+    }
+
+-
+    var priceFactorsData = typeof priceFactorsSection === "object" && priceFactorsSection ? priceFactorsSection : {}
+    var priceFactorsButtonData = typeof priceFactorsData.button === "object" && priceFactorsData.button ? priceFactorsData.button : {}
+    var priceFactorsOptions = Object.assign({}, priceFactorsDefaults, priceFactorsData)
+    var priceFactorsButton = Object.assign({}, priceFactorsDefaults.button, priceFactorsButtonData)
+
+section.price-factors
+    ._container
+        .price-factors__wrapper
+            .price-factors__head.ui-section-head.ui-section-head--compact
+                h2.price-factors__title.ui-title= priceFactorsOptions.title
+                p.price-factors__text.ui-text= priceFactorsOptions.text
+            .price-factors__slider.swiper(data-price-factors-swiper)
+                .price-factors__grid.swiper-wrapper
+                    each item in priceFactorsOptions.items
+                        .price-factors__slide.swiper-slide
+                            +numberCard(item)
+            a.price-factors__action.ui-btn(class=priceFactorsButton.className href=priceFactorsButton.href)
+                span.ui-btn__content= priceFactorsButton.label

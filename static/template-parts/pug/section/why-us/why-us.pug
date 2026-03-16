@@ -1,0 +1,59 @@
+include ../../components/feature-card/feature-card
+
+-
+    var whyUsCards = [
+        {
+            title: "Штатный состав опытных ребят",
+            text: "Клининговая компания в Москве принципиально не берет людей «с улицы», доверяя заказы только клинерам с опытом. Это позволяет нам быть спокойными за качество, дисциплину на объекте и сохранность каждой вещи.",
+            icon: "/static/images/ui/feature-card-star.png",
+            cardClass: "feature-card--compact"
+        },
+        {
+            title: "Контроль качества по чек-листу",
+            text: "Клининговая компания в Москве проверяет каждый уголок по списку дел, чтобы случайно не забыть про высокие стандарты сервиса. В итоге вы принимаете работу, где нет пропусков даже в самых сложных местах.",
+            icon: "/static/images/ui/feature-card-star.png",
+            cardClass: "feature-card--compact"
+        },
+        {
+            title: "Арсенал безопасных моющих средств",
+            text: "В работе клининговая компания в Москве использует только проверенные средства от лучших производителей. Эти составы не вредят здоровью и подходят для домов, где живут маленькие дети или любопытные домашние животные.",
+            icon: "/static/images/ui/feature-card-star.png",
+            cardClass: "feature-card--compact"
+        },
+        {
+            title: "Ответственный подход к каждому делу",
+            text: "Мы несем ответственность за результат. Вы можете не переживать за свои вещи: мы полностью отвечаем за их сохранность во время уборки. Наши мастера не боятся сложных задач и терпеливо доводят до блеска весь дом.",
+            icon: "/static/images/ui/feature-card-star.png",
+            cardClass: "feature-card--compact",
+            slideClass: "why-us__slide--offset-2"
+        },
+        {
+            title: "Бонусы и скидки для клиентов",
+            text: "Для друзей клиринговой компании в Москве мы придумали честную систему скидок, чтобы каждый следующий визит был выгоднее предыдущего. Поэтому профессиональный клининг в Москве в исполнении команды становится доступнее.",
+            icon: "/static/images/ui/feature-card-star.png",
+            cardClass: "feature-card--compact",
+            slideClass: "why-us__slide--offset-3"
+        }
+    ]
+
+section.why-us
+    ._container
+        .why-us__wrapper
+            .why-us__head.ui-section-head
+                h2.ui-title.why-us__title Почему выбирают нас
+                p.ui-text.why-us__text Философия нашей клининговой компании в Москве строится на создании комфорта для клиента, где услуги клининга становятся незаметным помощником в быту. Мы стремимся к тому, чтобы после нашего визита заказчик ощущал визуальную чистоту и прилив энергии в пространстве.
+                p.ui-text.why-us__text Нашу клининговую компанию в Москве выбирают, потому что у нас:
+
+            .why-us__slider.swiper(data-why-us-swiper)
+                .why-us__grid.swiper-wrapper
+                    each item in whyUsCards
+                        .why-us__slide.swiper-slide(class=item.slideClass)
+                            +featureCard({
+                                title: item.title,
+                                text: item.text,
+                                icon: item.icon,
+                                className: item.cardClass
+                            })
+
+            a.ui-btn.ui-btn--primary.why-us__action(href="#")
+                span.ui-btn__content Заказать клининг квартиры

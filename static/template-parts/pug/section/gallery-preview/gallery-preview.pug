@@ -1,0 +1,94 @@
+include ../../components/gallery-preview-item/gallery-preview-item
+
+-
+    var galleryVideoPath = "/static/images/section/gallery-preview/test-video.mp4";
+
+    var galleryTopRowItems = [
+        {
+            id: "gallery-top-1",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-1.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-1.png",
+            alt: "Уборка кухни крупным планом",
+            caption: "Работа команды ВАЙП–Клин"
+        },
+        {
+            id: "gallery-top-2",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-2.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-2.png",
+            alt: "Влажная уборка дома",
+            caption: "Уборка квартир и домов"
+        },
+        {
+            id: "gallery-top-3",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-3.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-3.png",
+            alt: "Светлая гостиная после клининга",
+            caption: "Результат уборки квартиры"
+        },
+        {
+            id: "gallery-top-4",
+            type: "video",
+            src: "/static/images/section/gallery-preview/gallery-row-1-video-poster.png",
+            lightboxSrc: galleryVideoPath,
+            alt: "Видео процесса уборки",
+            caption: "Видео процесса уборки"
+        }
+    ];
+
+-
+    var galleryBottomRowItems = [
+        {
+            id: "gallery-bottom-1",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-1.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-1.png",
+            alt: "Гостиная после уборки",
+            caption: "Чистый интерьер после клининга"
+        },
+        {
+            id: "gallery-bottom-2",
+            type: "video",
+            src: "/static/images/section/gallery-preview/gallery-row-2-video-poster.png",
+            lightboxSrc: galleryVideoPath,
+            alt: "Видео работы клинеров",
+            caption: "Видео работы команды ВАЙП–Клин"
+        },
+        {
+            id: "gallery-bottom-3",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-2.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-2.png",
+            alt: "Химчистка мягкой мебели",
+            caption: "Химчистка и глубокая уборка"
+        },
+        {
+            id: "gallery-bottom-4",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-3.png",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-3.png",
+            alt: "Инвентарь для клининга",
+            caption: "Профессиональный инвентарь и безопасная химия"
+        }
+    ];
+
+section.gallery-preview
+    ._container
+        .gallery-preview__wrapper
+            .gallery-preview__head
+                h2.ui-title.gallery-preview__title Галерея наших работ по уборке квартир, домов и офисов
+            .gallery-preview__marquees
+                .gallery-preview__row(data-gallery-marquee-row data-direction="-1" data-speed="36")
+                    .gallery-preview__track(data-gallery-marquee-track)
+                        each item in galleryTopRowItems
+                            +galleryPreviewItem(item, false)
+                        each item in galleryTopRowItems
+                            +galleryPreviewItem(item, true)
+                .gallery-preview__row.gallery-preview__row--reverse(data-gallery-marquee-row data-direction="1" data-speed="38")
+                    .gallery-preview__track(data-gallery-marquee-track)
+                        each item in galleryBottomRowItems
+                            +galleryPreviewItem(item, false)
+                        each item in galleryBottomRowItems
+                            +galleryPreviewItem(item, true)

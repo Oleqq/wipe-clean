@@ -1,0 +1,6 @@
+mixin numberCard(item)
+    article.number-card.ui-card(class=item.className)
+        span.number-card__number.ui-title--number= item.number
+        .number-card__body
+            h3.number-card__title= item.title
+            p.number-card__text.ui-text= item.text

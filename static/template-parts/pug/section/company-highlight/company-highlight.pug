@@ -1,0 +1,46 @@
+-
+    var companyHighlightDefaults = {
+        title: "ВАЙП–Клин, ваш надежный помощник",
+        summaryText: "В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны...",
+        paragraphs: [
+            "В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны. Мы заботимся, чтобы каждый визит мастера приносил в ваш дом долгожданный уют и спокойствие. Заранее согласовываем стоимость и учитываем особенности жилья.",
+            "Мы строим работу на заботе о деталях, чтобы вам было комфортно общаться с нами на любом этапе. Нам важно поддерживать вас во всем: от оформления заявки до финальной проверки чистоты в доме. Мы постоянно улучшаем сервис, чтобы стоимость клининга всегда соответствовала вашим высоким ожиданиям. Наши цены на уборку квартир остаются стабильными."
+        ],
+        noteText: "Для нас клининг — это не разовая уборка, а ваш ежедневный комфорт и залог долгих отношений. Регулярная поддержка порядка помогает содержать жилье в идеале весь год без лишних усилий. Доверьтесь профи из ВАЙП–Клин, и вы увидите, как цены на клининговые услуги сочетаются с качеством. Мы гарантируем, что честная стоимость и прозрачный подход станут основой нашей крепкой дружбы.",
+        bodyId: "company-highlight-body",
+        mainImageSrc: "/static/images/section/company-highlight/company-highlight-main.png",
+        mainImageAlt: "Инвентарь ВАЙП–Клин для уборки",
+        badgeImageSrc: "/static/images/section/company-highlight/company-highlight-badge.png",
+        badgeImageAlt: "Фирменный знак ВАЙП–Клин"
+    }
+
+-
+    var companyHighlightData = typeof companyHighlightSection === "object" && companyHighlightSection ? companyHighlightSection : {}
+    var companyHighlightOptions = Object.assign({}, companyHighlightDefaults, companyHighlightData)
+
+section.company-highlight
+    ._container
+        .company-highlight__wrapper
+            .company-highlight__content
+                .company-highlight__head
+                    h2.ui-title.company-highlight__title= companyHighlightOptions.title
+
+                .company-highlight__copy(data-read-more)
+                    .company-highlight__summary(data-read-more-summary)
+                        p.ui-text.ui-text--sm.company-highlight__summary-text
+                            = companyHighlightOptions.summaryText
+                            |  
+                            button.company-highlight__more(type="button" data-read-more-toggle aria-expanded="false" aria-controls=companyHighlightOptions.bodyId) Ещё
+
+                    .company-highlight__body(id=companyHighlightOptions.bodyId data-read-more-body)
+                        each paragraph in companyHighlightOptions.paragraphs
+                            p.ui-text.company-highlight__text= paragraph
+
+                .company-highlight__note
+                    p.company-highlight__note-text= companyHighlightOptions.noteText
+
+            .company-highlight__media
+                .company-highlight__media-main
+                    img(src=companyHighlightOptions.mainImageSrc alt=companyHighlightOptions.mainImageAlt loading="lazy")
+                .company-highlight__media-badge
+                    img(src=companyHighlightOptions.badgeImageSrc alt=companyHighlightOptions.badgeImageAlt loading="lazy")

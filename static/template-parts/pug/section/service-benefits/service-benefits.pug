@@ -1,0 +1,64 @@
+include ../../components/feature-card/feature-card
+
+-
+    var serviceBenefitsData = typeof serviceBenefitsData !== "undefined" ? serviceBenefitsData : {
+        title: "Преимущества уборки под ключ от компании ВАЙП–Клин",
+        text: "Взаимодействие с профильной организацией строится на доверии и высоких стандартах сервиса, принятых в индустрии. Команда внедряет современные методы менеджмента. Внимание к деталям и использование проверенных технологий позволяют достигать идеального состояния объекта при каждом визите.",
+        summary: "Продуманный сервис избавляет клиента от лишней бытовой рутины. Все задачи выполняются по строгим регламентам, которые отвечают принятым мировым стандартам.",
+        cards: [
+            {
+                title: "Штатные клинеры с опытом",
+                text: "Ряды мастеров пополняют только профи, подтвердившие квалификацию. Каждый кандидат прошел внутреннюю стажировку и экзамен перед допуском.",
+                icon: "/static/images/ui/feature-card-star-green.png",
+                className: "feature-card--compact service-benefits__card"
+            },
+            {
+                title: "Поэтапный контроль качества",
+                text: "Каждое техническое задание детально курируется ответственным менеджером. Это позволяет полностью исключить возникновение недочетов.",
+                icon: "/static/images/ui/feature-card-star-green.png",
+                className: "feature-card--compact service-benefits__card"
+            },
+            {
+                title: "Аккуратная уборка по чек-листу",
+                text: "Процесс наведения идеальной чистоты строго регламентирован внутренними правилами, что гарантирует абсолютную полноту оказания услуги на каждом объекте.",
+                icon: "/static/images/ui/feature-card-star-green.png",
+                className: "feature-card--compact service-benefits__card"
+            },
+            {
+                title: "Безопасные моющие средства",
+                text: "Используемые химические составы полностью гипоаллергенны. При этом крайне эффективны против пятен и абсолютно безвредны для здоровья детей.",
+                icon: "/static/images/ui/feature-card-star-green.png",
+                className: "feature-card--compact service-benefits__card"
+            },
+            {
+                title: "Полная ответственность за результат",
+                text: "Исполнители следят за сохранностью каждой вещи и берегут доверенное имущество. Официальные гарантии исключают риск порчи предметов интерьера.",
+                icon: "/static/images/ui/feature-card-star-green.png",
+                className: "feature-card--compact service-benefits__card"
+            }
+        ]
+    }
+
+section.service-benefits
+    ._container
+        .service-benefits__wrapper
+            .service-benefits__head.ui-section-head
+                h2.ui-title.service-benefits__title= serviceBenefitsData.title
+                p.ui-text.service-benefits__text= serviceBenefitsData.text
+
+            .service-benefits__desktop-grid
+                each item in serviceBenefitsData.cards
+                    .service-benefits__desktop-item
+                        +featureCard(item)
+
+                .service-benefits__summary
+                    p.ui-text.service-benefits__summary-text= serviceBenefitsData.summary
+
+            .service-benefits__slider.swiper(data-service-benefits-swiper)
+                .service-benefits__track.swiper-wrapper
+                    each item in serviceBenefitsData.cards
+                        .service-benefits__slide.swiper-slide
+                            +featureCard(item)
+
+            .service-benefits__summary-mobile
+                p.ui-text.service-benefits__summary-text= serviceBenefitsData.summary

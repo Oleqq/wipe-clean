@@ -1,0 +1,33 @@
+.fancybox__backdrop {
+    background: rgba(0, 46, 61, 0.82);
+    backdrop-filter: blur(20px) saturate(1.1);
+}
+
+.fancybox__toolbar {
+    --f-button-bg: rgba(255, 255, 255, 0.08);
+    --f-button-border-radius: 999px;
+    --f-button-hover-bg: rgba(255, 255, 255, 0.16);
+    --f-button-svg-width: 20px;
+    --f-button-svg-height: 20px;
+    --f-button-svg-stroke-width: 2;
+}
+
+.fancybox__slide {
+    padding: 24px;
+
+    @include below-mobile {
+        padding: 16px;
+    }
+}
+
+.fancybox__caption {
+    padding-top: 16px;
+    @include text-body(14px, rgba(255, 255, 255, 0.92), 500);
+    text-align: center;
+}
+
+.fancybox__content {
+    border-radius: $radius-xl;
+    overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
+}

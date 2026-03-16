@@ -1,0 +1,101 @@
+.ui-section-head {
+  display: grid;
+  gap: $gap-sm;
+}
+
+.ui-section-head--center {
+  justify-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ui-section-head--compact {
+  gap: $gap-xs;
+}
+
+.ui-section-head--narrow {
+  max-width: 650px;
+}
+
+.ui-kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding-left: 12px;
+  border-left: 2px solid $color-accent;
+  @include text-body(16px, $color-accent, 600);
+}
+
+.ui-kicker--muted {
+  border-left-color: $color-border-field;
+  color: $color-text;
+}
+
+.ui-title {
+  margin: 0;
+  @include text-title(36px);
+  @include adaptive-font(28, 36);
+}
+
+.ui-title--hero {
+  font-family: $font-display;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, $color-heading-hero-start 0%, $color-heading-hero-end 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  @include adaptive-font(32, 48);
+}
+
+.ui-title--card {
+  @include adaptive-font(18, 22);
+}
+
+.ui-title--compact {
+  @include adaptive-font(20, 24);
+}
+
+.ui-title--number,
+.ui-accent-value {
+  font-family: $font-heading;
+  font-weight: 700;
+  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ui-title--number {
+  font-size: 48px;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ui-accent-value {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+}
+
+.ui-text {
+  margin: 0;
+  @include text-body();
+}
+
+.ui-text--sm {
+  @include text-body(14px);
+}
+
+.ui-text--soft {
+  color: $color-text-soft;
+}
+
+.ui-text--center {
+  text-align: center;
+}

@@ -1,0 +1,162 @@
+include ../../components/before-after-card/before-after-card
+
+-
+    var beforeAfterResultsDefaults = {
+        titleLines: ["Результаты нашего", "клининга до и после"],
+        button: {
+            label: "Больше",
+            loadingLabel: "Загрузка...",
+            className: "ui-btn--primary"
+        },
+        initialDesktop: 6,
+        initialMobile: 3,
+        stepDesktop: 6,
+        stepMobile: 3,
+        items: [
+            {
+                id: "before-after-room-1",
+                beforeSrc: "/static/images/section/before-after-results/comparison-room-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-room-after.png",
+                alt: "Сравнение комнаты до и после уборки",
+                controlLabel: "Сравнить комнату до и после уборки",
+                start: 53.16,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-kitchen-1",
+                beforeSrc: "/static/images/section/before-after-results/comparison-kitchen-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-kitchen-after.png",
+                alt: "Сравнение кухни до и после уборки",
+                controlLabel: "Сравнить кухню до и после уборки",
+                start: 43.79,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-living-1",
+                beforeSrc: "/static/images/section/before-after-results/comparison-living-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-living-after.png",
+                alt: "Сравнение гостиной до и после уборки",
+                controlLabel: "Сравнить гостиную до и после уборки",
+                start: 76.81,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-living-2",
+                beforeSrc: "/static/images/section/before-after-results/comparison-living-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-living-after.png",
+                alt: "Сравнение гостиной до и после уборки",
+                controlLabel: "Сравнить гостиную до и после уборки",
+                start: 76.81,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-room-2",
+                beforeSrc: "/static/images/section/before-after-results/comparison-room-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-room-after.png",
+                alt: "Сравнение комнаты до и после уборки",
+                controlLabel: "Сравнить комнату до и после уборки",
+                start: 53.16,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-kitchen-2",
+                beforeSrc: "/static/images/section/before-after-results/comparison-kitchen-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-kitchen-after.png",
+                alt: "Сравнение кухни до и после уборки",
+                controlLabel: "Сравнить кухню до и после уборки",
+                start: 43.79,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-room-3",
+                beforeSrc: "/static/images/section/before-after-results/comparison-room-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-room-after.png",
+                alt: "Сравнение комнаты до и после уборки",
+                controlLabel: "Сравнить комнату до и после уборки",
+                start: 53.16,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-kitchen-3",
+                beforeSrc: "/static/images/section/before-after-results/comparison-kitchen-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-kitchen-after.png",
+                alt: "Сравнение кухни до и после уборки",
+                controlLabel: "Сравнить кухню до и после уборки",
+                start: 43.79,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-living-3",
+                beforeSrc: "/static/images/section/before-after-results/comparison-living-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-living-after.png",
+                alt: "Сравнение гостиной до и после уборки",
+                controlLabel: "Сравнить гостиную до и после уборки",
+                start: 76.81,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-living-4",
+                beforeSrc: "/static/images/section/before-after-results/comparison-living-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-living-after.png",
+                alt: "Сравнение гостиной до и после уборки",
+                controlLabel: "Сравнить гостиную до и после уборки",
+                start: 76.81,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-room-4",
+                beforeSrc: "/static/images/section/before-after-results/comparison-room-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-room-after.png",
+                alt: "Сравнение комнаты до и после уборки",
+                controlLabel: "Сравнить комнату до и после уборки",
+                start: 53.16,
+                mobileStart: 52.78
+            },
+            {
+                id: "before-after-kitchen-4",
+                beforeSrc: "/static/images/section/before-after-results/comparison-kitchen-before.png",
+                afterSrc: "/static/images/section/before-after-results/comparison-kitchen-after.png",
+                alt: "Сравнение кухни до и после уборки",
+                controlLabel: "Сравнить кухню до и после уборки",
+                start: 43.79,
+                mobileStart: 52.78
+            }
+        ]
+    }
+
+-
+    var beforeAfterResultsData = typeof beforeAfterResultsSection === "object" && beforeAfterResultsSection ? beforeAfterResultsSection : {}
+    var beforeAfterResultsButtonData = typeof beforeAfterResultsData.button === "object" && beforeAfterResultsData.button ? beforeAfterResultsData.button : {}
+    var beforeAfterResultsOptions = Object.assign({}, beforeAfterResultsDefaults, beforeAfterResultsData)
+    var beforeAfterResultsButton = Object.assign({}, beforeAfterResultsDefaults.button, beforeAfterResultsButtonData)
+    var beforeAfterResultsItems = Array.isArray(beforeAfterResultsData.items) && beforeAfterResultsData.items.length ? beforeAfterResultsData.items : beforeAfterResultsDefaults.items
+
+section.before-after-results
+    ._container(
+        data-before-after-results
+        data-initial-desktop=beforeAfterResultsOptions.initialDesktop
+        data-initial-mobile=beforeAfterResultsOptions.initialMobile
+        data-step-desktop=beforeAfterResultsOptions.stepDesktop
+        data-step-mobile=beforeAfterResultsOptions.stepMobile
+    )
+        .before-after-results__wrapper
+            .before-after-results__head.ui-section-head.ui-section-head--center
+                h2.before-after-results__title.ui-title
+                    each line, index in beforeAfterResultsOptions.titleLines
+                        | #{line}
+                        if index !== beforeAfterResultsOptions.titleLines.length - 1
+                            br
+
+            .before-after-results__grid
+                each item, index in beforeAfterResultsItems
+                    .before-after-results__item(data-before-after-item data-item-index=index)
+                        +beforeAfterCard(item)
+
+            button.before-after-results__more.ui-btn(
+                class=beforeAfterResultsButton.className
+                type="button"
+                data-before-after-more
+            )
+                span.ui-btn__content
+                    span.before-after-results__more-label.before-after-results__more-label--default= beforeAfterResultsButton.label
+                    span.before-after-results__more-label.before-after-results__more-label--loading= beforeAfterResultsButton.loadingLabel

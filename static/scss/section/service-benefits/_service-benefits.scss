@@ -1,0 +1,132 @@
+.service-benefits {
+    padding: 0 0 40px;
+
+    @include below-tablet {
+        padding-bottom: 24px;
+    }
+
+    @include below-mobile {
+        padding-bottom: 20px;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+        min-width: 0;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        max-width: 807px;
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
+    &__title {
+        @include adaptive-font(24, 36);
+    }
+
+    &__text,
+    &__summary-text {
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__desktop-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px 20px;
+
+        @include below-desktop {
+            gap: 20px 16px;
+        }
+
+        @include below-mobile {
+            display: none;
+        }
+    }
+
+    &__desktop-item {
+        min-width: 0;
+
+        .feature-card {
+            height: 100%;
+        }
+
+        &:nth-child(4) {
+            grid-column: 1;
+        }
+
+        &:nth-child(5) {
+            grid-column: 2;
+        }
+    }
+
+    &__summary {
+        align-self: center;
+        grid-column: 3;
+        max-width: 407px;
+
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__summary-text {
+        margin: 0;
+    }
+
+    &__summary-mobile {
+        display: none;
+
+        @include below-mobile {
+            display: block;
+        }
+    }
+
+    &__slider {
+        display: none;
+        min-width: 0;
+
+        @include below-mobile {
+            display: block;
+            overflow: visible;
+        }
+    }
+
+    &__track {
+        @include below-mobile {
+            display: flex;
+            gap: 0;
+        }
+    }
+
+    &__slide {
+        min-width: 0;
+        height: auto;
+
+        @include below-mobile {
+            width: 280px;
+        }
+
+        .feature-card {
+            height: 100%;
+        }
+    }
+
+    &__card {
+        .feature-card__title {
+            @include below-mobile {
+                font-size: 16px;
+            }
+        }
+    }
+}

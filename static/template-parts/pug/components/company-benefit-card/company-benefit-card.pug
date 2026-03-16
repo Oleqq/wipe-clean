@@ -1,0 +1,8 @@
+mixin companyBenefitCard(item)
+    article.company-benefit-card
+        .company-benefit-card__icon
+            span.company-benefit-card__icon-box
+                img(src=item.icon srcset="" alt="" aria-hidden="true")
+        .company-benefit-card__body
+            h3.company-benefit-card__title= item.title
+            p.company-benefit-card__text= item.text

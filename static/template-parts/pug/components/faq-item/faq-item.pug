@@ -1,0 +1,16 @@
+mixin faqItem(item, index, idPrefix)
+    -
+        var safePrefix = idPrefix || "faq";
+        var answerId = safePrefix + "-answer-" + index;
+        var buttonId = safePrefix + "-question-" + index;
+
+    .faq__item(data-faq-item)
+        button.faq__toggle(type="button" id=buttonId aria-expanded="false" aria-controls=answerId data-faq-toggle)
+            span.faq__question= item.question
+            span.faq__icon(aria-hidden="true")
+                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+                    path(d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+        .faq__answer(hidden id=answerId role="region" aria-labelledby=buttonId aria-hidden="true" data-faq-answer)
+            .faq__answer-inner
+                p.faq__answer-text= item.answer
