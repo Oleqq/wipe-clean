@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 .feature-card {
     display: grid;
     gap: 16px;
@@ -5,12 +7,18 @@
     width: 100%;
     padding: 20px;
     @include ui-card-surface();
+    @include ui-card-hover-outline();
 
     @include below-mobile {
         gap: 12px;
         padding: 16px;
         border-radius: $radius-xl;
     }
+
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    gap: 0;
 
     &__head {
         display: flex;
@@ -47,6 +55,8 @@
             display: block;
             width: 56px;
             height: 56px;
+            padding: 5px;
+            box-sizing: border-box;
             border: 2px solid $color-accent;
             border-radius: 10px;
             background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
@@ -55,6 +65,7 @@
             @include below-mobile {
                 width: 48px;
                 height: 48px;
+                padding: 1px;
             }
         }
     }

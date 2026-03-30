@@ -1,4 +1,5 @@
 include ../../components/service-teaser-card/service-teaser-card
+include ../../includes/media.pug
 
 -
     var servicesIntro = {
@@ -117,22 +118,52 @@ section.services-intro
     ._container
         .services-intro__wrapper
             .services-intro__hero
-                .services-intro__hero-head.ui-section-head
-                    span.ui-kicker.services-intro__hero-kicker= servicesIntro.hero.kicker
-                    h1.ui-title.ui-title--hero.services-intro__hero-title= servicesIntro.hero.title
+                .services-intro__hero-copy
+                    .services-intro__hero-head.ui-section-head
+                        span.ui-kicker.services-intro__hero-kicker= servicesIntro.hero.kicker
+                        h1.ui-title.ui-title--hero.services-intro__hero-title= servicesIntro.hero.title
+                    .services-intro__hero-content
+                        p.ui-text.services-intro__hero-text= servicesIntro.hero.text
+                        .services-intro__hero-actions
+                            each action in servicesIntro.hero.actions
+                                a.ui-btn.services-intro__hero-action(class=action.className href=action.href)
+                                    span.ui-btn__content= action.label
                 .services-intro__hero-media(aria-hidden="true")
                     .services-intro__hero-decor
-                        img(src="/static/images/section/services-hero/services-hero-decor.png" alt="")
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-decor.png",
+                            decorative: true,
+                            width: 1024,
+                            height: 1024,
+                            loading: "eager",
+                            decoding: "async",
+                            sizes: "(max-width: 650px) 54vw, 16vw"
+                        })
                     .services-intro__hero-cleaner
-                        img(src="/static/images/section/services-hero/services-hero-cleaner.png" alt="" loading="eager" fetchpriority="high")
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-cleaner.png",
+                            srcset: "/static/images/section/services-hero/services-hero-cleaner-468.png 468w, /static/images/section/services-hero/services-hero-cleaner.png 936w",
+                            webpSrcset: "/static/webp-images/section/services-hero/services-hero-cleaner-468.webp 468w, /static/webp-images/section/services-hero/services-hero-cleaner-936.webp 936w",
+                            decorative: true,
+                            width: 936,
+                            height: 2088,
+                            loading: "eager",
+                            decoding: "async",
+                            fetchpriority: "high",
+                            sizes: "(max-width: 650px) 42vw, 18vw"
+                        })
                     .services-intro__hero-interior
-                        img(src="/static/images/section/services-hero/services-hero-interior.png" alt="" loading="eager")
-                .services-intro__hero-content
-                    p.ui-text.services-intro__hero-text= servicesIntro.hero.text
-                    .services-intro__hero-actions
-                        each action in servicesIntro.hero.actions
-                            a.ui-btn.services-intro__hero-action(class=action.className href=action.href)
-                                span.ui-btn__content= action.label
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-interior.png",
+                            srcset: "/static/images/section/services-hero/services-hero-interior-630.png 630w, /static/images/section/services-hero/services-hero-interior.png 1260w",
+                            webpSrcset: "/static/webp-images/section/services-hero/services-hero-interior-630.webp 630w, /static/webp-images/section/services-hero/services-hero-interior-1260.webp 1260w",
+                            decorative: true,
+                            width: 1260,
+                            height: 1712,
+                            loading: "eager",
+                            decoding: "async",
+                            sizes: "(max-width: 650px) 74vw, 30vw"
+                        })
             .services-intro__overview
                 .services-intro__overview-content
                     h2.ui-title.services-intro__overview-title= servicesIntro.overview.title
@@ -145,7 +176,13 @@ section.services-intro
                             each paragraph in servicesIntro.overview.paragraphs
                                 p.ui-text.services-intro__overview-text= paragraph
                 .services-intro__overview-media(aria-hidden="true")
-                    img(src="/static/images/section/services-intro/services-intro-tools.png" alt="" loading="lazy")
+                    +mediaImage({
+                        src: "/static/images/section/services-intro/services-intro-tools.png",
+                        decorative: true,
+                        loading: "lazy",
+                        decoding: "async",
+                        sizes: "(max-width: 650px) 42vw, 18vw"
+                    })
             .services-intro__slider.swiper(data-services-intro-swiper)
                 .services-intro__slider-track.swiper-wrapper
                     each item in servicesIntro.cards

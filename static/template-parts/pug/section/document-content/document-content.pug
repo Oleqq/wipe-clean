@@ -1,0 +1,23 @@
+-
+    var documentContentDefaults = {
+        title: "Политика в отношении обработки персональных данных",
+        paragraphs: [
+            "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн",
+            "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн",
+            "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн",
+            "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн"
+        ]
+    };
+
+-
+    var documentContentData = typeof documentContentSection === "object" && documentContentSection ? documentContentSection : {};
+    var documentContentOptions = Object.assign({}, documentContentDefaults, documentContentData);
+    var documentContentParagraphs = Array.isArray(documentContentOptions.paragraphs) && documentContentOptions.paragraphs.length ? documentContentOptions.paragraphs : documentContentDefaults.paragraphs;
+
+section.document-content
+    ._container
+        .document-content__wrapper
+            h1.ui-title.ui-title--hero.document-content__title= documentContentOptions.title
+            .document-content__body.entry-content
+                each paragraph in documentContentParagraphs
+                    p= paragraph

@@ -1,57 +1,11 @@
-@import "global/variables";
-@import "global/mixins";
-@import "global/reset";
-@import "global/base";
-@import "global/container";
-@import "global/helpers";
-@import "global/ui-typography";
-@import "global/ui-layout";
-@import "global/ui-buttons";
-@import "global/ui-slider-nav";
-@import "global/ui-cards";
-@import "global/ui-check-list";
-@import "global/before-after-card";
-@import "global/blog-card";
-@import "global/company-benefit-card";
-@import "global/feature-card";
-@import "global/team-member-card";
-@import "global/ui-forms";
-@import "global/review-card";
-@import "global/number-card";
-@import "global/service-card";
-@import "global/service-teaser-card";
-@import "vendor/fancybox-overrides";
+@use "global";
+@use "vendor";
+@use "section";
 
-@import "section/about-hero/about-hero";
-@import "section/prices-hero/prices-hero";
-@import "section/blog-archive/blog-archive";
-@import "section/service-hero/service-hero";
-@import "section/service-page/service-page";
-@import "section/service-purpose/service-purpose";
-@import "section/service-includes/service-includes";
-@import "section/service-benefits/service-benefits";
-@import "section/service-price/service-price";
-@import "section/before-after-results/before-after-results";
-@import "section/other-services/other-services";
-@import "section/about-page/about-page";
-@import "section/services-intro/services-intro";
-@import "section/services-benefits/services-benefits";
-@import "section/company-story/company-story";
-@import "section/work-approach/work-approach";
-@import "section/team-preview/team-preview";
-@import "section/why-us/why-us";
-@import "section/order-cta/order-cta";
-@import "section/area-pricing/area-pricing";
-@import "section/price-factors/price-factors";
-@import "section/price-advantages/price-advantages";
-@import "section/company-highlight/company-highlight";
-@import "section/home-hero/home-hero";
-@import "section/services-preview/services-preview";
-@import "section/price-preview/price-preview";
-@import "section/work-steps/work-steps";
-@import "section/quote-request/quote-request";
-@import "section/company-preview/company-preview";
-@import "section/reviews-preview/reviews-preview";
-@import "section/gallery-preview/gallery-preview";
-@import "section/faq/faq";
-@import "section/contacts/contacts";
+
+
+header > div > div > div > a.ui-btn.ui-btn--primary.ui-btn--icon.header__phone > span > span > svg {
+    left: 1px;
+    position: relative;
+    top: -1px;
+}

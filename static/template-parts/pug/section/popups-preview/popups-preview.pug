@@ -1,0 +1,59 @@
+-
+    var popupsPreviewGroups = [
+        {
+            title: "Формы",
+            text: "Эти сценарии открывают рабочие popup-формы. Внутри можно проверить анимацию, body-lock, загрузку файлов и demo-отправку в success/error состояния.",
+            items: [
+                {
+                    label: "Попап отзыва",
+                    target: "popup-review"
+                },
+                {
+                    label: "Заказать услугу",
+                    target: "popup-order-service"
+                },
+                {
+                    label: "Рассчитать стоимость",
+                    target: "popup-calc"
+                },
+                {
+                    label: "Задать вопрос",
+                    target: "popup-question"
+                }
+            ]
+        },
+        {
+            title: "Статусы",
+            text: "Системные popup-состояния. Их можно открыть напрямую или получить после demo-отправки формы.",
+            items: [
+                {
+                    label: "Успешная заявка",
+                    target: "popup-status-success",
+                    buttonClass: "ui-btn--accent"
+                },
+                {
+                    label: "Ошибка заявки",
+                    target: "popup-status-error",
+                    buttonClass: "ui-btn--secondary"
+                }
+            ]
+        }
+    ];
+
+section.popups-preview
+    ._container
+        .popups-preview__wrapper
+            .popups-preview__head.ui-section-head
+                span.ui-kicker Системный preview popup-сценариев
+                h1.ui-title.ui-title--hero Попапы сайта
+                p.ui-text.popups-preview__text Страница нужна только для просмотра и отладки. Все popup-сценарии собраны на одном reusable modal-layer и открываются кнопками ниже.
+            .popups-preview__groups
+                each group in popupsPreviewGroups
+                    article.ui-card.popups-preview__group
+                        .popups-preview__group-head
+                            h2.popups-preview__group-title= group.title
+                            p.popups-preview__group-text= group.text
+                        .popups-preview__actions
+                            each item in group.items
+                                button.ui-btn(class=item.buttonClass ? item.buttonClass : "ui-btn--primary" type="button" data-popup-open=item.target)
+                                    span.ui-btn__content= item.label

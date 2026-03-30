@@ -1,15 +1,7 @@
+@use "../../global/core" as *;
+
 .company-story {
-    padding: 60px 0 100px;
-
-    @include below-tablet {
-        padding-top: 24px;
-        padding-bottom: 80px;
-    }
-
-    @include below-mobile {
-        padding-top: 20px;
-        padding-bottom: 56px;
-    }
+    @include section-padding(50px, 40px, 40px, 36px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -175,3 +167,4 @@
         transform: translateY(0);
     }
 }
+

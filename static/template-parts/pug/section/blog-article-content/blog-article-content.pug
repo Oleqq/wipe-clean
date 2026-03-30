@@ -1,0 +1,194 @@
+mixin articleFeatureItem(item)
+    article.entry-content__feature
+        h3.entry-content__feature-title= item.title
+        p.entry-content__feature-text= item.text
+
+mixin articleListItem(item)
+    li.entry-content__list-item
+        if item.title
+            strong= item.title + " "
+        | #{item.text}
+
+mixin renderArticleBlock(articleBlock)
+    if articleBlock && articleBlock.type
+        case articleBlock.type
+            when "section"
+                section.entry-content__section
+                    if articleBlock.title
+                        h2= articleBlock.title
+                    if Array.isArray(articleBlock.paragraphs)
+                        each paragraph in articleBlock.paragraphs
+                            p= paragraph
+            when "feature-section"
+                section.entry-content__section
+                    if articleBlock.title
+                        h2= articleBlock.title
+                    if articleBlock.lead
+                        p= articleBlock.lead
+                    if Array.isArray(articleBlock.items) && articleBlock.items.length
+                        .entry-content__feature-list
+                            each item in articleBlock.items
+                                +articleFeatureItem(item)
+                    if articleBlock.outro
+                        p= articleBlock.outro
+            when "list-section"
+                section.entry-content__section
+                    if articleBlock.title
+                        h2= articleBlock.title
+                    if Array.isArray(articleBlock.paragraphs)
+                        each paragraph in articleBlock.paragraphs
+                            p= paragraph
+                    if articleBlock.listLead
+                        p.entry-content__list-lead= articleBlock.listLead
+                    if Array.isArray(articleBlock.items) && articleBlock.items.length
+                        ul.entry-content__list
+                            each item in articleBlock.items
+                                +articleListItem(item)
+                    if articleBlock.outro
+                        p= articleBlock.outro
+            when "figure"
+                figure.entry-content__figure
+                    img(src=articleBlock.image.src alt=articleBlock.image.alt loading="lazy")
+
+-
+    var blogArticleContentDefaults = {
+        blocks: [
+            {
+                type: "feature-section",
+                title: "Почему уборка важна для здоровья питомца",
+                lead: "Наши животные проводят почти 24 часа в сутки на полу: они там спят, играют и даже пробуют всё на вкус. Если качественная уборка в доме — редкий гость, то накопленные бактерии и грязь быстро бьют по иммунитету любимца. И только безопасный порядок дает ряд преимуществ:",
+                items: [
+                    {
+                        title: "Профилактика инфекций",
+                        text: "Постоянная гигиена зон кормления и отдыха снижает риск развития опасных бактериальных заболеваний."
+                    },
+                    {
+                        title: "Снижение уровня стресса",
+                        text: "Чистый дом без резких посторонних запахов помогает любимцу чувствовать себя спокойно и безопасно."
+                    },
+                    {
+                        title: "Защита иммунитета",
+                        text: "Когда уборка проводится правильно, организм питомца не тратит ресурсы на борьбу с бытовыми токсинами и пылью."
+                    }
+                ],
+                outro: "Когда порядок наведен с умом, животные чувствуют себя спокойно, а квартира становится по-настоящему уютным и безопасным местом для каждого члена семьи. Правильная регулярная уборка — это долгая, активная и счастливая жизнь питомца и экономия на возможном лечении в будущем."
+            },
+            {
+                type: "figure",
+                image: {
+                    src: "/static/images/section/blog-article-content/blog-article-content-figure-1-placeholder.svg",
+                    alt: "Иллюстрация к блоку о пользе регулярной уборки для питомцев"
+                }
+            },
+            {
+                type: "list-section",
+                title: "Какие опасности для животного скрываются в грязном доме",
+                paragraphs: [
+                    "Если в углах копится грязь, дом перестает быть надежным убежищем для питомца. В своей среде обитания животные сталкиваются с пылью и мусором ежеминутно, и это часто бьет по их самочувствию. Здоровый питомец в чистом доме — это результат безопасной уборки, которая является актом заботы."
+                ],
+                listLead: "Чтобы в доме было безопасно для всех, нужно убрать:",
+                items: [
+                    {
+                        title: "Шерсть и пыль.",
+                        text: "Скопления волос и домашнего мусора часто становятся причиной кожных раздражений, зуда и проблем с дыханием у животных."
+                    },
+                    {
+                        title: "Бактерии и грибки.",
+                        text: "Влажные участки и остатки органики — идеальное место для размножения микробов, провоцирующих инфекции."
+                    },
+                    {
+                        title: "Остатки старого корма.",
+                        text: "Забытые под мебелью частицы еды быстро портятся и могут вызвать отравление, если животные решат ими «полакомиться»."
+                    },
+                    {
+                        title: "Паразитов.",
+                        text: "Пыльные плинтусы и ковры могут скрывать личинки блох или микроскопических клещей, поэтому глубокая уборка критически важна."
+                    },
+                    {
+                        title: "Застарелые запахи.",
+                        text: "Молекулы старых загрязнений заставляют животных нервничать или даже помечать территорию, нарушая комфорт в семье."
+                    }
+                ],
+                outro: "Хорошая уборка убирает все риски еще до того, как у питомца начнутся проблемы со здоровьем. Чистота в доме нужна не ради красоты, а чтобы создать условия, в которых животные будут жить долго и безопасно."
+            },
+            {
+                type: "list-section",
+                title: "Какие зоны в доме требуют регулярной уборки",
+                paragraphs: [
+                    "В каждой комнате есть свои секреты, поэтому уборка должна добираться даже до самых дальних углов. Больше всего внимания стоит уделять тем местам, где животные крутятся чаще всего. Чтобы дома было действительно безопасно, мало просто протереть пол — нужно тщательно пройтись по каждой зоне:"
+                ],
+                items: [
+                    {
+                        title: "Место кормления.",
+                        text: "Миски и подставки нужно очищать ежедневно, чтобы там не размножались патогенные микроорганизмы."
+                    },
+                    {
+                        title: "Зона туалета.",
+                        text: "Лотки и прилегающее пространство требуют тщательной дезинфекции составами, которые безопасно устраняют запахи."
+                    },
+                    {
+                        title: "Мягкая мебель и ковры.",
+                        text: "Здесь скапливается максимум шерсти и эпидермиса, поэтому уборка требует использования мощных пылесосов."
+                    },
+                    {
+                        title: "Подоконники и лежанки.",
+                        text: "Любимые места отдыха накапливают на себе пыль с улицы, которую необходимо регулярно и безопасно удалять."
+                    },
+                    {
+                        title: "Прихожая.",
+                        text: "В этой зоне животные чаще всего контактируют с уличной грязью и реагентами, которые мы приносим на обуви."
+                    }
+                ],
+                outro: "Когда все эти точки находятся под контролем, дом становится островком чистоты. Безопасная уборка позволяет хозяевам не беспокоиться о том, что любимец подхватит инфекцию в собственной спальне."
+            },
+            {
+                type: "figure",
+                image: {
+                    src: "/static/images/section/blog-article-content/blog-article-content-figure-2-placeholder.svg",
+                    alt: "Иллюстрация к блоку о безопасных средствах для уборки дома с животными"
+                }
+            },
+            {
+                type: "list-section",
+                title: "Какие средства подходят для домов с животными",
+                paragraphs: [
+                    "Главный принцип работы в доме, где есть питомцы — полное отсутствие токсичной химии в любом её проявлении. Безопасная уборка должна проводиться только теми средствами, которые не имеют в составе хлора, аммиака и агрессивных отдушек. Не стоит использовать:"
+                ],
+                items: [
+                    {
+                        title: "Продукты с хлором.",
+                        text: "Эти составы вызывают ожоги слизистых, а их запах крайне мучителен для чувствительного носа любого животного."
+                    },
+                    {
+                        title: "Средства с аммиаком и фосфатами.",
+                        text: "Такие компоненты могут вызвать серьезную аллергию или даже отравление, если животные оближут лапы после прогулки по полу."
+                    },
+                    {
+                        title: "Химию с синтетическими ароматизаторами.",
+                        text: "Сильные запахи часто сбивают питомцев с толку и вызывают у них чувство тревоги."
+                    }
+                ],
+                outro: "Для наведения порядка лучше выбирать специальные эко-средства, чтобы всё прошло максимально безопасно. Такая уборка не доставит хлопот даже чувствительным аллергикам, маленьким щенкам или пожилым собакам. Только натуральный состав гарантирует, что животные будут дышать безопасным чистым воздухом, а в доме не останется химии."
+            },
+            {
+                type: "section",
+                title: "Регулярность клининга и его влияние на здоровье",
+                paragraphs: [
+                    "Если следить за чистотой постоянно, ваши животные будут оставаться бодрыми и активными долгие годы. Регулярный клининг не дает копиться микробам и пыли, которые незаметно портят здоровье и подрывают иммунитет. Если наводить чистоту безопасно, можно забыть про проблемы с самочувствием питомца.",
+                    "Когда график плотный, поддерживать идеальный порядок своими силами бывает накладно. Чтобы уборка прошла по всем правилам и была на сто процентов безопасной для питомцев, можно обратиться к профессионалам. Опытные мастера подготовят дом так, чтобы животные чувствовали себя отлично."
+                ]
+            }
+        ]
+    }
+
+-
+    var blogArticleContentData = typeof blogArticleContentSection === "object" && blogArticleContentSection ? blogArticleContentSection : {}
+    var blogArticleContentOptions = Object.assign({}, blogArticleContentDefaults, blogArticleContentData)
+    var blogArticleContentBlocks = Array.isArray(blogArticleContentOptions.blocks) && blogArticleContentOptions.blocks.length ? blogArticleContentOptions.blocks : blogArticleContentDefaults.blocks
+
+section.blog-article-content
+    ._container
+        .blog-article-content__wrapper
+            article.blog-article-content__article.entry-content
+                each articleBlock in blogArticleContentBlocks
+                    +renderArticleBlock(articleBlock)

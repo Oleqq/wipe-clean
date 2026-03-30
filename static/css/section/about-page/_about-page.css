@@ -1,0 +1,28 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.about-page .services-preview,
+.about-page .reviews-preview,
+.about-page .order-cta,
+.about-page .contacts,
+.about-page .team-preview,
+.about-page .why-us {
+  min-width: 0;
+}

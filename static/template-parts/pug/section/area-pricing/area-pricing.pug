@@ -25,7 +25,7 @@
             },
             {
                 title: "Крупный инвентарь: как организуем",
-                text: "Бытовая химия входит в стоимость услуги. Для масштабных задач (пылесос, стремянка и подобное) предлагаем два варианта: использовать ваш инвентарь или наш. Доставка нашего оборудования стоит 3 000 рублей в Москве и 4 000 рублей в области. Точные условия оговариваем при бронировании.",
+                text: "Бытовая химия входит в стоимость услуги. Для масштабных задач, где нужен пылесос, стремянка и другой инвентарь, предлагаем два варианта: использовать ваш комплект или наш. Условия и логистику заранее согласовываем при бронировании.",
                 accents: [
                     "По Москве - 3000 рублей",
                     "По МО - 4000 рублей"
@@ -44,18 +44,17 @@ section.area-pricing
     ._container
         .area-pricing__wrapper
             .area-pricing__main
+                .area-pricing__head.ui-section-head.ui-section-head--compact
+                    h2.area-pricing__title.ui-title= areaPricingOptions.title
+                    p.area-pricing__text.ui-text= areaPricingOptions.text
                 .area-pricing__visual(aria-hidden="true")
                     .area-pricing__visual-media
                         img(src=areaPricingImage.src alt=areaPricingImage.alt loading="lazy")
-                .area-pricing__content
-                    .area-pricing__head.ui-section-head.ui-section-head--compact
-                        h2.area-pricing__title.ui-title= areaPricingOptions.title
-                        p.area-pricing__text.ui-text= areaPricingOptions.text
-                    ul.area-pricing__list.ui-price-list
-                        each item in areaPricingOptions.items
-                            li.area-pricing__row.ui-price-list__row
-                                span.area-pricing__label.ui-price-list__label= item.label
-                                span.area-pricing__value.ui-price-list__value= item.value
+                ul.area-pricing__list.ui-price-list
+                    each item in areaPricingOptions.items
+                        li.area-pricing__row.ui-price-list__row
+                            span.area-pricing__label.ui-price-list__label= item.label
+                            span.area-pricing__value.ui-price-list__value= item.value
             .area-pricing__cards
                 each card in areaPricingOptions.cards
                     .area-pricing__card.ui-card.ui-card--compact

@@ -152,11 +152,13 @@ section.before-after-results
                     .before-after-results__item(data-before-after-item data-item-index=index)
                         +beforeAfterCard(item)
 
-            button.before-after-results__more.ui-btn(
-                class=beforeAfterResultsButton.className
-                type="button"
-                data-before-after-more
-            )
-                span.ui-btn__content
-                    span.before-after-results__more-label.before-after-results__more-label--default= beforeAfterResultsButton.label
-                    span.before-after-results__more-label.before-after-results__more-label--loading= beforeAfterResultsButton.loadingLabel
+            .before-after-results__footer(data-before-after-footer)
+                .before-after-results__loader(data-before-after-loader aria-hidden="true")
+                    img(src="/static/images/section/blog-archive/blog-archive-loader.svg" alt="" loading="lazy")
+                button.before-after-results__more.ui-btn(
+                    class=beforeAfterResultsButton.className
+                    type="button"
+                    data-before-after-more
+                )
+                    span.ui-btn__content
+                        span.before-after-results__more-label.before-after-results__more-label--default(data-reveal-ignore)= beforeAfterResultsButton.label

@@ -1,14 +1,7 @@
+@use "../../global/core" as *;
+
 .company-preview {
-    padding: 116px 0 100px;
-
-    @include below-tablet {
-        padding-bottom: 88px;
-    }
-
-    @include below-mobile {
-        padding-top: 0;
-        padding-bottom: 64px;
-    }
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -58,6 +51,7 @@
 
     &__title {
         max-width: 630px;
+        text-transform: none;
 
         @include below-mobile {
             font-size: 24px;
@@ -103,11 +97,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: scaleX(-1);
         }
     }
 
     &__brand-card {
-        position: absolute;
+       
         top: calc(50% - 120px);
         left: 0;
         width: 328px;
@@ -116,11 +111,12 @@
         background: var(--card-fill-2, linear-gradient(180deg, #FFF 0%, #FFFCF8 100%));
         border-radius: 28px;
         @include adaptive-value(border-radius, 28px, 20px, $bp-desktop, $bp-mobile);
+        @include ui-card-hover-outline();
         
-
+         position: absolute;
         @include below-tablet {
             top: 0;
-            left: 50%;
+            left: 49%;
             width: 180px;
             transform: translateX(-50%);
         }
@@ -135,10 +131,11 @@
     &__benefits {
         width: 100%;
         min-width: 0;
+        overflow: visible;
 
-        @include below-mobile {
-            overflow: hidden;
-        }
+        // @include below-mobile {
+        //     overflow: hidden;
+        // }
     }
 
     &__benefits-track {
@@ -167,3 +164,4 @@
         }
     }
 }
+

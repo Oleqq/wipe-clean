@@ -1,0 +1,12 @@
+﻿extends ../layouts/default
+
+include ../components/contact-panel/contact-panel
+
+block content
+    include ../data/pages/policy-data
+    .document-page.document-page--policy
+        include ../section/document-content/document-content
+        section.document-page__contacts
+            ._container
+                .document-page__contacts-wrapper
+                    +contactPanel(policyContactPanelData)

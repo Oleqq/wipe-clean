@@ -1,14 +1,12 @@
+@use "../../global/core" as *;
+
 .service-price {
-    padding: 40px 0;
+    @include section-padding(40px, 40px, 32px, 32px, 25px, 25px);
 
-    @include below-tablet {
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-
-    @include below-mobile {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    @media (min-width:1440px) {
+        .ui-check-item__text {
+            white-space: nowrap;
+        }
     }
 
     &__wrapper {
@@ -145,6 +143,7 @@
     }
 
     &__accent {
+        font-weight: 700;
         @include below-mobile {
             font-size: 16px;
             letter-spacing: -0.04em;
@@ -163,3 +162,4 @@
         }
     }
 }
+

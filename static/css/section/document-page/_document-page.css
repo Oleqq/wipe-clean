@@ -1,0 +1,40 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.document-page__contacts {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .document-page__contacts {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 650px) {
+  .document-page__contacts {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.document-page__contacts-wrapper {
+  display: -ms-grid;
+  display: grid;
+}

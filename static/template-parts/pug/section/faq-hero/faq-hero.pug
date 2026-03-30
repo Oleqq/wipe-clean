@@ -1,0 +1,26 @@
+-
+    var faqHeroData = typeof faqHeroData !== "undefined" ? faqHeroData : {
+        kicker: "FAQ",
+        title: "Ответы на вопросы о клининговых услугах",
+        text: "У того, кто хочет заказать клининг в Москве всегда появляются вопросы и сомнения, и это нормально. Мы решили не ходить вокруг да около. Мы прямо отвечаем на то, что чаще всего беспокоит владельцев квартир. Так вы сразу поймете, как ведет дела наша клининговая компания.",
+        button: {
+            label: "Ознакомиться с услугами",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        imageSrc: "/static/images/section/faq-hero/faq-hero-question-mark.png",
+        imageAlt: "Иллюстрация к вопросам о клининговых услугах"
+    }
+
+section.faq-hero
+    ._container
+        .faq-hero__wrapper
+            .faq-hero__content
+                .faq-hero__head.ui-section-head
+                    span.ui-kicker.faq-hero__kicker= faqHeroData.kicker
+                    h1.ui-title.ui-title--hero.faq-hero__title= faqHeroData.title
+                p.ui-text.faq-hero__text= faqHeroData.text
+                a.ui-btn.faq-hero__action(class=faqHeroData.button.className href=faqHeroData.button.href)
+                    span.ui-btn__content= faqHeroData.button.label
+            .faq-hero__media(aria-hidden="true")
+                img(src=faqHeroData.imageSrc alt="" loading="eager" fetchpriority="high")

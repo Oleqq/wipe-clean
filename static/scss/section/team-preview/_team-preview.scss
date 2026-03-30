@@ -1,15 +1,8 @@
+@use "../../global/core" as *;
+
 .team-preview {
-    padding: 100px 0 100px;
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
 
-    @include below-tablet {
-        padding-top: 80px;
-        padding-bottom: 88px;
-    }
-
-    @include below-mobile {
-        padding-top: 64px;
-        padding-bottom: 64px;
-    }
 
     &__wrapper {
         display: grid;
@@ -61,6 +54,10 @@
         width: 100%;
         min-width: 0;
         overflow: hidden;
+
+        @include below-mobile {
+            overflow: visible;
+        }
     }
 
     &__track {

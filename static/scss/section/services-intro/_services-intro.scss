@@ -1,14 +1,7 @@
+@use "../../global/core" as *;
+
 .services-intro {
-    padding: 24px 0 80px;
-
-    @include below-tablet {
-        padding-top: 20px;
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 64px;
-    }
+    @include first-screen-padding(112px, 40px, 88px, 36px, 88px, 25px);
 
     &__wrapper {
         display: grid;
@@ -19,15 +12,12 @@
     &__hero {
         display: grid;
         grid-template-columns: minmax(0, 650px) minmax(0, 619px);
-        grid-template-areas:
-            "head media"
-            "content media";
+        grid-template-areas: "copy media";
         justify-content: space-between;
         align-items: start;
         column-gap: 30px;
-        row-gap: 48px;
 
-        @include adaptive-value(row-gap, 48px, 20px, $bp-desktop, $bp-mobile);
+        @include adaptive-value(column-gap, 30px, 20px, $bp-desktop, $bp-mobile);
 
         @include below-desktop {
             grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
@@ -37,17 +27,28 @@
         @include below-tablet {
             grid-template-columns: 1fr;
             grid-template-areas:
-                "head"
+                "copy"
                 "media"
                 "content";
             row-gap: 20px;
         }
     }
 
-    &__hero-head {
-        grid-area: head;
+    &__hero-copy {
+        grid-area: copy;
+        display: grid;
+        align-content: start;
+        gap: 20px;
         max-width: 650px;
-        padding-top: 28px;
+
+        @include below-tablet {
+            display: contents;
+        }
+    }
+
+    &__hero-head {
+        max-width: 650px;
+        padding-top: 0;
         gap: 20px;
 
         @include below-tablet {
@@ -101,7 +102,7 @@
 
     &__hero-decor {
         top: 48px;
-        right: 0;
+        right: 150px;
         width: min(58.32%, 361px);
         max-width: 361px;
         opacity: 0.32;
@@ -109,19 +110,19 @@
 
         @include below-desktop {
             top: 70px;
-            right: 12px;
+            // right: 12px;
             width: min(50%, 280px);
         }
 
         @include below-tablet {
             top: 28px;
-            right: 48px;
+            // right: 48px;
             width: min(58.4vw, 210px);
             max-width: 210px;
         }
 
         @include below-mobile {
-            right: 42px;
+            right: 100px;
         }
     }
 
@@ -174,9 +175,12 @@
 
     &__hero-content {
         display: grid;
-        grid-area: content;
         max-width: 650px;
         gap: 48px;
+
+        @include below-tablet {
+            grid-area: content;
+        }
 
         @include below-tablet {
             max-width: none;
@@ -353,7 +357,7 @@
         width: 100%;
         min-width: 0;
         margin-top: 20px;
-        overflow: hidden;
+        overflow: visible;
     }
 
     &__slider-track {
@@ -392,6 +396,11 @@
         @include below-mobile {
             grid-template-columns: 1fr;
             gap: 16px;
+
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -400,6 +409,7 @@
 
         @include below-mobile {
             width: 100%;
+            
         }
     }
 

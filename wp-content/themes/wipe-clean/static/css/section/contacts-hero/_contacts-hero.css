@@ -1,0 +1,202 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.contacts-hero {
+  padding-top: 112px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .contacts-hero {
+    padding-top: 88px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero {
+    padding-top: 88px;
+    padding-bottom: 25px;
+  }
+}
+.contacts-hero__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 60px;
+}
+@media (max-width: 991px) {
+  .contacts-hero__wrapper {
+    gap: 40px;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__wrapper {
+    gap: 24px;
+  }
+}
+.contacts-hero__layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 590px) 80px minmax(315px, 650px);
+  grid-template-columns: minmax(0, 590px) minmax(315px, 650px);
+  gap: 80px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+@media (max-width: 1199px) {
+  .contacts-hero__layout {
+    gap: 48px;
+  }
+}
+@media (max-width: 991px) {
+  .contacts-hero__layout {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__layout {
+    gap: 20px;
+  }
+}
+.contacts-hero__head {
+  max-width: 590px;
+}
+@media (max-width: 650px) {
+  .contacts-hero__head {
+    gap: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__title {
+    font-size: 32px;
+  }
+}
+.contacts-hero__text {
+  max-width: 590px;
+}
+@media (max-width: 650px) {
+  .contacts-hero__text {
+    font-size: 14px;
+  }
+}
+.contacts-hero__form {
+  display: -ms-grid;
+  display: grid;
+  gap: 24px;
+}
+@media (max-width: 650px) {
+  .contacts-hero__form {
+    gap: 16px;
+  }
+}
+.contacts-hero__fields {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .contacts-hero__fields {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__fields {
+    gap: 12px;
+  }
+}
+.contacts-hero__field {
+  min-width: 0;
+}
+.contacts-hero__field .ui-field__label {
+  margin-left: 18px;
+}
+.contacts-hero__field .ui-field__control {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+.contacts-hero__actions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 315px) 20px 315px;
+  grid-template-columns: minmax(0, 315px) 315px;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 768px) {
+  .contacts-hero__actions {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__actions {
+    gap: 16px;
+  }
+}
+.contacts-hero__checkbox {
+  max-width: 315px;
+}
+@media (max-width: 768px) {
+  .contacts-hero__checkbox {
+    max-width: none;
+  }
+}
+.contacts-hero__submit {
+  width: 100%;
+}
+.contacts-hero__submit-text--mobile {
+  display: none;
+}
+@media (max-width: 650px) {
+  .contacts-hero__submit-text--desktop {
+    display: none;
+  }
+  .contacts-hero__submit-text--mobile {
+    display: inline;
+  }
+}
+.contacts-hero__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 991px) {
+  .contacts-hero__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 650px) {
+  .contacts-hero__cards {
+    gap: 12px;
+  }
+}
+.contacts-hero__card {
+  height: 100%;
+}

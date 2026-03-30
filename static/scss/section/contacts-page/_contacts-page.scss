@@ -1,0 +1,60 @@
+@use "../../global/core" as *;
+
+.contacts-page {
+    &__requisites-wave {
+        position: relative;
+        background-color: $color-wave;
+        isolation: isolate;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        &::before {
+            top: 0;
+            height: 100px;
+            background-image: url("/static/images/section/company-requisites-band/company-requisites-band-wave-top.svg");
+            transform: translate(-50%, -100%);
+        }
+
+        &::after {
+            bottom: 0;
+            height: 100px;
+            background-image: url("/static/images/section/company-requisites-band/company-requisites-band-wave-bottom.svg");
+            transform: translate(-50%, 100%);
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        @include below-tablet {
+            &::before,
+            &::after {
+                height: 72px;
+            }
+        }
+
+        @include below-mobile {
+            &::before,
+            &::after {
+                height: 40px;
+            }
+        }
+    }
+
+    .reviews-preview {
+        min-width: 0;
+    }
+}
+

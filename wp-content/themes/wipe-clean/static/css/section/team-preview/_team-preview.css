@@ -1,0 +1,114 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.team-preview {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .team-preview {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 650px) {
+  .team-preview {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.team-preview__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+}
+@media (max-width: 650px) {
+  .team-preview__wrapper {
+    gap: 20px;
+  }
+}
+.team-preview__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+}
+@media (max-width: 650px) {
+  .team-preview__top {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+  }
+}
+.team-preview__head {
+  max-width: 650px;
+}
+@media (max-width: 650px) {
+  .team-preview__head {
+    gap: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .team-preview__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .team-preview__text {
+    font-size: 14px;
+  }
+}
+.team-preview__nav {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.team-preview__slider {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+@media (max-width: 650px) {
+  .team-preview__slider {
+    overflow: visible;
+  }
+}
+.team-preview__track {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.team-preview__slide {
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 0;
+}
+@media (max-width: 650px) {
+  .team-preview__slide {
+    width: 280px;
+  }
+}

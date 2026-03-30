@@ -1,60 +1,17 @@
+@use "./core" as *;
+
 .blog-card {
-    --blog-card-motion: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    --ui-card-outline-motion: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    --ui-card-outline-contour-speed: 3.4s;
+    --blog-card-motion: var(--ui-card-outline-motion);
     --blog-card-sweep-motion: 1.1s cubic-bezier(0.19, 1, 0.22, 1);
-    --blog-card-contour-speed: 3.4s;
-    position: relative;
     height: 100%;
     width: 100%;
-    isolation: isolate;
-    overflow: hidden;
-    transition: transform var(--blog-card-motion), box-shadow var(--blog-card-motion);
     @include ui-card-surface();
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: -62%;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0;
-        background:
-            conic-gradient(
-                from 180deg,
-                rgba($color-primary, 0) 0deg,
-                rgba($color-primary, 0) 84deg,
-                rgba($color-primary, 0.1) 106deg,
-                rgba($color-primary, 0.75) 126deg,
-                rgba($color-accent, 0.28) 142deg,
-                rgba($color-primary, 0.14) 160deg,
-                rgba($color-primary, 0) 196deg,
-                rgba($color-primary, 0) 360deg
-            );
-        filter: blur(10px);
-        transform: rotate(0deg);
-        transition: opacity var(--blog-card-motion);
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 2px;
-        border-radius: calc(#{$radius-2xl} - 2px);
-        background: linear-gradient(180deg, $color-surface 0%, $color-bg-soft 100%);
-        pointer-events: none;
-        z-index: 1;
-    }
+    @include ui-card-hover-outline();
 
     @media (hover: hover) {
         &:hover {
-            transform: translate3d(0, -6px, 0);
-            box-shadow: 0 18px 48px rgba(21, 15, 49, 0.11);
-
-            &::before {
-                opacity: 1;
-                animation: blog-card-contour-run var(--blog-card-contour-speed) linear infinite;
-            }
-
             .blog-card__inner::before {
                 opacity: 1;
                 transform: translate3d(0, 0, 0) scale(1);
@@ -261,6 +218,7 @@
         gap: 20px;
         min-width: 0;
         padding: 0 8px;
+        height: 100%;
 
         @include below-mobile {
             gap: 16px;
@@ -284,6 +242,7 @@
         margin: 0;
         @include text-title(18px);
         transition: color var(--blog-card-motion);
+        padding-top: 8px;
 
         @include below-mobile {
             font-size: 16px;
@@ -429,17 +388,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        transition: none;
-
-        &::before {
-            transition: none;
-            animation: none;
-        }
-
-        &::after {
-            transition: none;
-        }
-
         &__inner,
         &__media,
         &__media::before,
@@ -453,24 +401,15 @@
         &__link-icon::before,
         &__link-icon-inner,
         &__link-icon-inner img {
-            transition: none;
+            transition-duration: var(--motion-duration-fast);
         }
 
         &__inner {
             &::before,
             &::after {
-                transition: none;
+                transition-duration: var(--motion-duration-fast);
             }
         }
     }
 }
 
-@keyframes blog-card-contour-run {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}

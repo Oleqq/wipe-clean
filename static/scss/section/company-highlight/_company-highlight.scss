@@ -1,14 +1,10 @@
+@use "../../global/core" as *;
+
 .company-highlight {
-    padding: 20px 0 100px;
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
 
-    @include below-tablet {
-        padding-top: 24px;
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-top: 50px;
-        padding-bottom: 40px;
+    h2 {
+        text-transform: none;
     }
 
     &__wrapper {
@@ -154,40 +150,16 @@
     }
 
     &__media {
-        position: relative;
         order: 1;
         min-width: 0;
-        min-height: 501px;
 
         @include below-tablet {
             order: 2;
         }
-
-        @include below-mobile {
-            min-height: 277px;
-        }
     }
 
-    &__media-main {
+    &__media-image {
         width: 100%;
-        margin-top: 73px;
-
-        @include below-mobile {
-            margin-top: 40px;
-        }
-
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    &__media-badge {
-        position: absolute;
-        top: 0;
-        left: 27.85%;
-        width: 31.23%;
 
         img {
             display: block;
@@ -208,3 +180,4 @@
         transform: translateY(0);
     }
 }
+

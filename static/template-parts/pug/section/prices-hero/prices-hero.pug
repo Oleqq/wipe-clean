@@ -1,3 +1,5 @@
+include ../../includes/media.pug
+
 -
     var pricesHeroData = typeof pricesHeroData !== "undefined" ? pricesHeroData : {
         kicker: "Цены наших услуг",
@@ -10,7 +12,11 @@
         },
         media: {
             leftImageSrc: "/static/images/section/prices-hero/prices-hero-left.png",
-            rightImageSrc: "/static/images/section/prices-hero/prices-hero-right.png"
+            leftImageWidth: 1436,
+            leftImageHeight: 1952,
+            rightImageSrc: "/static/images/section/prices-hero/prices-hero-right.png",
+            rightImageWidth: 2392,
+            rightImageHeight: 2476
         }
     }
 
@@ -25,6 +31,24 @@ section.prices-hero
                     span.ui-btn__content= pricesHeroData.button.label
             .prices-hero__media(aria-hidden="true")
                 .prices-hero__image.prices-hero__image--left
-                    img(src=pricesHeroData.media.leftImageSrc alt="" loading="eager" fetchpriority="high")
+                    +mediaImage({
+                        src: pricesHeroData.media.leftImageSrc,
+                        decorative: true,
+                        width: pricesHeroData.media.leftImageWidth,
+                        height: pricesHeroData.media.leftImageHeight,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 56vw, 32vw"
+                    })
                 .prices-hero__image.prices-hero__image--right
-                    img(src=pricesHeroData.media.rightImageSrc alt="" loading="eager" fetchpriority="high")
+                    +mediaImage({
+                        src: pricesHeroData.media.rightImageSrc,
+                        decorative: true,
+                        width: pricesHeroData.media.rightImageWidth,
+                        height: pricesHeroData.media.rightImageHeight,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 58vw, 34vw"
+                    })

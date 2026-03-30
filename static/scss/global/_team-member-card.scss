@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 .team-member-card {
     display: grid;
     gap: 12px;
@@ -5,6 +7,7 @@
     width: 100%;
     padding: 8px;
     @include ui-card-surface($radius-xl);
+    @include ui-card-hover-outline($radius-xl);
 
     &__media {
         position: relative;
@@ -40,3 +43,4 @@
         @include text-title(16px);
     }
 }
+

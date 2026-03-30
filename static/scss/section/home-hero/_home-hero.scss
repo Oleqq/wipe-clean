@@ -1,14 +1,7 @@
+@use "../../global/core" as *;
+
 .home-hero {
-    padding: 24px 0 100px;
-
-    @include below-tablet {
-        padding-top: 20px;
-        padding-bottom: 80px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 64px;
-    }
+    @include first-screen-padding(112px, 40px, 88px, 32px, 88px, 25px);
 
     &__wrapper {
         display: grid;
@@ -45,10 +38,17 @@
         @include below-tablet {
             max-width: none;
         }
+
+        @include below-mobile {
+            display: contents;
+        }
     }
 
     &__text {
         max-width: 645px;
+        @media (max-width:467px) {
+            font-size: 14px;
+        }
     }
 
     &__visual {
@@ -67,6 +67,7 @@
         }
 
         @include below-mobile {
+            order: 3;
             min-height: 370px;
         }
 
@@ -221,9 +222,11 @@
 
     &__calculator {
         padding: 20px;
-        @include ui-card-surface();
+        // @include ui-card-surface();
+        // @include ui-card-hover-outline();
 
         @include below-mobile {
+            order: 4;
             padding: 16px;
             border-radius: $radius-xl;
         }
@@ -258,9 +261,10 @@
     &__area-slider {
         min-width: 0;
         overflow: visible;
+        margin: unset;
 
         @include below-mobile {
-            overflow: hidden;
+            overflow: visible;
         }
     }
 
@@ -324,27 +328,14 @@
         
     }
 
-    &__select-control {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        cursor: pointer;
-        text-align: left;
-    }
+    &__select {
+        min-width: 0;
 
-    &__select-value {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    &__select-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: none;
-        color: $color-text-soft;
+        select {
+            min-width: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
     &__actions {
@@ -420,3 +411,4 @@
         }
     }
 }
+

@@ -1,13 +1,7 @@
+@use "../../global/core" as *;
+
 .price-advantages {
-    padding: 0 0 80px;
-
-    @include below-tablet {
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 64px;
-    }
+    @include section-padding(40px, 40px, 36px, 36px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -49,10 +43,12 @@
 
     &__slider {
         min-width: 0;
-        overflow: visible;
+       overflow: hidden;
+       margin: 0;
 
         @include below-mobile {
-            overflow: hidden;
+           
+              overflow: visible;
         }
     }
 
@@ -81,6 +77,14 @@
             height: 100%;
         }
 
+        .feature-card--stacked {
+            gap: 12px;
+
+            .feature-card__head {
+                gap: 14px;
+            }
+        }
+
         @include below-mobile {
             box-sizing: border-box;
             width: 280px;
@@ -88,6 +92,15 @@
             .feature-card {
                 min-height: 298px;
             }
+
+            .feature-card--stacked {
+                gap: 10px;
+
+                .feature-card__head {
+                    gap: 12px;
+                }
+            }
         }
     }
 }
+

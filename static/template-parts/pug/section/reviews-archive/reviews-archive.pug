@@ -1,0 +1,92 @@
+include ../../components/review-card/review-card
+
+-
+    var reviewsArchiveDefaults = {
+        kicker: "Отзывы и рецензии",
+        title: "Отзывы наших клиентов",
+        topAction: {
+            label: "Оставить отзыв",
+            href: "#"
+        },
+        loadMoreLabel: "Больше отзывов",
+        initialDesktop: 8,
+        initialMobile: 6,
+        stepDesktop: 2,
+        stepMobile: 3,
+        items: [
+            {
+                author: "Анна Морозова",
+                text: "Очень понравился подход команды: приехали вовремя, уточнили детали по квартире и аккуратно прошли все зоны, о которых договаривались. После уборки дома действительно стало легче дышать, а кухня и ванная выглядели как после ремонта."
+            },
+            {
+                author: "Игорь Сафонов",
+                text: "Заказывали уборку перед приездом гостей и остались довольны. Специалисты работали спокойно, без суеты, при этом заметно внимательно относились к мелочам. Отдельно понравилось, что после себя все оставили в полном порядке."
+            },
+            {
+                author: "Марина К.",
+                text: "У нас дома маленький ребенок, поэтому особенно важно было подобрать деликатные средства. Команда все учла, объяснила, чем будет пользоваться, и действительно привела квартиру в порядок без резких запахов и лишней химии."
+            },
+            {
+                author: "Сергей Лаптев",
+                text: "После уборки офис стал выглядеть заметно свежее. Проработали полы, стеклянные перегородки, санузлы и кухонную зону. Руководству понравился результат, поэтому уже договорились о регулярном графике."
+            },
+            {
+                author: "Елена Жукова",
+                text: "Нужно было срочно привести квартиру в порядок после отъезда арендаторов. Работу выполнили быстро и без лишних вопросов, а самое главное, убрали даже те места, куда обычно никто не заглядывает. Результат реально порадовал."
+            },
+            {
+                author: "Артем Власов",
+                text: "Понравилась коммуникация: до выезда все четко согласовали, а на месте сотрудники просто сделали свою работу качественно и спокойно. Уборка получилась именно такой, какую ожидали, без неприятных сюрпризов."
+            },
+            {
+                author: "Ольга Демина",
+                text: "Обращались после семейного праздника, когда квартира была в полном беспорядке. Команда аккуратно и методично все восстановила, а особенно впечатлило, как бережно отнеслись к текстилю и светлым поверхностям."
+            },
+            {
+                author: "Николай Рябов",
+                text: "Редко пишу отзывы, но здесь действительно есть за что поблагодарить. Все было организовано профессионально: без опозданий, без спешки и с очень достойным итоговым качеством. Будем обращаться повторно."
+            },
+            {
+                author: "Виктория Левина",
+                text: "Генеральная уборка прошла отлично. Особенно понравилось, что команда не пыталась сделать все формально, а реально проверяла результат по ходу работы. После окончания квартира выглядела свежо и ухоженно."
+            },
+            {
+                author: "Максим Орлов",
+                text: "Заказывали уборку дома после долгого отсутствия. Пыли было много, но ребята справились очень достойно. Понравилось уважительное отношение, аккуратная работа и то, что можно спокойно доверить объект без постоянного контроля."
+            }
+        ]
+    }
+
+-
+    var reviewsArchiveData = typeof reviewsArchiveSection === "object" && reviewsArchiveSection ? reviewsArchiveSection : {}
+    var reviewsArchiveTopActionData = typeof reviewsArchiveData.topAction === "object" && reviewsArchiveData.topAction ? reviewsArchiveData.topAction : {}
+    var reviewsArchiveOptions = Object.assign({}, reviewsArchiveDefaults, reviewsArchiveData)
+    var reviewsArchiveTopAction = Object.assign({}, reviewsArchiveDefaults.topAction, reviewsArchiveTopActionData)
+    var reviewsArchiveItems = Array.isArray(reviewsArchiveData.items) && reviewsArchiveData.items.length ? reviewsArchiveData.items : reviewsArchiveDefaults.items
+
+section.reviews-archive(
+    data-reviews-archive
+    data-initial-desktop=reviewsArchiveOptions.initialDesktop
+    data-initial-mobile=reviewsArchiveOptions.initialMobile
+    data-step-desktop=reviewsArchiveOptions.stepDesktop
+    data-step-mobile=reviewsArchiveOptions.stepMobile
+)
+    ._container
+        .reviews-archive__wrapper
+            .reviews-archive__intro
+                .reviews-archive__head
+                    .reviews-archive__kicker= reviewsArchiveOptions.kicker
+                    h1.reviews-archive__title.ui-title.ui-title--hero= reviewsArchiveOptions.title
+                a.ui-btn.ui-btn--primary.reviews-archive__top-action(href=reviewsArchiveTopAction.href)
+                    span.ui-btn__content= reviewsArchiveTopAction.label
+
+            .reviews-archive__grid
+                each item, index in reviewsArchiveItems
+                    .reviews-archive__item(data-reviews-archive-item data-item-index=index)
+                        +reviewCard(item)
+
+            .reviews-archive__footer(data-reviews-archive-footer)
+                .reviews-archive__loader(data-reviews-archive-loader aria-hidden="true")
+                    img(src="/static/images/section/blog-archive/blog-archive-loader.svg" alt="" loading="lazy")
+                button.reviews-archive__more.ui-btn.ui-btn--primary(type="button" data-reviews-archive-more)
+                    span.ui-btn__content= reviewsArchiveOptions.loadMoreLabel

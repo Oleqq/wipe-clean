@@ -1,0 +1,56 @@
+mixin mediaImage(config)
+    -
+        var mediaConfig = config || {}
+        var mediaImageAttrs = {
+            src: mediaConfig.src || "",
+            alt: mediaConfig.decorative ? "" : (mediaConfig.alt || ""),
+            loading: mediaConfig.loading || "lazy",
+            decoding: mediaConfig.decoding || "async"
+        }
+
+        if (mediaConfig.className) {
+            mediaImageAttrs.class = mediaConfig.className
+        }
+
+        if (mediaConfig.width) {
+            mediaImageAttrs.width = mediaConfig.width
+        }
+
+        if (mediaConfig.height) {
+            mediaImageAttrs.height = mediaConfig.height
+        }
+
+        if (mediaConfig.fetchpriority) {
+            mediaImageAttrs.fetchpriority = mediaConfig.fetchpriority
+        }
+
+        if (mediaConfig.srcset) {
+            mediaImageAttrs.srcset = mediaConfig.srcset
+        }
+
+        if (mediaConfig.sizes) {
+            mediaImageAttrs.sizes = mediaConfig.sizes
+        }
+
+        if (mediaConfig.decorative) {
+            mediaImageAttrs["aria-hidden"] = "true"
+        }
+
+        var hasPictureSources = Boolean(mediaConfig.webpSrc || mediaConfig.webpSrcset || mediaConfig.sourceSrcset)
+
+    if hasPictureSources
+        picture(class=mediaConfig.pictureClassName)
+            if mediaConfig.webpSrc || mediaConfig.webpSrcset
+                source(
+                    type="image/webp"
+                    srcset=mediaConfig.webpSrcset || mediaConfig.webpSrc
+                    sizes=mediaConfig.sizes || null
+                )
+            if mediaConfig.sourceSrcset
+                source(
+                    srcset=mediaConfig.sourceSrcset
+                    sizes=mediaConfig.sizes || null
+                )
+            img&attributes(mediaImageAttrs)
+    else
+        img&attributes(mediaImageAttrs)

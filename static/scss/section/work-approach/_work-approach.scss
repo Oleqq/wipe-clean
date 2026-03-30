@@ -1,13 +1,7 @@
+@use "../../global/core" as *;
+
 .work-approach {
-    padding: 0 0 80px;
-
-    @include below-tablet {
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 56px;
-    }
+    @include section-padding(40px, 40px, 36px, 36px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -42,10 +36,11 @@
 
     &__slider {
         min-width: 0;
-        overflow: visible;
-
+        
+        margin: 0;
+        overflow: hidden;
         @include below-mobile {
-            overflow: hidden;
+            overflow: visible;
         }
     }
 
@@ -83,3 +78,4 @@
         }
     }
 }
+

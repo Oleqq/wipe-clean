@@ -1,3 +1,5 @@
+include ../../includes/media.pug
+
 mixin galleryPreviewItem(item, isClone)
     -
         var itemClassName = "gallery-preview__item";
@@ -36,7 +38,17 @@ mixin galleryPreviewItem(item, isClone)
 
     a&attributes(itemAttrs)
         span.gallery-preview__item-media
-            img(src=item.src alt=item.alt loading="lazy")
+            +mediaImage({
+                src: item.src,
+                srcset: item.srcset,
+                webpSrcset: item.webpSrcset,
+                alt: item.alt,
+                width: item.width,
+                height: item.height,
+                loading: "lazy",
+                decoding: "async",
+                sizes: "(max-width: 650px) 62vw, 22vw"
+            })
         if item.type === "video"
             span.gallery-preview__item-badge(aria-hidden="true")
                 img(src="/static/images/section/gallery-preview/gallery-play.svg" alt="")

@@ -1,0 +1,36 @@
+@use "./core" as *;
+
+:root {
+    --motion-duration-fast: 0.22s;
+    --motion-duration-base: 0.32s;
+    --motion-duration-slow: 0.52s;
+    --motion-duration-reveal: 1.38s;
+    --motion-ease-standard: cubic-bezier(0.18, 0.88, 0.24, 1);
+    --motion-ease-decelerate: cubic-bezier(0.12, 0.82, 0.2, 1);
+    --motion-ease-emphasis: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --motion-stagger-step: 148ms;
+    --motion-distance-xs: 8px;
+    --motion-distance-sm: 16px;
+    --motion-distance-md: 24px;
+    --motion-distance-lg: 34px;
+    --motion-blur-sm: 5px;
+    --motion-blur-md: 8px;
+    --motion-blur-lg: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --motion-duration-fast: 0.16s;
+        --motion-duration-base: 0.22s;
+        --motion-duration-slow: 0.3s;
+        --motion-duration-reveal: 0.5s;
+        --motion-stagger-step: 32ms;
+        --motion-distance-xs: 0px;
+        --motion-distance-sm: 2px;
+        --motion-distance-md: 4px;
+        --motion-distance-lg: 6px;
+        --motion-blur-sm: 0px;
+        --motion-blur-md: 0px;
+        --motion-blur-lg: 0px;
+    }
+}

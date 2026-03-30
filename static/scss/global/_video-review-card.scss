@@ -1,0 +1,88 @@
+@use "./core" as *;
+
+.video-review-card {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    text-decoration: none;
+    @include ui-card-surface();
+    @include ui-card-hover-outline();
+
+    @include below-mobile {
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .video-review-card__media img {
+                transform: scale(1.03);
+            }
+
+            .video-review-card__media::after {
+                opacity: 1;
+            }
+
+            .video-review-card__play {
+                transform: translate3d(-50%, -50%, 0) scale(1.04);
+                box-shadow: 0 16px 36px rgba(232, 191, 128, 0.28);
+            }
+        }
+    }
+
+    &__media {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background-color: #fff0dc;
+
+        @include below-mobile {
+            border-radius: 12px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(232, 191, 128, 0.12) 100%);
+            opacity: 0;
+            transition: opacity $transition-base;
+            pointer-events: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            transition: transform $transition-base;
+
+            @include below-mobile {
+                height: 320px;
+            }
+        }
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: transform $transition-base, box-shadow $transition-base;
+        pointer-events: none;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+

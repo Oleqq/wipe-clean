@@ -1,15 +1,7 @@
+@use "../../global/core" as *;
+
 .price-preview {
-    padding: 120px 0 100px;
-
-    @include below-tablet {
-        padding-top: 96px;
-        padding-bottom: 80px;
-    }
-
-    @include below-mobile {
-        padding-top: 72px;
-        padding-bottom: 64px;
-    }
+    @include section-padding(40px, 40px, 32px, 32px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -29,7 +21,7 @@
 
     &__visual {
         align-self: end;
-
+        height: 100%;
         @include below-tablet {
             order: 2;
             max-width: 320px;
@@ -39,7 +31,7 @@
         img {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: contain;
         }
     }
@@ -133,13 +125,26 @@
         }
     }
 
+    &__label-head,
+    &__label-tail {
+        display: inline;
+    }
+
+    &__label-tail {
+        @include below-mobile {
+            display: block;
+        }
+    }
+
     &__value {
         flex-shrink: 0;
         background: none;
         -webkit-background-clip: initial;
         background-clip: initial;
         color: #22aa7f;
-
+        height: 100%;
+        display: flex;
+        align-items: center;
         @include below-mobile {
             text-align: right;
         }

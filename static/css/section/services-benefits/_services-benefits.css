@@ -1,0 +1,379 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.services-benefits {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .services-benefits {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.services-benefits__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 100px;
+  min-width: 0;
+}
+@media (max-width: 991px) {
+  .services-benefits__wrapper {
+    gap: 72px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__wrapper {
+    gap: 40px;
+  }
+}
+.services-benefits__intro {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+  min-width: 0;
+}
+@media (max-width: 650px) {
+  .services-benefits__intro {
+    gap: 20px;
+  }
+}
+.services-benefits__head {
+  max-width: 1025px;
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .services-benefits__head {
+    gap: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__text {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.services-benefits__slider {
+  min-width: 0;
+  overflow: visible;
+  margin: unset;
+}
+@media (max-width: 650px) {
+  .services-benefits__slider {
+    overflow: visible;
+  }
+}
+.services-benefits__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+@media (max-width: 1199px) {
+  .services-benefits__cards {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0;
+  }
+}
+.services-benefits__slide {
+  min-width: 0;
+  height: auto;
+}
+@media (max-width: 650px) {
+  .services-benefits__slide {
+    width: 280px;
+  }
+}
+.services-benefits__slide .feature-card {
+  gap: 10px;
+  min-height: 272px;
+  height: 100%;
+}
+@media (max-width: 650px) {
+  .services-benefits__slide .feature-card {
+    gap: 10px;
+    min-height: 240px;
+  }
+}
+.services-benefits__slide .feature-card__head {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (max-width: 650px) {
+  .services-benefits__slide .feature-card__head {
+    gap: 16px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__slide .feature-card__text {
+    font-size: 14px;
+  }
+}
+.services-benefits__details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 650px) 60px minmax(280px, 570px);
+  grid-template-columns: minmax(0, 650px) minmax(280px, 570px);
+  -ms-grid-rows: auto 0px auto;
+      grid-template-areas: "offer visual" "checklist visual";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+  row-gap: 0px;
+}
+@media (max-width: 1199px) {
+  .services-benefits__details {
+    -ms-grid-columns: minmax(0, 1fr) 32px minmax(280px, 44%);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 44%);
+    -webkit-column-gap: 32px;
+       -moz-column-gap: 32px;
+            column-gap: 32px;
+  }
+}
+@media (max-width: 991px) {
+  .services-benefits__details {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto 32px auto 32px auto;
+        grid-template-areas: "offer" "checklist" "visual";
+    row-gap: 32px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__details {
+    row-gap: 20px;
+  }
+}
+.services-benefits__offer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  grid-area: offer;
+  gap: 40px;
+}
+@media (max-width: 650px) {
+  .services-benefits__offer {
+    gap: 24px;
+    margin-bottom: 10px;
+  }
+}
+.services-benefits__offer-content {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .services-benefits__offer-content {
+    gap: 10px;
+  }
+}
+.services-benefits__offer-title {
+  max-width: 650px;
+}
+@media (max-width: 650px) {
+  .services-benefits__offer-title {
+    font-size: 24px;
+  }
+}
+.services-benefits__offer-text {
+  max-width: 650px;
+}
+@media (max-width: 650px) {
+  .services-benefits__offer-text {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.services-benefits__offer-action {
+  width: 240px;
+}
+@media (max-width: 650px) {
+  .services-benefits__offer-action {
+    width: 100%;
+  }
+}
+.services-benefits__checklist {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  grid-area: checklist;
+  gap: 16px;
+  max-width: 650px;
+}
+@media (max-width: 650px) {
+  .services-benefits__checklist {
+    gap: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__checklist-title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__checklist-text {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.services-benefits__checklist-list {
+  display: -ms-grid;
+  display: grid;
+  gap: 12px;
+  padding: 12px 0 0;
+  margin: 0;
+  list-style: none;
+}
+@media (max-width: 650px) {
+  .services-benefits__checklist-list {
+    gap: 10px;
+    padding-top: 10px;
+  }
+}
+.services-benefits__visual {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  position: relative;
+  grid-area: visual;
+  min-height: 854px;
+  -ms-grid-row-align: end;
+      align-self: end;
+  isolation: isolate;
+}
+@media (max-width: 991px) {
+  .services-benefits__offer {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .services-benefits__checklist {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .services-benefits__visual {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+  }
+}
+@media (max-width: 1199px) {
+  .services-benefits__visual {
+    min-height: 760px;
+  }
+}
+@media (max-width: 991px) {
+  .services-benefits__visual {
+    min-height: 447px;
+    max-width: 338px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.services-benefits__visual-decor, .services-benefits__visual-image {
+  position: absolute;
+}
+.services-benefits__visual-decor img, .services-benefits__visual-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.services-benefits__visual-decor {
+  top: 0;
+  left: 50%;
+  width: min(103.4%, 590px);
+  max-width: 590px;
+  opacity: 0.32;
+  -webkit-transform: translateX(-50%) rotate(15deg);
+          transform: translateX(-50%) rotate(15deg);
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .services-benefits__visual-decor {
+    top: 0;
+    width: min(100%, 338px);
+    max-width: 338px;
+  }
+}
+.services-benefits__visual-image {
+  bottom: 0;
+  left: 50%;
+  width: min(100.11%, 571px);
+  max-width: 571px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .services-benefits__visual-image {
+    width: min(79.17vw, 267px);
+    max-width: 267px;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__visual-image {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .services-benefits__visual-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}

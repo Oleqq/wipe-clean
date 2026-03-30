@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 .number-card {
     gap: 16px;
     min-height: 100%;
@@ -53,3 +55,4 @@
         }
     }
 }
+

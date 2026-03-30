@@ -1,21 +1,15 @@
 mixin reviewCard(item)
     article.review-card
         .review-card__rating(aria-label="Рейтинг 5 из 5")
-            span.review-card__star.review-card__star--sm(aria-hidden="true")
-                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round")
-            span.review-card__star.review-card__star--md(aria-hidden="true")
-                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round")
-            span.review-card__star.review-card__star--xl(aria-hidden="true")
-                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round")
-            span.review-card__star.review-card__star--md(aria-hidden="true")
-                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round")
-            span.review-card__star.review-card__star--sm(aria-hidden="true")
-                svg(viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M12 2.5L14.9389 8.45492L21.5093 9.40983L16.7546 14.0451L17.8779 20.5902L12 17.5L6.12215 20.5902L7.24548 14.0451L2.4907 9.40983L9.06107 8.45492L12 2.5Z" fill="currentColor" stroke="#1B9E74" stroke-width="1.2" stroke-linejoin="round")
+            img.review-card__rating-stars(
+                src="/static/images/components/review-card/review-card-stars.svg"
+                alt=""
+                aria-hidden="true"
+                width="222"
+                height="50"
+                loading="lazy"
+                decoding="async"
+            )
         .review-card__body
             p.review-card__text= item.text
             p.review-card__author= item.author

@@ -1,11 +1,7 @@
-.order-cta {
-    padding-top: 40px;
-    padding-bottom: 32px;
+@use "../../global/core" as *;
 
-    @include below-tablet {
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
+.order-cta {
+    @include section-padding(16px, 16px, 16px, 16px, 16px, 16px);
 
     &__wrapper {
         display: grid;
@@ -123,13 +119,7 @@
     }
 
     &--service {
-        padding-top: 80px;
-        padding-bottom: 0;
-
-        @include below-tablet {
-            padding-top: 100px;
-            padding-bottom: 0;
-        }
+        @include section-padding(60px, 60px, 50px, 50px, 25px, 25px);
 
         .order-cta__wrapper {
             grid-template-columns: minmax(0, 620px) minmax(0, 650px);
@@ -152,6 +142,17 @@
 
         .order-cta__action {
             width: 280px;
+            @include below-mobile {
+                width: 100%;
+            }
+        }
+
+        .order-cta__content {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .order-cta__text {
+            max-width: 95%;
         }
 
         .order-cta__visual-media {
@@ -170,3 +171,4 @@
         }
     }
 }
+

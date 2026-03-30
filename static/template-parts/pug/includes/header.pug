@@ -1,4 +1,94 @@
-header.site-header
+include ../data/includes/header-data
+
+mixin headerChevronIcon(className)
+    svg(class=className viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M0.353516 0.353516L4.35352 4.35352L8.35352 0.353516" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round")
+
+mixin headerArrowIcon(className)
+    svg(class=className viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin headerPhoneIcon(className)
+    svg(class=className viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M22 20.2448V23.667C22 24.2858 21.7542 24.8793 21.3167 25.3167C20.8793 25.7542 20.2858 26 19.667 26C15.2332 25.7304 10.9848 23.8476 7.81016 20.673C4.63555 17.4983 2.75276 13.2499 2.48315 8.81616C2.48315 8.19735 2.72899 7.60389 3.16642 7.16644C3.60386 6.729 4.19731 6.48315 4.81612 6.48315H8.23831C8.65696 6.47904 9.06282 6.6286 9.37925 6.90325C9.69567 7.17789 9.90063 7.55849 9.95565 7.97353C10.0583 8.7517 10.2488 9.51583 10.523 10.2511C10.6378 10.557 10.6642 10.889 10.599 11.2092C10.5338 11.5294 10.3796 11.8248 10.1541 12.0614L8.70538 13.5101C10.3298 16.3668 12.6991 18.7361 15.5558 20.3605L17.0045 18.9118C17.2411 18.6863 17.5365 18.5321 17.8567 18.4669C18.1769 18.4017 18.5089 18.4281 18.8148 18.5429C19.5501 18.8171 20.3142 19.0076 21.0924 19.1103C21.5115 19.166 21.8954 19.375 22.1704 19.6973C22.4453 20.0197 22.5928 20.432 22.5854 20.855L22 20.2448Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin headerMenuIcon(className)
+    svg(class=className viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M4.66699 5.8335H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M4.66699 14H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M4.66699 22.1665H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round")
+
+mixin headerCloseIcon(className)
+    svg(class=className viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M21 7L7 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M7 7L21 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round")
+
+header.header(data-header)
     ._container
-        .site-header__wrapper
-            a.site-header__logo(href="index.html" aria-label="На главную") wipe-clean
+        .header__wrapper
+            a.header__brand(href="index.html" aria-label="На главную")
+                span.header__brand-mark
+                    img(src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt="")
+                span.header__brand-type
+                    img(src="/static/images/section/company-preview/company-preview-logo-type.svg" alt="")
+            nav.header__nav(id=headerNavId data-header-nav aria-label="Основная навигация")
+                button.header__nav-backdrop(type="button" data-header-close aria-label="Закрыть меню")
+                .header__nav-panel(data-lenis-prevent)
+                    ul.header__menu
+                        each item, index in headerMenuItems
+                            -
+                                var headerItemClassName = item.children ? "header__item header__item--has-children" : "header__item";
+                                var headerSubmenuVariant = item.submenuVariant || "compact";
+                                var headerSubmenuId = item.submenuId || ("header-submenu-" + index);
+                                var headerSubmenuColumns = headerSubmenuVariant === "wide" ? [item.children.slice(0, 5), item.children.slice(5)] : [item.children];
+                                if (item.desktopHidden) {
+                                    headerItemClassName += " header__item--desktop-hidden";
+                                }
+                                if (item.children) {
+                                    headerItemClassName += " header__item--submenu-" + headerSubmenuVariant;
+                                }
+                            if item.children
+                                li(class=headerItemClassName data-header-item)
+                                    .header__item-row
+                                        a.header__link.header__link--parent(href=item.href data-header-link data-header-parent-link)= item.label
+                                        button.header__submenu-toggle(
+                                            type="button"
+                                            aria-expanded="false"
+                                            aria-controls=headerSubmenuId
+                                            aria-label=`Показать подменю раздела ${item.label}`
+                                            data-header-submenu-toggle
+                                        )
+                                            +headerChevronIcon("header__submenu-toggle-icon")
+                                    .header__submenu(id=headerSubmenuId data-header-submenu aria-hidden="true")
+                                        .header__submenu-panel(class=`header__submenu-panel--${headerSubmenuVariant}`)
+                                            each column in headerSubmenuColumns
+                                                ul.header__submenu-column
+                                                    each child in column
+                                                        li.header__submenu-item
+                                                            a.header__submenu-link(href=child.href data-header-link)
+                                                                span.header__submenu-link-text= child.label
+                                                                span.header__submenu-arrow
+                                                                    +headerArrowIcon("header__submenu-arrow-icon")
+                            else
+                                li(class=headerItemClassName)
+                                    a.header__link(href=item.href data-header-link)= item.label
+            .header__actions
+                a.ui-btn.ui-btn--primary.ui-btn--icon.header__phone(href="tel:+79801636101" aria-label="Позвонить")
+                    span.ui-btn__content
+                        span.header__action-icon
+                            +headerPhoneIcon("header__action-icon-svg")
+                a.ui-btn.ui-btn--primary.header__cta(href="contacts.html")
+                    span.ui-btn__content Связаться с нами
+                button.ui-btn.ui-btn--primary.ui-btn--icon.header__menu-toggle(
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls=headerNavId
+                    aria-label="Открыть меню"
+                    data-header-toggle
+                )
+                    span.ui-btn__content
+                        span.header__action-icon.header__action-icon--menu
+                            +headerMenuIcon("header__action-icon-svg")
+                        span.header__action-icon.header__action-icon--close
+                            +headerCloseIcon("header__action-icon-svg")

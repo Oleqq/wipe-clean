@@ -1,8 +1,9 @@
 mixin checkListItem(item)
+    - var checkListItemIcon = item.icon || "/static/images/ui/check-badge-icon.svg";
     li.ui-check-item
         span.ui-check-item__icon(aria-hidden="true")
             span.ui-check-item__icon-inner
-                img(src=item.icon alt="" loading="lazy")
+                img(src=checkListItemIcon alt="" loading="lazy")
         span.ui-check-item__text
             if item.mobileText
                 span.ui-check-item__text-desktop= item.text

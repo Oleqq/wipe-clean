@@ -1,15 +1,7 @@
+@use "../../global/core" as *;
+
 .work-steps {
-    padding: 80px 0 100px;
-
-    @include below-tablet {
-        padding-top: 64px;
-        padding-bottom: 80px;
-    }
-
-    @include below-mobile {
-        padding-top: 56px;
-        padding-bottom: 64px;
-    }
+    @include section-padding(40px, 40px, 32px, 32px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -42,7 +34,7 @@
         overflow: visible;
 
         @include below-mobile {
-            overflow: hidden;
+            
             margin: unset;
         }
     }
@@ -68,13 +60,17 @@
         gap: 16px;
         padding: 20px;
         border-radius: $radius-2xl;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
 
         @include below-mobile {
-            gap: 12px;
+            // gap: 12px;
             min-height: 190px;
             padding: 16px;
             border-radius: $radius-xl;
             width: 260px;
+            gap: 8px;
         }
     }
 
@@ -83,9 +79,23 @@
         font-size: 48px;
         line-height: 0.9;
         letter-spacing: 0.02em;
+        min-height: 50px;
+        height: fit-content;
+
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 90%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, #1b9e74 0%, #28b789 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
         @include below-mobile {
             font-size: 40px;
+            min-height: 40px;
         }
     }
 

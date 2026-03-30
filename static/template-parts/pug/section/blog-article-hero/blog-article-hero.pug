@@ -1,0 +1,44 @@
+include ../../includes/media.pug
+
+-
+    var blogArticleHeroDefaults = {
+        titleLines: ["Уборка", "«Здоровый питомец»"],
+        excerpt: "Для тех, у кого дома живет собака или кот, уборка перестает быть просто борьбой с пылью. Это прежде всего способ уберечь любимца от болячек. Также это возможность сделать жизнь в квартире комфортной для всех, а не только для четвероногого друга. Когда в комнатах чисто, животные меньше болеют. При этом находиться в таком доме становится безопаснее и приятнее каждому.",
+        dateLabel: "Дата публикации:",
+        dateValue: "29 / 01 / 2025",
+        image: {
+            src: "/static/images/section/blog-article-hero/blog-article-hero-media-placeholder.svg",
+            alt: "Иллюстрация к статье об уборке для дома с питомцами"
+        }
+    }
+
+-
+    var blogArticleHeroData = typeof blogArticleHeroSection === "object" && blogArticleHeroSection ? blogArticleHeroSection : {}
+    var blogArticleHeroImageData = typeof blogArticleHeroData.image === "object" && blogArticleHeroData.image ? blogArticleHeroData.image : {}
+    var blogArticleHeroOptions = Object.assign({}, blogArticleHeroDefaults, blogArticleHeroData)
+    var blogArticleHeroTitleLines = Array.isArray(blogArticleHeroOptions.titleLines) && blogArticleHeroOptions.titleLines.length ? blogArticleHeroOptions.titleLines : blogArticleHeroDefaults.titleLines
+    var blogArticleHeroImage = Object.assign({}, blogArticleHeroDefaults.image, blogArticleHeroImageData)
+
+section.blog-article-hero
+    ._container
+        .blog-article-hero__wrapper
+            .blog-article-hero__content
+                .blog-article-hero__head
+                    h1.blog-article-hero__title
+                        each line, index in blogArticleHeroTitleLines
+                            | #{line}
+                            if index !== blogArticleHeroTitleLines.length - 1
+                                br
+                    p.blog-article-hero__excerpt.ui-text= blogArticleHeroOptions.excerpt
+                .blog-article-hero__meta
+                    span.blog-article-hero__meta-label= blogArticleHeroOptions.dateLabel
+                    span.blog-article-hero__meta-value= blogArticleHeroOptions.dateValue
+            .blog-article-hero__media
+                +mediaImage({
+                    src: blogArticleHeroImage.src,
+                    alt: blogArticleHeroImage.alt,
+                    loading: "eager",
+                    decoding: "async",
+                    fetchpriority: "high",
+                    sizes: "(max-width: 650px) 100vw, 46vw"
+                })

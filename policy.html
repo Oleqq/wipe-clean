@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wipe Clean</title>
+    <link rel="preload" href="/static/fonts/Involve-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/static/css/vendor/fancybox.css">
+    <link rel="stylesheet" href="/static/css/vendor/swiper-bundle.css">
+    <link rel="stylesheet" href="/static/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="_container">
+        <div class="header__wrapper"><a class="header__brand" href="index.html" aria-label="На главную"><span class="header__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="header__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+          <nav class="header__nav" id="header-nav" data-header-nav aria-label="Основная навигация">
+            <button class="header__nav-backdrop" type="button" data-header-close aria-label="Закрыть меню"></button>
+            <div class="header__nav-panel" data-lenis-prevent>
+              <ul class="header__menu">
+                <li class="header__item header__item--has-children header__item--submenu-compact" data-header-item>
+                  <div class="header__item-row"><a class="header__link header__link--parent" href="about-us.html" data-header-link data-header-parent-link>О компании</a>
+                    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="header-about-submenu" aria-label="Показать подменю раздела О компании" data-header-submenu-toggle>
+                          <svg class="header__submenu-toggle-icon" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M0.353516 0.353516L4.35352 4.35352L8.35352 0.353516" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                    </button>
+                  </div>
+                  <div class="header__submenu" id="header-about-submenu" data-header-submenu aria-hidden="true">
+                    <div class="header__submenu-panel header__submenu-panel--compact">
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="blog.html" data-header-link><span class="header__submenu-link-text">Блог</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="faq.html" data-header-link><span class="header__submenu-link-text">FAQ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item header__item--has-children header__item--submenu-wide" data-header-item>
+                  <div class="header__item-row"><a class="header__link header__link--parent" href="services.html" data-header-link data-header-parent-link>Услуги</a>
+                    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="header-services-submenu" aria-label="Показать подменю раздела Услуги" data-header-submenu-toggle>
+                          <svg class="header__submenu-toggle-icon" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M0.353516 0.353516L4.35352 4.35352L8.35352 0.353516" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                    </button>
+                  </div>
+                  <div class="header__submenu" id="header-services-submenu" data-header-submenu aria-hidden="true">
+                    <div class="header__submenu-panel header__submenu-panel--wide">
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Поддерживающая уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Срочная уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="apartment-cleaning.html" data-header-link><span class="header__submenu-link-text">Уборка квартир</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка домов и коттеджей</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка квартир по суточно</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Мытьё окон</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка офисов</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Генеральная уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка после ремонта</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item"><a class="header__link" href="prices.html" data-header-link>Цены</a></li>
+                <li class="header__item"><a class="header__link" href="promotions.html" data-header-link>Акции</a></li>
+                <li class="header__item"><a class="header__link" href="reviews.html" data-header-link>Отзывы</a></li>
+                <li class="header__item"><a class="header__link" href="contacts.html" data-header-link>Контакты</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="blog.html" data-header-link>Блог</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="faq.html" data-header-link>FAQ</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="header__actions"><a class="ui-btn ui-btn--primary ui-btn--icon header__phone" href="tel:+79801636101" aria-label="Позвонить"><span class="ui-btn__content"><span class="header__action-icon">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M22 20.2448V23.667C22 24.2858 21.7542 24.8793 21.3167 25.3167C20.8793 25.7542 20.2858 26 19.667 26C15.2332 25.7304 10.9848 23.8476 7.81016 20.673C4.63555 17.4983 2.75276 13.2499 2.48315 8.81616C2.48315 8.19735 2.72899 7.60389 3.16642 7.16644C3.60386 6.729 4.19731 6.48315 4.81612 6.48315H8.23831C8.65696 6.47904 9.06282 6.6286 9.37925 6.90325C9.69567 7.17789 9.90063 7.55849 9.95565 7.97353C10.0583 8.7517 10.2488 9.51583 10.523 10.2511C10.6378 10.557 10.6642 10.889 10.599 11.2092C10.5338 11.5294 10.3796 11.8248 10.1541 12.0614L8.70538 13.5101C10.3298 16.3668 12.6991 18.7361 15.5558 20.3605L17.0045 18.9118C17.2411 18.6863 17.5365 18.5321 17.8567 18.4669C18.1769 18.4017 18.5089 18.4281 18.8148 18.5429C19.5501 18.8171 20.3142 19.0076 21.0924 19.1103C21.5115 19.166 21.8954 19.375 22.1704 19.6973C22.4453 20.0197 22.5928 20.432 22.5854 20.855L22 20.2448Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></span></a><a class="ui-btn ui-btn--primary header__cta" href="contacts.html"><span class="ui-btn__content">Связаться с нами</span></a>
+            <button class="ui-btn ui-btn--primary ui-btn--icon header__menu-toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="Открыть меню" data-header-toggle><span class="ui-btn__content"><span class="header__action-icon header__action-icon--menu">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4.66699 5.8335H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4.66699 14H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4.66699 22.1665H23.3337" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span><span class="header__action-icon header__action-icon--close">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M21 7L7 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M7 7L21 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="smooth-wrapper" id="smooth-wrapper">
+      <div class="smooth-content" id="smooth-content">
+        <main class="main">
+          <div class="document-page document-page--policy">
+            <section class="document-content">
+              <div class="_container">
+                <div class="document-content__wrapper">
+                  <h1 class="ui-title ui-title--hero document-content__title">Политика в отношении обработки персональных данных</h1>
+                  <div class="document-content__body entry-content">
+                    <p>Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной &quot;рыбой&quot; для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн</p>
+                    <p>Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной &quot;рыбой&quot; для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн</p>
+                    <p>Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной &quot;рыбой&quot; для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн</p>
+                    <p>Lorem Ipsum - это текст-&quot;рыба&quot;, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной &quot;рыбой&quot; для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="document-page__contacts">
+              <div class="_container">
+                <div class="document-page__contacts-wrapper">
+                  <div class="contact-panel">
+                    <div class="contact-panel__aside">
+                      <h2 class="ui-title contact-panel__title">Контакты клининговой компании ВАЙП–Клин</h2>
+                      <div class="contact-panel__cards">
+                        <div class="contact-panel__cards-row">
+                          <div class="contact-card contact-panel__card">
+                            <p class="contact-card__label">Номер телефона</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                          </div>
+                          <div class="contact-card contact-card--socials contact-panel__card">
+                            <p class="contact-card__label">Электронная почта</p>
+                            <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"/></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"/></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"/></span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="contact-card contact-panel__card">
+                          <p class="contact-card__label">Электронная почта</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contact-panel__form-block">
+                      <h3 class="contact-panel__form-title">Форма заявки</h3>
+                      <form class="contact-panel__form ui-form" action="#" method="post" novalidate="novalidate">
+                        <div class="contact-panel__fields">
+                          <div class="ui-field contact-panel__field">
+                            <label class="ui-field__label" for="policy-name">Ваше имя</label>
+                            <input class="ui-field__control" id="policy-name" type="text" name="name" placeholder="Введите имя и фамилию"/>
+                          </div>
+                          <div class="ui-field contact-panel__field">
+                            <label class="ui-field__label" for="policy-phone">Номер телефона</label>
+                            <input class="ui-field__control" id="policy-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _"/>
+                          </div>
+                        </div>
+                        <div class="contact-panel__form-actions">
+                          <label class="ui-checkbox contact-panel__checkbox" for="policy-agreement">
+                            <input class="ui-checkbox__input" id="policy-agreement" type="checkbox" name="agreement"/><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                          </label>
+                          <button class="ui-btn ui-btn--primary contact-panel__submit" type="submit"><span class="ui-btn__content"><span class="contact-panel__submit-text contact-panel__submit-text--desktop">Узнать стоимость клининга</span><span class="contact-panel__submit-text contact-panel__submit-text--mobile">Рассчитать стоимость</span></span></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="footer__wave" aria-hidden="true"><img src="/static/images/ui/footer-wave.svg" alt=""></div>
+          <div class="footer__body">
+            <div class="_container">
+              <div class="footer__wrapper">
+                <div class="footer__top"><a class="footer__brand" href="index.html" aria-label="На главную"><span class="footer__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="footer__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+                  <ul class="footer__requisites">
+                    <li class="footer__requisite"><strong class="footer__requisite-label">ООО</strong><span class="footer__requisite-value">«ВАЙП–Клин»</span></li>
+                    <li class="footer__requisite"><strong class="footer__requisite-label">ОГРН</strong><span class="footer__requisite-value">0000000000000</span></li>
+                    <li class="footer__requisite"><strong class="footer__requisite-label">ИНН</strong><span class="footer__requisite-value">0000000000</span></li>
+                    <li class="footer__requisite"><strong class="footer__requisite-label">КПП</strong><span class="footer__requisite-value">000000000</span></li>
+                  </ul>
+                </div>
+                <div class="footer__divider"></div>
+                <div class="footer__nav">
+                  <p class="footer__nav-title">Меню сайта</p>
+                  <div class="footer__nav-body">
+                    <ul class="footer__nav-column">
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="about-us.html">О компании</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="services.html">Услуги</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="prices.html">Цены</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="promotions.html">Акции</a></li>
+                    </ul>
+                    <ul class="footer__nav-column">
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="reviews.html">Отзывы</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="blog.html">Блог</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="faq.html">FAQ</a></li>
+                      <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer__divider"></div>
+                <div class="footer__contacts">
+                          <div class="contact-card footer__contact-card">
+                            <p class="contact-card__label">Номер телефона</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                          </div>
+                          <div class="contact-card contact-card--socials footer__contact-card">
+                            <p class="contact-card__label">Мессенджеры</p>
+                            <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                            </div>
+                          </div>
+                          <div class="contact-card footer__contact-card">
+                            <p class="contact-card__label">Электронная почта</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                          </div>
+                </div>
+                <div class="footer__bottom">
+                  <p class="footer__copyright">© 2026 - Официальный сайт "ВАЙП–Клин"</p>
+                  <div class="footer__legal"><a class="footer__legal-link" href="policy.html">Политика конфиденциальности</a><a class="footer__legal-link" href="policy.html">Согласие ОПД</a><a class="footer__legal-link" href="policy.html">Согласие Cookies</a>
+                  </div><a class="footer__made-by" href="https://ds-art.ru/" target="_blank" rel="noopener noreferrer" aria-label="Сайт разработан компанией DS-ART"><span class="footer__made-by-mark">DS</span><span class="footer__made-by-text">Сайт разработан компанией DS-ART</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+        <div class="popup" data-popup="popup-review" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--review" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-review-title" aria-describedby="popup-review-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--review">
+              <div class="popup-form__head">
+                <h2 class="popup-form__title" id="popup-review-title">
+                  Оставьте свой отзыв о <br>
+                  работе компании ВАЙП-Клин
+                </h2>
+                <p class="popup-form__text" id="popup-review-description">Для нас будет очень ценно, если вы поделитесь своим отзывом о нашей работе. Так же будем рады, если к своему отзыву вы прикрепите фотографии или видео.</p>
+              </div>
+              <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                <div class="popup-form__grid popup-form__grid--three">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-name">Ваше имя</label>
+                        <input id="popup-review-name" type="text" name="popup-review-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-phone">Номер телефона</label>
+                        <input id="popup-review-phone" type="tel" name="popup-review-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-email">Email</label>
+                        <input id="popup-review-email" type="email" name="popup-review-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                </div>
+                <div class="popup-form__grid popup-form__grid--two">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-message">Ваш отзыв</label>
+                        <textarea id="popup-review-message" name="popup-review-message" rows="7" placeholder="Описание отзыва ..." required></textarea>
+                      </div>
+                  <div class="popup-upload" data-popup-upload><span class="ui-field__label popup-upload__label">Фото или видео</span>
+                    <label class="popup-upload__zone" for="popup-review-files">
+                      <input class="popup-upload__input" id="popup-review-files" type="file" name="files" accept="image/jpeg,image/png,video/mp4" multiple hidden data-popup-upload-input>
+                      <div class="popup-upload__empty" data-popup-upload-empty><span class="popup-upload__badge">
+                              <svg class="popup-upload__badge-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M19.9997 35V21.6667L13.333 28.3333" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M20 21.6666L26.6667 28.3333" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.32204 25.4483C5.96082 24.2576 4.89508 22.7666 4.20899 21.0932C3.5229 19.4198 3.23524 17.6099 3.36874 15.8062C3.50224 14.0026 4.05324 12.2547 4.97823 10.7005C5.90321 9.14641 7.17685 7.82861 8.69856 6.8512C10.2203 5.87379 11.9484 5.26355 13.7464 5.06867C15.5445 4.87378 17.3632 5.09959 19.059 5.72826C20.7548 6.35692 22.2812 7.37124 23.5177 8.69109C24.7542 10.0109 25.6669 11.6002 26.1837 13.3333H29.167C30.7871 13.3331 32.3638 13.8576 33.661 14.8281C34.9582 15.7987 35.9063 17.1632 36.3633 18.7175C36.8204 20.2718 36.7619 21.9323 36.1965 23.4506C35.6312 24.9688 34.5894 26.2632 33.227 27.14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></span>
+                        <div class="popup-upload__copy">
+                          <p class="popup-upload__title">Добавьте картинку или видео</p>
+                          <p class="popup-upload__text">JPEG, PNG или MP4, не больше 20 МБ</p>
+                        </div>
+                      </div>
+                      <div class="popup-upload__preview" hidden data-popup-upload-preview></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="popup-form__actions">
+                      <label class="ui-checkbox popup-form__checkbox" for="popup-review-agreement">
+                        <input class="ui-checkbox__input" id="popup-review-agreement" type="checkbox" name="popup-review-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                      </label>
+                  <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Оставить отзыв</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-order-service" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide popup__dialog--service" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-order-service-title" aria-describedby="popup-order-service-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--service">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-order-service-title">Хотите заказать клининг<br>домой? Оставляйте заявку</h2>
+                  <p class="popup-form__text" id="popup-order-service-description">Заполните форму ниже и наши менеджеры свяжутся с вами в ближайшее время, чтобы обсудить все детали клининга и озвучить стоимость.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-name">Ваше имя</label>
+                          <input id="popup-order-service-name" type="text" name="popup-order-service-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-phone">Номер телефона</label>
+                          <input id="popup-order-service-phone" type="tel" name="popup-order-service-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-email">Email</label>
+                        <input id="popup-order-service-email" type="email" name="popup-order-service-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-select">Выбор услуг</label>
+                        <div class="popup-form__select">
+                          <select id="popup-order-service-select" name="popup-order-service-select" required>
+                            <option value="" disabled selected>Выберите нужные вам услуги</option>
+                            <option value="support-cleaning">Поддерживающая уборка</option>
+                            <option value="general-cleaning">Генеральная уборка</option>
+                            <option value="window-cleaning">Мытьё окон</option>
+                            <option value="post-repair">Уборка после ремонта</option>
+                          </select><span class="popup-form__select-icon" aria-hidden="true">
+                                <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></span>
+                        </div>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-order-service-agreement">
+                          <input class="ui-checkbox__input" id="popup-order-service-agreement" type="checkbox" name="popup-order-service-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Заказать клининг</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--order" aria-hidden="true"><img src="/static/images/section/popup-system/popup-order-service-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-calc" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide popup__dialog--calc" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-calc-title" aria-describedby="popup-calc-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--calculator">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-calc-title">Узнайте стоимость уборки</h2>
+                  <p class="popup-form__text" id="popup-calc-description">Заполните форму ниже, чтобы мы оперативно посчитали стоимость уборки и сообщили ее вам. Наши менеджеры перезвонят вам в ближайшее время.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <fieldset class="popup-form__fieldset">
+                    <legend class="popup-form__legend">Площадь</legend>
+                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
+                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    </div>
+                  </fieldset>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-service">Услуги</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-service" name="popup-calc-service" required>
+                              <option value="" disabled>Выберите услугу</option>
+                              <option value="support-cleaning" selected>Поддерживающая уборка</option>
+                              <option value="general-cleaning">Генеральная уборка</option>
+                              <option value="window-cleaning">Мытьё окон</option>
+                              <option value="post-repair">Уборка после ремонта</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-frequency">Регулярность</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-frequency" name="popup-calc-frequency" required>
+                              <option value="" disabled>Выберите регулярность</option>
+                              <option value="single" selected>Разовая</option>
+                              <option value="weekly">Еженедельно</option>
+                              <option value="twice-month">2 раза в месяц</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-name">Ваше имя</label>
+                          <input id="popup-calc-name" type="text" name="popup-calc-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-phone">Номер телефона</label>
+                          <input id="popup-calc-phone" type="tel" name="popup-calc-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-calc-agreement">
+                          <input class="ui-checkbox__input" id="popup-calc-agreement" type="checkbox" name="popup-calc-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Рассчитать стоимость</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--calc" aria-hidden="true"><img src="/static/images/section/popup-system/popup-calc-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-question" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide popup__dialog--question" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-question-title" aria-describedby="popup-question-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--question">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-question-title">У вас остались вопросы?</h2>
+                  <p class="popup-form__text" id="popup-question-description">Напишите свой вопрос в форме ниже. Мы обязательно с вами свяжемся и расскажем про наши услуги, условия и стоимость.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-name">Ваше имя</label>
+                          <input id="popup-question-name" type="text" name="popup-question-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-phone">Номер телефона</label>
+                          <input id="popup-question-phone" type="tel" name="popup-question-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-email">Email</label>
+                        <input id="popup-question-email" type="email" name="popup-question-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-message">Ваш вопрос</label>
+                        <textarea id="popup-question-message" name="popup-question-message" rows="6" placeholder="Напишите ваш вопрос ..." required></textarea>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-question-agreement">
+                          <input class="ui-checkbox__input" id="popup-question-agreement" type="checkbox" name="popup-question-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Отправить вопрос</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--question" aria-hidden="true"><img src="/static/images/section/popup-system/popup-question-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-success" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-success" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-status-success-title" aria-describedby="popup-status-success-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--success">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M9.62499 21.55C9.2601 19.9063 9.31613 18.1971 9.78789 16.5808C10.2596 14.9646 11.1319 13.4936 12.3237 12.3043C13.5155 11.115 14.9883 10.2459 16.6055 9.77749C18.2228 9.30911 19.9321 9.25666 21.575 9.625C22.4793 8.21075 23.725 7.0469 25.1974 6.24071C26.6697 5.43453 28.3214 5.01196 30 5.01196C31.6786 5.01196 33.3302 5.43453 34.8026 6.24071C36.275 7.0469 37.5207 8.21075 38.425 9.625C40.0704 9.25506 41.7827 9.30727 43.4025 9.77678C45.0223 10.2463 46.4971 11.1179 47.6896 12.3104C48.8821 13.5029 49.7537 14.9777 50.2232 16.5975C50.6927 18.2173 50.7449 19.9296 50.375 21.575C51.7892 22.4793 52.9531 23.725 53.7593 25.1974C54.5655 26.6697 54.988 28.3214 54.988 30C54.988 31.6786 54.5655 33.3303 53.7593 34.8026C52.9531 36.275 51.7892 37.5207 50.375 38.425C50.7433 40.0679 50.6909 41.7772 50.2225 43.3945C49.7541 45.0117 48.885 46.4845 47.6957 47.6763C46.5064 48.8681 45.0354 49.7403 43.4191 50.2121C41.8029 50.6839 40.0937 50.7399 38.45 50.375C37.5469 51.7947 36.3002 52.9635 34.8253 53.7733C33.3504 54.5831 31.6951 55.0076 30.0125 55.0076C28.3299 55.0076 26.6746 54.5831 25.1997 53.7733C23.7248 52.9635 22.4781 51.7947 21.575 50.375C19.9321 50.7433 18.2228 50.6909 16.6055 50.2225C14.9883 49.7541 13.5155 48.885 12.3237 47.6957C11.1319 46.5064 10.2596 45.0354 9.78789 43.4192C9.31613 41.8029 9.2601 40.0937 9.62499 38.45C8.19989 37.5481 7.02603 36.3004 6.21262 34.823C5.3992 33.3456 4.97266 31.6865 4.97266 30C4.97266 28.3135 5.3992 26.6544 6.21262 25.177C7.02603 23.6996 8.19989 22.4519 9.62499 21.55Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M22.5 30L27.5 35L37.5 25" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-success-title">Ваша заявка принята!</h2>
+                <p class="popup-status__text" id="popup-status-success-description">Мы получили вашу заявку на звонок, наш менеджер свяжется с вами в ближайшее время.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-error" data-lenis-prevent hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-error" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="popup-status-error-title" aria-describedby="popup-status-error-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--error">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M54.3251 45.0001L34.3251 10.0001C33.889 9.23058 33.2566 8.59054 32.4924 8.14525C31.7282 7.69995 30.8595 7.46533 29.9751 7.46533C29.0906 7.46533 28.222 7.69995 27.4578 8.14525C26.6936 8.59054 26.0612 9.23058 25.6251 10.0001L5.62507 45.0001C5.18427 45.7635 4.95314 46.6298 4.95509 47.5113C4.95704 48.3929 5.19201 49.2582 5.63618 50.0196C6.08035 50.7811 6.71794 51.4115 7.48431 51.8471C8.25067 52.2828 9.11859 52.508 10.0001 52.5001H50.0001C50.8773 52.4992 51.7389 52.2675 52.4983 51.8283C53.2577 51.3891 53.8881 50.7578 54.3263 49.9979C54.7646 49.2379 54.9952 48.376 54.9949 47.4988C54.9947 46.6215 54.7637 45.7598 54.3251 45.0001Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M30 22.5V32.5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M30 42.5H30.03" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-error-title">Ошибка!</h2>
+                <p class="popup-status__text" id="popup-status-error-description">Ваша заявка по какой-то причине была отклонена. Проверьте ваши данные.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="/static/js/vendor/gsap.min.js"></script>
+    <script src="/static/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="/static/js/vendor/ScrollSmoother.min.js"></script>
+    <script src="/static/js/vendor/fancybox.umd.js"></script>
+    <script src="/static/js/vendor/swiper-bundle.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
+  </body>
+</html>

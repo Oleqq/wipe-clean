@@ -1,13 +1,7 @@
+@use "../../global/core" as *;
+
 .service-benefits {
-    padding: 0 0 40px;
-
-    @include below-tablet {
-        padding-bottom: 24px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 20px;
-    }
+    @include section-padding(50px, 40px, 36px, 32px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -95,6 +89,7 @@
     &__slider {
         display: none;
         min-width: 0;
+        margin: unset;
 
         @include below-mobile {
             display: block;
@@ -130,3 +125,4 @@
         }
     }
 }
+

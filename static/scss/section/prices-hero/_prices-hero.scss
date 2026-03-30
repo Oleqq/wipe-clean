@@ -1,18 +1,23 @@
+@use "../../global/core" as *;
+
 .prices-hero {
-    padding: 24px 0 0;
+    @include first-screen-padding(112px, 20px, 88px, 50px, 80px, 25px);
     overflow-x: clip;
 
-    @include below-tablet {
-        padding-top: 20px;
+    h1 {
+
+        @media (max-width:467px) {
+            max-width: 340px;
+        }
     }
 
     &__wrapper {
         position: relative;
-        min-height: 468px;
+        min-height: 100%;
 
         @include below-tablet {
             display: grid;
-            row-gap: 12px;
+            row-gap: 16px;
             min-height: 0;
         }
     }
@@ -24,18 +29,19 @@
         justify-items: center;
         gap: 20px;
         width: 100%;
-        max-width: 725px;
+        max-width: 760px;
         margin: 0 auto;
-        padding-top: 88px;
+        padding-top: 42px;
         text-align: center;
 
         @include below-desktop {
-            padding-top: 72px;
+            max-width: 720px;
+            padding-top: 20px;
         }
 
         @include below-tablet {
             gap: 12px;
-            padding-top: 68px;
+            padding-top: 0;
         }
     }
 
@@ -48,14 +54,14 @@
 
     &__title {
         width: 100%;
-        max-width: 725px;
+        max-width: 760px;
 
         @include adaptive-font(32, 48);
     }
 
     &__text {
         width: 100%;
-        max-width: 725px;
+        max-width: 760px;
         color: rgba(0, 46, 61, 0.8);
 
         @include below-mobile {
@@ -66,7 +72,7 @@
 
     &__action {
         width: 280px;
-        margin-top: 28px;
+        margin-top: 18px;
 
         @include below-tablet {
             width: 360px;
@@ -80,11 +86,13 @@
         inset: 0;
         pointer-events: none;
         z-index: 1;
+        top: 0;
 
         @include below-tablet {
             position: relative;
             inset: auto;
             width: min(100%, 560px);
+            height: auto;
             aspect-ratio: 360 / 303;
             margin: 0 auto;
             margin-top: 0;
@@ -98,31 +106,40 @@
             display: block;
             width: 100%;
             height: auto;
+            object-fit: contain;
         }
 
         &--left {
-            top: 18px;
-            left: 22.6515%;
-            width: 37.4242%;
+            top: 38px;
+            left: -13.2%;
+            width: min(34vw, 560px);
         }
 
         &--right {
-            top: 28px;
-            right: -7.1212%;
-            width: 47.8788%;
+            top: 90px;
+            right: -7.2%;
+            width: min(45vw, 624px);
+        }
+
+        @include below-desktop {
+            &--left {
+                top: 42px;
+                left: -10.8%;
+                width: min(32vw, 500px);
+            }
         }
 
         @include below-tablet {
             &--left {
-                top: 15px;
-                left: 0;
-                width: 68.8889%;
+                top: 18px;
+                left: -10%;
+                width: 60%;
             }
 
             &--right {
-                top: 30px;
-                right: -12.5%;
-                width: 81.6667%;
+                top: 28px;
+                right: -12%;
+                width: 76%;
             }
         }
     }

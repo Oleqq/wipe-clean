@@ -1,13 +1,7 @@
+@use "../../global/core" as *;
+
 .area-pricing {
-    padding: 66px 0 0;
-
-    @include below-tablet {
-        padding-top: 56px;
-    }
-
-    @include below-mobile {
-        padding-top: 50px;
-    }
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -20,32 +14,58 @@
 
     &__main {
         display: grid;
-        grid-template-columns: minmax(0, 707px) minmax(0, 650px);
-        align-items: end;
+        grid-template-columns: minmax(0, 650px) minmax(0, 707px);
+        grid-template-areas:
+            "visual head"
+            "visual list";
+        align-items: start;
         justify-content: space-between;
         column-gap: 13px;
+        row-gap: 24px;
 
         @include below-desktop {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
             column-gap: 32px;
+            row-gap: 20px;
         }
 
         @include below-tablet {
             grid-template-columns: 1fr;
-            align-items: start;
+            grid-template-areas:
+                "head"
+                "visual"
+                "list";
             row-gap: 20px;
         }
     }
 
+    &__head {
+        grid-area: head;
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
     &__visual {
+        grid-area: visual;
         position: relative;
         width: 100%;
         padding-bottom: 23px;
+        align-self: end;
+        justify-self: start;
 
         @include below-tablet {
             width: min(100%, 420px);
             margin: 0 auto;
             padding-bottom: 11px;
+            align-self: start;
+        }
+
+        @include below-mobile {
+            margin: 0 auto -42px;
+            padding-bottom: 0;
         }
 
         &::before,
@@ -114,24 +134,6 @@
         }
     }
 
-    &__content {
-        display: grid;
-        gap: 24px;
-        min-width: 0;
-
-        @include below-mobile {
-            gap: 12px;
-        }
-    }
-
-    &__head {
-        gap: 16px;
-
-        @include below-mobile {
-            gap: 10px;
-        }
-    }
-
     &__title {
         color: $color-heading-hero-start;
 
@@ -151,12 +153,16 @@
     }
 
     &__list {
+        grid-area: list;
         gap: 8px;
         padding: 20px;
         border-width: 1px;
         border-radius: $radius-lg;
+        position: relative;
+        z-index: 2;
 
         @include below-mobile {
+            margin-top: -10px;
             padding: 12px;
             border-radius: $radius-xl;
         }
@@ -192,7 +198,7 @@
         color: $color-heading-hero-start;
 
         @include below-mobile {
-            max-width: 162px;
+            // max-width: 162px;
         }
     }
 
@@ -288,3 +294,4 @@
         }
     }
 }
+

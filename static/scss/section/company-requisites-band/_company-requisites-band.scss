@@ -1,0 +1,61 @@
+@use "../../global/core" as *;
+
+.company-requisites-band {
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+
+    &__wrapper {
+        min-width: 0;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include below-tablet {
+            gap: 20px;
+        }
+
+        @include below-mobile {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        min-width: 0;
+        @include text-body(20px, $color-heading, 400);
+        letter-spacing: -0.04em;
+        
+
+        @include below-tablet {
+            font-size: 18px;
+        }
+
+        @include below-mobile {
+            display: grid;
+            gap: 2px;
+            
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__label {
+        flex-shrink: 0;
+        font-weight: 600;
+        color: $color-heading;
+    }
+
+    &__value {
+        min-width: 0;
+        word-break: break-word;
+    }
+}
+

@@ -1,0 +1,217 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.service-price {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .service-price {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+@media (max-width: 650px) {
+  .service-price {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+@media (min-width: 1440px) {
+  .service-price .ui-check-item__text {
+    white-space: nowrap;
+  }
+}
+.service-price__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 586px 84px minmax(0, 650px);
+  grid-template-columns: 586px minmax(0, 650px);
+      grid-template-areas: "visual content";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 32px 84px;
+}
+@media (max-width: 1199px) {
+  .service-price__wrapper {
+    -ms-grid-columns: minmax(280px, 0.9286fr) 48px minmax(0, 1fr);
+    grid-template-columns: minmax(280px, 0.9286fr) minmax(0, 1fr);
+    gap: 32px 48px;
+  }
+}
+@media (max-width: 991px) {
+  .service-price__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto 24px auto;
+        grid-template-areas: "content" "visual";
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    gap: 24px;
+  }
+}
+.service-price__visual {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: visual;
+  width: 586px;
+}
+@media (max-width: 1199px) {
+  .service-price__visual {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .service-price__visual {
+    width: 360px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 650px) {
+  .service-price__visual {
+    width: 278px;
+  }
+}
+.service-price__visual-media {
+  width: 100%;
+  aspect-ratio: 586/576;
+}
+@media (max-width: 650px) {
+  .service-price__visual-media {
+    aspect-ratio: 278/274;
+  }
+}
+.service-price__visual-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.service-price__content {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: content;
+  display: -ms-grid;
+  display: grid;
+  gap: 40px;
+  min-width: 0;
+}
+@media (max-width: 991px) {
+  .service-price__visual {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .service-price__content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+}
+@media (max-width: 650px) {
+  .service-price__content {
+    gap: 27px;
+  }
+}
+.service-price__body {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .service-price__body {
+    gap: 10px;
+  }
+}
+.service-price__title {
+  max-width: 650px;
+  color: #150f31;
+  line-height: 1.2;
+}
+@media (max-width: 650px) {
+  .service-price__title {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+}
+.service-price__title-inline, .service-price__title-break {
+  display: inline;
+}
+@media (max-width: 650px) {
+  .service-price__title-break {
+    display: block;
+  }
+}
+.service-price__title-accent {
+  background: -webkit-gradient(linear, left top, left bottom, from(#1b9e74), to(#28b789));
+  background: linear-gradient(180deg, #1b9e74 0%, #28b789 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 650px) {
+  .service-price__text, .service-price__lead, .service-price__note {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.service-price__lead, .service-price__note {
+  color: rgba(21, 15, 49, 0.8);
+}
+.service-price__list {
+  display: -ms-grid;
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 650px) {
+  .service-price__list {
+    gap: 10px;
+    padding: 6px 0;
+  }
+}
+.service-price__accent {
+  font-weight: 700;
+}
+@media (max-width: 650px) {
+  .service-price__accent {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+}
+.service-price__action {
+  width: 320px;
+}
+@media (max-width: 991px) {
+  .service-price__action {
+    width: 360px;
+  }
+}
+@media (max-width: 650px) {
+  .service-price__action {
+    width: 100%;
+  }
+}

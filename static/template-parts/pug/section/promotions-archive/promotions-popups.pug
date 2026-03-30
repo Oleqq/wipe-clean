@@ -1,0 +1,59 @@
+include ../../components/check-list-item/check-list-item
+
+mixin promotionPopupCloseIcon(className)
+    svg(class=className viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+        path(d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+        path(d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+
+mixin promotionPopup(item)
+    -
+        var promotionPopupTitleId = item.popupId + "-title";
+        var promotionPopupDescriptionId = item.popupId + "-description";
+        var promotionPopupConditions = Array.isArray(item.popupConditions) ? item.popupConditions : [];
+        var promotionPopupText = Array.isArray(item.popupText) ? item.popupText : [item.popupText];
+    .popup(data-popup=item.popupId data-lenis-prevent hidden aria-hidden="true")
+        button.popup__backdrop(type="button" tabindex="-1" aria-hidden="true" data-popup-close)
+        .popup__dialog.popup__dialog--promotion(data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby=promotionPopupTitleId aria-describedby=promotionPopupDescriptionId)
+            button.popup__close(type="button" aria-label="Закрыть попап" data-popup-close)
+                +promotionPopupCloseIcon("popup__close-icon")
+            .promotion-popup.popup-form.popup-form--promotion
+                .promotion-popup__media
+                    img(src=item.popupImageSrc || item.imageSrc alt=item.popupImageAlt || item.imageAlt || item.title loading="lazy")
+                .promotion-popup__content
+                    .popup-form__head
+                        h2.popup-form__title(id=promotionPopupTitleId)= item.popupTitle || item.title
+                        each paragraph, paragraphIndex in promotionPopupText
+                            if paragraph
+                                p(id=paragraphIndex === 0 ? promotionPopupDescriptionId : null).popup-form__text= paragraph
+                    if promotionPopupConditions.length
+                        .promotion-popup__conditions
+                            p.promotion-popup__conditions-title Условия:
+                            ul.promotion-popup__conditions-list
+                                each condition in promotionPopupConditions
+                                    +checkListItem({ text: condition })
+                    form.popup-form__form(action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error")
+                        .popup-form__grid.popup-form__grid--two
+                            .ui-field.popup-form__field
+                                label.ui-field__label(for=item.popupId + "-name") Ваше имя
+                                input(id=item.popupId + "-name" type="text" name="name" placeholder="Введите имя и фамилию" required autocomplete="name")
+                            .ui-field.popup-form__field
+                                label.ui-field__label(for=item.popupId + "-phone") Номер телефона
+                                input(id=item.popupId + "-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel")
+                        .popup-form__actions
+                            label.ui-checkbox.popup-form__checkbox(for=item.popupId + "-agreement")
+                                input.ui-checkbox__input(id=item.popupId + "-agreement" type="checkbox" name="agreement" required)
+                                span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
+                            button.ui-btn.ui-btn--primary.popup-form__submit(type="submit")
+                                span.ui-btn__content Заказать клининг
+
+-
+    var promotionPopupItems = [];
+
+    if (typeof promotionsArchiveSection === "object" && promotionsArchiveSection && Array.isArray(promotionsArchiveSection.items)) {
+        promotionPopupItems = promotionsArchiveSection.items.filter(function (item) {
+            return item && item.popupId;
+        });
+    }
+
+each item in promotionPopupItems
+    +promotionPopup(item)

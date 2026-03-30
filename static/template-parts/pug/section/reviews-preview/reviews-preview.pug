@@ -37,6 +37,16 @@ include ../../components/review-card/review-card
     var reviewsPreviewData = typeof reviewsPreviewSection === "object" && reviewsPreviewSection ? reviewsPreviewSection : {}
     var reviewsPreviewOptions = Object.assign({}, reviewsPreviewDefaults, reviewsPreviewData)
     var reviewsPreviewItems = Array.isArray(reviewsPreviewOptions.items) && reviewsPreviewOptions.items.length ? reviewsPreviewOptions.items : reviewsPreviewDefaults.items
+    var reviewsPreviewRenderItems = reviewsPreviewItems.slice()
+
+    if (reviewsPreviewRenderItems.length && reviewsPreviewRenderItems.length < 6) {
+        var reviewsPreviewRepeatIndex = 0
+
+        while (reviewsPreviewRenderItems.length < 6) {
+            reviewsPreviewRenderItems.push(reviewsPreviewItems[reviewsPreviewRepeatIndex % reviewsPreviewItems.length])
+            reviewsPreviewRepeatIndex += 1
+        }
+    }
 
 section.reviews-preview(class=reviewsPreviewOptions.className)
     ._container
@@ -46,7 +56,7 @@ section.reviews-preview(class=reviewsPreviewOptions.className)
                 p.ui-text= reviewsPreviewOptions.text
             .reviews-preview__slider.swiper(data-reviews-preview-swiper)
                 .reviews-preview__track.swiper-wrapper
-                    each item in reviewsPreviewItems
+                    each item in reviewsPreviewRenderItems
                         .reviews-preview__slide.swiper-slide
                             +reviewCard(item)
             .reviews-preview__footer

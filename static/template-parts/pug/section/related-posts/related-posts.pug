@@ -1,0 +1,89 @@
+include ../../components/blog-card/blog-card
+
+-
+    var relatedPostsDefaults = {
+        title: "Рекомендованные статьи",
+        mobileLimit: 3,
+        actions: [
+            {
+                label: "Наши статьи",
+                href: "/blog.html",
+                className: "ui-btn ui-btn--primary"
+            },
+            {
+                label: "Наши услуги",
+                href: "/services.html",
+                className: "ui-btn ui-btn--secondary"
+            }
+        ],
+        items: [
+            {
+                title: "Как поддерживать чистоту в квартире между генеральными уборками",
+                excerpt: "Разбираем понятный домашний режим, который помогает сохранять порядок без перегруза и не доводить квартиру до авральной уборки.",
+                dateLabel: "29 / 01 / 2025",
+                dateTime: "2025-01-29",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о поддерживающей уборке"
+            },
+            {
+                title: "Какие ошибки чаще всего совершают при уборке кухни",
+                excerpt: "Показываем, какие привычные действия мешают добиться чистоты на кухне и почему профессиональный подход экономит время и силы.",
+                dateLabel: "24 / 01 / 2025",
+                dateTime: "2025-01-24",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи об уборке кухни"
+            },
+            {
+                title: "Чем отличается генеральная уборка от поддерживающего клининга",
+                excerpt: "Сравниваем два формата уборки, чтобы было проще выбрать подходящий сценарий под ваш объект, график и текущий уровень загрязнений.",
+                dateLabel: "18 / 01 / 2025",
+                dateTime: "2025-01-18",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о форматах клининга"
+            },
+            {
+                title: "Как подготовить квартиру к приезду клининговой службы",
+                excerpt: "Короткий чек-лист перед выездом команды: что лучше убрать заранее, а что можно спокойно оставить на специалистов.",
+                dateLabel: "13 / 01 / 2025",
+                dateTime: "2025-01-13",
+                href: "#",
+                imageSrc: "/static/images/section/blog-archive/blog-card-placeholder.svg",
+                imageAlt: "Превью статьи о подготовке квартиры к клинингу"
+            }
+        ]
+    }
+
+-
+    var relatedPostsData = typeof relatedPostsSection === "object" && relatedPostsSection ? relatedPostsSection : {}
+    var relatedPostsOptions = Object.assign({}, relatedPostsDefaults, relatedPostsData)
+    var relatedPostsItems = Array.isArray(relatedPostsData.items) && relatedPostsData.items.length ? relatedPostsData.items : relatedPostsDefaults.items
+    var relatedPostsActions = Array.isArray(relatedPostsData.actions) && relatedPostsData.actions.length ? relatedPostsData.actions : relatedPostsDefaults.actions
+    var relatedPostsMobileLimit = Number(relatedPostsOptions.mobileLimit) > 0 ? Number(relatedPostsOptions.mobileLimit) : relatedPostsDefaults.mobileLimit
+
+section.related-posts
+    ._container
+        .related-posts__wrapper
+            .related-posts__head
+                h2.related-posts__title= relatedPostsOptions.title
+
+            .related-posts__grid
+                each item, index in relatedPostsItems
+                    -
+                        var relatedPostsItemClassName = "related-posts__item";
+                        if (index + 1 > relatedPostsMobileLimit) {
+                            relatedPostsItemClassName += " related-posts__item--mobile-hidden";
+                        }
+                    div(class=relatedPostsItemClassName)
+                        +blogCard(item)
+
+            if relatedPostsActions.length
+                .related-posts__actions
+                    each action in relatedPostsActions
+                        -
+                            var relatedPostsActionClassName = action.className || "ui-btn ui-btn--secondary"
+                            var relatedPostsActionHref = action.href || "#"
+                        a(class=relatedPostsActionClassName href=relatedPostsActionHref)
+                            span.ui-btn__content= action.label

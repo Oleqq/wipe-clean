@@ -52,6 +52,8 @@ $container-padding-mobile: 16px;
 $section-space-desktop: 140px;
 $section-space-tablet: 110px;
 $section-space-mobile: 80px;
+$section-space-mobile-compact: 50px;
+$section-space-mobile-tight: 40px;
 
 $gap-xl: 32px;
 $gap-lg: 24px;
@@ -65,4 +67,4 @@ $bp-tablet: 991px;
 $bp-mobile-lg: 768px;
 $bp-mobile: 650px;
 
-$transition-base: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+$transition-base: 0.34s cubic-bezier(0.18, 0.88, 0.24, 1);

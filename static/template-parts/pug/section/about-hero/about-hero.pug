@@ -1,7 +1,9 @@
+include ../../includes/media.pug
+
 -
     var aboutHero = {
         kicker: "О компании",
-        title: "Клининговая компания ВАЙП–Клин",
+        title: "",
         text: "Профессиональный клининг — это продуманная система создания здоровой микросреды. Это требует экспертных знаний. Наша клининговая компания в Москве трансформирует привычное представление о порядке. Мы превращаем уборку в технологичный процесс с идеальным итогом.",
         actions: [
             {
@@ -22,12 +24,31 @@ section.about-hero
         .about-hero__wrapper
             .about-hero__media(aria-hidden="true")
                 .about-hero__decor
-                    img(src="/static/images/section/about-hero/about-hero-decor.png" alt="")
+                    +mediaImage({
+                        src: "/static/images/section/about-hero/about-hero-decor.png",
+                        decorative: true,
+                        width: 1024,
+                        height: 1024,
+                        loading: "eager",
+                        decoding: "async",
+                        sizes: "(max-width: 650px) 72vw, 22vw"
+                    })
                 .about-hero__image
-                    img(src="/static/images/section/about-hero/about-hero-image.png" alt="Иллюстрация клининговой компании ВАЙП–Клин" loading="eager" fetchpriority="high")
+                    +mediaImage({
+                        src: "/static/images/section/about-hero/about-hero-image.png",
+                        srcset: "/static/images/section/about-hero/about-hero-image-512.png 512w, /static/images/section/about-hero/about-hero-image.png 1024w",
+                        webpSrcset: "/static/webp-images/section/about-hero/about-hero-image-512.webp 512w, /static/webp-images/section/about-hero/about-hero-image-1024.webp 1024w",
+                        alt: "Иллюстрация клининговой компании ВАЙП–Клин",
+                        width: 1024,
+                        height: 1536,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 78vw, 32vw"
+                    })
             .about-hero__head.ui-section-head
                 span.ui-kicker.about-hero__kicker= aboutHero.kicker
-                h1.ui-title.ui-title--hero.about-hero__title= aboutHero.title
+                h1.ui-title.ui-title--hero.about-hero__title КЛИНИНГОВАЯ <br>КОМПАНИЯ ВАЙП–Клин
             .about-hero__content
                 p.ui-text.about-hero__text= aboutHero.text
                 .about-hero__actions

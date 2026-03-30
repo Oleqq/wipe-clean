@@ -1,13 +1,7 @@
+@use "../../global/core" as *;
+
 .contacts {
-    padding: 100px 0 120px;
-
-    @include below-tablet {
-        padding: 80px 0 96px;
-    }
-
-    @include below-mobile {
-        padding: 64px 0;
-    }
+    @include section-padding(50px, 60px, 44px, 48px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -93,106 +87,6 @@
         @include below-mobile {
             grid-template-columns: 1fr;
             gap: 12px;
-        }
-    }
-
-    &__card {
-        display: grid;
-        gap: 16px;
-        min-height: 112px;
-        padding: 20px;
-        @include ui-card-surface();
-
-        @include below-mobile {
-            gap: 12px;
-            min-height: 0;
-            padding: 16px;
-            border-radius: $radius-xl;
-        }
-
-        &--socials {
-            min-height: 130px;
-
-            @include below-mobile {
-                min-height: 0;
-            }
-        }
-    }
-
-    &__card-label {
-        margin: 0;
-        @include text-body(16px, $color-text, 400);
-
-        @include below-mobile {
-            font-size: 14px;
-        }
-    }
-
-    &__card-value {
-        margin: 0;
-        @include text-title(28px);
-        text-transform: uppercase;
-        text-decoration: none;
-        word-break: break-word;
-
-        @include below-mobile {
-            font-size: 24px;
-        }
-
-        &--link {
-            display: inline-block;
-            transition: color $transition-base, opacity $transition-base;
-
-            @include hover {
-                color: $color-primary;
-            }
-        }
-    }
-
-    &__socials {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-
-        @include below-mobile {
-            gap: 12px;
-        }
-    }
-
-    &__social-link {
-        width: 52px;
-        flex: none;
-
-        border-radius: 12px;
-
-        @include below-mobile {
-            width: 48px;
-        }
-
-        .ui-btn__content {
-            width: 48px;
-            min-height: 48px;
-            padding: 8px;
-            border-radius: $radius-sm;
-
-            @include below-mobile {
-                width: 44px;
-                min-height: 44px;
-            }
-        }
-
-        
-
-        img {
-            display: block;
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-
-            @include below-mobile {
-                width: 28px;
-                height: 28px;
-            }
         }
     }
 
@@ -298,3 +192,4 @@
         }
     }
 }
+

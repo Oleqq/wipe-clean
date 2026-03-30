@@ -1,16 +1,14 @@
+@use "./core" as *;
+
 .service-card {
+    --service-card-motion: 0.56s cubic-bezier(0.22, 1, 0.36, 1);
     display: grid;
     gap: 16px;
     min-width: 0;
     padding: 12px;
     color: inherit;
     @include ui-card-surface();
-    transition: transform $transition-base, box-shadow $transition-base;
-
-    @include hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 28px rgba(21, 15, 49, 0.08);
-    }
+    @include ui-card-hover-outline();
 
     @include below-mobile {
         gap: 8px;
@@ -25,6 +23,7 @@
         height: 160px;
         border-radius: $radius-lg;
         background: linear-gradient(180deg, rgba($color-primary, 0.08) 0%, rgba($color-accent, 0.12) 100%);
+        transition: transform var(--service-card-motion), filter var(--service-card-motion);
 
         @include below-mobile {
             height: 120px;
@@ -38,6 +37,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform var(--service-card-motion), filter var(--service-card-motion), opacity var(--service-card-motion);
 
         &--fill {
             inset: 0;
@@ -60,9 +60,11 @@
             left: 18%;
             width: 124%;
             height: 100%;
+            left: 0;
 
             @include below-mobile {
                 left: 10%;
+                left: 0;
                 width: 118%;
             }
         }
@@ -96,11 +98,15 @@
 
     &__body {
         display: grid;
+        grid-template-rows: minmax(44px, auto) auto;
+        align-content: start;
         gap: 12px;
         min-width: 0;
         padding: 0 8px 8px;
+        transition: transform var(--service-card-motion);
 
         @include below-mobile {
+            grid-template-rows: minmax(34px, auto) auto;
             gap: 8px;
             padding: 0 6px 6px;
         }
@@ -109,7 +115,9 @@
     &__title {
         margin: 0;
         min-width: 0;
+        align-self: start;
         @include text-title(18px);
+        transition: transform var(--service-card-motion), color var(--service-card-motion);
 
         @include below-mobile {
             font-size: 14px;
@@ -126,6 +134,7 @@
 
     &__label {
         @include text-body(16px, $color-text, 400);
+        transition: opacity var(--service-card-motion), transform var(--service-card-motion);
 
         @include below-mobile {
             font-size: 12px;
@@ -145,6 +154,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        transition: transform var(--service-card-motion), filter var(--service-card-motion);
 
         @include below-mobile {
             font-size: 14px;
@@ -175,6 +185,7 @@
             letter-spacing: -0.04em;
             text-transform: uppercase;
             color: $color-heading-hero-start;
+            min-height: 44px;
 
             @include below-mobile {
                 font-family: $font-heading;
@@ -183,6 +194,7 @@
                 line-height: 1.2;
                 letter-spacing: -0.02em;
                 color: $color-heading;
+                min-height: 34px;
             }
         }
     }
@@ -213,6 +225,36 @@
                 left: -1%;
                 width: 114%;
             }
+        }
+    }
+
+    @include hover {
+        .service-card__media {
+            transform: translate3d(0, -2px, 0);
+            filter: saturate(1.03);
+        }
+
+        .service-card__layer {
+            transform: scale(1.028);
+        }
+
+        .service-card__body {
+            transform: translate3d(0, -1px, 0);
+        }
+
+        .service-card__title {
+            color: $color-heading-hero-start;
+            transform: translate3d(0, -1px, 0);
+        }
+
+        .service-card__label {
+            opacity: 0.82;
+            transform: translate3d(0, -1px, 0);
+        }
+
+        .service-card__price {
+            transform: translate3d(0, -1px, 0);
+            filter: drop-shadow(0 6px 14px rgba($color-accent, 0.18));
         }
     }
 }

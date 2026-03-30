@@ -1,15 +1,7 @@
+@use "../../global/core" as *;
+
 .quote-request {
-    padding: 40px 0 120px;
-
-    @include below-tablet {
-        padding-top: 24px;
-        padding-bottom: 96px;
-    }
-
-    @include below-mobile {
-        padding-top: 20px;
-        padding-bottom: 64px;
-    }
+    @include section-padding(40px, 60px, 32px, 48px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -32,10 +24,18 @@
             order: 2;
             margin: 0 auto;
         }
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 
     &__visual-media {
         width: 100%;
+
+        @media (min-width:991px) {
+            position: absolute;
+            top: 0;
+        }
 
         img {
             display: block;
@@ -120,3 +120,4 @@
         }
     }
 }
+

@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 .ui-check-item {
     display: flex;
     align-items: center;
@@ -9,6 +11,7 @@
     }
 
     &__icon-inner {
+        position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -18,15 +21,34 @@
         border-radius: 12px;
         background-color: $color-accent-dark;
         box-shadow: $shadow-accent;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border-radius: 10px;
+            background:
+                radial-gradient(circle at 24% 84%, rgba(201, 219, 38, 0.62) 0%, rgba(201, 219, 38, 0.28) 34%, rgba(201, 219, 38, 0) 68%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 32%);
+            filter: blur(1.6px);
+            pointer-events: none;
+        }
 
         img {
+            position: relative;
+            z-index: 1;
             display: block;
             width: 32px;
             height: 32px;
             border: 2px solid $color-accent;
             border-radius: 10px;
             background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+            box-shadow: inset 0 -2px 0 rgba(201, 219, 38, 0.42);
             object-fit: contain;
+
+            // object-fit: none;
+           
         }
     }
 
@@ -44,24 +66,31 @@
             font-size: 14px;
             letter-spacing: -0.04em;
         }
-    }
-
-    &__text-desktop,
-    &__text-mobile {
-        display: inline;
-    }
-
-    &__text-mobile {
-        display: none;
-
-        @include below-mobile {
+        
+        &-desktop,
+        &-mobile {
             display: inline;
         }
-    }
 
-    &__text-desktop {
-        @include below-mobile {
+        &-mobile {
             display: none;
+
+            @include below-mobile {
+                display: inline;
+            }
+        }
+
+        &-desktop {
+            @include below-mobile {
+                display: none;
+            }
         }
     }
+}
+
+
+.area-pricing__value {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }

@@ -42,8 +42,19 @@ include ../../components/faq-item/faq-item
 -
     var faqData = typeof faqSectionData === "object" && faqSectionData ? faqSectionData : {};
     var faqItemsData = Array.isArray(faqData.items) && faqData.items.length ? faqData.items : faqDefaults.items;
+    var faqMobileItemsData = Array.isArray(faqData.mobileItems) && faqData.mobileItems.length ? faqData.mobileItems : faqItemsData;
     var faqOptions = Object.assign({}, faqDefaults, faqData);
     faqOptions.items = faqItemsData;
+    faqOptions.mobileItems = faqMobileItemsData;
+
+    var faqInitialOpenIndex = typeof faqData.initialOpenIndex === "number" ? faqData.initialOpenIndex : -1;
+    var faqMobileInitialOpenIndex = typeof faqData.mobileInitialOpenIndex === "number" ? faqData.mobileInitialOpenIndex : faqInitialOpenIndex;
+    var faqShouldShowTitle = typeof faqData.showTitle === "boolean" ? faqData.showTitle : !!faqOptions.title;
+    var faqSectionClassName = "faq";
+
+    if (faqData.modifier) {
+        faqSectionClassName += " faq--" + faqData.modifier;
+    }
 
     var faqColumns = [];
     var faqDesktopColumnsData = Array.isArray(faqData.desktopColumns) && faqData.desktopColumns.length ? faqData.desktopColumns : null;
@@ -80,16 +91,21 @@ include ../../components/faq-item/faq-item
         });
     }
 
-section.faq
+section(class=faqSectionClassName)
     ._container
         .faq__wrapper
-            .faq__head
-                h2.ui-title.faq__title= faqOptions.title
+            if faqShouldShowTitle
+                .faq__head
+                    h2.ui-title.faq__title= faqOptions.title
             .faq__columns.faq__columns--desktop
                 each columnItems in faqColumns
                     .faq__column(data-faq-group)
                         each entry in columnItems
-                            +faqItem(entry.item, entry.index, "faq-desktop")
+                            +faqItem(entry.item, entry.index, "faq-desktop", entry.index === faqInitialOpenIndex)
             .faq__mobile(data-faq-group)
-                each item, index in faqOptions.items
-                    +faqItem(item, index, "faq-mobile")
+                each item, index in faqOptions.mobileItems
+                    +faqItem(item, index, "faq-mobile", index === faqMobileInitialOpenIndex)
+            if faqOptions.action
+                .faq__footer
+                    a.ui-btn.faq__action(class=faqOptions.action.className href=faqOptions.action.href)
+                        span.ui-btn__content= faqOptions.action.label

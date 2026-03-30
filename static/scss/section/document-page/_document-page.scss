@@ -1,0 +1,12 @@
+@use "../../global/core" as *;
+
+.document-page {
+    &__contacts {
+        @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+    }
+
+    &__contacts-wrapper {
+        display: grid;
+    }
+}
+

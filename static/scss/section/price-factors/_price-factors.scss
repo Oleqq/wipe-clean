@@ -1,15 +1,7 @@
+@use "../../global/core" as *;
+
 .price-factors {
-    padding: 120px 0 80px;
-
-    @include below-tablet {
-        padding-top: 96px;
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-top: 100px;
-        padding-bottom: 64px;
-    }
+    @include section-padding(50px, 40px, 44px, 36px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -49,10 +41,11 @@
 
     &__slider {
         min-width: 0;
-        overflow: visible;
-
+         overflow: hidden;
+        
+        margin: 0;
         @include below-mobile {
-            overflow: hidden;
+           overflow: visible;
         }
     }
 
@@ -82,7 +75,7 @@
     }
 
     &__action {
-        width: 280px;
+        width: fit-contentc;
         margin: 0 auto;
 
         @include below-mobile {
@@ -90,3 +83,4 @@
         }
     }
 }
+

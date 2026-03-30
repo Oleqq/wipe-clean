@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 .ui-section-head {
   display: grid;
   gap: $gap-sm;
@@ -50,6 +52,10 @@
   background-clip: text;
   color: transparent;
   @include adaptive-font(32, 48);
+
+  @media (max-width:467px) {
+    font-size: 26px !important;
+  }
 }
 
 .ui-title--card {
@@ -62,12 +68,7 @@
 
 .ui-title--number,
 .ui-accent-value {
-  font-family: $font-heading;
-  font-weight: 700;
-  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  @include accent-value();
 }
 
 .ui-title--number {
@@ -78,9 +79,7 @@
 }
 
 .ui-accent-value {
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: -0.04em;
+  @include accent-value();
 }
 
 .ui-text {
@@ -99,3 +98,4 @@
 .ui-text--center {
   text-align: center;
 }
+

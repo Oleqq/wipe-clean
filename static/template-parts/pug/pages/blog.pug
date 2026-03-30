@@ -1,16 +1,9 @@
-extends ../layouts/default
-
-block header
-
-block footer
+﻿extends ../layouts/default
 
 block content
+    include ../data/pages/blog-data
     .blog-page
         include ../section/blog-archive/blog-archive
         include ../section/reviews-preview/reviews-preview
         include ../section/gallery-preview/gallery-preview
-        -
-            var contactsSectionData = {
-                idPrefix: "blog-contacts"
-            }
         include ../section/contacts/contacts

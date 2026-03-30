@@ -1,0 +1,65 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.document-content {
+  padding-top: 112px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .document-content {
+    padding-top: 88px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 650px) {
+  .document-content {
+    padding-top: 88px;
+    padding-bottom: 25px;
+  }
+}
+.document-content__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+}
+@media (max-width: 650px) {
+  .document-content__wrapper {
+    gap: 20px;
+  }
+}
+.document-content__title {
+  max-width: 1320px;
+}
+@media (max-width: 650px) {
+  .document-content__title {
+    font-size: 32px;
+  }
+}
+.document-content__body {
+  gap: 32px;
+}
+@media (max-width: 650px) {
+  .document-content__body {
+    gap: 20px;
+  }
+}
+.document-content__body p {
+  max-width: 1320px;
+}

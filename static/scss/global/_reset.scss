@@ -1,3 +1,5 @@
+@use "./core" as *;
+
 // ========================================
 // CSS RESET & NORMALIZE
 // ========================================
@@ -144,13 +146,8 @@ th {
 
 // Reduced motion support
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -244,3 +241,4 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 
 button { font: inherit; }
+

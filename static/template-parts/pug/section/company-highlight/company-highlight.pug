@@ -1,22 +1,22 @@
 -
     var companyHighlightDefaults = {
-        title: "ВАЙП–Клин, ваш надежный помощник",
-        summaryText: "В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны...",
+        title: "ВАЙП–Клин, ВАШ НАДЕЖНЫЙ ПОМОЩНИК",
+        summaryText: "В ВАЙП–Клин мы ценим ваше время и берем на себя все заботы о чистоте. Мы создаем сервис, в котором легко заказать уборку, заранее понимать стоимость и быть уверенным в результате...",
         paragraphs: [
-            "В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны. Мы заботимся, чтобы каждый визит мастера приносил в ваш дом долгожданный уют и спокойствие. Заранее согласовываем стоимость и учитываем особенности жилья.",
-            "Мы строим работу на заботе о деталях, чтобы вам было комфортно общаться с нами на любом этапе. Нам важно поддерживать вас во всем: от оформления заявки до финальной проверки чистоты в доме. Мы постоянно улучшаем сервис, чтобы стоимость клининга всегда соответствовала вашим высоким ожиданиям. Наши цены на уборку квартир остаются стабильными."
+            "В ВАЙП–Клин мы ценим ваше время и берем на себя все заботы о чистоте. Мы создаем сервис, в котором легко заказать уборку, заранее понимать стоимость и быть уверенным в результате. Наша задача — не просто навести порядок, а сделать ваш дом по-настоящему комфортным, свежим и приятным для жизни.",
+            "Мы выстраиваем работу так, чтобы вам было удобно на каждом этапе: от оформления заявки до финальной проверки результата. Команда приезжает вовремя, учитывает особенности жилья и работает аккуратно, чтобы качество уборки было стабильным, а сервис — понятным и предсказуемым."
         ],
-        noteText: "Для нас клининг — это не разовая уборка, а ваш ежедневный комфорт и залог долгих отношений. Регулярная поддержка порядка помогает содержать жилье в идеале весь год без лишних усилий. Доверьтесь профи из ВАЙП–Клин, и вы увидите, как цены на клининговые услуги сочетаются с качеством. Мы гарантируем, что честная стоимость и прозрачный подход станут основой нашей крепкой дружбы.",
+        noteText: "Для нас клининг — это не разовая услуга, а надежная поддержка вашего ежедневного комфорта. Регулярная уборка помогает поддерживать дом в идеальном состоянии без лишних усилий, а честный подход и внимание к деталям становятся основой доверия между нами и клиентом.",
         bodyId: "company-highlight-body",
-        mainImageSrc: "/static/images/section/company-highlight/company-highlight-main.png",
-        mainImageAlt: "Инвентарь ВАЙП–Клин для уборки",
-        badgeImageSrc: "/static/images/section/company-highlight/company-highlight-badge.png",
-        badgeImageAlt: "Фирменный знак ВАЙП–Клин"
+        mediaImageSrc: "/static/images/section/company-highlight/company-highlight-full.png",
+        mediaImageAlt: "Инвентарь ВАЙП–Клин для уборки"
     }
 
 -
     var companyHighlightData = typeof companyHighlightSection === "object" && companyHighlightSection ? companyHighlightSection : {}
     var companyHighlightOptions = Object.assign({}, companyHighlightDefaults, companyHighlightData)
+    var companyHighlightMediaSrc = companyHighlightOptions.mediaImageSrc || companyHighlightOptions.mainImageSrc || companyHighlightDefaults.mediaImageSrc
+    var companyHighlightMediaAlt = companyHighlightOptions.mediaImageAlt || companyHighlightOptions.mainImageAlt || companyHighlightDefaults.mediaImageAlt
 
 section.company-highlight
     ._container
@@ -40,7 +40,5 @@ section.company-highlight
                     p.company-highlight__note-text= companyHighlightOptions.noteText
 
             .company-highlight__media
-                .company-highlight__media-main
-                    img(src=companyHighlightOptions.mainImageSrc alt=companyHighlightOptions.mainImageAlt loading="lazy")
-                .company-highlight__media-badge
-                    img(src=companyHighlightOptions.badgeImageSrc alt=companyHighlightOptions.badgeImageAlt loading="lazy")
+                .company-highlight__media-image
+                    img(src=companyHighlightMediaSrc alt=companyHighlightMediaAlt loading="lazy")

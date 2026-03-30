@@ -1,30 +1,4 @@
-mixin contactsCard(card)
-    if card && card.type == "socials"
-        .contacts__card.contacts__card--socials
-            p.contacts__card-label= card.label
-            .contacts__socials
-                each social in card.items
-                    -
-                        var socialAttrs = {
-                            href: social.href || "#",
-                            "aria-label": social.label
-                        };
-
-                        if (socialAttrs.href !== "#") {
-                            socialAttrs.target = "_blank";
-                            socialAttrs.rel = "noopener noreferrer";
-                        }
-
-                    a.contacts__social-link.ui-btn.ui-btn--primary&attributes(socialAttrs)
-                        span.ui-btn__content
-                            img(src=social.iconSrc alt="" aria-hidden="true" loading="lazy")
-    else if card
-        .contacts__card
-            p.contacts__card-label= card.label
-            if card.href
-                a.contacts__card-value.contacts__card-value--link(href=card.href)= card.value
-            else
-                p.contacts__card-value= card.value
+include ../contact-card/contact-card
 
 mixin contactsSection(data)
     -
@@ -53,9 +27,9 @@ mixin contactsSection(data)
                     .contacts__aside
                         .contacts__cards
                             .contacts__cards-row
-                                +contactsCard(data.phoneCard)
-                                +contactsCard(data.socialCard)
-                            +contactsCard(data.emailCard)
+                                +contactCard(data.phoneCard)
+                                +contactCard(data.socialCard)
+                            +contactCard(data.emailCard)
                     .contacts__form-block
                         h3.contacts__form-title= data.formTitle
                         form.contacts__form.ui-form(action=formAction method=formMethod novalidate)

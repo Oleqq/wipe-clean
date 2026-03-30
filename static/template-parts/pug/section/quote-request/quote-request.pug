@@ -16,8 +16,9 @@ section.quote-request
                         .ui-field.quote-request__field
                             label.ui-field__label(for="quote-request-phone") Номер телефона
                             input#quote-request-phone(type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _")
-                    label.ui-checkbox.quote-request__checkbox
-                        input.ui-checkbox__input(type="checkbox" name="agreement")
-                        span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
-                    button.ui-btn.ui-btn--primary.ui-btn--full.quote-request__submit(type="submit")
-                        span.ui-btn__content Рассчитать стоимость
+                    .quote-request__fields
+                        label.ui-checkbox.quote-request__checkbox
+                            input.ui-checkbox__input(type="checkbox" name="agreement")
+                            span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
+                        button.ui-btn.ui-btn--primary.ui-btn--full.quote-request__submit(type="submit")
+                            span.ui-btn__content Узнать стоимость клининга

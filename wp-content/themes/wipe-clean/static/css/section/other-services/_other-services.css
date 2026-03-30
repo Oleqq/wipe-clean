@@ -1,0 +1,115 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.other-services {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .other-services {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
+@media (max-width: 650px) {
+  .other-services {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.other-services__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+}
+@media (max-width: 650px) {
+  .other-services__wrapper {
+    gap: 20px;
+  }
+}
+.other-services__head {
+  max-width: 850px;
+  margin: 0 auto;
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .other-services__head {
+    gap: 10px;
+  }
+}
+.other-services__title {
+  text-align: center;
+}
+@media (max-width: 650px) {
+  .other-services__title {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+}
+.other-services__text {
+  text-align: center;
+}
+@media (max-width: 650px) {
+  .other-services__text {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.other-services__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 20px;
+}
+@media (max-width: 991px) {
+  .other-services__grid {
+    -ms-grid-columns: minmax(0, 1fr) 12px minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+}
+@media (max-width: 650px) {
+  .other-services__card .service-card__media {
+    height: 120px;
+  }
+}
+.other-services__action {
+  width: 320px;
+  margin: 0 auto;
+}
+@media (max-width: 650px) {
+  .other-services__action {
+    width: 100%;
+  }
+}
+.other-services__action-label--mobile {
+  display: none;
+}
+@media (max-width: 650px) {
+  .other-services__action-label--mobile {
+    display: inline;
+  }
+}
+@media (max-width: 650px) {
+  .other-services__action-label--desktop {
+    display: none;
+  }
+}

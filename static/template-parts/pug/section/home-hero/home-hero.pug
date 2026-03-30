@@ -1,3 +1,5 @@
+﻿include ../../includes/media.pug
+
 section.home-hero
     ._container
         .home-hero__wrapper
@@ -8,57 +10,96 @@ section.home-hero
                     p.ui-text.home-hero__text Мечтаете о безупречном порядке?<br>Начните с расчёта стоимости — форма ниже ждёт вас!
 
                     .home-hero__calculator
-                        form.home-hero__form(action="#" method="post" novalidate)
+                        form.home-hero__form.ui-form(action="#" method="post" novalidate data-demo-form data-form-success-popup="popup-status-success" data-form-error-popup="popup-status-error")
                             fieldset.home-hero__area
                                 legend.home-hero__area-title Площадь
+                                input(type="hidden" name="area" value="one-room" data-demo-choice-input)
                                 .home-hero__area-slider.swiper(data-hero-area-swiper)
-                                    .ui-choice-group.home-hero__area-options.swiper-wrapper
-                                        button.ui-choice.ui-choice--active.home-hero__choice.swiper-slide(type="button")
+                                    .ui-choice-group.home-hero__area-options.swiper-wrapper(data-demo-choice-group)
+                                        button.ui-choice.ui-choice--active.home-hero__choice.swiper-slide(type="button" aria-pressed="true" data-demo-choice data-choice-value="one-room")
                                             span.ui-choice__label однокомнатная
-                                        button.ui-choice.home-hero__choice.swiper-slide(type="button")
+                                        button.ui-choice.home-hero__choice.swiper-slide(type="button" aria-pressed="false" data-demo-choice data-choice-value="two-room")
                                             span.ui-choice__label 2-х комнатная
-                                        button.ui-choice.home-hero__choice.swiper-slide(type="button")
+                                        button.ui-choice.home-hero__choice.swiper-slide(type="button" aria-pressed="false" data-demo-choice data-choice-value="three-four-room")
                                             span.ui-choice__label 3/4-х комнатная
-                                        button.ui-choice.home-hero__choice.home-hero__choice--meter.swiper-slide(type="button")
+                                        button.ui-choice.home-hero__choice.home-hero__choice--meter.swiper-slide(type="button" aria-pressed="false" data-demo-choice data-choice-value="custom-area")
                                             span.ui-choice__label
                                                 | _ _ _ _ M
                                                 sup 2
                             .home-hero__form-grid
                                 .ui-field.home-hero__field
                                     label.ui-field__label(for="hero-service") Услуги
-                                    button.ui-field__control.home-hero__select-control(type="button" id="hero-service" aria-label="Выбор услуги")
-                                        span.home-hero__select-value Поддерживающая уборка
-                                        span.home-hero__select-icon(aria-hidden="true")
-                                            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    .ui-select.home-hero__select
+                                        select#hero-service.ui-field__control(name="service" required)
+                                            option(value="support-cleaning" selected) Поддерживающая уборка
+                                            option(value="general-cleaning") Генеральная уборка
+                                            option(value="after-renovation") Уборка после ремонта
+                                            option(value="window-cleaning") Мытье окон
+                                        span.ui-select__icon(aria-hidden="true")
+                                            svg.ui-select__icon-svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
                                                 path(d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
                                 .ui-field.home-hero__field
                                     label.ui-field__label(for="hero-frequency") Регулярность
-                                    button.ui-field__control.home-hero__select-control(type="button" id="hero-frequency" aria-label="Выбор регулярности")
-                                        span.home-hero__select-value Разовая
-                                        span.home-hero__select-icon(aria-hidden="true")
-                                            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    .ui-select.home-hero__select
+                                        select#hero-frequency.ui-field__control(name="frequency" required)
+                                            option(value="single" selected) Разовая
+                                            option(value="weekly") Еженедельно
+                                            option(value="biweekly") 2 раза в месяц
+                                            option(value="monthly") Ежемесячно
+                                        span.ui-select__icon(aria-hidden="true")
+                                            svg.ui-select__icon-svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg")
                                                 path(d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
                                 .ui-field.home-hero__field
                                     label.ui-field__label(for="hero-name") Ваше имя
-                                    input#hero-name(type="text" name="name" placeholder="Введите имя и фамилию")
+                                    input#hero-name.ui-field__control(type="text" name="name" placeholder="Введите имя и фамилию" required autocomplete="name")
                                 .ui-field.home-hero__field
                                     label.ui-field__label(for="hero-phone") Номер телефона
-                                    input#hero-phone(type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _")
-                            .home-hero__actions
-                                label.ui-checkbox.home-hero__checkbox
-                                    input.ui-checkbox__input(type="checkbox" name="agreement")
+                                    input#hero-phone.ui-field__control(type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel")
+                            .home-hero__actions(data-form-actions)
+                                label.ui-checkbox.home-hero__checkbox(for="hero-agreement")
+                                    input#hero-agreement.ui-checkbox__input(type="checkbox" name="agreement" required)
                                     span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
-                                button.ui-btn.ui-btn--primary.ui-btn--full.home-hero__submit(type="button")
+                                button.ui-btn.ui-btn--primary.ui-btn--full.home-hero__submit(type="submit")
                                     span.ui-btn__content Рассчитать стоимость
 
                 .home-hero__visual(aria-hidden="true")
                     .home-hero__visual-tools
-                        img(src="/static/images/section/home-hero/hero-tools.png" alt="")
+                        +mediaImage({
+                            src: "/static/images/section/home-hero/hero-tools.png",
+                            decorative: true,
+                            width: 2048,
+                            height: 2048,
+                            loading: "eager",
+                            decoding: "async",
+                            sizes: "(max-width: 1099px) 38vw, 18vw"
+                        })
                     .home-hero__visual-shadow
                     .home-hero__visual-room
-                        img(src="/static/images/section/home-hero/hero-room.png" alt="")
+                        +mediaImage({
+                            src: "/static/images/section/home-hero/hero-room.png",
+                            srcset: "/static/images/section/home-hero/hero-room-728.png 728w, /static/images/section/home-hero/hero-room.png 1456w",
+                            webpSrcset: "/static/webp-images/section/home-hero/hero-room-728.webp 728w, /static/webp-images/section/home-hero/hero-room-1456.webp 1456w",
+                            decorative: true,
+                            width: 1456,
+                            height: 816,
+                            loading: "eager",
+                            decoding: "async",
+                            fetchpriority: "high",
+                            sizes: "(max-width: 1099px) 82vw, 44vw"
+                        })
                     .home-hero__visual-cleaner
-                        img(src="/static/images/section/home-hero/hero-cleaner.png" alt="")
+                        +mediaImage({
+                            src: "/static/images/section/home-hero/hero-cleaner.png",
+                            srcset: "/static/images/section/home-hero/hero-cleaner-464.png 464w, /static/images/section/home-hero/hero-cleaner.png 928w",
+                            webpSrcset: "/static/webp-images/section/home-hero/hero-cleaner-464.webp 464w, /static/webp-images/section/home-hero/hero-cleaner-928.webp 928w",
+                            decorative: true,
+                            width: 928,
+                            height: 1232,
+                            loading: "eager",
+                            decoding: "async",
+                            fetchpriority: "high",
+                            sizes: "(max-width: 1099px) 58vw, 28vw"
+                        })
 
             .home-hero__benefits
                 article.ui-card.ui-card--compact.home-hero__benefit
@@ -88,3 +129,4 @@ section.home-hero
                                 path(d="M23.3333 20H26.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
                                 path(d="M16.2 23.8L23.8 16.2" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round")
                     p.home-hero__benefit-title Скидки постоянным клиентам
+

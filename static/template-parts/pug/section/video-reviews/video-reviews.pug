@@ -1,0 +1,90 @@
+include ../../components/video-review-card/video-review-card
+
+-
+    var videoReviewsVideoPath = "/static/images/section/gallery-preview/test-video.mp4"
+    var videoReviewsPosterPath = "/static/images/section/video-reviews/video-review-poster-placeholder.svg"
+
+    var videoReviewsDefaults = {
+        titleLines: ["Видео Отзывы", "наших клиентов"],
+        topAction: {
+            label: "Оставить отзыв",
+            href: "#"
+        },
+        items: [
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента о клининге квартиры",
+                caption: "Видео отзыв клиента о работе ВАЙП–Клин"
+            },
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента об уборке дома",
+                caption: "Отзыв клиента после уборки дома"
+            },
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента о регулярном клининге",
+                caption: "Отзыв о регулярном обслуживании"
+            },
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента об уборке офиса",
+                caption: "Отзыв о клининге офисного пространства"
+            },
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента о генеральной уборке",
+                caption: "Отзыв о генеральной уборке"
+            },
+            {
+                posterSrc: videoReviewsPosterPath,
+                videoSrc: videoReviewsVideoPath,
+                alt: "Видео отзыв клиента о деликатной уборке",
+                caption: "Отзыв о деликатной уборке квартиры"
+            }
+        ]
+    }
+
+-
+    var videoReviewsData = typeof videoReviewsSection === "object" && videoReviewsSection ? videoReviewsSection : {}
+    var videoReviewsTopActionData = typeof videoReviewsData.topAction === "object" && videoReviewsData.topAction ? videoReviewsData.topAction : {}
+    var videoReviewsOptions = Object.assign({}, videoReviewsDefaults, videoReviewsData)
+    var videoReviewsTopAction = Object.assign({}, videoReviewsDefaults.topAction, videoReviewsTopActionData)
+    var videoReviewsItems = Array.isArray(videoReviewsData.items) && videoReviewsData.items.length ? videoReviewsData.items : videoReviewsDefaults.items
+
+section.video-reviews
+    ._container
+        .video-reviews__wrapper
+            .video-reviews__head
+                h2.video-reviews__title
+                    each line, index in videoReviewsOptions.titleLines
+                        | #{line}
+                        if index !== videoReviewsOptions.titleLines.length - 1
+                            br
+
+            .video-reviews__slider.swiper(data-video-reviews-swiper)
+                .video-reviews__track.swiper-wrapper
+                    each item in videoReviewsItems
+                        .video-reviews__slide.swiper-slide
+                            +videoReviewCard(item)
+
+            .video-reviews__actions
+                a.ui-btn.ui-btn--primary.video-reviews__top-action(href=videoReviewsTopAction.href)
+                    span.ui-btn__content= videoReviewsTopAction.label
+
+                .video-reviews__nav.ui-slider-nav.ui-slider-nav--desktop-only
+                    button.video-reviews__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Предыдущее видео" data-video-reviews-prev)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                    button.video-reviews__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Следующее видео" data-video-reviews-next)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")

@@ -1,0 +1,1161 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wipe Clean</title>
+    <link rel="preload" href="/static/fonts/Involve-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/static/css/vendor/fancybox.css">
+    <link rel="stylesheet" href="/static/css/vendor/swiper-bundle.css">
+    <link rel="stylesheet" href="/static/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="_container">
+        <div class="header__wrapper"><a class="header__brand" href="index.html" aria-label="РќР° РіР»Р°РІРЅСѓСЋ"><span class="header__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="header__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+          <nav class="header__nav" id="header-nav" data-header-nav aria-label="РћСЃРЅРѕРІРЅР°СЏ РЅР°РІРёРіР°С†РёСЏ">
+            <button class="header__nav-backdrop" type="button" data-header-close aria-label="Р—Р°РєСЂС‹С‚СЊ РјРµРЅСЋ"></button>
+            <div class="header__nav-panel">
+              <ul class="header__menu">
+                <li class="header__item"><a class="header__link" href="about-us.html" data-header-link>Рћ РєРѕРјРїР°РЅРёРё</a></li>
+                <li class="header__item header__item--has-children" data-header-item>
+                  <div class="header__item-row"><a class="header__link header__link--parent" href="services.html" data-header-link data-header-parent-link>РЈСЃР»СѓРіРё</a>
+                    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="header-services-submenu" aria-label="РџРѕРєР°Р·Р°С‚СЊ РїРѕРґРјРµРЅСЋ СЂР°Р·РґРµР»Р° РЈСЃР»СѓРіРё" data-header-submenu-toggle>
+                          <svg class="header__submenu-toggle-icon" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M2 2L8 6L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                    </button>
+                  </div>
+                  <div class="header__submenu" id="header-services-submenu" data-header-submenu aria-hidden="true">
+                    <div class="header__submenu-panel">
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="apartment-cleaning.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РњС‹С‚СЊС‘ РѕРєРѕРЅ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item"><a class="header__link" href="prices.html" data-header-link>Р¦РµРЅС‹</a></li>
+                <li class="header__item"><a class="header__link" href="promotions.html" data-header-link>РђРєС†РёРё</a></li>
+                <li class="header__item"><a class="header__link" href="reviews.html" data-header-link>РћС‚Р·С‹РІС‹</a></li>
+                <li class="header__item"><a class="header__link" href="contacts.html" data-header-link>РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="blog.html" data-header-link>Р‘Р»РѕРі</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="faq.html" data-header-link>FAQ</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="header__actions"><a class="ui-btn ui-btn--primary ui-btn--icon header__phone" href="tel:+79801636101" aria-label="РџРѕР·РІРѕРЅРёС‚СЊ"><span class="ui-btn__content"><span class="header__action-icon">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M22 20.2448V23.667C22 24.2858 21.7542 24.8793 21.3167 25.3167C20.8793 25.7542 20.2858 26 19.667 26C15.2332 25.7304 10.9848 23.8476 7.81016 20.673C4.63555 17.4983 2.75276 13.2499 2.48315 8.81616C2.48315 8.19735 2.72899 7.60389 3.16642 7.16644C3.60386 6.729 4.19731 6.48315 4.81612 6.48315H8.23831C8.65696 6.47904 9.06282 6.6286 9.37925 6.90325C9.69567 7.17789 9.90063 7.55849 9.95565 7.97353C10.0583 8.7517 10.2488 9.51583 10.523 10.2511C10.6378 10.557 10.6642 10.889 10.599 11.2092C10.5338 11.5294 10.3796 11.8248 10.1541 12.0614L8.70538 13.5101C10.3298 16.3668 12.6991 18.7361 15.5558 20.3605L17.0045 18.9118C17.2411 18.6863 17.5365 18.5321 17.8567 18.4669C18.1769 18.4017 18.5089 18.4281 18.8148 18.5429C19.5501 18.8171 20.3142 19.0076 21.0924 19.1103C21.5115 19.166 21.8954 19.375 22.1704 19.6973C22.4453 20.0197 22.5928 20.432 22.5854 20.855L22 20.2448Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></span></a><a class="ui-btn ui-btn--primary header__cta" href="contacts.html"><span class="ui-btn__content">РЎРІСЏР·Р°С‚СЊСЃСЏ СЃ РЅР°РјРё</span></a>
+            <button class="ui-btn ui-btn--primary ui-btn--icon header__menu-toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ" data-header-toggle><span class="ui-btn__content"><span class="header__action-icon header__action-icon--menu">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 14H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 20H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span><span class="header__action-icon header__action-icon--close">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 8L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M20 8L8 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="home-hero">
+        <div class="_container">
+          <div class="home-hero__wrapper">
+            <div class="home-hero__top">
+              <div class="home-hero__intro ui-section-head"><span class="ui-kicker">РЈР±РѕСЂРєР° Р»СЋР±С‹С… РїРѕРјРµС‰РµРЅРёР№ РІ Р»СЋР±РѕРј СЂР°Р№РѕРЅРµ РњРѕСЃРєРІС‹ РїРѕ РґРѕСЃС‚СѓРїРЅС‹Рј С†РµРЅР°Рј</span>
+                <h1 class="ui-title ui-title--hero">РљР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РїРѕ СѓР±РѕСЂРєРµ РєРІР°СЂС‚РёСЂ Рё РґРѕРјРѕРІ РІ РњРѕСЃРєРІРµ Рё РњРћ</h1>
+                <p class="ui-text home-hero__text">РњРµС‡С‚Р°РµС‚Рµ Рѕ Р±РµР·СѓРїСЂРµС‡РЅРѕРј РїРѕСЂСЏРґРєРµ?<br>РќР°С‡РЅРёС‚Рµ СЃ СЂР°СЃС‡С‘С‚Р° СЃС‚РѕРёРјРѕСЃС‚Рё вЂ” С„РѕСЂРјР° РЅРёР¶Рµ Р¶РґС‘С‚ РІР°СЃ!</p>
+                <div class="home-hero__calculator">
+                  <form class="home-hero__form" action="#" method="post" novalidate>
+                    <fieldset class="home-hero__area">
+                      <legend class="home-hero__area-title">РџР»РѕС‰Р°РґСЊ</legend>
+                      <div class="home-hero__area-slider swiper" data-hero-area-swiper>
+                        <div class="ui-choice-group home-hero__area-options swiper-wrapper">
+                          <button class="ui-choice ui-choice--active home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">РѕРґРЅРѕРєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                          <button class="ui-choice home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">2-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                          <button class="ui-choice home-hero__choice swiper-slide" type="button"><span class="ui-choice__label">3/4-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                          <button class="ui-choice home-hero__choice home-hero__choice--meter swiper-slide" type="button"><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="home-hero__form-grid">
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-service">РЈСЃР»СѓРіРё</label>
+                        <button class="ui-field__control home-hero__select-control" type="button" id="hero-service" aria-label="Р’С‹Р±РѕСЂ СѓСЃР»СѓРіРё"><span class="home-hero__select-value">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="home-hero__select-icon" aria-hidden="true">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></span></button>
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-frequency">Р РµРіСѓР»СЏСЂРЅРѕСЃС‚СЊ</label>
+                        <button class="ui-field__control home-hero__select-control" type="button" id="hero-frequency" aria-label="Р’С‹Р±РѕСЂ СЂРµРіСѓР»СЏСЂРЅРѕСЃС‚Рё"><span class="home-hero__select-value">Р Р°Р·РѕРІР°СЏ</span><span class="home-hero__select-icon" aria-hidden="true">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></span></button>
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-name">Р’Р°С€Рµ РёРјСЏ</label>
+                        <input id="hero-name" type="text" name="name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ">
+                      </div>
+                      <div class="ui-field home-hero__field">
+                        <label class="ui-field__label" for="hero-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                        <input id="hero-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                      </div>
+                    </div>
+                    <div class="home-hero__actions">
+                      <label class="ui-checkbox home-hero__checkbox">
+                        <input class="ui-checkbox__input" type="checkbox" name="agreement"><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                      </label>
+                      <button class="ui-btn ui-btn--primary ui-btn--full home-hero__submit" type="button"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="home-hero__visual" aria-hidden="true">
+                <div class="home-hero__visual-tools"><img src="/static/images/section/home-hero/hero-tools.png" alt="" loading="eager" decoding="async" width="2048" height="2048" sizes="(max-width: 1099px) 38vw, 18vw" aria-hidden="true">
+                </div>
+                <div class="home-hero__visual-shadow"></div>
+                <div class="home-hero__visual-room">
+                        <picture>
+                          <source type="image/webp" srcset="/static/webp-images/section/home-hero/hero-room-728.webp 728w, /static/webp-images/section/home-hero/hero-room-1456.webp 1456w" sizes="(max-width: 1099px) 82vw, 44vw"><img src="/static/images/section/home-hero/hero-room.png" alt="" loading="eager" decoding="async" width="1456" height="816" fetchpriority="high" srcset="/static/images/section/home-hero/hero-room-728.png 728w, /static/images/section/home-hero/hero-room.png 1456w" sizes="(max-width: 1099px) 82vw, 44vw" aria-hidden="true">
+                        </picture>
+                </div>
+                <div class="home-hero__visual-cleaner">
+                        <picture>
+                          <source type="image/webp" srcset="/static/webp-images/section/home-hero/hero-cleaner-464.webp 464w, /static/webp-images/section/home-hero/hero-cleaner-928.webp 928w" sizes="(max-width: 1099px) 58vw, 28vw"><img src="/static/images/section/home-hero/hero-cleaner.png" alt="" loading="eager" decoding="async" width="928" height="1232" fetchpriority="high" srcset="/static/images/section/home-hero/hero-cleaner-464.png 464w, /static/images/section/home-hero/hero-cleaner.png 928w" sizes="(max-width: 1099px) 58vw, 28vw" aria-hidden="true">
+                        </picture>
+                </div>
+              </div>
+            </div>
+            <div class="home-hero__benefits">
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.3333 20L17.7778 24.4444L26.6667 15.5555" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 3.33334L24.5667 7.90001L30.9 9.10001L32.1 15.4333L36.6667 20L32.1 24.5667L30.9 30.9L24.5667 32.1L20 36.6667L15.4333 32.1L9.1 30.9L7.9 24.5667L3.33334 20L7.9 15.4333L9.1 9.10001L15.4333 7.90001L20 3.33334Z" stroke="white" stroke-width="2.8" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">Р’С‹РіРѕРґРЅС‹Рµ РїСЂРµРґР»РѕР¶РµРЅРёСЏ</p>
+              </article>
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.1667 17.5C17.3883 17.5 20 14.8883 20 11.6667C20 8.44501 17.3883 5.83334 14.1667 5.83334C10.945 5.83334 8.33334 8.44501 8.33334 11.6667C8.33334 14.8883 10.945 17.5 14.1667 17.5Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M5 31.6667C5 26.6041 9.10405 22.5 14.1667 22.5C19.2293 22.5 23.3333 26.6041 23.3333 31.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M26.6667 16.6667C28.9679 16.6667 30.8333 14.8012 30.8333 12.5C30.8333 10.1988 28.9679 8.33334 26.6667 8.33334" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M35 31.6667C35 27.5245 31.6419 24.1667 27.5 24.1667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">РљРІР°Р»РёС„РёС†РёСЂРѕРІР°РЅРЅР°СЏ РєРѕРјР°РЅРґР°</p>
+              </article>
+              <article class="ui-card ui-card--compact home-hero__benefit">
+                <div class="ui-icon-badge home-hero__benefit-icon">
+                  <div class="ui-icon-badge__inner">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 11.6667V15" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 25V28.3333" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M13.3333 20H16.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M23.3333 20H26.6667" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M16.2 23.8L23.8 16.2" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="home-hero__benefit-title">РЎРєРёРґРєРё РїРѕСЃС‚РѕСЏРЅРЅС‹Рј РєР»РёРµРЅС‚Р°Рј</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services-preview">
+        <div class="_container">
+          <div class="services-preview__wrapper">
+            <div class="services-preview__head ui-section-head ui-section-head--center">
+              <h2 class="ui-title">РќР°С€Рё СѓСЃР»СѓРіРё РїРѕ СѓР±РѕСЂРєРµ</h2>
+              <p class="ui-text">РњС‹ РІС‹РїРѕР»РЅСЏРµРј РєР»РёРЅРёРЅРі РїРѕРґ СЂР°Р·РЅС‹Рµ Р·Р°РґР°С‡Рё вЂ” РѕС‚ СЂРµРіСѓР»СЏСЂРЅРѕР№ СѓР±РѕСЂРєРё РєРІР°СЂС‚РёСЂС‹ РґРѕ РєРѕРјРїР»РµРєСЃРЅРѕР№ РіРµРЅРµСЂР°Р»СЊРЅРѕР№ СѓР±РѕСЂРєРё РїРѕСЃР»Рµ РїРµСЂРµРµР·РґР°. Р’СЃРµ СЂР°Р±РѕС‚С‹ РІС‹РїРѕР»РЅСЏСЋС‚СЃСЏ С€С‚Р°С‚РЅС‹РјРё РєР»РёРЅРµСЂР°РјРё РїРѕ С‡РµРє-Р»РёСЃС‚Сѓ, СЃ РєРѕРЅС‚СЂРѕР»РµРј СЃС‚Р°СЂС€РµРіРѕ СЃРїРµС†РёР°Р»РёСЃС‚Р°.</p>
+            </div>
+            <div class="services-preview__grid services-preview__grid--featured"><a class="service-card service-card--lg" href="#" aria-label="РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 3 500 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 7 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 10 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 17 000 в‚Ѕ</span></span></span></a>
+            </div>
+            <div class="services-preview__grid services-preview__grid--secondary"><a class="service-card service-card--sm" href="#" aria-label="РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 5 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="РњС‹С‚СЊС‘ РѕРєРѕРЅ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">РњС‹С‚СЊС‘ РѕРєРѕРЅ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 2 500 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-office.png" alt="" style="--service-layer-order:4"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 19 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"></span><span class="service-card__body"><span class="service-card__title">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 12 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm service-card--after-repair" href="#" aria-label="РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:6"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 12 000 в‚Ѕ</span></span></span></a>
+            </div>
+            <div class="ui-banner services-preview__note">
+              <p class="ui-text services-preview__note-text">РС‚РѕРіРѕРІР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё РїРѕРјРµС‰РµРЅРёСЏ, РЅРµРѕР±С…РѕРґРёРјС‹С… СѓСЃР»СѓРі Рё РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹С… РїСЂРµРґРїРѕС‡С‚РµРЅРёР№. Р—Р°РїРѕР»РЅРёС‚Рµ Р·Р°СЏРІРєСѓ РЅР° СЃР°Р№С‚Рµ РёР»Рё СЃРІСЏР¶РёС‚РµСЃСЊ СЃ РЅР°РјРё РїРѕ С‚РµР»РµС„РѕРЅСѓ РёР»Рё РІ РјРµСЃСЃРµРЅРґР¶РµСЂ, С‡С‚РѕР±С‹ РјС‹ СЂР°СЃСЃС‡РёС‚Р°Р»Рё СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёСЂРёРЅРіРѕРІС‹С… СѓСЃР»СѓРі.</p>
+            </div>
+            <div class="services-preview__actions"><a class="ui-btn ui-btn--primary ui-btn--full" href="#"><span class="ui-btn__content">РћР·РЅР°РєРѕРјРёС‚СЊСЃСЏ СЃРѕ РІСЃРµРјРё СѓСЃР»СѓРіР°РјРё</span></a><a class="ui-btn ui-btn--secondary ui-btn--full" href="#"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="ui-wave-group">
+        <section class="price-preview">
+          <div class="_container">
+            <div class="price-preview__wrapper">
+              <div class="price-preview__visual" aria-hidden="true"><img src="/static/images/section/price-preview/price-preview-bucket.png" alt=""></div>
+              <div class="price-preview__content">
+                <div class="price-preview__head ui-section-head ui-section-head--compact">
+                  <h2 class="price-preview__title ui-title"><span class="price-preview__title-accent">Р¦РµРЅС‹ РЅР°</span> РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ</h2>
+                  <p class="price-preview__text ui-text">РњС‹ РїСЂРёРґРµСЂР¶РёРІР°РµРјСЃСЏ РїСЂРѕР·СЂР°С‡РЅРѕРіРѕ С†РµРЅРѕРѕР±СЂР°Р·РѕРІР°РЅРёСЏ: СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР° Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё, СЃРѕСЃС‚РѕСЏРЅРёСЏ РїРѕРјРµС‰РµРЅРёСЏ Рё РІС‹Р±СЂР°РЅРЅРѕРіРѕ С„РѕСЂРјР°С‚Р° СѓР±РѕСЂРєРё. РќРёРєР°РєРёС… СЃРєСЂС‹С‚С‹С… РґРѕРїР»Р°С‚ вЂ” РёС‚РѕРіРѕРІР°СЏ С†РµРЅР° СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµС‚СЃСЏ Р·Р°СЂР°РЅРµРµ.</p>
+                </div>
+                <ul class="price-preview__list ui-price-list">
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ</span><span class="price-preview__value ui-price-list__value">РѕС‚ 80 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№</span><span class="price-preview__value ui-price-list__value">РѕС‚ 80 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ</span><span class="price-preview__value ui-price-list__value">РѕС‚ 30 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</span><span class="price-preview__value ui-price-list__value">РѕС‚ 140 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</span><span class="price-preview__value ui-price-list__value">РѕС‚ 160 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="price-preview__value ui-price-list__value">РѕС‚ 80 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°</span><span class="price-preview__value ui-price-list__value">РѕС‚ 140 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РЈР±РѕСЂРєР° РїРµСЂРµРґ РІСЉРµР·РґРѕРј / РїРѕСЃР»Рµ РїРµСЂРµРµР·РґР°</span><span class="price-preview__value ui-price-list__value">РѕС‚ 80 СЂСѓР±./РјВІ</span></li>
+                  <li class="price-preview__row ui-price-list__row"><span class="price-preview__label ui-price-list__label">РњС‹С‚СЊС‘ РѕРєРѕРЅ</span><span class="price-preview__value ui-price-list__value">РѕС‚ 300 СЂСѓР±./РјВІ</span></li>
+                </ul>
+                <div class="price-preview__actions"><a class="price-preview__action ui-btn ui-btn--primary" href="#"><span class="ui-btn__content"><span class="price-preview__btn-label price-preview__btn-label--desktop">РћР·РЅР°РєРѕРјРёС‚СЊСЃСЏ СЃРѕ РІСЃРµРјРё С†РµРЅР°РјРё</span><span class="price-preview__btn-label price-preview__btn-label--mobile">РЎРІСЏР·Р°С‚СЊСЃСЏ СЃ РЅР°РјРё</span></span></a><a class="price-preview__action ui-btn ui-btn--secondary" href="#"><span class="ui-btn__content"><span class="price-preview__btn-label price-preview__btn-label--desktop">Р—Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі</span><span class="price-preview__btn-label price-preview__btn-label--mobile">РќР°С€Рё СѓСЃР»СѓРіРё</span></span></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="work-steps">
+          <div class="_container">
+            <div class="work-steps__wrapper">
+              <div class="work-steps__head ui-section-head ui-section-head--compact ui-section-head--narrow">
+                <h2 class="ui-title">Р­С‚Р°РїС‹ РЅР°С€РµР№ СЂР°Р±РѕС‚С‹</h2>
+                <p class="ui-text">РњС‹ РІС‹СЃС‚СЂРѕРёР»Рё РїСЂРѕС†РµСЃСЃ РєР»РёРЅРёРЅРіР° С‚Р°Рє, С‡С‚РѕР±С‹ РґР»СЏ РєР»РёРµРЅС‚Р° РѕРЅ Р±С‹Р» РјР°РєСЃРёРјР°Р»СЊРЅРѕ РїСЂРѕСЃС‚С‹Рј Рё РїРѕРЅСЏС‚РЅС‹Рј вЂ” РѕС‚ РїРµСЂРІРѕРіРѕ РѕР±СЂР°С‰РµРЅРёСЏ РґРѕ РїСЂРёС‘РјРєРё СЂРµР·СѓР»СЊС‚Р°С‚Р°.</p>
+              </div>
+              <div class="work-steps__slider swiper" data-work-steps-swiper>
+                <div class="work-steps__grid swiper-wrapper">
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">01</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Р—Р°СЏРІРєР° Рё РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ</h3>
+                      <p class="work-steps__item-text ui-text">Р’С‹ РѕСЃС‚Р°РІР»СЏРµС‚Рµ Р·Р°СЏРІРєСѓ, Р° РЅР°С€ РјРµРЅРµРґР¶РµСЂ СѓС‚РѕС‡РЅСЏРµС‚ РґРµС‚Р°Р»Рё СѓР±РѕСЂРєРё Рё РѕС‚РІРµС‡Р°РµС‚ РЅР° РІР°С€Рё РІРѕРїСЂРѕСЃС‹.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">02</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">Р Р°СЃС‡С‘С‚ СЃС‚РѕРёРјРѕСЃС‚Рё Рё СЃРѕРіР»Р°СЃРѕРІР°РЅРёРµ</h3>
+                      <p class="work-steps__item-text ui-text">РњС‹ СЂР°СЃСЃС‡РёС‚С‹РІР°РµРј СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР° Рё СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµРј РµС‘ СЃ РІР°РјРё РґРѕ РЅР°С‡Р°Р»Р° СЂР°Р±РѕС‚.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">03</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">РЎРѕРіР»Р°СЃРѕРІР°РЅРёРµ РґР°С‚С‹ РІС‹РµР·РґР°</h3>
+                      <p class="work-steps__item-text ui-text">РџРѕРґР±РёСЂР°РµРј СѓРґРѕР±РЅСѓСЋ РґР»СЏ РІР°СЃ РґР°С‚Сѓ Рё РІСЂРµРјСЏ РїСЂРѕРІРµРґРµРЅРёСЏ СѓР±РѕСЂРєРё.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">04</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">РџСЂРёР±С‹С‚РёРµ РєРѕРјР°РЅРґС‹ РІ РґРµРЅСЊ СѓР±РѕСЂРєРё СЃРѕ РІСЃРµРјРё СЃСЂРµРґСЃС‚РІР°РјРё</h3>
+                      <p class="work-steps__item-text ui-text">Р’ РЅР°Р·РЅР°С‡РµРЅРЅС‹Р№ РґРµРЅСЊ РєРѕРјР°РЅРґР° РїСЂРёРµР·Р¶Р°РµС‚ РІРѕРІСЂРµРјСЏ СЃРѕ РІСЃРµРј РЅРµРѕР±С…РѕРґРёРјС‹Рј РёРЅРІРµРЅС‚Р°СЂС‘Рј Рё Р±РµР·РѕРїР°СЃРЅРѕР№ С…РёРјРёРµР№.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">05</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">РЈР±РѕСЂРєР° РїРѕ С‡РµРє-Р»РёСЃС‚Сѓ</h3>
+                      <p class="work-steps__item-text ui-text">РљР»РёРЅРµСЂС‹ РІС‹РїРѕР»РЅСЏСЋС‚ СѓР±РѕСЂРєСѓ РїРѕ С‡РµРє-Р»РёСЃС‚Сѓ РїРѕРґ РєРѕРЅС‚СЂРѕР»РµРј СЃС‚Р°СЂС€РµРіРѕ СЃРїРµС†РёР°Р»РёСЃС‚Р°.</p>
+                    </div>
+                  </article>
+                  <article class="ui-card work-steps__item swiper-slide"><span class="work-steps__number ui-title--number">06</span>
+                    <div class="work-steps__item-body">
+                      <h3 class="work-steps__item-title">РџСЂРёС‘РјРєР° СЂР°Р±РѕС‚ Рё РѕРїР»Р°С‚Р°</h3>
+                      <p class="work-steps__item-text ui-text">Р’С‹ РїСЂРёРЅРёРјР°РµС‚Рµ СЂРµР·СѓР»СЊС‚Р°С‚, Рё РїРѕСЃР»Рµ СЌС‚РѕРіРѕ РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РѕРїР»Р°С‚Р° СѓРґРѕР±РЅС‹Рј РґР»СЏ РІР°СЃ СЃРїРѕСЃРѕР±РѕРј.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="quote-request">
+          <div class="_container">
+            <div class="quote-request__wrapper">
+              <div class="quote-request__visual" aria-hidden="true">
+                <div class="quote-request__visual-media"><img src="/static/images/section/quote-request/Mask group.png" alt=""></div>
+              </div>
+              <div class="quote-request__content">
+                <div class="quote-request__head ui-section-head ui-section-head--compact">
+                  <h2 class="quote-request__title ui-title">Р Р°СЃСЃС‡РёС‚Р°Р№С‚Рµ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР° РІ РњРѕСЃРєРІРµ СѓР¶Рµ СЃРµР№С‡Р°СЃ</h2>
+                  <p class="quote-request__text ui-text">РћСЃС‚Р°РІСЊС‚Рµ Р·Р°СЏРІРєСѓ, Рё РЅР°С€ РјРµРЅРµРґР¶РµСЂ СЃРІСЏР¶РµС‚СЃСЏ СЃ РІР°РјРё РІ С‚РµС‡РµРЅРёРµ 5вЂ“15 РјРёРЅСѓС‚, СѓС‚РѕС‡РЅРёС‚ РґРµС‚Р°Р»Рё Рё СЂР°СЃСЃС‡РёС‚Р°РµС‚ С‚РѕС‡РЅСѓСЋ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіРѕРІС‹С… СѓСЃР»СѓРі РїРѕРґ РІР°С€Сѓ Р·Р°РґР°С‡Сѓ.</p>
+                </div>
+                <form class="quote-request__form ui-form" action="#" method="post" novalidate>
+                  <div class="quote-request__fields">
+                    <div class="ui-field quote-request__field">
+                      <label class="ui-field__label" for="quote-request-name">Р’Р°С€Рµ РёРјСЏ</label>
+                      <input id="quote-request-name" type="text" name="name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ">
+                    </div>
+                    <div class="ui-field quote-request__field">
+                      <label class="ui-field__label" for="quote-request-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                      <input id="quote-request-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                    </div>
+                  </div>
+                  <label class="ui-checkbox quote-request__checkbox">
+                    <input class="ui-checkbox__input" type="checkbox" name="agreement"><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                  </label>
+                  <button class="ui-btn ui-btn--primary ui-btn--full quote-request__submit" type="submit"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="company-preview">
+        <div class="_container">
+          <div class="company-preview__wrapper">
+            <div class="company-preview__top">
+              <div class="company-preview__content">
+                <div class="company-preview__head">
+                  <h2 class="ui-title company-preview__title">РљР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ Р’РђР™РџвЂ“РљР»РёРЅ, РІР°С€ РЅР°РґС‘Р¶РЅС‹Р№ РїРѕРјРѕС‰РЅРёРє</h2>
+                  <p class="ui-text company-preview__text">РњС‹ РїРѕРґС…РѕРґРёРј Рє СѓР±РѕСЂРєРµ РєР°Рє Рє Р·Р°Р±РѕС‚Рµ Рѕ РґРѕРјРµ. Р”Р»СЏ РЅР°СЃ РІР°Р¶РЅРѕ РЅРµ РїСЂРѕСЃС‚Рѕ РЅР°РІРµСЃС‚Рё С‡РёСЃС‚РѕС‚Сѓ, Р° СЃРґРµР»Р°С‚СЊ СЌС‚Рѕ Р°РєРєСѓСЂР°С‚РЅРѕ, Р±РµР·РѕРїР°СЃРЅРѕ Рё СЃ СѓРІР°Р¶РµРЅРёРµРј Рє РІР°С€РµРјСѓ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ. РРјРµРЅРЅРѕ РїРѕСЌС‚РѕРјСѓ РІСЃРµ СЂР°Р±РѕС‚С‹ РІС‹РїРѕР»РЅСЏСЋС‚СЃСЏ С€С‚Р°С‚РЅРѕР№ РєРѕРјР°РЅРґРѕР№, РїСЂРѕС€РµРґС€РµР№ РѕР±СѓС‡РµРЅРёРµ Рё РІРЅСѓС‚СЂРµРЅРЅСЋСЋ РїСЂРѕРІРµСЂРєСѓ РєР°С‡РµСЃС‚РІР°.</p>
+                  <p class="ui-text company-preview__text">РљР°Р¶РґР°СЏ СѓР±РѕСЂРєР° РєРѕРЅС‚СЂРѕР»РёСЂСѓРµС‚СЃСЏ СЃС‚Р°СЂС€РёРј РєР»РёРЅРµСЂРѕРј, Р° РµСЃР»Рё СЂРµР·СѓР»СЊС‚Р°С‚ РІР°СЃ РЅРµ СѓСЃС‚СЂРѕРёС‚ вЂ” РјС‹ РїРµСЂРµРґРµР»Р°РµРј СЂР°Р±РѕС‚Сѓ Р·Р° СЃРІРѕР№ СЃС‡С‘С‚. РўР°РєРѕР№ РїРѕРґС…РѕРґ РїРѕР·РІРѕР»СЏРµС‚ РЅР°Рј РІС‹СЃС‚СЂР°РёРІР°С‚СЊ РґРѕР»РіРѕСЃСЂРѕС‡РЅС‹Рµ Рё РґРѕРІРµСЂРёС‚РµР»СЊРЅС‹Рµ РѕС‚РЅРѕС€РµРЅРёСЏ СЃ РєР»РёРµРЅС‚Р°РјРё.</p>
+                </div>
+              </div>
+              <div class="company-preview__visual">
+                <div class="company-preview__media"><img src="/static/images/section/company-preview/company-preview-media.png" alt="РљРѕРјР°РЅРґР° Р’РђР™РџвЂ“РљР»РёРЅ Р·Р° СЂР°Р±РѕС‚РѕР№"></div>
+                <div class="company-preview__brand-card"><img src="/static/images/section/company-preview/Group 19.png" alt="Р’РђР™РџвЂ“РљР»РёРЅ"></div>
+              </div>
+            </div>
+            <div class="company-preview__benefits swiper" data-company-preview-benefits-swiper>
+              <div class="company-preview__benefits-track swiper-wrapper">
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-experience.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">РћРїС‹С‚РЅС‹Рµ РєР»РёРЅРµСЂС‹</h3>
+                            <p class="company-benefit-card__text">РЁС‚Р°С‚РЅС‹Рµ СЃРїРµС†РёР°Р»РёСЃС‚С‹ СЃ СЂРµРіСѓР»СЏСЂРЅС‹Рј РѕР±СѓС‡РµРЅРёРµРј</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-guarantee.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Р“Р°СЂР°РЅС‚РёСЏ РЅР° РєР»РёРЅРёРЅРі</h3>
+                            <p class="company-benefit-card__text">РџРµСЂРµРґРµР»РєР° Р·Р° РЅР°С€ СЃС‡С‘С‚</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-quality.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Р’С‹СЃРѕРєРѕРµ РєР°С‡РµСЃС‚РІРѕ СѓСЃР»СѓРі</h3>
+                            <p class="company-benefit-card__text">РЈР±РѕСЂРєР° РїРѕ С‡РµРє-Р»РёСЃС‚Сѓ</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-discounts.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">РђРєС†РёРё Рё СЃРєРёРґРєРё</h3>
+                            <p class="company-benefit-card__text">Р”Р»СЏ РЅРѕРІС‹С… Рё РїРѕСЃС‚РѕСЏРЅРЅС‹С… РєР»РёРµРЅС‚РѕРІ</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-pricing.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">РџСЂРѕР·СЂР°С‡РЅС‹Рµ С†РµРЅС‹</h3>
+                            <p class="company-benefit-card__text">Р§РµСЃС‚РЅС‹Рµ С†РµРЅС‹ Р±РµР· СЃСЋСЂРїСЂРёР·РѕРІ</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="company-preview__benefit-slide swiper-slide">
+                        <article class="company-benefit-card">
+                          <div class="company-benefit-card__icon"><span class="company-benefit-card__icon-box"><img src="/static/images/section/company-preview/icon-chemistry.svg" srcset="" alt="" aria-hidden="true"></span></div>
+                          <div class="company-benefit-card__body">
+                            <h3 class="company-benefit-card__title">Р‘РµР·РѕРїР°СЃРЅР°СЏ С…РёРјРёСЏ</h3>
+                            <p class="company-benefit-card__text">Р“РёРїРѕР°Р»Р»РµСЂРіРµРЅРЅС‹Рµ СЃСЂРµРґСЃС‚РІР° РґР»СЏ РґРµС‚РµР№ Рё Р¶РёРІРѕС‚РЅС‹С…</p>
+                          </div>
+                        </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reviews-preview">
+        <div class="_container">
+          <div class="reviews-preview__wrapper">
+            <div class="reviews-preview__head ui-section-head ui-section-head--center">
+              <h2 class="ui-title">РћС‚Р·С‹РІС‹ РЅР°С€РёС… РєР»РёРµРЅС‚РѕРІ</h2>
+              <p class="ui-text">РќР°Рј РґРѕРІРµСЂСЏСЋС‚ СѓР±РѕСЂРєСѓ РєРІР°СЂС‚РёСЂ, РґРѕРјРѕРІ Рё РѕС„РёСЃРѕРІ РІ РњРѕСЃРєРІРµ, Р° РјРЅРѕРіРёРµ РєР»РёРµРЅС‚С‹ РѕР±СЂР°С‰Р°СЋС‚СЃСЏ Рє РЅР°Рј СЂРµРіСѓР»СЏСЂРЅРѕ Рё СЂРµРєРѕРјРµРЅРґСѓСЋС‚ Р’РђР™РџвЂ“РљР»РёРЅ СЃРІРѕРёРј Р±Р»РёР·РєРёРј.</p>
+            </div>
+            <div class="reviews-preview__slider swiper" data-reviews-preview-swiper>
+              <div class="reviews-preview__track swiper-wrapper">
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><img class="review-card__rating-stars" src="/static/images/components/review-card/review-card-stars.svg" alt="" aria-hidden="true" width="222" height="50" loading="lazy" decoding="async"></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">РРјСЏ РєР»РёРµРЅС‚Р°</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><img class="review-card__rating-stars" src="/static/images/components/review-card/review-card-stars.svg" alt="" aria-hidden="true" width="222" height="50" loading="lazy" decoding="async"></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">РРјСЏ РєР»РёРµРЅС‚Р°</p>
+                          </div>
+                        </article>
+                </div>
+                <div class="reviews-preview__slide swiper-slide">
+                        <article class="review-card">
+                          <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><img class="review-card__rating-stars" src="/static/images/components/review-card/review-card-stars.svg" alt="" aria-hidden="true" width="222" height="50" loading="lazy" decoding="async"></div>
+                          <div class="review-card__body">
+                            <p class="review-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="review-card__author">РРјСЏ РєР»РёРµРЅС‚Р°</p>
+                          </div>
+                        </article>
+                </div>
+              </div>
+            </div>
+            <div class="reviews-preview__footer">
+              <div class="reviews-preview__actions"><a class="ui-btn ui-btn--primary" href="#"><span class="ui-btn__content">РћР·РЅР°РєРѕРјРёС‚СЊСЃСЏ СЃ РґСЂСѓРіРёРјРё РѕС‚Р·С‹РІР°РјРё</span></a><a class="ui-btn ui-btn--secondary" href="#"><span class="ui-btn__content">РћСЃС‚Р°РІРёС‚СЊ РѕС‚Р·С‹РІ Рѕ РєРѕРјРїР°РЅРёРё</span></a>
+              </div>
+              <div class="reviews-preview__nav ui-slider-nav ui-slider-nav--desktop-only">
+                <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РџСЂРµРґС‹РґСѓС‰РёР№ РѕС‚Р·С‹РІ" data-reviews-preview-prev><span class="ui-btn__content">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span></button>
+                <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РЎР»РµРґСѓСЋС‰РёР№ РѕС‚Р·С‹РІ" data-reviews-preview-next><span class="ui-btn__content">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-preview">
+        <div class="_container">
+          <div class="gallery-preview__wrapper">
+            <div class="gallery-preview__head">
+              <h2 class="ui-title gallery-preview__title">Р“Р°Р»РµСЂРµСЏ РЅР°С€РёС… СЂР°Р±РѕС‚ РїРѕ СѓР±РѕСЂРєРµ РєРІР°СЂС‚РёСЂ, РґРѕРјРѕРІ Рё РѕС„РёСЃРѕРІ</h2>
+            </div>
+            <div class="gallery-preview__marquees">
+              <div class="gallery-preview__row" data-gallery-marquee-row data-direction="-1" data-speed="36">
+                <div class="gallery-preview__track" data-gallery-marquee-track><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" data-gallery-item-id="gallery-top-1" aria-label="РЈР±РѕСЂРєР° РєСѓС…РЅРё РєСЂСѓРїРЅС‹Рј РїР»Р°РЅРѕРј" data-fancybox="gallery-preview" data-caption="Р Р°Р±РѕС‚Р° РєРѕРјР°РЅРґС‹ Р’РђР™РџвЂ“РљР»РёРЅ"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-1-500.webp 500w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-1-1000.webp 1000w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" alt="РЈР±РѕСЂРєР° РєСѓС…РЅРё РєСЂСѓРїРЅС‹Рј РїР»Р°РЅРѕРј" loading="lazy" decoding="async" width="1000" height="667" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-1-500.png 500w, /static/images/section/gallery-preview/gallery-row-1-photo-1.png 1000w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" data-gallery-item-id="gallery-top-2" aria-label="Р’Р»Р°Р¶РЅР°СЏ СѓР±РѕСЂРєР° РґРѕРјР°" data-fancybox="gallery-preview" data-caption="РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ Рё РґРѕРјРѕРІ"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-2-640.webp 640w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-2-1280.webp 1280w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" alt="Р’Р»Р°Р¶РЅР°СЏ СѓР±РѕСЂРєР° РґРѕРјР°" loading="lazy" decoding="async" width="1280" height="720" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-2-640.png 640w, /static/images/section/gallery-preview/gallery-row-1-photo-2.png 1280w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" data-gallery-item-id="gallery-top-3" aria-label="РЎРІРµС‚Р»Р°СЏ РіРѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ РєР»РёРЅРёРЅРіР°" data-fancybox="gallery-preview" data-caption="Р РµР·СѓР»СЊС‚Р°С‚ СѓР±РѕСЂРєРё РєРІР°СЂС‚РёСЂС‹"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-3-320.webp 320w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-3-640.webp 640w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" alt="РЎРІРµС‚Р»Р°СЏ РіРѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ РєР»РёРЅРёРЅРіР°" loading="lazy" decoding="async" width="640" height="288" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-3-320.png 320w, /static/images/section/gallery-preview/gallery-row-1-photo-3.png 640w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--video" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-top-4" aria-label="Р’РёРґРµРѕ РїСЂРѕС†РµСЃСЃР° СѓР±РѕСЂРєРё" data-fancybox="gallery-preview" data-caption="Р’РёРґРµРѕ РїСЂРѕС†РµСЃСЃР° СѓР±РѕСЂРєРё" data-type="html5video" data-html5video-format="video/mp4" data-width="1280" data-height="720"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-video-poster-960.webp 960w, /static/webp-images/section/gallery-preview/gallery-row-1-video-poster-1920.webp 1920w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-video-poster.png" alt="Р’РёРґРµРѕ РїСЂРѕС†РµСЃСЃР° СѓР±РѕСЂРєРё" loading="lazy" decoding="async" width="1920" height="1225" srcset="/static/images/section/gallery-preview/gallery-row-1-video-poster-960.png 960w, /static/images/section/gallery-preview/gallery-row-1-video-poster.png 1920w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" data-gallery-item-id="gallery-top-1" aria-label="РЈР±РѕСЂРєР° РєСѓС…РЅРё РєСЂСѓРїРЅС‹Рј РїР»Р°РЅРѕРј" data-gallery-clone="" data-gallery-target="gallery-top-1" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-1-500.webp 500w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-1-1000.webp 1000w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-1.png" alt="РЈР±РѕСЂРєР° РєСѓС…РЅРё РєСЂСѓРїРЅС‹Рј РїР»Р°РЅРѕРј" loading="lazy" decoding="async" width="1000" height="667" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-1-500.png 500w, /static/images/section/gallery-preview/gallery-row-1-photo-1.png 1000w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" data-gallery-item-id="gallery-top-2" aria-label="Р’Р»Р°Р¶РЅР°СЏ СѓР±РѕСЂРєР° РґРѕРјР°" data-gallery-clone="" data-gallery-target="gallery-top-2" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-2-640.webp 640w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-2-1280.webp 1280w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-2.png" alt="Р’Р»Р°Р¶РЅР°СЏ СѓР±РѕСЂРєР° РґРѕРјР°" loading="lazy" decoding="async" width="1280" height="720" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-2-640.png 640w, /static/images/section/gallery-preview/gallery-row-1-photo-2.png 1280w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" data-gallery-item-id="gallery-top-3" aria-label="РЎРІРµС‚Р»Р°СЏ РіРѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ РєР»РёРЅРёРЅРіР°" data-gallery-clone="" data-gallery-target="gallery-top-3" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-photo-3-320.webp 320w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-3-640.webp 640w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-photo-3.png" alt="РЎРІРµС‚Р»Р°СЏ РіРѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ РєР»РёРЅРёРЅРіР°" loading="lazy" decoding="async" width="640" height="288" srcset="/static/images/section/gallery-preview/gallery-row-1-photo-3-320.png 320w, /static/images/section/gallery-preview/gallery-row-1-photo-3.png 640w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--video gallery-preview__item--clone" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-top-4" aria-label="Р’РёРґРµРѕ РїСЂРѕС†РµСЃСЃР° СѓР±РѕСЂРєРё" data-gallery-clone="" data-gallery-target="gallery-top-4" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-1-video-poster-960.webp 960w, /static/webp-images/section/gallery-preview/gallery-row-1-video-poster-1920.webp 1920w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-1-video-poster.png" alt="Р’РёРґРµРѕ РїСЂРѕС†РµСЃСЃР° СѓР±РѕСЂРєРё" loading="lazy" decoding="async" width="1920" height="1225" srcset="/static/images/section/gallery-preview/gallery-row-1-video-poster-960.png 960w, /static/images/section/gallery-preview/gallery-row-1-video-poster.png 1920w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a>
+                </div>
+              </div>
+              <div class="gallery-preview__row gallery-preview__row--reverse" data-gallery-marquee-row data-direction="1" data-speed="38">
+                <div class="gallery-preview__track" data-gallery-marquee-track><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" data-gallery-item-id="gallery-bottom-1" aria-label="Р“РѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ СѓР±РѕСЂРєРё" data-fancybox="gallery-preview" data-caption="Р§РёСЃС‚С‹Р№ РёРЅС‚РµСЂСЊРµСЂ РїРѕСЃР»Рµ РєР»РёРЅРёРЅРіР°"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-1-341.webp 341w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-1-683.webp 683w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" alt="Р“РѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ СѓР±РѕСЂРєРё" loading="lazy" decoding="async" width="683" height="512" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-1-341.png 341w, /static/images/section/gallery-preview/gallery-row-2-photo-1.png 683w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--video" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-bottom-2" aria-label="Р’РёРґРµРѕ СЂР°Р±РѕС‚С‹ РєР»РёРЅРµСЂРѕРІ" data-fancybox="gallery-preview" data-caption="Р’РёРґРµРѕ СЂР°Р±РѕС‚С‹ РєРѕРјР°РЅРґС‹ Р’РђР™РџвЂ“РљР»РёРЅ" data-type="html5video" data-html5video-format="video/mp4" data-width="1280" data-height="720"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-video-poster-284.webp 284w, /static/webp-images/section/gallery-preview/gallery-row-2-video-poster-568.webp 568w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-video-poster.png" alt="Р’РёРґРµРѕ СЂР°Р±РѕС‚С‹ РєР»РёРЅРµСЂРѕРІ" loading="lazy" decoding="async" width="568" height="388" srcset="/static/images/section/gallery-preview/gallery-row-2-video-poster-284.png 284w, /static/images/section/gallery-preview/gallery-row-2-video-poster.png 568w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" data-gallery-item-id="gallery-bottom-3" aria-label="РҐРёРјС‡РёСЃС‚РєР° РјСЏРіРєРѕР№ РјРµР±РµР»Рё" data-fancybox="gallery-preview" data-caption="РҐРёРјС‡РёСЃС‚РєР° Рё РіР»СѓР±РѕРєР°СЏ СѓР±РѕСЂРєР°"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-2-1000.webp 1000w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-2-2000.webp 2000w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" alt="РҐРёРјС‡РёСЃС‚РєР° РјСЏРіРєРѕР№ РјРµР±РµР»Рё" loading="lazy" decoding="async" width="2000" height="1333" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-2-1000.png 1000w, /static/images/section/gallery-preview/gallery-row-2-photo-2.png 2000w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item" href="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" data-gallery-item-id="gallery-bottom-4" aria-label="РРЅРІРµРЅС‚Р°СЂСЊ РґР»СЏ РєР»РёРЅРёРЅРіР°" data-fancybox="gallery-preview" data-caption="РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РёРЅРІРµРЅС‚Р°СЂСЊ Рё Р±РµР·РѕРїР°СЃРЅР°СЏ С…РёРјРёСЏ"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-3-540.webp 540w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-3-1080.webp 1080w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" alt="РРЅРІРµРЅС‚Р°СЂСЊ РґР»СЏ РєР»РёРЅРёРЅРіР°" loading="lazy" decoding="async" width="1080" height="731" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-3-540.png 540w, /static/images/section/gallery-preview/gallery-row-2-photo-3.png 1080w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" data-gallery-item-id="gallery-bottom-1" aria-label="Р“РѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ СѓР±РѕСЂРєРё" data-gallery-clone="" data-gallery-target="gallery-bottom-1" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-1-341.webp 341w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-1-683.webp 683w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-1.png" alt="Р“РѕСЃС‚РёРЅР°СЏ РїРѕСЃР»Рµ СѓР±РѕСЂРєРё" loading="lazy" decoding="async" width="683" height="512" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-1-341.png 341w, /static/images/section/gallery-preview/gallery-row-2-photo-1.png 683w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--video gallery-preview__item--clone" href="/static/images/section/gallery-preview/test-video.mp4" data-gallery-item-id="gallery-bottom-2" aria-label="Р’РёРґРµРѕ СЂР°Р±РѕС‚С‹ РєР»РёРЅРµСЂРѕРІ" data-gallery-clone="" data-gallery-target="gallery-bottom-2" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-video-poster-284.webp 284w, /static/webp-images/section/gallery-preview/gallery-row-2-video-poster-568.webp 568w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-video-poster.png" alt="Р’РёРґРµРѕ СЂР°Р±РѕС‚С‹ РєР»РёРЅРµСЂРѕРІ" loading="lazy" decoding="async" width="568" height="388" srcset="/static/images/section/gallery-preview/gallery-row-2-video-poster-284.png 284w, /static/images/section/gallery-preview/gallery-row-2-video-poster.png 568w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span><span class="gallery-preview__item-badge" aria-hidden="true"><img src="/static/images/section/gallery-preview/gallery-play.svg" alt=""></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" data-gallery-item-id="gallery-bottom-3" aria-label="РҐРёРјС‡РёСЃС‚РєР° РјСЏРіРєРѕР№ РјРµР±РµР»Рё" data-gallery-clone="" data-gallery-target="gallery-bottom-3" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-2-1000.webp 1000w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-2-2000.webp 2000w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-2.png" alt="РҐРёРјС‡РёСЃС‚РєР° РјСЏРіРєРѕР№ РјРµР±РµР»Рё" loading="lazy" decoding="async" width="2000" height="1333" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-2-1000.png 1000w, /static/images/section/gallery-preview/gallery-row-2-photo-2.png 2000w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a><a class="gallery-preview__item gallery-preview__item--clone" href="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" data-gallery-item-id="gallery-bottom-4" aria-label="РРЅРІРµРЅС‚Р°СЂСЊ РґР»СЏ РєР»РёРЅРёРЅРіР°" data-gallery-clone="" data-gallery-target="gallery-bottom-4" aria-hidden="true" tabindex="-1"><span class="gallery-preview__item-media">
+                                  <picture>
+                                    <source type="image/webp" srcset="/static/webp-images/section/gallery-preview/gallery-row-2-photo-3-540.webp 540w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-3-1080.webp 1080w" sizes="(max-width: 650px) 62vw, 22vw"><img src="/static/images/section/gallery-preview/gallery-row-2-photo-3.png" alt="РРЅРІРµРЅС‚Р°СЂСЊ РґР»СЏ РєР»РёРЅРёРЅРіР°" loading="lazy" decoding="async" width="1080" height="731" srcset="/static/images/section/gallery-preview/gallery-row-2-photo-3-540.png 540w, /static/images/section/gallery-preview/gallery-row-2-photo-3.png 1080w" sizes="(max-width: 650px) 62vw, 22vw">
+                                  </picture></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq">
+        <div class="_container">
+          <div class="faq__wrapper">
+            <div class="faq__head">
+              <h2 class="ui-title faq__title">РћС‚РІРµС‚С‹ РЅР° РІРѕРїСЂРѕСЃС‹ Рѕ РєР»РёРЅРёРЅРіРµ РІ РњРѕСЃРєРІРµ</h2>
+            </div>
+            <div class="faq__columns faq__columns--desktop">
+              <div class="faq__column" data-faq-group>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-0" aria-expanded="false" aria-controls="faq-desktop-answer-0" data-faq-toggle><span class="faq__question">РљР°Рє СЂР°СЃСЃС‡РёС‚С‹РІР°РµС‚СЃСЏ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР° РєРІР°СЂС‚РёСЂС‹ РІ РњРѕСЃРєРІРµ?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-0" role="region" aria-labelledby="faq-desktop-question-0" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">РС‚РѕРіРѕРІР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё, СЃС‚РµРїРµРЅРё Р·Р°РіСЂСЏР·РЅРµРЅРёСЏ Рё РІС‹Р±СЂР°РЅРЅРѕРіРѕ РЅР°Р±РѕСЂР° СѓСЃР»СѓРі. Р¤РёРЅР°Р»СЊРЅСѓСЋ С†РµРЅСѓ РјС‹ СЂР°СЃСЃС‡РёС‚С‹РІР°РµРј Р·Р°СЂР°РЅРµРµ Рё СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµРј СЃ РІР°РјРё РґРѕ РІС‹РµР·РґР° РєРѕРјР°РЅРґС‹.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-1" aria-expanded="false" aria-controls="faq-desktop-answer-1" data-faq-toggle><span class="faq__question">РњРѕР¶РЅРѕ Р»Рё РЅР°С…РѕРґРёС‚СЊСЃСЏ РґРѕРјР° РІРѕ РІСЂРµРјСЏ СѓР±РѕСЂРєРё РєРІР°СЂС‚РёСЂС‹?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-1" role="region" aria-labelledby="faq-desktop-question-1" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Р”Р°, РєРѕРЅРµС‡РЅРѕ. Р’С‹ РјРѕР¶РµС‚Рµ РѕСЃС‚Р°РІР°С‚СЊСЃСЏ РґРѕРјР° РІРѕ РІСЂРµРјСЏ РєР»РёРЅРёРЅРіР° РёР»Рё РїРµСЂРµРґР°С‚СЊ РґРѕСЃС‚СѓРї СѓРґРѕР±РЅС‹Рј РґР»СЏ РІР°СЃ СЃРїРѕСЃРѕР±РѕРј. Р’СЃРµ РґРµС‚Р°Р»Рё СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµРј Р·Р°СЂР°РЅРµРµ.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-2" aria-expanded="false" aria-controls="faq-desktop-answer-2" data-faq-toggle><span class="faq__question">РЎРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё Р·Р°РЅРёРјР°РµС‚ СѓР±РѕСЂРєР° РєРІР°СЂС‚РёСЂС‹ РёР»Рё РґРѕРјР°?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-2" role="region" aria-labelledby="faq-desktop-question-2" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">РЎСЂРѕРє Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё РїРѕРјРµС‰РµРЅРёСЏ, С„РѕСЂРјР°С‚Р° СѓР±РѕСЂРєРё Рё РєРѕР»РёС‡РµСЃС‚РІР° РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… Р·Р°РґР°С‡. РџРѕСЃР»Рµ СѓС‚РѕС‡РЅРµРЅРёСЏ РґРµС‚Р°Р»РµР№ РјС‹ Р·Р°СЂР°РЅРµРµ РѕСЂРёРµРЅС‚РёСЂСѓРµРј РІР°СЃ РїРѕ РІСЂРµРјРµРЅРё РґРѕ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ Р·Р°РєР°Р·Р°.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-3" aria-expanded="false" aria-controls="faq-desktop-answer-3" data-faq-toggle><span class="faq__question">РљР°РєРёРµ СЃСЂРµРґСЃС‚РІР° РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РїСЂРё СѓР±РѕСЂРєРµ?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-3" role="region" aria-labelledby="faq-desktop-question-3" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">РњС‹ РёСЃРїРѕР»СЊР·СѓРµРј РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Рµ Рё Р±РµР·РѕРїР°СЃРЅС‹Рµ СЃСЂРµРґСЃС‚РІР°, РїРѕРґС…РѕРґСЏС‰РёРµ РґР»СЏ Р¶РёР»С‹С… РїРѕРјРµС‰РµРЅРёР№. РџСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРґР±РёСЂР°РµРј РґРµР»РёРєР°С‚РЅСѓСЋ С…РёРјРёСЋ РґР»СЏ РґРµС‚РµР№, Р¶РёРІРѕС‚РЅС‹С… Рё С‡СѓРІСЃС‚РІРёС‚РµР»СЊРЅС‹С… РїРѕРІРµСЂС…РЅРѕСЃС‚РµР№.</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+              <div class="faq__column" data-faq-group>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-4" aria-expanded="false" aria-controls="faq-desktop-answer-4" data-faq-toggle><span class="faq__question">Р§С‚Рѕ РґРµР»Р°С‚СЊ, РµСЃР»Рё СЂРµР·СѓР»СЊС‚Р°С‚ СѓР±РѕСЂРєРё РЅРµ СѓСЃС‚СЂРѕРёР»?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-4" role="region" aria-labelledby="faq-desktop-question-4" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Р•СЃР»Рё Сѓ РІР°СЃ РѕСЃС‚Р°РЅСѓС‚СЃСЏ Р·Р°РјРµС‡Р°РЅРёСЏ, СЃРѕРѕР±С‰РёС‚Рµ РЅР°Рј СЃСЂР°Р·Сѓ РїРѕСЃР»Рµ РїСЂРёРµРјРєРё. РњС‹ РѕРїРµСЂР°С‚РёРІРЅРѕ РІРµСЂРЅРµРјСЃСЏ Рё РёСЃРїСЂР°РІРёРј РЅРµРґРѕС‡РµС‚С‹ Р·Р° СЃРІРѕР№ СЃС‡РµС‚.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-5" aria-expanded="false" aria-controls="faq-desktop-answer-5" data-faq-toggle><span class="faq__question">Р Р°Р±РѕС‚Р°РµС‚Рµ Р»Рё РІС‹ РІ РІС‹С…РѕРґРЅС‹Рµ Рё РїСЂР°Р·РґРЅРёРєРё?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-5" role="region" aria-labelledby="faq-desktop-question-5" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Р”Р°, РјС‹ РїСЂРёРЅРёРјР°РµРј Р·Р°РєР°Р·С‹ РЅР° РІС‹С…РѕРґРЅС‹Рµ Рё РїСЂР°Р·РґРЅРёС‡РЅС‹Рµ РґРЅРё. Р›СѓС‡С€Рµ Р±СЂРѕРЅРёСЂРѕРІР°С‚СЊ РґР°С‚Сѓ Р·Р°СЂР°РЅРµРµ, РѕСЃРѕР±РµРЅРЅРѕ РІ РїРµСЂРёРѕРґС‹ РІС‹СЃРѕРєРѕР№ Р·Р°РіСЂСѓР·РєРё.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-6" aria-expanded="false" aria-controls="faq-desktop-answer-6" data-faq-toggle><span class="faq__question">Р’РѕР·РјРѕР¶РЅР° Р»Рё СЃСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР° РІ РњРѕСЃРєРІРµ?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-6" role="region" aria-labelledby="faq-desktop-question-6" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">Р”Р°, РїСЂРё РЅР°Р»РёС‡РёРё СЃРІРѕР±РѕРґРЅРѕР№ РєРѕРјР°РЅРґС‹ РјРѕР¶РµРј РѕСЂРіР°РЅРёР·РѕРІР°С‚СЊ СЃСЂРѕС‡РЅС‹Р№ РІС‹РµР·Рґ РІ Р±Р»РёР¶Р°Р№С€РµРµ РґРѕСЃС‚СѓРїРЅРѕРµ РІСЂРµРјСЏ. РЈС‚РѕС‡РЅРёС‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РјРѕР¶РЅРѕ РїРѕ С‚РµР»РµС„РѕРЅСѓ РёР»Рё С‡РµСЂРµР· С„РѕСЂРјСѓ Р·Р°СЏРІРєРё.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faq__item" data-faq-item>
+                        <button class="faq__toggle" type="button" id="faq-desktop-question-7" aria-expanded="false" aria-controls="faq-desktop-answer-7" data-faq-toggle><span class="faq__question">РљР°Рє РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РѕРїР»Р°С‚Р° РєР»РёРЅРёРЅРіР°?</span><span class="faq__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                              <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg></span></button>
+                        <div class="faq__answer" hidden id="faq-desktop-answer-7" role="region" aria-labelledby="faq-desktop-question-7" aria-hidden="true" data-faq-answer>
+                          <div class="faq__answer-inner">
+                            <p class="faq__answer-text">РћРїР»Р°С‚РёС‚СЊ РјРѕР¶РЅРѕ СѓРґРѕР±РЅС‹Рј РґР»СЏ РІР°СЃ СЃРїРѕСЃРѕР±РѕРј РїРѕСЃР»Рµ СЃРѕРіР»Р°СЃРѕРІР°РЅРёСЏ СЃС‚РѕРёРјРѕСЃС‚Рё Рё РІС‹РїРѕР»РЅРµРЅРёСЏ СЂР°Р±РѕС‚. Р’СЃРµ СѓСЃР»РѕРІРёСЏ РѕРїР»Р°С‚С‹ РѕР·РІСѓС‡РёРІР°РµРј Р·Р°СЂР°РЅРµРµ, Р±РµР· СЃРєСЂС‹С‚С‹С… РґРѕРїР»Р°С‚.</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="faq__mobile" data-faq-group>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-0" aria-expanded="false" aria-controls="faq-mobile-answer-0" data-faq-toggle><span class="faq__question">РљР°Рє СЂР°СЃСЃС‡РёС‚С‹РІР°РµС‚СЃСЏ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР° РєРІР°СЂС‚РёСЂС‹ РІ РњРѕСЃРєРІРµ?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-0" role="region" aria-labelledby="faq-mobile-question-0" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">РС‚РѕРіРѕРІР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё, СЃС‚РµРїРµРЅРё Р·Р°РіСЂСЏР·РЅРµРЅРёСЏ Рё РІС‹Р±СЂР°РЅРЅРѕРіРѕ РЅР°Р±РѕСЂР° СѓСЃР»СѓРі. Р¤РёРЅР°Р»СЊРЅСѓСЋ С†РµРЅСѓ РјС‹ СЂР°СЃСЃС‡РёС‚С‹РІР°РµРј Р·Р°СЂР°РЅРµРµ Рё СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµРј СЃ РІР°РјРё РґРѕ РІС‹РµР·РґР° РєРѕРјР°РЅРґС‹.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-1" aria-expanded="false" aria-controls="faq-mobile-answer-1" data-faq-toggle><span class="faq__question">РњРѕР¶РЅРѕ Р»Рё РЅР°С…РѕРґРёС‚СЊСЃСЏ РґРѕРјР° РІРѕ РІСЂРµРјСЏ СѓР±РѕСЂРєРё РєРІР°СЂС‚РёСЂС‹?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-1" role="region" aria-labelledby="faq-mobile-question-1" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Р”Р°, РєРѕРЅРµС‡РЅРѕ. Р’С‹ РјРѕР¶РµС‚Рµ РѕСЃС‚Р°РІР°С‚СЊСЃСЏ РґРѕРјР° РІРѕ РІСЂРµРјСЏ РєР»РёРЅРёРЅРіР° РёР»Рё РїРµСЂРµРґР°С‚СЊ РґРѕСЃС‚СѓРї СѓРґРѕР±РЅС‹Рј РґР»СЏ РІР°СЃ СЃРїРѕСЃРѕР±РѕРј. Р’СЃРµ РґРµС‚Р°Р»Рё СЃРѕРіР»Р°СЃРѕРІС‹РІР°РµРј Р·Р°СЂР°РЅРµРµ.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-2" aria-expanded="false" aria-controls="faq-mobile-answer-2" data-faq-toggle><span class="faq__question">РЎРєРѕР»СЊРєРѕ РІСЂРµРјРµРЅРё Р·Р°РЅРёРјР°РµС‚ СѓР±РѕСЂРєР° РєРІР°СЂС‚РёСЂС‹ РёР»Рё РґРѕРјР°?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-2" role="region" aria-labelledby="faq-mobile-question-2" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">РЎСЂРѕРє Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё РїРѕРјРµС‰РµРЅРёСЏ, С„РѕСЂРјР°С‚Р° СѓР±РѕСЂРєРё Рё РєРѕР»РёС‡РµСЃС‚РІР° РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… Р·Р°РґР°С‡. РџРѕСЃР»Рµ СѓС‚РѕС‡РЅРµРЅРёСЏ РґРµС‚Р°Р»РµР№ РјС‹ Р·Р°СЂР°РЅРµРµ РѕСЂРёРµРЅС‚РёСЂСѓРµРј РІР°СЃ РїРѕ РІСЂРµРјРµРЅРё РґРѕ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ Р·Р°РєР°Р·Р°.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-3" aria-expanded="false" aria-controls="faq-mobile-answer-3" data-faq-toggle><span class="faq__question">РљР°РєРёРµ СЃСЂРµРґСЃС‚РІР° РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РїСЂРё СѓР±РѕСЂРєРµ?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-3" role="region" aria-labelledby="faq-mobile-question-3" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">РњС‹ РёСЃРїРѕР»СЊР·СѓРµРј РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Рµ Рё Р±РµР·РѕРїР°СЃРЅС‹Рµ СЃСЂРµРґСЃС‚РІР°, РїРѕРґС…РѕРґСЏС‰РёРµ РґР»СЏ Р¶РёР»С‹С… РїРѕРјРµС‰РµРЅРёР№. РџСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРґР±РёСЂР°РµРј РґРµР»РёРєР°С‚РЅСѓСЋ С…РёРјРёСЋ РґР»СЏ РґРµС‚РµР№, Р¶РёРІРѕС‚РЅС‹С… Рё С‡СѓРІСЃС‚РІРёС‚РµР»СЊРЅС‹С… РїРѕРІРµСЂС…РЅРѕСЃС‚РµР№.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-4" aria-expanded="false" aria-controls="faq-mobile-answer-4" data-faq-toggle><span class="faq__question">Р§С‚Рѕ РґРµР»Р°С‚СЊ, РµСЃР»Рё СЂРµР·СѓР»СЊС‚Р°С‚ СѓР±РѕСЂРєРё РЅРµ СѓСЃС‚СЂРѕРёР»?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-4" role="region" aria-labelledby="faq-mobile-question-4" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Р•СЃР»Рё Сѓ РІР°СЃ РѕСЃС‚Р°РЅСѓС‚СЃСЏ Р·Р°РјРµС‡Р°РЅРёСЏ, СЃРѕРѕР±С‰РёС‚Рµ РЅР°Рј СЃСЂР°Р·Сѓ РїРѕСЃР»Рµ РїСЂРёРµРјРєРё. РњС‹ РѕРїРµСЂР°С‚РёРІРЅРѕ РІРµСЂРЅРµРјСЃСЏ Рё РёСЃРїСЂР°РІРёРј РЅРµРґРѕС‡РµС‚С‹ Р·Р° СЃРІРѕР№ СЃС‡РµС‚.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-5" aria-expanded="false" aria-controls="faq-mobile-answer-5" data-faq-toggle><span class="faq__question">Р Р°Р±РѕС‚Р°РµС‚Рµ Р»Рё РІС‹ РІ РІС‹С…РѕРґРЅС‹Рµ Рё РїСЂР°Р·РґРЅРёРєРё?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-5" role="region" aria-labelledby="faq-mobile-question-5" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Р”Р°, РјС‹ РїСЂРёРЅРёРјР°РµРј Р·Р°РєР°Р·С‹ РЅР° РІС‹С…РѕРґРЅС‹Рµ Рё РїСЂР°Р·РґРЅРёС‡РЅС‹Рµ РґРЅРё. Р›СѓС‡С€Рµ Р±СЂРѕРЅРёСЂРѕРІР°С‚СЊ РґР°С‚Сѓ Р·Р°СЂР°РЅРµРµ, РѕСЃРѕР±РµРЅРЅРѕ РІ РїРµСЂРёРѕРґС‹ РІС‹СЃРѕРєРѕР№ Р·Р°РіСЂСѓР·РєРё.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-6" aria-expanded="false" aria-controls="faq-mobile-answer-6" data-faq-toggle><span class="faq__question">Р’РѕР·РјРѕР¶РЅР° Р»Рё СЃСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР° РІ РњРѕСЃРєРІРµ?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-6" role="region" aria-labelledby="faq-mobile-question-6" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">Р”Р°, РїСЂРё РЅР°Р»РёС‡РёРё СЃРІРѕР±РѕРґРЅРѕР№ РєРѕРјР°РЅРґС‹ РјРѕР¶РµРј РѕСЂРіР°РЅРёР·РѕРІР°С‚СЊ СЃСЂРѕС‡РЅС‹Р№ РІС‹РµР·Рґ РІ Р±Р»РёР¶Р°Р№С€РµРµ РґРѕСЃС‚СѓРїРЅРѕРµ РІСЂРµРјСЏ. РЈС‚РѕС‡РЅРёС‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РјРѕР¶РЅРѕ РїРѕ С‚РµР»РµС„РѕРЅСѓ РёР»Рё С‡РµСЂРµР· С„РѕСЂРјСѓ Р·Р°СЏРІРєРё.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="faq__item" data-faq-item>
+                      <button class="faq__toggle" type="button" id="faq-mobile-question-7" aria-expanded="false" aria-controls="faq-mobile-answer-7" data-faq-toggle><span class="faq__question">РљР°Рє РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РѕРїР»Р°С‚Р° РєР»РёРЅРёРЅРіР°?</span><span class="faq__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                          </svg></span></button>
+                      <div class="faq__answer" hidden id="faq-mobile-answer-7" role="region" aria-labelledby="faq-mobile-question-7" aria-hidden="true" data-faq-answer>
+                        <div class="faq__answer-inner">
+                          <p class="faq__answer-text">РћРїР»Р°С‚РёС‚СЊ РјРѕР¶РЅРѕ СѓРґРѕР±РЅС‹Рј РґР»СЏ РІР°СЃ СЃРїРѕСЃРѕР±РѕРј РїРѕСЃР»Рµ СЃРѕРіР»Р°СЃРѕРІР°РЅРёСЏ СЃС‚РѕРёРјРѕСЃС‚Рё Рё РІС‹РїРѕР»РЅРµРЅРёСЏ СЂР°Р±РѕС‚. Р’СЃРµ СѓСЃР»РѕРІРёСЏ РѕРїР»Р°С‚С‹ РѕР·РІСѓС‡РёРІР°РµРј Р·Р°СЂР°РЅРµРµ, Р±РµР· СЃРєСЂС‹С‚С‹С… РґРѕРїР»Р°С‚.</p>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <section class="contacts">
+              <div class="_container">
+                <div class="contacts__wrapper">
+                  <div class="contacts__head">
+                    <h2 class="ui-title contacts__title">РљРѕРЅС‚Р°РєС‚С‹ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё Р’РђР™РџвЂ“РљР»РёРЅ</h2>
+                  </div>
+                  <div class="contacts__content">
+                    <div class="contacts__aside">
+                      <div class="contacts__cards">
+                        <div class="contacts__cards-row">
+                                <div class="contact-card">
+                                  <p class="contact-card__label">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                                </div>
+                                <div class="contact-card contact-card--socials">
+                                  <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p>
+                                  <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                                  </div>
+                                </div>
+                        </div>
+                              <div class="contact-card">
+                                <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                              </div>
+                      </div>
+                    </div>
+                    <div class="contacts__form-block">
+                      <h3 class="contacts__form-title">Р¤РѕСЂРјР° Р·Р°СЏРІРєРё</h3>
+                      <form class="contacts__form ui-form" action="#" method="post" novalidate>
+                        <div class="contacts__fields">
+                          <div class="ui-field contacts__field">
+                            <label class="ui-field__label" for="home-contacts-name">Р’Р°С€Рµ РёРјСЏ</label>
+                            <input class="ui-field__control" id="home-contacts-name" type="text" name="name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ">
+                          </div>
+                          <div class="ui-field contacts__field">
+                            <label class="ui-field__label" for="home-contacts-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                            <input class="ui-field__control" id="home-contacts-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                          </div>
+                        </div>
+                        <div class="contacts__form-actions">
+                          <label class="ui-checkbox contacts__checkbox" for="home-contacts-agreement">
+                            <input class="ui-checkbox__input" id="home-contacts-agreement" type="checkbox" name="agreement"><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                          </label>
+                          <button class="ui-btn ui-btn--primary contacts__submit" type="submit"><span class="ui-btn__content"><span class="contacts__submit-text contacts__submit-text--desktop">РЈР·РЅР°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР°</span><span class="contacts__submit-text contacts__submit-text--mobile">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></span></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+    </main>
+        <div class="popup" data-popup="popup-review" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--review" role="dialog" aria-modal="true" aria-labelledby="popup-review-title" aria-describedby="popup-review-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--review">
+              <div class="popup-form__head">
+                <h2 class="popup-form__title" id="popup-review-title">РћСЃС‚Р°РІСЊС‚Рµ СЃРІРѕР№ РѕС‚Р·С‹РІ Рѕ СЂР°Р±РѕС‚Рµ РєРѕРјРїР°РЅРёРё Р’РђР™Рџ-РљР»РёРЅ</h2>
+                <p class="popup-form__text" id="popup-review-description">Р”Р»СЏ РЅР°СЃ Р±СѓРґРµС‚ РѕС‡РµРЅСЊ С†РµРЅРЅРѕ, РµСЃР»Рё РІС‹ РїРѕРґРµР»РёС‚РµСЃСЊ СЃРІРѕРёРј РѕС‚Р·С‹РІРѕРј Рѕ РЅР°С€РµР№ СЂР°Р±РѕС‚Рµ. РўР°Рє Р¶Рµ Р±СѓРґРµРј СЂР°РґС‹, РµСЃР»Рё Рє СЃРІРѕРµРјСѓ РѕС‚Р·С‹РІСѓ РІС‹ РїСЂРёРєСЂРµРїРёС‚Рµ С„РѕС‚РѕРіСЂР°С„РёРё РёР»Рё РІРёРґРµРѕ.</p>
+              </div>
+              <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                <div class="popup-form__grid popup-form__grid--three">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-name">Р’Р°С€Рµ РёРјСЏ</label>
+                        <input id="popup-review-name" type="text" name="popup-review-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                        <input id="popup-review-phone" type="tel" name="popup-review-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-email">Email</label>
+                        <input id="popup-review-email" type="email" name="popup-review-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                </div>
+                <div class="popup-form__grid popup-form__grid--two">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-message">Р’Р°С€ РѕС‚Р·С‹РІ</label>
+                        <textarea id="popup-review-message" name="popup-review-message" rows="7" placeholder="РћРїРёСЃР°РЅРёРµ РѕС‚Р·С‹РІР° ..." required></textarea>
+                      </div>
+                  <div class="popup-upload" data-popup-upload><span class="ui-field__label popup-upload__label">Р¤РѕС‚Рѕ РёР»Рё РІРёРґРµРѕ</span>
+                    <label class="popup-upload__zone" for="popup-review-files">
+                      <input class="popup-upload__input" id="popup-review-files" type="file" name="files" accept="image/jpeg,image/png,video/mp4" multiple hidden data-popup-upload-input>
+                      <div class="popup-upload__empty" data-popup-upload-empty><span class="popup-upload__badge">
+                              <svg class="popup-upload__badge-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M14.6667 28.3333L20 23M20 23L25.3333 28.3333M20 23V35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M29.7336 29.7168C31.8561 28.559 33.3333 26.3091 33.3333 23.7083C33.3333 19.9257 30.266 16.8583 26.4833 16.8583C26.211 16.8583 25.9424 16.8757 25.6791 16.9093C24.4591 12.7406 20.6151 9.70834 16.0667 9.70834C10.5358 9.70834 6.05001 14.1941 6.05001 19.725C6.05001 20.2205 6.08653 20.7075 6.15699 21.1836C3.99138 21.9417 2.44167 24.0058 2.44167 26.4333C2.44167 29.5033 4.93001 31.9917 8.00001 31.9917H14.6667" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></span>
+                        <div class="popup-upload__copy">
+                          <p class="popup-upload__title">Р”РѕР±Р°РІС‚Рµ РєР°СЂС‚РёРЅРєСѓ РёР»Рё РІРёРґРµРѕ</p>
+                          <p class="popup-upload__text">JPEG, PNG РёР»Рё MP4, РЅРµР±РѕР»СЊС€Рµ 20 mb</p>
+                        </div>
+                      </div>
+                      <div class="popup-upload__preview" hidden data-popup-upload-preview></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="popup-form__actions">
+                      <label class="ui-checkbox popup-form__checkbox" for="popup-review-agreement">
+                        <input class="ui-checkbox__input" id="popup-review-agreement" type="checkbox" name="popup-review-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                      </label>
+                  <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">РћСЃС‚Р°РІРёС‚СЊ РѕС‚Р·С‹РІ</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-order-service" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-order-service-title" aria-describedby="popup-order-service-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--service">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-order-service-title">РҐРѕС‚РёС‚Рµ Р·Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі РґРѕРјРѕР№? РћСЃС‚Р°РІР»СЏР№С‚Рµ Р·Р°СЏРІРєСѓ</h2>
+                  <p class="popup-form__text" id="popup-order-service-description">Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ РЅРёР¶Рµ Рё РЅР°С€Рё РјРµРЅРµРґР¶РµСЂС‹ СЃРІСЏР¶СѓС‚СЃСЏ СЃ РІР°РјРё РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ, С‡С‚РѕР±С‹ РѕР±СЃСѓРґРёС‚СЊ РІСЃРµ РґРµС‚Р°Р»Рё РєР»РёРЅРёРЅРіР° Рё РѕР·РІСѓС‡РёС‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-order-service-name" type="text" name="popup-order-service-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-order-service-phone" type="tel" name="popup-order-service-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-email">Email</label>
+                        <input id="popup-order-service-email" type="email" name="popup-order-service-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-select">Р’С‹Р±РѕСЂ СѓСЃР»СѓРі</label>
+                        <div class="popup-form__select">
+                          <select id="popup-order-service-select" name="popup-order-service-select" required>
+                            <option value="" disabled selected>Р’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅС‹Рµ РІР°Рј СѓСЃР»СѓРіРё</option>
+                            <option value="support-cleaning">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</option>
+                            <option value="general-cleaning">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</option>
+                            <option value="window-cleaning">РњС‹С‚СЊС‘ РѕРєРѕРЅ</option>
+                            <option value="post-repair">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</option>
+                          </select><span class="popup-form__select-icon" aria-hidden="true">
+                                <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></span>
+                        </div>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-order-service-agreement">
+                          <input class="ui-checkbox__input" id="popup-order-service-agreement" type="checkbox" name="popup-order-service-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Р—Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--order" aria-hidden="true"><img src="/static/images/section/popup-system/popup-order-service-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-calc" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-calc-title" aria-describedby="popup-calc-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--calculator">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-calc-title">РЈР·РЅР°Р№С‚Рµ СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё</h2>
+                  <p class="popup-form__text" id="popup-calc-description">Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ РЅРёР¶Рµ, С‡С‚РѕР±С‹ РјС‹ РѕРїРµСЂР°С‚РёРІРЅРѕ РїРѕСЃС‡РёС‚Р°Р»Рё СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё Рё СЃРѕРѕР±С‰РёР»Рё РµРµ РІР°Рј. РќР°С€Рё РјРµРЅРµРґР¶РµСЂС‹ РїРµСЂРµР·РІРѕРЅСЏС‚ РІР°Рј РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <fieldset class="popup-form__fieldset">
+                    <legend class="popup-form__legend">РџР»РѕС‰Р°РґСЊ</legend>
+                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
+                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">РѕРґРЅРѕРєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    </div>
+                  </fieldset>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-service">РЈСЃР»СѓРіРё</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-service" name="popup-calc-service" required>
+                              <option value="" disabled>Р’С‹Р±РµСЂРёС‚Рµ СѓСЃР»СѓРіСѓ</option>
+                              <option value="support-cleaning" selected>РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</option>
+                              <option value="general-cleaning">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</option>
+                              <option value="window-cleaning">РњС‹С‚СЊС‘ РѕРєРѕРЅ</option>
+                              <option value="post-repair">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-frequency">Р РµРіСѓР»СЏСЂРЅРѕСЃС‚СЊ</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-frequency" name="popup-calc-frequency" required>
+                              <option value="" disabled>Р’С‹Р±РµСЂРёС‚Рµ СЂРµРіСѓР»СЏСЂРЅРѕСЃС‚СЊ</option>
+                              <option value="single" selected>Р Р°Р·РѕРІР°СЏ</option>
+                              <option value="weekly">Р•Р¶РµРЅРµРґРµР»СЊРЅРѕ</option>
+                              <option value="twice-month">2 СЂР°Р·Р° РІ РјРµСЃСЏС†</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-calc-name" type="text" name="popup-calc-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-calc-phone" type="tel" name="popup-calc-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-calc-agreement">
+                          <input class="ui-checkbox__input" id="popup-calc-agreement" type="checkbox" name="popup-calc-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--calc" aria-hidden="true"><img src="/static/images/section/popup-system/popup-calc-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-question" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-question-title" aria-describedby="popup-question-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--question">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-question-title">РЈ РІР°СЃ РѕСЃС‚Р°Р»РёСЃСЊ РІРѕРїСЂРѕСЃС‹?</h2>
+                  <p class="popup-form__text" id="popup-question-description">РќР°РїРёС€Рё РЅР° СЃРІРѕР№ РІРѕРїСЂРѕСЃ РІ С„РѕСЂРјРµ РЅРёР¶Рµ. РњС‹ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃ РІР°РјРё СЃРІСЏР¶РµРјСЃСЏ Рё СЂР°СЃСЃРєР°Р¶РµРј РїСЂРѕ РЅР°С€Рё СѓСЃР»СѓРіРё, СѓСЃР»РѕРІРёСЏ Рё СЃС‚РѕРёРјРѕСЃС‚СЊ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-question-name" type="text" name="popup-question-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-question-phone" type="tel" name="popup-question-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-email">Email</label>
+                        <input id="popup-question-email" type="email" name="popup-question-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-message">Р’Р°С€ РІРѕРїСЂРѕСЃ</label>
+                        <textarea id="popup-question-message" name="popup-question-message" rows="6" placeholder="РќР°РїРёС€РёС‚Рµ РІР°С€ РІРѕРїСЂРѕСЃ ..." required></textarea>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-question-agreement">
+                          <input class="ui-checkbox__input" id="popup-question-agreement" type="checkbox" name="popup-question-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">РћС‚РїСЂР°РІРёС‚СЊ РІРѕРїСЂРѕСЃ</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--question" aria-hidden="true"><img src="/static/images/section/popup-system/popup-question-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-success" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-success" role="dialog" aria-modal="true" aria-labelledby="popup-status-success-title" aria-describedby="popup-status-success-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--success">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M30 6L35.3 10.9L41.95 11.65L44.65 17.85L50.5 21L49 27.55L52.5 33.25L48.25 38.3L48.8 44.95L42.8 47.65L39.95 53.7L33.35 52.95L28 57L22.7 52.1L16.05 51.35L13.35 45.15L7.5 42L9 35.45L5.5 29.75L9.75 24.7L9.2 18.05L15.2 15.35L18.05 9.3L24.65 10.05L30 6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M20.5 30.5L26.75 36.75L39.5 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-success-title">Р’Р°С€Р° Р·Р°СЏРІРєР° РїСЂРёРЅСЏС‚Р°!</h2>
+                <p class="popup-status__text" id="popup-status-success-description">РњС‹ РїРѕР»СѓС‡РёР»Рё РІР°С€Сѓ Р·Р°СЏРІРєСѓ РЅР° Р·РІРѕРЅРѕРє, РЅР°С€ РјРµРЅРµРґР¶РµСЂ СЃРІСЏР¶РµС‚СЃСЏ СЃ РІР°РјРё РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-error" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-error" role="dialog" aria-modal="true" aria-labelledby="popup-status-error-title" aria-describedby="popup-status-error-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--error">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M31.9833 10.3167L48.7667 40.1167C49.1 40.7 49.2667 41.35 49.2667 42C49.2667 44.1667 47.5167 45.9167 45.35 45.9167H11.7833C11.1333 45.9167 10.5 45.75 9.91666 45.4333C8.01666 44.35 7.35 41.9333 8.43333 40.0333L25.2167 10.3167C25.55 9.73334 26.0167 9.25 26.6167 8.91667C28.5167 7.83334 30.9167 8.5 31.9833 10.3167Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M28.5 22V31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                      <path d="M28.5 37H28.525" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-error-title">РћС€РёР±РєР°!</h2>
+                <p class="popup-status__text" id="popup-status-error-description">Р’Р°С€Р° Р·Р°СЏРІРєР° РїРѕ РєР°РєРѕР№-С‚Рѕ РїСЂРёС‡РёРЅРµ Р±С‹Р»Р° РѕС‚РєР»РѕРЅРµРЅР°. РџСЂРѕРІРµСЂСЊС‚Рµ РІР°С€Рё РґР°РЅРЅС‹Рµ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <footer class="footer">
+      <div class="footer__wave" aria-hidden="true"><img src="/static/images/ui/footer-wave.svg" alt=""></div>
+      <div class="footer__body">
+        <div class="_container">
+          <div class="footer__wrapper">
+            <div class="footer__top"><a class="footer__brand" href="index.html" aria-label="РќР° РіР»Р°РІРЅСѓСЋ"><span class="footer__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="footer__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+              <ul class="footer__requisites">
+                <li class="footer__requisite"><strong class="footer__requisite-label">РћРћРћ</strong><span class="footer__requisite-value">В«Р’РђР™РџвЂ“РљР»РёРЅВ»</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РћР“Р Рќ</strong><span class="footer__requisite-value">0000000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РРќРќ</strong><span class="footer__requisite-value">0000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РљРџРџ</strong><span class="footer__requisite-value">000000000</span></li>
+              </ul>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__nav">
+              <p class="footer__nav-title">РњРµРЅСЋ СЃР°Р№С‚Р°</p>
+              <div class="footer__nav-body">
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="about-us.html">Рћ РєРѕРјРїР°РЅРёРё</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="services.html">РЈСЃР»СѓРіРё</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="prices.html">Р¦РµРЅС‹</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="promotions.html">РђРєС†РёРё</a></li>
+                </ul>
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="reviews.html">РћС‚Р·С‹РІС‹</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="blog.html">Р‘Р»РѕРі</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="faq.html">FAQ</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__contacts">
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                  </div>
+                  <div class="contact-card contact-card--socials footer__contact-card">
+                    <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p>
+                    <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                    </div>
+                  </div>
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                  </div>
+            </div>
+            <div class="footer__bottom">
+              <p class="footer__copyright">В© 2026 - РћС„РёС†РёР°Р»СЊРЅС‹Р№ СЃР°Р№С‚ "Р’РђР™РџвЂ“РљР»РёРЅ"</p>
+              <div class="footer__legal"><a class="footer__legal-link" href="policy.html">РџРѕР»РёС‚РёРєР° РєРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕСЃС‚Рё</a><a class="footer__legal-link" href="policy.html">РЎРѕРіР»Р°СЃРёРµ РћРџР”</a><a class="footer__legal-link" href="policy.html">РЎРѕРіР»Р°СЃРёРµ Cookies</a>
+              </div><a class="footer__made-by" href="https://ds-art.ru/" target="_blank" rel="noopener noreferrer" aria-label="РЎР°Р№С‚ СЂР°Р·СЂР°Р±РѕС‚Р°РЅ РєРѕРјРїР°РЅРёРµР№ DS-ART"><span class="footer__made-by-mark">DS</span><span class="footer__made-by-text">РЎР°Р№С‚ СЂР°Р·СЂР°Р±РѕС‚Р°РЅ РєРѕРјРїР°РЅРёРµР№ DS-ART</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/js/vendor/fancybox.umd.js"></script>
+    <script src="/static/js/vendor/swiper-bundle.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
+  </body>
+</html>

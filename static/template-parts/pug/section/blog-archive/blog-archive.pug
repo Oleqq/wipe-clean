@@ -1,4 +1,5 @@
 include ../../components/blog-card/blog-card
+include ../../includes/media.pug
 
 -
     var blogArchiveDefaults = {
@@ -6,7 +7,11 @@ include ../../components/blog-card/blog-card
         textTop: "В этом разделе вы найдёте актуальные статьи и новости из мира профессиональной уборки: разбираем тренды, делимся экспертными советами и рассказываем о современных средствах и технологиях клининга.",
         textBottom: "Материалы помогут оптимизировать процесс уборки, выбрать подходящие решения для любых задач и быть в курсе последних достижений отрасли.",
         heroImageSrc: "/static/images/section/blog-archive/blog-archive-hero.png",
+        heroImageSrcset: "/static/images/section/blog-archive/blog-archive-hero-768.png 768w, /static/images/section/blog-archive/blog-archive-hero.png 1536w",
+        heroImageWebpSrcset: "/static/webp-images/section/blog-archive/blog-archive-hero-768.webp 768w, /static/webp-images/section/blog-archive/blog-archive-hero-1536.webp 1536w",
         heroImageAlt: "Инвентарь и средства для профессиональной уборки",
+        heroImageWidth: 1536,
+        heroImageHeight: 1024,
         button: {
             label: "Показать ещё",
             loadingLabel: "Загрузка..."
@@ -173,7 +178,18 @@ section.blog-archive(
                         p.blog-archive__text.ui-text= blogArchiveOptions.textTop
                         p.blog-archive__text.ui-text= blogArchiveOptions.textBottom
                 .blog-archive__hero-media
-                    img(src=blogArchiveOptions.heroImageSrc alt=blogArchiveOptions.heroImageAlt loading="lazy")
+                    +mediaImage({
+                        src: blogArchiveOptions.heroImageSrc,
+                        srcset: blogArchiveOptions.heroImageSrcset,
+                        webpSrcset: blogArchiveOptions.heroImageWebpSrcset,
+                        alt: blogArchiveOptions.heroImageAlt,
+                        width: blogArchiveOptions.heroImageWidth,
+                        height: blogArchiveOptions.heroImageHeight,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 100vw, 46vw"
+                    })
 
             .blog-archive__grid
                 each item, index in blogArchiveItems

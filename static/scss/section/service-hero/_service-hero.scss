@@ -1,14 +1,7 @@
+@use "../../global/core" as *;
+
 .service-hero {
-    padding: 24px 0 120px;
-
-    @include below-tablet {
-        padding-top: 20px;
-        padding-bottom: 100px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 50px;
-    }
+    @include first-screen-padding(112px, 60px, 88px, 50px, 88px, 25px);
 
     &__wrapper {
         display: grid;
@@ -19,7 +12,7 @@
         align-items: start;
         justify-content: space-between;
         column-gap: 20px;
-        row-gap: 48px;
+        row-gap: 0px;
 
         @include below-desktop {
             grid-template-columns: minmax(0, 1fr) minmax(0, 0.9538fr);
@@ -61,10 +54,10 @@
         grid-area: head;
         max-width: 620px;
         gap: 20px;
-        padding-top: 24px;
+        padding-top: 0;
 
         @include below-desktop {
-            padding-top: 12px;
+            padding-top: 0;
         }
 
         @include below-tablet {
@@ -127,3 +120,4 @@
         }
     }
 }
+

@@ -24,8 +24,15 @@ section.price-preview
                     p.price-preview__text.ui-text Мы придерживаемся прозрачного ценообразования: стоимость клининга зависит от площади, состояния помещения и выбранного формата уборки. Никаких скрытых доплат — итоговая цена согласовывается заранее.
                 ul.price-preview__list.ui-price-list
                     each item in pricePreviewItems
+                        -
+                            var pricePreviewLabelParts = typeof item.label === "string" ? item.label.split("/") : [item.label];
+                            var pricePreviewLabelHead = pricePreviewLabelParts[0] || "";
+                            var pricePreviewLabelTail = pricePreviewLabelParts.length > 1 ? "/" + pricePreviewLabelParts.slice(1).join("/") : "";
                         li.price-preview__row.ui-price-list__row
-                            span.price-preview__label.ui-price-list__label= item.label
+                            span.price-preview__label.ui-price-list__label
+                                span.price-preview__label-head= pricePreviewLabelHead
+                                if pricePreviewLabelTail
+                                    span.price-preview__label-tail= pricePreviewLabelTail
                             span.price-preview__value.ui-price-list__value= item.value
                 .price-preview__actions
                     a.price-preview__action.ui-btn.ui-btn--primary(href="#")

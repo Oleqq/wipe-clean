@@ -1,16 +1,7 @@
+@use "../../global/core" as *;
+
 .other-services {
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    @include below-tablet {
-        padding-top: 72px;
-        padding-bottom: 72px;
-    }
-
-    @include below-mobile {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
 
     &__wrapper {
         display: grid;
@@ -93,3 +84,4 @@
         }
     }
 }
+

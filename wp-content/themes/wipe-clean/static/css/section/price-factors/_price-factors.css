@@ -1,0 +1,125 @@
+@-webkit-keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes ui-card-contour-run {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.price-factors {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .price-factors {
+    padding-top: 44px;
+    padding-bottom: 36px;
+  }
+}
+@media (max-width: 650px) {
+  .price-factors {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.price-factors__wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 32px;
+}
+@media (max-width: 650px) {
+  .price-factors__wrapper {
+    gap: 20px;
+  }
+}
+.price-factors__head {
+  max-width: 804px;
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .price-factors__head {
+    gap: 10px;
+  }
+}
+.price-factors__title {
+  color: #002e3d;
+}
+@media (max-width: 650px) {
+  .price-factors__title {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+}
+.price-factors__text {
+  color: rgba(0, 46, 61, 0.8);
+}
+@media (max-width: 650px) {
+  .price-factors__text {
+    font-size: 14px;
+    letter-spacing: -0.04em;
+  }
+}
+.price-factors__slider {
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+}
+@media (max-width: 650px) {
+  .price-factors__slider {
+    overflow: visible;
+  }
+}
+.price-factors__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .price-factors__grid {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .price-factors__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-grid-columns: none;
+    grid-template-columns: none;
+    gap: 0;
+  }
+}
+.price-factors__slide {
+  height: auto;
+}
+@media (max-width: 650px) {
+  .price-factors__slide {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 260px;
+  }
+}
+.price-factors__action {
+  width: fit-contentc;
+  margin: 0 auto;
+}
+@media (max-width: 650px) {
+  .price-factors__action {
+    width: 100%;
+  }
+}

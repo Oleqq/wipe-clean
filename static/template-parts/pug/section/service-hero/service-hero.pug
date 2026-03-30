@@ -1,9 +1,13 @@
+include ../../includes/media.pug
+
 -
     var serviceHeroData = typeof serviceHeroData !== "undefined" ? serviceHeroData : {
         kicker: "Уборка квартир",
         title: "Уборка квартир под ключ в Москве",
         text: "Поддерживающая уборка квартир под ключ в Москве гарантирует чистоту. При этом личное участие владельца не требуется. Профильные мастера быстро ликвидируют налет и мусор, создавая приятную среду в комнатах. Такой сервис сохраняет свежесть. Он обеспечивает соблюдение санитарных норм.",
         imageSrc: "/static/images/section/service-hero/service-hero-apartment-cleaning.png",
+        imageWidth: 1536,
+        imageHeight: 1024,
         imageAlt: "Уборка квартиры под ключ в Москве",
         actions: [
             {
@@ -23,7 +27,18 @@ section.service-hero
     ._container
         .service-hero__wrapper
             .service-hero__media
-                img(src=serviceHeroData.imageSrc alt=serviceHeroData.imageAlt loading="eager" fetchpriority="high")
+                +mediaImage({
+                    src: serviceHeroData.imageSrc,
+                    srcset: "/static/images/section/service-hero/service-hero-apartment-cleaning-768.png 768w, /static/images/section/service-hero/service-hero-apartment-cleaning.png 1536w",
+                    webpSrcset: "/static/webp-images/section/service-hero/service-hero-apartment-cleaning-768.webp 768w, /static/webp-images/section/service-hero/service-hero-apartment-cleaning-1536.webp 1536w",
+                    alt: serviceHeroData.imageAlt,
+                    width: serviceHeroData.imageWidth,
+                    height: serviceHeroData.imageHeight,
+                    loading: "eager",
+                    decoding: "async",
+                    fetchpriority: "high",
+                    sizes: "(max-width: 650px) 88vw, 38vw"
+                })
             .service-hero__head.ui-section-head
                 span.ui-kicker.service-hero__kicker= serviceHeroData.kicker
                 h1.ui-title.ui-title--hero.service-hero__title= serviceHeroData.title

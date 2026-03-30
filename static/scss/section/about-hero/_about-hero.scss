@@ -1,14 +1,7 @@
+@use "../../global/core" as *;
+
 .about-hero {
-    padding: 24px 0 120px;
-
-    @include below-tablet {
-        padding-top: 20px;
-        padding-bottom: 100px;
-    }
-
-    @include below-mobile {
-        padding-bottom: 80px;
-    }
+    @include first-screen-padding(112px, 60px, 88px, 44px, 88px, 25px);
 
     &__wrapper {
         display: grid;
@@ -18,7 +11,8 @@
             "media content";
         align-items: start;
         column-gap: 20px;
-        row-gap: 48px;
+        row-gap: 20px;
+        position: relative;
 
         @include adaptive-value(row-gap, 48px, 24px, $bp-desktop, $bp-mobile);
 
@@ -36,11 +30,23 @@
         }
     }
 
+    h1 {
+        text-transform: none;
+    }
+
     &__media {
         position: relative;
         grid-area: media;
         min-height: 560px;
         isolation: isolate;
+
+        @media (min-width:468px) {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
 
         @include below-desktop {
             min-height: 520px;
@@ -69,21 +75,21 @@
     }
 
     &__decor {
-        top: -46px;
-        left: 66.5%;
+        top: 0px;
+        left: -10%;
         width: min(110%, 715px);
         max-width: 715px;
-        opacity: 0.32;
+        opacity: 1;
         z-index: 1;
 
         @include below-desktop {
-            top: -24px;
-            left: 56%;
+            top: 0px;
+            left: -10%;
             width: min(104%, 560px);
         }
 
         @include below-tablet {
-            top: -78px;
+            top: 0px;
             right: -10px;
             left: auto;
             width: min(88vw, 313px);
@@ -93,6 +99,7 @@
         @include below-mobile {
             top: -80px;
             right: -20px;
+            transform: rotate(45deg);
         }
     }
 
@@ -101,7 +108,7 @@
         left: 27.1%;
         width: min(62.31%, 405px);
         max-width: 405px;
-        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+        // filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
         z-index: 2;
 
         @include below-desktop {
@@ -117,13 +124,14 @@
 
         @include below-mobile {
             left: 28px;
+            top: -28px;
         }
     }
 
     &__head {
         grid-area: head;
         max-width: 650px;
-        padding-top: 20px;
+        padding-top: 0;
         gap: 20px;
 
         @include below-tablet {
@@ -183,3 +191,4 @@
         }
     }
 }
+
