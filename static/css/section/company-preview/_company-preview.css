@@ -274,7 +274,7 @@
 @media (max-width: 991px) {
   .company-preview__brand-card {
     top: 0;
-    left: 49%;
+    left: 47%;
     width: 180px;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);

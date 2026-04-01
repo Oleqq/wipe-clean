@@ -1,0 +1,55 @@
+include ../../components/company-benefit-card/company-benefit-card
+
+-
+    var companyBenefits = [
+        {
+            title: "Опытные клинеры",
+            text: "Штатные специалисты с регулярным обучением",
+            icon: "/static/images/section/company-preview/icon-experience.svg"
+        },
+        {
+            title: "Гарантия на клининг",
+            text: "Переделка за наш счёт",
+            icon: "/static/images/section/company-preview/icon-guarantee.svg"
+        },
+        {
+            title: "Высокое качество услуг",
+            text: "Уборка по чек-листу",
+            icon: "/static/images/section/company-preview/icon-quality.svg"
+        },
+        {
+            title: "Акции и скидки",
+            text: "Для новых и постоянных клиентов",
+            icon: "/static/images/section/company-preview/icon-discounts.svg"
+        },
+        {
+            title: "Прозрачные цены",
+            text: "Честные цены без сюрпризов",
+            icon: "/static/images/section/company-preview/icon-pricing.svg"
+        },
+        {
+            title: "Безопасная химия",
+            text: "Гипоаллергенные средства для детей и животных",
+            icon: "/static/images/section/company-preview/icon-chemistry.svg"
+        }
+    ];
+
+section.company-preview
+    ._container
+        .company-preview__wrapper
+            .company-preview__top
+                .company-preview__content
+                    .company-preview__head
+                        h2.ui-title.company-preview__title КЛИНИНГОВАЯ КОМПАНИЯ <br>ВАЙП–Клин, ВАШ НАДЕЖНЫЙ ПОМОЩНИК
+                        p.ui-text.company-preview__text Мы подходим к уборке как к заботе о доме. Для нас важно не просто навести чистоту, а сделать это аккуратно, безопасно и с уважением к вашему пространству. Именно поэтому все работы выполняются штатной командой, прошедшей обучение и внутреннюю проверку качества.
+                        p.ui-text.company-preview__text Каждая уборка контролируется старшим клинером, а если результат вас не устроит — мы переделаем работу за свой счёт. Такой подход позволяет нам выстраивать долгосрочные и доверительные отношения с клиентами.
+                .company-preview__visual
+                    .company-preview__media
+                        img(src="/static/images/section/company-preview/company-preview-media.png" alt="Команда ВАЙП–Клин за работой")
+                    .company-preview__brand-card
+                        img(src="/static/images/section/company-preview/Group 19.png" alt="ВАЙП–Клин")
+            .company-preview__benefits.swiper(data-company-preview-benefits-swiper)
+                .company-preview__benefits-track.swiper-wrapper
+                    each item in companyBenefits
+                        .company-preview__benefit-slide.swiper-slide
+                            +companyBenefitCard(item)

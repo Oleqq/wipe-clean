@@ -17,6 +17,7 @@ function wipe_clean_get_front_page_acf_layout_contacts() {
 		'display'    => 'block',
 		'sub_fields' => array(
 			wipe_clean_acf_field( 'text', 'title', 'Заголовок' ),
+			wipe_clean_acf_field( 'textarea', 'text', 'Текст', array( 'rows' => 4 ) ),
 			wipe_clean_acf_field( 'text', 'phone_label', 'Подпись телефона' ),
 			wipe_clean_acf_field( 'text', 'phone_value', 'Телефон' ),
 			wipe_clean_acf_field( 'text', 'socials_label', 'Подпись соцсетей' ),
@@ -26,7 +27,15 @@ function wipe_clean_get_front_page_acf_layout_contacts() {
 				array(
 					wipe_clean_acf_field( 'text', 'label', 'Название' ),
 					wipe_clean_acf_field( 'url', 'url', 'Ссылка' ),
-					wipe_clean_acf_field( 'image', 'icon', 'Иконка', array( 'return_format' => 'array', 'preview_size' => 'thumbnail' ) ),
+					wipe_clean_acf_field(
+						'image',
+						'icon',
+						'Иконка',
+						array(
+							'return_format' => 'array',
+							'preview_size'  => 'thumbnail',
+						)
+					),
 				)
 			),
 			wipe_clean_acf_field( 'text', 'email_label', 'Подпись email' ),

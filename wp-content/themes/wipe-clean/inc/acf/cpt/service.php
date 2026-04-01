@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF fields for homepage service cards.
+ * Поля ACF для услуги.
  *
  * @package wipe-clean
  */
@@ -10,99 +10,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register ACF for service items.
+ * Register service ACF fields.
  *
  * @return void
  */
 function wipe_clean_register_service_cpt_acf_fields() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+	if ( ! function_exists( 'wipe_clean_sync_acf_field_group' ) ) {
 		return;
 	}
 
-	acf_add_local_field_group(
+	wipe_clean_sync_acf_field_group(
 		array(
 			'key'      => 'group_wipe_clean_service_cpt',
-			'title'    => 'Настройки карточки услуги',
+			'title'    => 'Карточка услуги',
 			'fields'   => array(
 				wipe_clean_acf_field(
 					'message',
 					'service_note',
-					'Как использовать',
+					'Как заполнять услугу',
 					array(
-						'message'   => 'Эти записи используются в блоке услуг на главной странице. Если услуга не должна показываться на главной, снимите галочку <strong>Показывать на главной</strong>.',
+						'message'   => 'Услуга здесь работает как обычная запись. Карточки на главной, в архиве и в других блоках собираются сами из <strong>названия</strong>, <strong>краткого описания</strong>, <strong>изображения записи</strong> и поля <strong>Цена от</strong>. Отдельные поля для главной не нужны.',
 						'esc_html'  => 0,
 						'new_lines' => 'wpautop',
 					)
 				),
-				wipe_clean_acf_field( 'text', 'card_price', 'Цена' ),
 				wipe_clean_acf_field(
-					'true_false',
-					'show_on_home',
-					'Показывать на главной',
+					'text',
+					'service_price_value',
+					'Цена от',
 					array(
-						'ui'            => 1,
-						'default_value' => 1,
-					)
-				),
-				wipe_clean_acf_field(
-					'select',
-					'home_group',
-					'Где показывать на главной',
-					array(
-						'choices'       => array(
-							'featured'  => 'Верхние карточки',
-							'secondary' => 'Нижние карточки',
-						),
-						'default_value' => 'featured',
-						'ui'            => 1,
-					)
-				),
-				wipe_clean_acf_field( 'number', 'home_order', 'Порядок на главной', array( 'default_value' => 10 ) ),
-				wipe_clean_acf_field(
-					'select',
-					'card_variant',
-					'Оформление карточки',
-					array(
-						'choices'       => array(
-							'standard'     => 'Обычное',
-							'after_repair' => 'После ремонта',
-						),
-						'default_value' => 'standard',
-						'ui'            => 1,
-					)
-				),
-				wipe_clean_acf_repeater(
-					'card_layers',
-					'Слои изображения',
-					array(
-						wipe_clean_acf_field(
-							'image',
-							'image',
-							'Изображение',
-							array(
-								'return_format' => 'id',
-								'preview_size'  => 'medium',
-							)
-						),
-						wipe_clean_acf_field(
-							'select',
-							'modifier',
-							'Расположение слоя',
-							array(
-								'choices'       => array(
-									'fill'        => 'На весь кадр',
-									'shift-top'   => 'Сдвиг вверх',
-									'shift-right' => 'Сдвиг вправо',
-									'flip'        => 'Отразить',
-									'overlay'     => 'Поверх других',
-								),
-								'default_value' => 'fill',
-								'ui'            => 1,
-							)
-						),
-					),
-					array(
-						'button_label' => 'Добавить слой',
+						'instructions' => 'Короткая цена для карточки услуги и блока стоимости на странице услуги. Например: от 10 000 ₽.',
 					)
 				),
 			),

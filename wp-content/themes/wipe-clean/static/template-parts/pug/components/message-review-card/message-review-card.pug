@@ -1,0 +1,16 @@
+mixin messageReviewCard(item)
+    -
+        var messageReviewAttrs = {
+            href: item.lightboxSrc || item.imageSrc || "#",
+            class: "message-review-card",
+            "data-fancybox": "message-reviews",
+            "aria-label": item.alt || "Открыть рекомендацию клиента"
+        }
+
+        if (item.caption) {
+            messageReviewAttrs["data-caption"] = item.caption
+        }
+
+    a&attributes(messageReviewAttrs)
+        .message-review-card__media
+            img(src=item.imageSrc alt=item.alt loading="lazy")

@@ -1,0 +1,64 @@
+include ../../components/promotion-card/promotion-card
+
+-
+    var promotionsArchiveDefaults = {
+        kicker: "Акции",
+        titleLines: ["Скидки и акции", "на клининг в Москве"],
+        button: {
+            label: "Ознакомиться с услугами",
+            href: "services.html",
+            className: "ui-btn--primary"
+        },
+        moreButton: {
+            label: "Показать ещё",
+            loadingLabel: "Загрузка..."
+        },
+        initialDesktop: 3,
+        initialMobile: 3,
+        stepDesktop: 3,
+        stepMobile: 3,
+        items: []
+    }
+
+-
+    var promotionsArchiveData = typeof promotionsArchiveSection === "object" && promotionsArchiveSection ? promotionsArchiveSection : {};
+    var promotionsArchiveButtonData = typeof promotionsArchiveData.button === "object" && promotionsArchiveData.button ? promotionsArchiveData.button : {};
+    var promotionsArchiveMoreButtonData = typeof promotionsArchiveData.moreButton === "object" && promotionsArchiveData.moreButton ? promotionsArchiveData.moreButton : {};
+    var promotionsArchiveOptions = Object.assign({}, promotionsArchiveDefaults, promotionsArchiveData);
+    promotionsArchiveOptions.button = Object.assign({}, promotionsArchiveDefaults.button, promotionsArchiveButtonData);
+    promotionsArchiveOptions.moreButton = Object.assign({}, promotionsArchiveDefaults.moreButton, promotionsArchiveMoreButtonData);
+
+    var promotionsArchiveItems = Array.isArray(promotionsArchiveData.items) && promotionsArchiveData.items.length ? promotionsArchiveData.items : promotionsArchiveDefaults.items;
+
+section.promotions-archive(
+    data-promotions-archive
+    data-initial-desktop=promotionsArchiveOptions.initialDesktop
+    data-initial-mobile=promotionsArchiveOptions.initialMobile
+    data-step-desktop=promotionsArchiveOptions.stepDesktop
+    data-step-mobile=promotionsArchiveOptions.stepMobile
+)
+    ._container
+        .promotions-archive__wrapper
+            .promotions-archive__hero
+                .promotions-archive__head.ui-section-head
+                    span.ui-kicker.promotions-archive__kicker= promotionsArchiveOptions.kicker
+                    h1.ui-title.ui-title--hero.promotions-archive__title
+                        each line, index in promotionsArchiveOptions.titleLines
+                            | #{line}
+                            if index !== promotionsArchiveOptions.titleLines.length - 1
+                                br
+                a.ui-btn.promotions-archive__action(class=promotionsArchiveOptions.button.className href=promotionsArchiveOptions.button.href)
+                    span.ui-btn__content= promotionsArchiveOptions.button.label
+
+            .promotions-archive__grid
+                each item, index in promotionsArchiveItems
+                    .promotions-archive__item(data-promotions-item data-item-index=index)
+                        +promotionCard(item)
+
+            .promotions-archive__footer(data-promotions-footer)
+                .promotions-archive__loader(data-promotions-loader aria-hidden="true")
+                    img(src="/static/images/section/blog-archive/blog-archive-loader.svg" alt="" loading="lazy")
+                button.promotions-archive__more.ui-btn.ui-btn--primary(type="button" data-promotions-more)
+                    span.ui-btn__content
+                        span.promotions-archive__more-label.promotions-archive__more-label--default= promotionsArchiveOptions.moreButton.label
+                        span.promotions-archive__more-label.promotions-archive__more-label--loading= promotionsArchiveOptions.moreButton.loadingLabel

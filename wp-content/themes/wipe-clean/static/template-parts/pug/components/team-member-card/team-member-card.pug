@@ -1,0 +1,9 @@
+mixin teamMemberCard(item)
+    article.team-member-card
+        .team-member-card__media
+            if item.image
+                img(src=item.image alt=item.name loading="lazy")
+            else
+                .team-member-card__placeholder(aria-hidden="true")
+        .team-member-card__body
+            h3.team-member-card__name= item.name

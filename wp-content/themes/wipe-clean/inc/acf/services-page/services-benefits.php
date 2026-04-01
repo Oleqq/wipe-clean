@@ -1,0 +1,160 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+function wipe_clean_get_services_page_acf_layout_services_benefits() {
+	return array(
+		'key'        => 'layout_wipe_clean_services_benefits',
+		'name'       => 'services_benefits',
+		'label'      => 'Преимущества и предложение',
+		'display'    => 'block',
+		'sub_fields' => array(
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_tab_main',
+				'label'     => 'Основное',
+				'name'      => '',
+				'type'      => 'tab',
+				'placement' => 'top',
+			),
+			array(
+				'key'   => 'field_wipe_clean_services_benefits_title',
+				'label' => 'Заголовок',
+				'name'  => 'title',
+				'type'  => 'textarea',
+				'rows'  => 3,
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_text',
+				'label'     => 'Текст',
+				'name'      => 'text',
+				'type'      => 'textarea',
+				'rows'      => 4,
+				'new_lines' => 'br',
+			),
+			array(
+				'key'          => 'field_wipe_clean_services_benefits_cards',
+				'label'        => 'Карточки преимуществ',
+				'name'         => 'cards',
+				'type'         => 'repeater',
+				'layout'       => 'block',
+				'button_label' => 'Добавить карточку',
+				'sub_fields'   => array(
+					array(
+						'key'   => 'field_wipe_clean_services_benefits_cards_title',
+						'label' => 'Заголовок',
+						'name'  => 'title',
+						'type'  => 'text',
+					),
+					array(
+						'key'       => 'field_wipe_clean_services_benefits_cards_text',
+						'label'     => 'Текст',
+						'name'      => 'text',
+						'type'      => 'textarea',
+						'rows'      => 4,
+						'new_lines' => 'br',
+					),
+					array(
+						'key'           => 'field_wipe_clean_services_benefits_cards_icon',
+						'label'         => 'Иконка',
+						'name'          => 'icon',
+						'type'          => 'image',
+						'return_format' => 'array',
+						'preview_size'  => 'thumbnail',
+						'library'       => 'all',
+					),
+				),
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_tab_offer',
+				'label'     => 'Предложение',
+				'name'      => '',
+				'type'      => 'tab',
+				'placement' => 'top',
+			),
+			array(
+				'key'   => 'field_wipe_clean_services_benefits_offer_title',
+				'label' => 'Заголовок предложения',
+				'name'  => 'offer_title',
+				'type'  => 'textarea',
+				'rows'  => 3,
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_offer_text',
+				'label'     => 'Текст предложения',
+				'name'      => 'offer_text',
+				'type'      => 'textarea',
+				'rows'      => 5,
+				'new_lines' => 'br',
+			),
+			array(
+				'key'   => 'field_wipe_clean_services_benefits_offer_button',
+				'label' => 'Кнопка предложения',
+				'name'  => 'offer_button',
+				'type'  => 'link',
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_tab_checklist',
+				'label'     => 'Блок «Что важно знать»',
+				'name'      => '',
+				'type'      => 'tab',
+				'placement' => 'top',
+			),
+			array(
+				'key'   => 'field_wipe_clean_services_benefits_checklist_title',
+				'label' => 'Заголовок списка',
+				'name'  => 'checklist_title',
+				'type'  => 'text',
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_checklist_text',
+				'label'     => 'Текст над списком',
+				'name'      => 'checklist_text',
+				'type'      => 'textarea',
+				'rows'      => 4,
+				'new_lines' => 'br',
+			),
+			array(
+				'key'          => 'field_wipe_clean_services_benefits_checklist_items',
+				'label'        => 'Пункты списка',
+				'name'         => 'checklist_items',
+				'type'         => 'repeater',
+				'layout'       => 'table',
+				'button_label' => 'Добавить пункт',
+				'sub_fields'   => array(
+					array(
+						'key'   => 'field_wipe_clean_services_benefits_checklist_items_text',
+						'label' => 'Текст',
+						'name'  => 'text',
+						'type'  => 'text',
+					),
+					array(
+						'key'           => 'field_wipe_clean_services_benefits_checklist_items_icon',
+						'label'         => 'Иконка',
+						'name'          => 'icon',
+						'type'          => 'image',
+						'return_format' => 'array',
+						'preview_size'  => 'thumbnail',
+						'library'       => 'all',
+					),
+				),
+			),
+			array(
+				'key'       => 'field_wipe_clean_services_benefits_tab_media',
+				'label'     => 'Изображение',
+				'name'      => '',
+				'type'      => 'tab',
+				'placement' => 'top',
+			),
+			array(
+				'key'           => 'field_wipe_clean_services_benefits_visual_image',
+				'label'         => 'Изображение справа',
+				'name'          => 'visual_image',
+				'type'          => 'image',
+				'return_format' => 'array',
+				'preview_size'  => 'medium',
+				'library'       => 'all',
+			),
+		),
+	);
+}

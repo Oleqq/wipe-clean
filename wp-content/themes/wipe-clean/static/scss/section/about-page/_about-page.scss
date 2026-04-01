@@ -1,0 +1,13 @@
+@use "../../global/core" as *;
+
+.about-page {
+    .services-preview,
+    .reviews-preview,
+    .order-cta,
+    .contacts,
+    .team-preview,
+    .why-us {
+        min-width: 0;
+    }
+}
+

@@ -1,0 +1,22 @@
+mixin promotionCard(item)
+    -
+        var promotionCardHref = item.href || "#";
+        var promotionCardImageAlt = item.imageAlt || item.title;
+        var promotionCardLinkLabel = item.linkLabel || "Подробнее";
+        var promotionCardPopupId = item.popupId || "";
+
+    article.promotion-card
+        a.promotion-card__link(
+            href=promotionCardPopupId ? "#" : promotionCardHref
+            aria-label=item.title
+            data-popup-open=promotionCardPopupId ? promotionCardPopupId : null
+        )
+            .promotion-card__media
+                img(src=item.imageSrc alt=promotionCardImageAlt loading="lazy")
+            .promotion-card__body
+                h3.promotion-card__title= item.title
+                .promotion-card__meta
+                    span.promotion-card__label= promotionCardLinkLabel
+                    span.promotion-card__icon
+                        span.promotion-card__icon-inner
+                            img(src="/static/images/section/blog-archive/blog-card-arrow.svg" alt="" aria-hidden="true" loading="lazy")

@@ -1,0 +1,206 @@
+include ../../components/service-teaser-card/service-teaser-card
+include ../../includes/media.pug
+
+-
+    var servicesIntro = {
+        hero: {
+            kicker: "Наши клининговые услуги",
+            title: "Услуги клининговой компании в Москве",
+            text: "ВАЙП–Клин освобождает горожан от бытовых забот, обеспечивая в жилье искренний уют и гармонию. Под профессиональным клинингом в Москве мы понимаем мягкое удаление грязи и влажную обработку комнат. Обратившись в клининговую компанию, вы получите доступные услуги.",
+            actions: [
+                {
+                    label: "Заказать клининг",
+                    href: "#",
+                    className: "ui-btn--primary"
+                },
+                {
+                    label: "Хочу задать вопрос услуги",
+                    href: "#",
+                    className: "ui-btn--secondary"
+                }
+            ]
+        },
+        overview: {
+            title: "Наши услуги по уборке в квартирах и не только",
+            summary: "Мы продвигаем качественные услуги и гордимся профессиональным клинингом. Наводим блеск в любых зданиях. Легко справляемся с квартирами, офисными пространствами и частным ...",
+            paragraphs: [
+                "Мы продвигаем качественные услуги и гордимся профессиональным клинингом. Наводим блеск в любых зданиях. Легко справляемся с квартирами, офисными пространствами и частным сектором.",
+                "Все представленные услуги клининговой компании оказываются комплексно и подразумевают проработку каждой зоны. Такой продуманный клининг в Москве позволяет не просто убрать пыль, а полностью устранить все застарелые пятна. Мы работаем по стандартам индустрии, чтобы уборка приносила вам уют.",
+                "Мы всегда подберем удобный формат взаимодействия, исходя из ваших пожеланий и периодичности прихода бригад. Вы можете заказать клининг в Москве как разово для преображения жилья, так и оформить долгосрочный договор. Заказ услуг клининговой компании помогает спланировать бюджет."
+            ],
+            bodyId: "services-intro-overview"
+        },
+        cards: [
+            {
+                className: "service-teaser-card--apartment",
+                title: "Уборка в квартирах",
+                text: "Качественная уборка в квартирах Москвы состоит из чистки напольных покрытий и обеспыливания предметов меблировки. Клинеры с опытом бережно устранят следы эксплуатации жилья. Они вернут комнатам их первоначальный блеск. Решение заказать услуги клининговой компании сохранит время.",
+                href: "#",
+                images: [
+                    {
+                        className: "service-teaser-card__image--main",
+                        src: "/static/images/section/services-intro/service-teaser-apartment.png"
+                    }
+                ]
+            },
+            {
+                className: "service-teaser-card--cottage",
+                title: "Уборка домов и коттеджей",
+                text: "Масштаб клининговых услуг для дома требует внимания к площадям остекления и сложным лестничным зонам. Мы используем спецтехнику. Так профессиональный сервис проходит быстро. При этом каждый уголок сияет чистотой. Аккуратная уборка гарантирует сохранность дорогих материалов.",
+                href: "#",
+                images: [
+                    {
+                        className: "service-teaser-card__image--main",
+                        src: "/static/images/section/services-intro/service-teaser-cottage-base.png"
+                    },
+                    {
+                        className: "service-teaser-card__image--overlay",
+                        src: "/static/images/section/services-intro/service-teaser-cottage-overlay.png"
+                    }
+                ]
+            },
+            {
+                className: "service-teaser-card--office",
+                title: "Уборка в офисе",
+                text: "Чистое рабочее пространство — это залог продуктивности офисных работников и показатель статуса перед партнерами. Благодаря услугам клининговой компании будут продезинфицированы и убраны рабочие места. Мы наведем порядок в общих зонах. Заказать клининг для офиса можно на любое время.",
+                href: "#",
+                images: [
+                    {
+                        className: "service-teaser-card__image--main",
+                        src: "/static/images/section/services-intro/service-teaser-office.png"
+                    }
+                ]
+            },
+            {
+                className: "service-teaser-card--general",
+                title: "Генеральная уборка",
+                text: "Такой вариант основан на полном очищении пространства, при котором услуги клининга охватывают все уголки домовладения. Благодаря профессиональному клинингу в Москве в помещениях не останется ни пылинки. Заказав регулярную или разовую генеральную уборку, вы забудете о ежедневной рутине.",
+                href: "#",
+                images: [
+                    {
+                        className: "service-teaser-card__image--main",
+                        src: "/static/images/section/services-intro/service-teaser-general-base.png"
+                    },
+                    {
+                        className: "service-teaser-card__image--overlay",
+                        src: "/static/images/section/services-intro/service-teaser-general-overlay.png"
+                    }
+                ]
+            },
+            {
+                className: "service-teaser-card--maintenance",
+                title: "Поддерживающая уборка",
+                text: "Поддержание чистоты клининговой компанией подойдет для тех, кто хочет сохранить порядок без лишних затрат времени на борьбу с пылью. Клинеры протрут зеркала, вымоют полы и сантехнику. Профессиональные услуги клининга позволяют вашему дому выглядеть опрятно каждый день.",
+                href: "#",
+                images: [
+                    {
+                        className: "service-teaser-card__image--main",
+                        src: "/static/images/section/services-intro/service-teaser-maintenance.png"
+                    }
+                ]
+            }
+        ],
+        actions: [
+            {
+                label: "Заказать клининговые услуги",
+                href: "#",
+                className: "ui-btn--primary"
+            },
+            {
+                label: "Ознакомиться с ценами",
+                href: "#",
+                className: "ui-btn--secondary"
+            }
+        ]
+    }
+
+section.services-intro
+    ._container
+        .services-intro__wrapper
+            .services-intro__hero
+                .services-intro__hero-copy
+                    .services-intro__hero-head.ui-section-head
+                        span.ui-kicker.services-intro__hero-kicker= servicesIntro.hero.kicker
+                        h1.ui-title.ui-title--hero.services-intro__hero-title= servicesIntro.hero.title
+                    .services-intro__hero-content
+                        p.ui-text.services-intro__hero-text= servicesIntro.hero.text
+                        .services-intro__hero-actions
+                            each action in servicesIntro.hero.actions
+                                a.ui-btn.services-intro__hero-action(class=action.className href=action.href)
+                                    span.ui-btn__content= action.label
+                .services-intro__hero-media(aria-hidden="true")
+                    .services-intro__hero-decor
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-decor.png",
+                            decorative: true,
+                            width: 1024,
+                            height: 1024,
+                            loading: "eager",
+                            decoding: "async",
+                            sizes: "(max-width: 650px) 54vw, 16vw"
+                        })
+                    .services-intro__hero-cleaner
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-cleaner.png",
+                            srcset: "/static/images/section/services-hero/services-hero-cleaner-468.png 468w, /static/images/section/services-hero/services-hero-cleaner.png 936w",
+                            webpSrcset: "/static/webp-images/section/services-hero/services-hero-cleaner-468.webp 468w, /static/webp-images/section/services-hero/services-hero-cleaner-936.webp 936w",
+                            decorative: true,
+                            width: 936,
+                            height: 2088,
+                            loading: "eager",
+                            decoding: "async",
+                            fetchpriority: "high",
+                            sizes: "(max-width: 650px) 42vw, 18vw"
+                        })
+                    .services-intro__hero-interior
+                        +mediaImage({
+                            src: "/static/images/section/services-hero/services-hero-interior.png",
+                            srcset: "/static/images/section/services-hero/services-hero-interior-630.png 630w, /static/images/section/services-hero/services-hero-interior.png 1260w",
+                            webpSrcset: "/static/webp-images/section/services-hero/services-hero-interior-630.webp 630w, /static/webp-images/section/services-hero/services-hero-interior-1260.webp 1260w",
+                            decorative: true,
+                            width: 1260,
+                            height: 1712,
+                            loading: "eager",
+                            decoding: "async",
+                            sizes: "(max-width: 650px) 74vw, 30vw"
+                        })
+            .services-intro__overview
+                .services-intro__overview-content
+                    h2.ui-title.services-intro__overview-title= servicesIntro.overview.title
+                    .services-intro__overview-copy(data-read-more)
+                        .services-intro__overview-summary
+                            p.ui-text.services-intro__overview-summary-text
+                                | #{servicesIntro.overview.summary} 
+                                button.services-intro__overview-more(type="button" data-read-more-toggle aria-expanded="false" aria-controls=servicesIntro.overview.bodyId) Ещё
+                        .services-intro__overview-body(id=servicesIntro.overview.bodyId)
+                            each paragraph in servicesIntro.overview.paragraphs
+                                p.ui-text.services-intro__overview-text= paragraph
+                .services-intro__overview-media(aria-hidden="true")
+                    +mediaImage({
+                        src: "/static/images/section/services-intro/services-intro-tools.png",
+                        decorative: true,
+                        loading: "lazy",
+                        decoding: "async",
+                        sizes: "(max-width: 650px) 42vw, 18vw"
+                    })
+            .services-intro__slider.swiper(data-services-intro-swiper)
+                .services-intro__slider-track.swiper-wrapper
+                    each item in servicesIntro.cards
+                        .services-intro__slide.swiper-slide
+                            +serviceTeaserCard(item)
+            .services-intro__footer
+                .services-intro__actions
+                    each action in servicesIntro.actions
+                        a.ui-btn.services-intro__action(class=action.className href=action.href)
+                            span.ui-btn__content= action.label
+                .services-intro__nav.ui-slider-nav.ui-slider-nav--desktop-only
+                    button.services-intro__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Предыдущая услуга" data-services-intro-prev)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                    button.services-intro__nav-btn.ui-btn.ui-btn--primary.ui-slider-nav__btn(type="button" aria-label="Следующая услуга" data-services-intro-next)
+                        span.ui-btn__content
+                            svg(width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round")

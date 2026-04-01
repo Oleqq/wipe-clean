@@ -18,6 +18,14 @@
             transform: rotate(360deg);
   }
 }
+.promotions-page .contacts__head {
+  max-width: 100%;
+}
+
+.contacts__head h2 {
+  max-width: 66%;
+}
+
 .promotions-archive {
   padding-top: 112px;
   padding-bottom: 50px;
@@ -253,9 +261,13 @@
 
 .popup__dialog--promotion {
   width: min(100%, 944px);
-  max-height: calc(100vh - 24px);
   padding: 14px 14px 18px;
   overflow-x: hidden;
+  overflow-y: visible;
+  scrollbar-gutter: auto;
+}
+.popup__dialog--promotion.is-scrollable {
+  max-height: calc(100vh - 24px);
   overflow-y: auto;
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
@@ -264,8 +276,10 @@
 @media (max-width: 650px) {
   .popup__dialog--promotion {
     width: min(100%, 388px);
-    max-height: calc(100dvh - 24px);
     padding: 10px;
+  }
+  .popup__dialog--promotion.is-scrollable {
+    max-height: calc(100dvh - 24px);
   }
 }
 

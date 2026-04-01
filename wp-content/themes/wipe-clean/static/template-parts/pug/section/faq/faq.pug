@@ -1,0 +1,111 @@
+include ../../components/faq-item/faq-item
+
+-
+    var faqDefaults = {
+        title: "Ответы на вопросы о клининге в Москве",
+        items: [
+            {
+                question: "Как рассчитывается стоимость клининга квартиры в Москве?",
+                answer: "Итоговая стоимость зависит от площади, степени загрязнения и выбранного набора услуг. Финальную цену мы рассчитываем заранее и согласовываем с вами до выезда команды."
+            },
+            {
+                question: "Можно ли находиться дома во время уборки квартиры?",
+                answer: "Да, конечно. Вы можете оставаться дома во время клининга или передать доступ удобным для вас способом. Все детали согласовываем заранее."
+            },
+            {
+                question: "Сколько времени занимает уборка квартиры или дома?",
+                answer: "Срок зависит от площади помещения, формата уборки и количества дополнительных задач. После уточнения деталей мы заранее ориентируем вас по времени до подтверждения заказа."
+            },
+            {
+                question: "Какие средства используются при уборке?",
+                answer: "Мы используем профессиональные и безопасные средства, подходящие для жилых помещений. При необходимости подбираем деликатную химию для детей, животных и чувствительных поверхностей."
+            },
+            {
+                question: "Что делать, если результат уборки не устроил?",
+                answer: "Если у вас останутся замечания, сообщите нам сразу после приемки. Мы оперативно вернемся и исправим недочеты за свой счет."
+            },
+            {
+                question: "Работаете ли вы в выходные и праздники?",
+                answer: "Да, мы принимаем заказы на выходные и праздничные дни. Лучше бронировать дату заранее, особенно в периоды высокой загрузки."
+            },
+            {
+                question: "Возможна ли срочная уборка в Москве?",
+                answer: "Да, при наличии свободной команды можем организовать срочный выезд в ближайшее доступное время. Уточнить возможность можно по телефону или через форму заявки."
+            },
+            {
+                question: "Как производится оплата клининга?",
+                answer: "Оплатить можно удобным для вас способом после согласования стоимости и выполнения работ. Все условия оплаты озвучиваем заранее, без скрытых доплат."
+            }
+        ]
+    };
+
+-
+    var faqData = typeof faqSectionData === "object" && faqSectionData ? faqSectionData : {};
+    var faqItemsData = Array.isArray(faqData.items) && faqData.items.length ? faqData.items : faqDefaults.items;
+    var faqMobileItemsData = Array.isArray(faqData.mobileItems) && faqData.mobileItems.length ? faqData.mobileItems : faqItemsData;
+    var faqOptions = Object.assign({}, faqDefaults, faqData);
+    faqOptions.items = faqItemsData;
+    faqOptions.mobileItems = faqMobileItemsData;
+
+    var faqInitialOpenIndex = typeof faqData.initialOpenIndex === "number" ? faqData.initialOpenIndex : -1;
+    var faqMobileInitialOpenIndex = typeof faqData.mobileInitialOpenIndex === "number" ? faqData.mobileInitialOpenIndex : faqInitialOpenIndex;
+    var faqShouldShowTitle = typeof faqData.showTitle === "boolean" ? faqData.showTitle : !!faqOptions.title;
+    var faqSectionClassName = "faq";
+
+    if (faqData.modifier) {
+        faqSectionClassName += " faq--" + faqData.modifier;
+    }
+
+    var faqColumns = [];
+    var faqDesktopColumnsData = Array.isArray(faqData.desktopColumns) && faqData.desktopColumns.length ? faqData.desktopColumns : null;
+
+    if (faqDesktopColumnsData) {
+        faqColumns = faqDesktopColumnsData.map(function(columnIndexes) {
+            var items = [];
+
+            if (!Array.isArray(columnIndexes)) {
+                return items;
+            }
+
+            columnIndexes.forEach(function(itemIndex) {
+                var item = faqOptions.items[itemIndex];
+
+                if (item) {
+                    items.push({ item: item, index: itemIndex });
+                }
+            });
+
+            return items;
+        });
+    } else {
+        var faqColumnSplitIndex = Math.ceil(faqOptions.items.length / 2);
+        faqColumns = [[], []];
+
+        faqOptions.items.forEach(function(item, index) {
+            if (index < faqColumnSplitIndex) {
+                faqColumns[0].push({ item: item, index: index });
+                return;
+            }
+
+            faqColumns[1].push({ item: item, index: index });
+        });
+    }
+
+section(class=faqSectionClassName)
+    ._container
+        .faq__wrapper
+            if faqShouldShowTitle
+                .faq__head
+                    h2.ui-title.faq__title= faqOptions.title
+            .faq__columns.faq__columns--desktop
+                each columnItems in faqColumns
+                    .faq__column(data-faq-group)
+                        each entry in columnItems
+                            +faqItem(entry.item, entry.index, "faq-desktop", entry.index === faqInitialOpenIndex)
+            .faq__mobile(data-faq-group)
+                each item, index in faqOptions.mobileItems
+                    +faqItem(item, index, "faq-mobile", index === faqMobileInitialOpenIndex)
+            if faqOptions.action
+                .faq__footer
+                    a.ui-btn.faq__action(class=faqOptions.action.className href=faqOptions.action.href)
+                        span.ui-btn__content= faqOptions.action.label

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wipe-Clean • Список страниц</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg: #fffcf8;
+            --bg-soft: #fff6ed;
+            --surface: rgba(255, 255, 255, 0.9);
+            --surface-strong: rgba(255, 255, 255, 0.96);
+            --text: #171742;
+            --text-soft: #646b84;
+            --accent: #1498c6;
+            --accent-strong: #0d7ea7;
+            --line: rgba(20, 152, 198, 0.16);
+            --success: #1f9864;
+            --shadow-lg: 0 22px 70px rgba(25, 35, 78, 0.12);
+            --shadow-md: 0 12px 32px rgba(25, 35, 78, 0.08);
+            --radius-xl: 32px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --container: 1240px;
+            --transition: 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            font-family: "Involve", "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(202, 234, 224, 0.95) 0%, rgba(202, 234, 224, 0) 30%),
+                radial-gradient(circle at top right, rgba(20, 152, 198, 0.12) 0%, rgba(20, 152, 198, 0) 24%),
+                linear-gradient(180deg, #fffdfa 0%, #fff8f1 100%);
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 50%;
+            filter: blur(18px);
+            opacity: 0.92;
+        }
+
+        body::before {
+            top: -140px;
+            right: -120px;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(20, 152, 198, 0.18) 0%, rgba(20, 152, 198, 0) 72%);
+        }
+
+        body::after {
+            bottom: -180px;
+            left: -140px;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(202, 234, 224, 0.95) 0%, rgba(202, 234, 224, 0) 72%);
+        }
+
+        .hub {
+            position: relative;
+            z-index: 1;
+            padding: 28px 20px 40px;
+        }
+
+        .hub__container {
+            width: min(100%, var(--container));
+            margin: 0 auto;
+        }
+
+        .hub__hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(320px, 480px);
+            gap: 28px;
+            align-items: stretch;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 252, 248, 0.92) 100%);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(18px);
+        }
+
+        .hub__title {
+            margin: 0 0 16px;
+            font-size: clamp(34px, 4vw, 62px);
+            line-height: 0.96;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+        }
+
+        .hub__text {
+            max-width: 720px;
+            margin: 0 0 20px;
+            font-size: 18px;
+            line-height: 1.55;
+            color: var(--text-soft);
+        }
+
+        .hub__tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hub__tip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 46px;
+            padding: 10px 16px;
+            border: 1px solid rgba(20, 152, 198, 0.14);
+            border-radius: 999px;
+            background: var(--surface-strong);
+            box-shadow: var(--shadow-md);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .hub__visual {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: var(--surface-strong);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hub__visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hub__section {
+            margin-top: 24px;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: var(--surface);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(14px);
+        }
+
+        .hub__section-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hub__section-title {
+            margin: 0;
+            font-size: clamp(24px, 2.1vw, 34px);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .hub__section-text {
+            margin: 0;
+            max-width: 680px;
+            color: var(--text-soft);
+            line-height: 1.55;
+            font-size: 16px;
+        }
+
+        .hub__grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .hub__card {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 180px;
+            padding: 22px;
+            border: 1px solid rgba(20, 152, 198, 0.16);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 252, 248, 0.94) 100%);
+            box-shadow: 0 10px 28px rgba(25, 35, 78, 0.07);
+            text-decoration: none;
+            color: inherit;
+            transition:
+                transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .hub__card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(20, 152, 198, 0.08) 0%, rgba(20, 152, 198, 0) 48%);
+            opacity: 0;
+            transition: opacity var(--transition);
+            pointer-events: none;
+        }
+
+        .hub__card:hover {
+            transform: translate3d(0, -6px, 0);
+            border-color: rgba(20, 152, 198, 0.28);
+            box-shadow: 0 18px 42px rgba(25, 35, 78, 0.12);
+        }
+
+        .hub__card:hover::before {
+            opacity: 1;
+        }
+
+        .hub__card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hub__card-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .hub__card-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #29b0db 0%, #1295c4 100%);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1;
+            box-shadow: 0 10px 20px rgba(20, 152, 198, 0.24);
+        }
+
+        .hub__card-badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(202, 234, 224, 0.66);
+            color: var(--success);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .hub__card-title {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .hub__card-text {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--text-soft);
+        }
+
+        .hub__card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: auto;
+            color: var(--accent-strong);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .hub__card-link::after {
+            content: "→";
+            font-size: 18px;
+            line-height: 1;
+            transition: transform var(--transition);
+        }
+
+        .hub__card:hover .hub__card-link::after {
+            transform: translate3d(4px, 0, 0);
+        }
+
+        .hub__bottom-note {
+            margin: 18px 0 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-soft);
+        }
+
+        @media (max-width: 1099px) {
+            .hub__hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hub__grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .hub {
+                padding: 16px 14px 28px;
+            }
+
+            .hub__hero,
+            .hub__section {
+                padding: 18px;
+                border-radius: 24px;
+            }
+
+            .hub__text {
+                font-size: 16px;
+            }
+
+            .hub__tips {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .hub__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hub__card {
+                min-height: 0;
+                padding: 18px;
+            }
+
+            .hub__card-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="hub">
+        <div class="hub__container">
+            <section class="hub__hero" aria-labelledby="hub-title">
+                <div>
+                    <h1 class="hub__title" id="hub-title">Список страниц сайта</h1>
+                    <p class="hub__text">
+                        Здесь собраны все страницы проекта. Нажмите на нужную карточку, чтобы открыть страницу.
+                    </p>
+                    <div class="hub__tips" aria-label="Подсказки">
+                        <span class="hub__tip">Все ссылки идут через <code>/template-parts/</code></span>
+                      
+                    </div>
+                </div>
+
+                <div class="hub__visual">
+                    <img
+                        src="images/section/company-highlight/company-highlight-full.png"
+                        alt="Wipe-Clean"
+                        width="768"
+                        height="768"
+                        loading="eager"
+                        decoding="async"
+                    >
+                </div>
+            </section>
+
+            <section class="hub__section" aria-labelledby="main-pages-title">
+                <div class="hub__section-head">
+                    <div>
+                        <h2 class="hub__section-title" id="main-pages-title">Основные страницы</h2>
+                        <p class="hub__section-text">Главные страницы сайта и внутренние страницы с контентом.</p>
+                    </div>
+                </div>
+
+                <div class="hub__grid">
+                    <a class="hub__card" href="/template-parts/index.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">01</span>
+                            <span class="hub__card-badge">Главная</span>
+                        </div>
+                        <h3 class="hub__card-title">Главная</h3>
+                        <p class="hub__card-text">Стартовая страница сайта.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/about-us.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">02</span>
+                            <span class="hub__card-badge">О компании</span>
+                        </div>
+                        <h3 class="hub__card-title">О компании</h3>
+                        <p class="hub__card-text">Страница о компании и команде.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/services.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">03</span>
+                            <span class="hub__card-badge">Услуги</span>
+                        </div>
+                        <h3 class="hub__card-title">Услуги</h3>
+                        <p class="hub__card-text">Общий список услуг.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/apartment-cleaning.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">04</span>
+                            <span class="hub__card-badge">Страница услуги</span>
+                        </div>
+                        <h3 class="hub__card-title">Уборка квартиры</h3>
+                        <p class="hub__card-text">Внутренняя страница услуги.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/prices.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">05</span>
+                            <span class="hub__card-badge">Цены</span>
+                        </div>
+                        <h3 class="hub__card-title">Цены</h3>
+                        <p class="hub__card-text">Страница с ценами и тарифами.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/blog.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">06</span>
+                            <span class="hub__card-badge">Блог</span>
+                        </div>
+                        <h3 class="hub__card-title">Блог</h3>
+                        <p class="hub__card-text">Список всех статей.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/single-blog.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">07</span>
+                            <span class="hub__card-badge">Статья</span>
+                        </div>
+                        <h3 class="hub__card-title">Статья блога</h3>
+                        <p class="hub__card-text">Внутренняя страница статьи.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/reviews.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">08</span>
+                            <span class="hub__card-badge">Отзывы</span>
+                        </div>
+                        <h3 class="hub__card-title">Отзывы</h3>
+                        <p class="hub__card-text">Отзывы клиентов и видео.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/faq.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">09</span>
+                            <span class="hub__card-badge">FAQ</span>
+                        </div>
+                        <h3 class="hub__card-title">FAQ</h3>
+                        <p class="hub__card-text">Частые вопросы и ответы.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/promotions.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">10</span>
+                            <span class="hub__card-badge">Акции</span>
+                        </div>
+                        <h3 class="hub__card-title">Акции</h3>
+                        <p class="hub__card-text">Все акции и предложения.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/contacts.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">11</span>
+                            <span class="hub__card-badge">Контакты</span>
+                        </div>
+                        <h3 class="hub__card-title">Контакты</h3>
+                        <p class="hub__card-text">Контакты и форма связи.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="hub__section" aria-labelledby="extra-pages-title">
+                <div class="hub__section-head">
+                    <div>
+                        <h2 class="hub__section-title" id="extra-pages-title">Дополнительно</h2>
+                        <p class="hub__section-text">Служебные и вспомогательные страницы проекта.</p>
+                    </div>
+                </div>
+
+                <div class="hub__grid">
+                    <a class="hub__card" href="/template-parts/popups.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">12</span>
+                            <span class="hub__card-badge">Попапы</span>
+                        </div>
+                        <h3 class="hub__card-title">Попапы</h3>
+                        <p class="hub__card-text">Все всплывающие окна на одной странице.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/policy.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">13</span>
+                            <span class="hub__card-badge">Документ</span>
+                        </div>
+                        <h3 class="hub__card-title">Политика</h3>
+                        <p class="hub__card-text">Текстовая страница документа.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+
+                    <a class="hub__card" href="/template-parts/404.html">
+                        <div class="hub__card-top">
+                            <span class="hub__card-number">14</span>
+                            <span class="hub__card-badge">404</span>
+                        </div>
+                        <h3 class="hub__card-title">Страница 404</h3>
+                        <p class="hub__card-text">Страница ошибки.</p>
+                        <span class="hub__card-link">Открыть</span>
+                    </a>
+                </div>
+
+                <p class="hub__bottom-note">
+                    Если структура сервера изменится, здесь нужно будет поправить только пути в ссылках.
+                </p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

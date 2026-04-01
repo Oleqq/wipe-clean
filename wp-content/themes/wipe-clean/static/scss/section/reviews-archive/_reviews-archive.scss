@@ -1,0 +1,190 @@
+@use "../../global/core" as *;
+
+.reviews-archive {
+    @include first-screen-padding(112px, 50px, 88px, 44px, 88px, 25px);
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__intro {
+        display: grid;
+        justify-items: center;
+        gap: 24px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        display: grid;
+        justify-items: center;
+        gap: 20px;
+        text-align: center;
+
+        @include below-mobile {
+            gap: 12px;
+        }
+    }
+
+    &__kicker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 22px;
+        padding: 0 12px;
+        border-left: 2px solid $color-accent;
+        border-right: 2px solid $color-accent;
+        @include text-body(16px, $color-accent, 600);
+
+        @include below-mobile {
+            min-height: 20px;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        @include below-mobile {
+            font-size: 31px;
+        }
+    }
+
+    &__top-action {
+        width: 240px;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
+        gap: 32px 20px;
+
+        @include below-mobile {
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        min-width: 0;
+
+        &[hidden] {
+            display: none;
+        }
+
+        &.is-revealed {
+            animation: reviews-archive-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+            animation-delay: var(--reviews-archive-delay, 0s);
+        }
+    }
+
+    &__footer {
+        display: grid;
+        justify-items: center;
+        padding-top: 4px;
+        min-height: 50px;
+
+        @include below-mobile {
+            padding-top: 8px;
+            min-height: 44px;
+        }
+
+        &.is-loading {
+            .reviews-archive__loader {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+
+                img {
+                    animation: reviews-archive-loader-spin 0.9s linear infinite;
+                }
+            }
+
+            .reviews-archive__more {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(8px);
+            }
+        }
+    }
+
+    &__loader {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.92);
+        transition: opacity $transition-base, transform $transition-base, visibility $transition-base;
+        grid-area: 1 / 1;
+
+        @include below-mobile {
+            width: 40px;
+            height: 40px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__more {
+        width: 200px;
+        grid-area: 1 / 1;
+        transition: opacity $transition-base, transform $transition-base, visibility $transition-base;
+
+        &.is-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        &.is-exhausted {
+            opacity: 0;
+            transform: translateY(8px);
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+}
+
+@keyframes reviews-archive-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes reviews-archive-loader-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+

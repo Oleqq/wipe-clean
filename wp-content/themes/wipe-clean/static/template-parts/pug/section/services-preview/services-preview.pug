@@ -1,0 +1,157 @@
+include ../../components/service-card/service-card
+
+-
+    var servicesPreviewFeaturedServices = [
+        {
+            title: "Поддерживающая уборка",
+            price: "от 3 500 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "fill" }
+            ]
+        },
+        {
+            title: "Срочная уборка",
+            price: "от 7 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" }
+            ]
+        },
+        {
+            title: "Уборка квартир",
+            price: "от 10 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                { src: "/static/images/services/service-preview-apartments.png", modifier: "fill" }
+            ]
+        },
+        {
+            title: "Уборка домов и коттеджей",
+            price: "от 17 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" }
+            ]
+        }
+    ]
+
+-
+    var servicesPreviewSecondaryServices = [
+        {
+            title: "Уборка квартир по суточно",
+            price: "от 5 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                { src: "/static/images/services/service-preview-apartments.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-daily.png", modifier: "fill" }
+            ]
+        },
+        {
+            title: "Мытьё окон",
+            price: "от 2 500 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                { src: "/static/images/services/service-preview-windows.png", modifier: "flip" }
+            ]
+        },
+        {
+            title: "Уборка офисов",
+            price: "от 19 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                { src: "/static/images/services/service-preview-apartments.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-daily.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-office.png", modifier: "shift-right" }
+            ]
+        },
+        {
+            title: "Генеральная уборка",
+            price: "от 12 000 ₽",
+            href: "#",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                { src: "/static/images/services/service-preview-windows.png", modifier: "flip" },
+                { src: "/static/images/services/service-preview-after-repair.png", modifier: "overlay" }
+            ]
+        },
+        {
+            title: "Уборка после ремонта",
+            price: "от 12 000 ₽",
+            href: "#",
+            className: "service-card--after-repair",
+            layers: [
+                { src: "/static/images/services/service-preview-base.png", modifier: "shift-top" },
+                { src: "/static/images/services/service-preview-urgent.png", modifier: "fill" },
+                { src: "/static/images/services/service-preview-houses.png", modifier: "shift-right" },
+                { src: "/static/images/services/service-preview-windows.png", modifier: "flip" },
+                { src: "/static/images/services/service-preview-after-repair.png", modifier: "overlay" },
+                { src: "/static/images/services/service-preview-after-repair.png", modifier: "fill" }
+            ]
+        }
+    ]
+
+-
+    var servicesPreviewDefaults = {
+        className: "",
+        bodyId: "services-preview-text",
+        title: "Наши услуги по уборке",
+        text: "Мы выполняем клининг под разные задачи — от регулярной уборки квартиры до комплексной генеральной уборки после переезда. Все работы выполняются штатными клинерами по чек-листу, с контролем старшего специалиста.",
+        summaryText: "",
+        noteText: "Итоговая стоимость зависит от площади помещения, необходимых услуг и индивидуальных предпочтений. Заполните заявку на сайте или свяжитесь с нами по телефону или в мессенджер, чтобы мы рассчитали стоимость клиринговых услуг.",
+        featuredServices: servicesPreviewFeaturedServices,
+        secondaryServices: servicesPreviewSecondaryServices,
+        actions: [
+            {
+                label: "Ознакомиться со всеми услугами",
+                href: "#",
+                className: "ui-btn--primary ui-btn--full"
+            },
+            {
+                label: "Рассчитать стоимость уборки",
+                href: "#",
+                className: "ui-btn--secondary ui-btn--full"
+            }
+        ]
+    }
+
+-
+    var servicesPreviewData = typeof servicesPreviewSection === "object" && servicesPreviewSection ? servicesPreviewSection : {}
+    var servicesPreviewOptions = Object.assign({}, servicesPreviewDefaults, servicesPreviewData)
+    var servicesPreviewBodyId = servicesPreviewOptions.bodyId
+
+section.services-preview(class=servicesPreviewOptions.className)
+    ._container
+        .services-preview__wrapper
+            .services-preview__head.ui-section-head.ui-section-head--center
+                h2.ui-title= servicesPreviewOptions.title
+                if servicesPreviewOptions.summaryText
+                    .services-preview__copy(data-read-more)
+                        .services-preview__summary
+                            p.ui-text.services-preview__summary-text
+                                | #{servicesPreviewOptions.summaryText} 
+                                button.services-preview__more(type="button" data-read-more-toggle aria-expanded="false" aria-controls=servicesPreviewBodyId) Ещё
+                        .services-preview__body(id=servicesPreviewBodyId)
+                            p.ui-text= servicesPreviewOptions.text
+                else
+                    p.ui-text= servicesPreviewOptions.text
+            .services-preview__grid.services-preview__grid--featured
+                each service in servicesPreviewOptions.featuredServices
+                    +serviceCard(service, "lg")
+            .services-preview__grid.services-preview__grid--secondary
+                each service in servicesPreviewOptions.secondaryServices
+                    +serviceCard(service, "sm")
+            .ui-banner.services-preview__note
+                p.ui-text.services-preview__note-text= servicesPreviewOptions.noteText
+            .services-preview__actions
+                each action in servicesPreviewOptions.actions
+                    a.ui-btn(class=action.className href=action.href)
+                        span.ui-btn__content= action.label

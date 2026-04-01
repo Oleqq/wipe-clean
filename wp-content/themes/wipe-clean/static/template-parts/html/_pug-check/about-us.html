@@ -1,0 +1,856 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wipe Clean</title>
+    <link rel="preload" href="/static/fonts/Involve-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/static/css/vendor/fancybox.css">
+    <link rel="stylesheet" href="/static/css/vendor/swiper-bundle.css">
+    <link rel="stylesheet" href="/static/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="_container">
+        <div class="header__wrapper"><a class="header__brand" href="index.html" aria-label="РќР° РіР»Р°РІРЅСѓСЋ"><span class="header__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="header__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+          <nav class="header__nav" id="header-nav" data-header-nav aria-label="РћСЃРЅРѕРІРЅР°СЏ РЅР°РІРёРіР°С†РёСЏ">
+            <button class="header__nav-backdrop" type="button" data-header-close aria-label="Р—Р°РєСЂС‹С‚СЊ РјРµРЅСЋ"></button>
+            <div class="header__nav-panel">
+              <ul class="header__menu">
+                <li class="header__item"><a class="header__link" href="about-us.html" data-header-link>Рћ РєРѕРјРїР°РЅРёРё</a></li>
+                <li class="header__item header__item--has-children" data-header-item>
+                  <div class="header__item-row"><a class="header__link header__link--parent" href="services.html" data-header-link data-header-parent-link>РЈСЃР»СѓРіРё</a>
+                    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="header-services-submenu" aria-label="РџРѕРєР°Р·Р°С‚СЊ РїРѕРґРјРµРЅСЋ СЂР°Р·РґРµР»Р° РЈСЃР»СѓРіРё" data-header-submenu-toggle>
+                          <svg class="header__submenu-toggle-icon" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M2 2L8 6L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                    </button>
+                  </div>
+                  <div class="header__submenu" id="header-services-submenu" data-header-submenu aria-hidden="true">
+                    <div class="header__submenu-panel">
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="apartment-cleaning.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РњС‹С‚СЊС‘ РѕРєРѕРЅ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item"><a class="header__link" href="prices.html" data-header-link>Р¦РµРЅС‹</a></li>
+                <li class="header__item"><a class="header__link" href="promotions.html" data-header-link>РђРєС†РёРё</a></li>
+                <li class="header__item"><a class="header__link" href="reviews.html" data-header-link>РћС‚Р·С‹РІС‹</a></li>
+                <li class="header__item"><a class="header__link" href="contacts.html" data-header-link>РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="blog.html" data-header-link>Р‘Р»РѕРі</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="faq.html" data-header-link>FAQ</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="header__actions"><a class="ui-btn ui-btn--primary ui-btn--icon header__phone" href="tel:+79801636101" aria-label="РџРѕР·РІРѕРЅРёС‚СЊ"><span class="ui-btn__content"><span class="header__action-icon">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M22 20.2448V23.667C22 24.2858 21.7542 24.8793 21.3167 25.3167C20.8793 25.7542 20.2858 26 19.667 26C15.2332 25.7304 10.9848 23.8476 7.81016 20.673C4.63555 17.4983 2.75276 13.2499 2.48315 8.81616C2.48315 8.19735 2.72899 7.60389 3.16642 7.16644C3.60386 6.729 4.19731 6.48315 4.81612 6.48315H8.23831C8.65696 6.47904 9.06282 6.6286 9.37925 6.90325C9.69567 7.17789 9.90063 7.55849 9.95565 7.97353C10.0583 8.7517 10.2488 9.51583 10.523 10.2511C10.6378 10.557 10.6642 10.889 10.599 11.2092C10.5338 11.5294 10.3796 11.8248 10.1541 12.0614L8.70538 13.5101C10.3298 16.3668 12.6991 18.7361 15.5558 20.3605L17.0045 18.9118C17.2411 18.6863 17.5365 18.5321 17.8567 18.4669C18.1769 18.4017 18.5089 18.4281 18.8148 18.5429C19.5501 18.8171 20.3142 19.0076 21.0924 19.1103C21.5115 19.166 21.8954 19.375 22.1704 19.6973C22.4453 20.0197 22.5928 20.432 22.5854 20.855L22 20.2448Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></span></a><a class="ui-btn ui-btn--primary header__cta" href="contacts.html"><span class="ui-btn__content">РЎРІСЏР·Р°С‚СЊСЃСЏ СЃ РЅР°РјРё</span></a>
+            <button class="ui-btn ui-btn--primary ui-btn--icon header__menu-toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ" data-header-toggle><span class="ui-btn__content"><span class="header__action-icon header__action-icon--menu">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 14H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 20H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span><span class="header__action-icon header__action-icon--close">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 8L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M20 8L8 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="about-page">
+        <section class="about-hero">
+          <div class="_container">
+            <div class="about-hero__wrapper">
+              <div class="about-hero__media" aria-hidden="true">
+                <div class="about-hero__decor"><img src="/static/images/section/about-hero/about-hero-decor.png" alt="" loading="eager" decoding="async" width="1024" height="1024" sizes="(max-width: 650px) 72vw, 22vw" aria-hidden="true">
+                </div>
+                <div class="about-hero__image">
+                          <picture>
+                            <source type="image/webp" srcset="/static/webp-images/section/about-hero/about-hero-image-512.webp 512w, /static/webp-images/section/about-hero/about-hero-image-1024.webp 1024w" sizes="(max-width: 650px) 78vw, 32vw"><img src="/static/images/section/about-hero/about-hero-image.png" alt="РР»Р»СЋСЃС‚СЂР°С†РёСЏ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё Р’РђР™РџвЂ“РљР»РёРЅ" loading="eager" decoding="async" width="1024" height="1536" fetchpriority="high" srcset="/static/images/section/about-hero/about-hero-image-512.png 512w, /static/images/section/about-hero/about-hero-image.png 1024w" sizes="(max-width: 650px) 78vw, 32vw">
+                          </picture>
+                </div>
+              </div>
+              <div class="about-hero__head ui-section-head"><span class="ui-kicker about-hero__kicker">Рћ РєРѕРјРїР°РЅРёРё</span>
+                <h1 class="ui-title ui-title--hero about-hero__title">РљР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ Р’РђР™РџвЂ“РљР»РёРЅ</h1>
+              </div>
+              <div class="about-hero__content">
+                <p class="ui-text about-hero__text">РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі вЂ” СЌС‚Рѕ РїСЂРѕРґСѓРјР°РЅРЅР°СЏ СЃРёСЃС‚РµРјР° СЃРѕР·РґР°РЅРёСЏ Р·РґРѕСЂРѕРІРѕР№ РјРёРєСЂРѕСЃСЂРµРґС‹. Р­С‚Рѕ С‚СЂРµР±СѓРµС‚ СЌРєСЃРїРµСЂС‚РЅС‹С… Р·РЅР°РЅРёР№. РќР°С€Р° РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ С‚СЂР°РЅСЃС„РѕСЂРјРёСЂСѓРµС‚ РїСЂРёРІС‹С‡РЅРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ Рѕ РїРѕСЂСЏРґРєРµ. РњС‹ РїСЂРµРІСЂР°С‰Р°РµРј СѓР±РѕСЂРєСѓ РІ С‚РµС…РЅРѕР»РѕРіРёС‡РЅС‹Р№ РїСЂРѕС†РµСЃСЃ СЃ РёРґРµР°Р»СЊРЅС‹Рј РёС‚РѕРіРѕРј.</p>
+                <div class="about-hero__actions"><a class="ui-btn about-hero__action ui-btn--primary" href="#"><span class="ui-btn__content">Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃС‹</span></a><a class="ui-btn about-hero__action ui-btn--secondary" href="#"><span class="ui-btn__content">РљР»РёРЅРёРЅРіРѕРІС‹Рµ СѓСЃР»СѓРіРё</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="ui-wave-group">
+          <section class="company-story">
+            <div class="_container">
+              <div class="company-story__wrapper">
+                <div class="company-story__content">
+                  <div class="company-story__head">
+                    <h2 class="ui-title company-story__title">Рћ РЅР°С€РµР№ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё</h2>
+                  </div>
+                  <div class="company-story__copy" data-read-more>
+                    <div class="company-story__summary" data-read-more-summary>
+                      <p class="ui-text ui-text--sm company-story__summary-text">РџСѓС‚СЊ СЂР°Р·РІРёС‚РёСЏ РЅР°С€РµР№ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё РІ РњРѕСЃРєРІРµ РЅР°С‡Р°Р»СЃСЏ РІ 2015 РіРѕРґСѓ, РєРѕРіРґР° РЅРµР±РѕР»СЊС€Р°СЏ Р±СЂРёРіР°РґР° РёР· РґРІСѓС… С‡РµР»РѕРІРµРє РїРѕСЃС‚Р°РІРёР»Р° РїРµСЂРµРґ СЃРѕР±РѕР№ С†РµР»СЊ РґРѕРєР°Р·Р°С‚СЊ, С‡С‚Рѕ СѓР±РѕСЂРєР° РјРѕР¶РµС‚ Р±С‹С‚СЊ РёРЅРґСѓСЃС‚СЂРёРµР№ ...
+                        <button class="company-story__more" type="button" data-read-more-toggle aria-expanded="false" aria-controls="company-story-body">Р•С‰С‘</button>
+                      </p>
+                    </div>
+                    <div class="company-story__body" id="company-story-body" data-read-more-body>
+                      <p class="ui-text company-story__text">РџСѓС‚СЊ СЂР°Р·РІРёС‚РёСЏ РЅР°С€РµР№ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё РІ РњРѕСЃРєРІРµ РЅР°С‡Р°Р»СЃСЏ РІ 2015 РіРѕРґСѓ, РєРѕРіРґР° РЅРµР±РѕР»СЊС€Р°СЏ Р±СЂРёРіР°РґР° РёР· РґРІСѓС… С‡РµР»РѕРІРµРє РїРѕСЃС‚Р°РІРёР»Р° РїРµСЂРµРґ СЃРѕР±РѕР№ С†РµР»СЊ РґРѕРєР°Р·Р°С‚СЊ, С‡С‚Рѕ СѓР±РѕСЂРєР° РјРѕР¶РµС‚ Р±С‹С‚СЊ РёРЅРґСѓСЃС‚СЂРёРµР№. Р’ С‚Рѕ РІСЂРµРјСЏ РІ РЅР°С€РµРј СЂР°СЃРїРѕСЂСЏР¶РµРЅРёРё РЅР°С…РѕРґРёР»СЃСЏ Р»РёС€СЊ РѕРґРёРЅ Р°РІС‚РѕРјРѕР±РёР»СЊ Рё Р±Р°Р·РѕРІС‹Р№ РєРѕРјРїР»РµРєС‚. РњС‹ РЅР°С‡РёРЅР°Р»Рё СЃ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ С‡Р°СЃС‚РЅРѕРіРѕ СЃРµРєС‚РѕСЂР°. РљР°Р¶РґС‹Р№ РѕР±СЉРµРєС‚ РїРѕРјРѕРіР°Р» РѕСЃРѕР·РЅР°С‚СЊ, С‡С‚Рѕ С‡РµР»РѕРІРµРє РґРѕРІРµСЂРёР» РЅР°Рј СЃРІРѕРµ Р¶РёР»СЊРµ.</p>
+                      <p class="ui-text company-story__text company-story__text--featured"><strong>Р‘РѕР»РµРµ 7 Р»РµС‚</strong> РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РїСЂРѕС€Р»Р° РїСѓС‚СЊ РѕС‚ РјР°Р»С‹С… Р·Р°РєР°Р·РѕРІ РґРѕ Р±РѕР»СЊС€РѕР№ РєРѕРјР°РЅРґС‹. РЎРµРіРѕРґРЅСЏ СЌС‚Рѕ <strong>35 РїСЂРµРґР°РЅРЅС‹С… РґРµР»Сѓ</strong> РїСЂРѕС„Рё. РњС‹ РЅР°РєРѕРїРёР»Рё РѕРїС‹С‚ РЅР° <strong>10 000 РѕР±СЉРµРєС‚Р°С…</strong>. РЎСЂРµРґРё РЅРёС… Р±С‹Р»Рё Рё СѓСЋС‚РЅС‹Рµ РєРІР°СЂС‚РёСЂС‹, Рё РѕРіСЂРѕРјРЅС‹Рµ РґРµР»РѕРІС‹Рµ С†РµРЅС‚СЂС‹ РЅР°С€РµРіРѕ РіРѕСЂРѕРґР°. РќРµСЃРјРѕС‚СЂСЏ РЅР° СЂРѕСЃС‚, РјС‹ СЃРѕС…СЂР°РЅРёР»Рё РёСЃРєСЂРµРЅРЅРёР№ РґСЂР°Р№РІ: Рє РєР°Р¶РґРѕР№ РЅРѕРІРѕР№ Р·Р°РґР°С‡Рµ РєРѕРјР°РЅРґР° РѕС‚РЅРѕСЃРёС‚СЃСЏ СЃ С‚РµРј Р¶Рµ РґСѓС€РµРІРЅС‹Рј С‚СЂРµРїРµС‚РѕРј, С‡С‚Рѕ Рё РІ СЃР°РјС‹Р№ РїРµСЂРІС‹Р№ СЂР°Р·.</p>
+                    </div>
+                  </div>
+                  <div class="company-story__note">
+                    <p class="company-story__note-text">РЎРµРіРѕРґРЅСЏ РЅР°С€Р° РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ СЃС‚Р°Р»Р° РґР»СЏ Р¶РёС‚РµР»РµР№ СЃС‚РѕР»РёС†С‹ СЃРёРЅРѕРЅРёРјРѕРј РЅР°РґРµР¶РЅРѕСЃС‚Рё. РћРЅРё С†РµРЅСЏС‚ РЅР°С€Сѓ РёСЃРєСЂРµРЅРЅСЋСЋ Р·Р°Р±РѕС‚Сѓ Рѕ РїРѕСЂСЏРґРєРµ РІ РґРѕРјРµ. РњС‹ РЅРµ РїСЂРѕСЃС‚Рѕ СѓР±РёСЂР°РµРј РїС‹Р»СЊ. РњС‹ С…РѕС‚РёРј, С‡С‚РѕР±С‹ РґРѕРјР° РІР°Рј РґС‹С€Р°Р»РѕСЃСЊ Р»РµРіРєРѕ, Р° РЅР° СЂР°Р±РѕС‚Рµ РЅРёС‡РµРіРѕ РЅРµ РѕС‚РІР»РµРєР°Р»Рѕ. РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ РІ РЅР°С€РµРј РїРѕРЅРёРјР°РЅРёРё вЂ” СЌС‚Рѕ РєРѕРіРґР° РјР°СЃС‚РµСЂ Р±РµСЂРµР¶РµС‚ РєР°Р¶РґРѕРµ РїРѕРєСЂС‹С‚РёРµ, РёСЃРїРѕР»СЊР·СѓРµС‚ С‚РµС…РЅРёРєСѓ Рё РёСЃРєСЂРµРЅРЅРµ СЃС‚Р°СЂР°РµС‚СЃСЏ РЅР° РєР°Р¶РґРѕРј Р°РґСЂРµСЃРµ.</p>
+                  </div>
+                </div>
+                <div class="company-story__media"><img src="/static/images/section/company-story/company-story-team.png" alt="РљРѕРјР°РЅРґР° Р’РђР™РџвЂ“РљР»РёРЅ СЃ РёРЅРІРµРЅС‚Р°СЂРµРј РґР»СЏ СѓР±РѕСЂРєРё" loading="lazy"></div>
+              </div>
+            </div>
+          </section>
+          <section class="work-approach">
+            <div class="_container">
+              <div class="work-approach__wrapper">
+                <div class="work-approach__head ui-section-head ui-section-head--center">
+                  <h2 class="ui-title work-approach__title">РќР°С€ РїРѕРґС…РѕРґ Рє СЂР°Р±РѕС‚Рµ</h2>
+                  <p class="ui-text work-approach__text">РњС‹ РїРѕРґС…РѕРґРёРј Рє РєР°Р¶РґРѕРјСѓ РѕР±СЉРµРєС‚Сѓ СЃРѕ СЃС‚СЂРѕРіРёРј РїР»Р°РЅРѕРј. РўР°Рє РїСЂРѕС‰Рµ РЅРµ СѓРїСѓСЃС‚РёС‚СЊ РЅРё РѕРґРЅРѕР№ РјРµР»РѕС‡Рё Рё РґРѕР±РёС‚СЊСЃСЏ РЅР°СЃС‚РѕСЏС‰РµР№ СЃРІРµР¶РµСЃС‚Рё. РќР°С€Р° РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РїРµСЂРІС‹Рј РґРµР»РѕРј РѕС†РµРЅРёРІР°РµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ РјРµР±РµР»Рё Рё РїРѕРєСЂС‹С‚РёР№, РїРѕРґР±РёСЂР°СЏ РїРѕРґС…РѕРґСЏС‰РёРµ Рё Р±РµР·РѕРїР°СЃРЅС‹Рµ СЃРѕСЃС‚Р°РІС‹. РўР°РєРѕР№ РїРѕСЂСЏРґРѕРє РґРµР№СЃС‚РІРёР№ Р·Р°С‰РёС‰Р°РµС‚ РёРјСѓС‰РµСЃС‚РІРѕ РѕС‚ РїРѕРІСЂРµР¶РґРµРЅРёР№. РњС‹ С†РµРЅРёРј РґРѕР»РіРѕСЃСЂРѕС‡РЅРѕРµ СЃРѕС‚СЂСѓРґРЅРёС‡РµСЃС‚РІРѕ.</p>
+                </div>
+                <div class="work-approach__slider swiper" data-work-approach-swiper>
+                  <div class="work-approach__grid swiper-wrapper">
+                    <div class="work-approach__slide swiper-slide">
+                                <article class="feature-card">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">РЎРёСЃС‚РµРјРЅРѕСЃС‚СЊ</h3>
+                                  </div>
+                                  <p class="feature-card__text">РљР°Р¶РґР°СЏ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РґРѕР»Р¶РЅР° РёРјРµС‚СЊ РІРЅСѓС‚СЂРµРЅРЅРёР№ РєРѕРґРµРєСЃ РґРµР№СЃС‚РІРёР№, Рё РјС‹ РІРЅРµРґСЂРёР»Рё Р¶РµСЃС‚РєСѓСЋ СЃРёСЃС‚РµРјСѓ РїР»Р°РЅРёСЂРѕРІР°РЅРёСЏ РєР°Р¶РґРѕРіРѕ РІРёР·РёС‚Р°. РњС‹ РїРѕРґС…РѕРґРёРј Рє СЂР°Р±РѕС‚Рµ СЃРёСЃС‚РµРјРЅРѕ, СЃР»РµРґСѓСЏ СЃС…РµРјРµ, РёСЃРєР»СЋС‡Р°СЋС‰РµР№ РїСЂРѕРїСѓСЃРєРё Р·Р°РіСЂСЏР·РЅРµРЅРЅС‹С… Р·РѕРЅ РёР»Рё РїРѕРІС‚РѕСЂРЅРѕРµ Р·Р°РїС‹Р»РµРЅРёРµ. Р’РµСЃСЊ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ вЂ” СЌС‚Рѕ СЃР»Р°Р¶РµРЅРЅС‹Р№ РјРµС…Р°РЅРёР·Рј, РіРґРµ РєР°Р¶РґРѕРµ РґРІРёР¶РµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРѕ РЅР° СЂРµР·СѓР»СЊС‚Р°С‚.</p>
+                                </article>
+                    </div>
+                    <div class="work-approach__slide swiper-slide">
+                                <article class="feature-card">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">РџРѕСЌС‚Р°РїРЅС‹Р№ РїРѕРґС…РѕРґ</h3>
+                                  </div>
+                                  <p class="feature-card__text">Р РµР°Р»РёР·Р°С†РёСЏ Р·Р°РґР°С‡Рё СЂР°Р·РґРµР»РµРЅР° РЅР° СЃС‚СЂРѕРіРёРµ С†РёРєР»С‹: РѕС‚ СЃСѓС…РѕР№ РѕР±РµСЃРїС‹Р»РёРІР°СЋС‰РµР№ РѕР±СЂР°Р±РѕС‚РєРё РґРѕ С„РёРЅРёС€РЅРѕР№ РґРµР·РёРЅС„РµРєС†РёРё Рё РїРѕР»РёСЂРѕРІРєРё РїРѕРІРµСЂС…РЅРѕСЃС‚РµР№. РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ РѕС‚ РЅР°С€РµР№ РєРѕРјР°РЅРґС‹ РїРѕРґСЂР°Р·СѓРјРµРІР°РµС‚ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРµ РґРІРёР¶РµРЅРёРµ В«СЃРІРµСЂС…Сѓ РІРЅРёР·В», С‡С‚Рѕ РїСЂРµРґРѕС‚РІСЂР°С‰Р°РµС‚ РїРµСЂРµРЅРѕСЃ РіСЂСЏР·Рё. РўРѕР»СЊРєРѕ РїРѕСЃР»Рµ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРµРґС‹РґСѓС‰РµРіРѕ СЌС‚Р°РїР° РјС‹ РїРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ С€Р°РіСѓ, РѕР±РµСЃРїРµС‡РёРІР°СЏ РіР»СѓР±РѕРєСѓСЋ РѕС‡РёСЃС‚РєСѓ.</p>
+                                </article>
+                    </div>
+                    <div class="work-approach__slide swiper-slide">
+                                <article class="feature-card">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">РџСЂРѕРјС‹С€Р»РµРЅРЅС‹Р№ Р°СЂСЃРµРЅР°Р»</h3>
+                                  </div>
+                                  <p class="feature-card__text">Р’ СЂР°Р±РѕС‚Рµ РјС‹ РёСЃРїРѕР»СЊР·СѓРµРј РјРѕС‰РЅСѓСЋ С‚РµС…РЅРёРєСѓ, РєРѕС‚РѕСЂР°СЏ РґРѕСЃС‚Р°РµС‚ РїС‹Р»СЊ Рё РїСЏС‚РЅР° РґР°Р¶Рµ РёР· СЃР°РјРѕР№ РіР»СѓР±РёРЅС‹ С‚РєР°РЅРµР№, РЅРµ РїРѕСЂС‚СЏ РёС… РІРЅРµС€РЅРёР№ РІРёРґ. РљР°С‡РµСЃС‚РІРµРЅРЅР°СЏ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РЅРµ РѕР±С…РѕРґРёС‚СЃСЏ Р±РµР· РїР°СЂРѕРіРµРЅРµСЂР°С‚РѕСЂРѕРІ Рё СЌРєСЃС‚СЂР°РєС‚РѕСЂРѕРІ, РІРµРґСЊ С‚РѕР»СЊРєРѕ С‚Р°Рє РјРѕР¶РЅРѕ РґРѕСЃС‚РёС‡СЊ С‡РёСЃС‚РѕС‚С‹, РЅРµРґРѕСЃС‚СѓРїРЅРѕР№ РѕР±С‹РєРЅРѕРІРµРЅРЅРѕРјСѓ РїС‹Р»РµСЃРѕСЃСѓ. РћСЃРЅР°С‰РµРЅРёРµ РїРѕРјРѕРіР°РµС‚ РЅР°Рј СЃРїСЂР°РІР»СЏС‚СЊСЃСЏ СЃ Р·Р°РґР°С‡Р°РјРё Р±С‹СЃС‚СЂРµРµ, СЃРѕР·РґР°РІР°СЏ РІ РїРѕРјРµС‰РµРЅРёСЏС… Р·РґРѕСЂРѕРІСѓСЋ Рё Р±РµР·РѕРїР°СЃРЅСѓСЋ Р°С‚РјРѕСЃС„РµСЂСѓ.</p>
+                                </article>
+                    </div>
+                    <div class="work-approach__slide swiper-slide">
+                                <article class="feature-card">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">Р‘РµСЂРµР¶РЅР°СЏ РґРµР·РёРЅС„РµРєС†РёСЏ</h3>
+                                  </div>
+                                  <p class="feature-card__text">Р”Р»СЏ СЂР°Р±РѕС‚С‹ РјС‹ РІС‹Р±РёСЂР°РµРј С‚Р°РєРёРµ СЃСЂРµРґСЃС‚РІР°, РєРѕС‚РѕСЂС‹Рµ Р»РµРіРєРѕ СЃРїСЂР°РІР»СЏСЋС‚СЃСЏ СЃ Р±Р°РєС‚РµСЂРёСЏРјРё, РЅРѕ РЅРµ РѕСЃС‚Р°РІР»СЏСЋС‚ РІ РєРѕРјРЅР°С‚Р°С… С‚СЏР¶РµР»РѕРіРѕ С…РёРјРёС‡РµСЃРєРѕРіРѕ Р·Р°РїР°С…Р°. Р’ РњРѕСЃРєРІРµ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РґР»СЏ РґРѕРјР° РёСЃРїРѕР»СЊР·СѓРµС‚ СЃРѕСЃС‚Р°РІС‹, РєРѕС‚РѕСЂС‹Рµ РїРѕР»РЅРѕСЃС‚СЊСЋ СЃРјС‹РІР°СЋС‚СЃСЏ СЃ РїРѕРІРµСЂС…РЅРѕСЃС‚РµР№, СЃРѕР·РґР°РІР°СЏ РІ РїРѕРјРµС‰РµРЅРёСЏС… РїРѕ-РЅР°СЃС‚РѕСЏС‰РµРјСѓ СЃРІРµР¶РёР№ РІРѕР·РґСѓС…. РњС‹ РІСЃРµРіРґР° РЅР°СЃСѓС…Рѕ РїСЂРѕС‚РёСЂР°РµРј РґРІРµСЂРЅС‹Рµ СЂСѓС‡РєРё Рё РІС‹РєР»СЋС‡Р°С‚РµР»Рё, С‡С‚РѕР±С‹ РІС‹ РјРѕРіР»Рё РїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ С‡РёСЃС‚С‹Рј Р¶РёР»СЊРµРј.</p>
+                                </article>
+                    </div>
+                  </div>
+                </div><a class="ui-btn ui-btn--primary work-approach__action" href="#"><span class="ui-btn__content">Р—Р°РєР°Р·Р°С‚СЊ СѓР±РѕСЂРєСѓ</span></a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="team-preview">
+          <div class="_container">
+            <div class="team-preview__wrapper">
+              <div class="team-preview__top">
+                <div class="team-preview__head ui-section-head">
+                  <h2 class="ui-title team-preview__title">РќР°С€Р° РєРѕРјР°РЅРґР°</h2>
+                  <p class="ui-text team-preview__text">РћСЃРЅРѕРІРѕР№ РЅР°С€РµРіРѕ СѓСЃРїРµС…Р° СЏРІР»СЏСЋС‚СЃСЏ Р»СЋРґРё, РїРѕСЌС‚РѕРјСѓ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ Р’РђР™РџвЂ“РљР»РёРЅ СѓРґРµР»СЏРµС‚ РІРЅРёРјР°РЅРёРµ РїРѕРґРіРѕС‚РѕРІРєРµ РїРµСЂСЃРѕРЅР°Р»Р°. РљР°Р¶РґС‹Р№ РєР°РЅРґРёРґР°С‚ РїСЂРѕС…РѕРґРёС‚ РјРЅРѕРіРѕСЃС‚СѓРїРµРЅС‡Р°С‚С‹Р№ РѕС‚Р±РѕСЂ, РїСЂРѕРІРµСЂРєСѓ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё Рё РѕР±СѓС‡РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚Р°Рј РѕСЂРіР°РЅРёР·Р°С†РёРё РґРѕ РґРѕРїСѓСЃРєР° Рє СЂР°Р±РѕС‚Рµ. РќР° РѕР±СЉРµРєС‚Рµ РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ СЃС‚Р°СЂС€РёР№ РєР»РёРЅРµСЂ, РєРѕС‚РѕСЂС‹Р№ РЅРµ С‚РѕР»СЊРєРѕ СѓС‡Р°СЃС‚РІСѓРµС‚ РІ РїСЂРѕС†РµСЃСЃРµ, РЅРѕ Рё РІРµРґРµС‚ РїРѕСЃС‚РѕСЏРЅРЅС‹Р№ РјРѕРЅРёС‚РѕСЂРёРЅРі РєР°С‡РµСЃС‚РІР°.</p>
+                </div>
+                <div class="team-preview__nav ui-slider-nav ui-slider-nav--desktop-only">
+                  <button class="team-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РџСЂРµРґС‹РґСѓС‰РёР№ СЃРѕС‚СЂСѓРґРЅРёРє" data-team-preview-prev><span class="ui-btn__content">
+                      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></button>
+                  <button class="team-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РЎР»РµРґСѓСЋС‰РёР№ СЃРѕС‚СЂСѓРґРЅРёРє" data-team-preview-next><span class="ui-btn__content">
+                      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></button>
+                </div>
+              </div>
+              <div class="team-preview__slider swiper" data-team-preview-swiper>
+                <div class="team-preview__track swiper-wrapper">
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="team-preview__slide swiper-slide">
+                            <article class="team-member-card">
+                              <div class="team-member-card__media">
+                                <div class="team-member-card__placeholder" aria-hidden="true"></div>
+                              </div>
+                              <div class="team-member-card__body">
+                                <h3 class="team-member-card__name">РРјСЏ СЃРѕС‚СЂСѓРґРЅРёРєР°</h3>
+                              </div>
+                            </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="why-us">
+          <div class="_container">
+            <div class="why-us__wrapper">
+              <div class="why-us__head ui-section-head">
+                <h2 class="ui-title why-us__title">РџРѕС‡РµРјСѓ РІС‹Р±РёСЂР°СЋС‚ РЅР°СЃ</h2>
+                <p class="ui-text why-us__text">Р¤РёР»РѕСЃРѕС„РёСЏ РЅР°С€РµР№ РєР»РёРЅРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё РІ РњРѕСЃРєРІРµ СЃС‚СЂРѕРёС‚СЃСЏ РЅР° СЃРѕР·РґР°РЅРёРё РєРѕРјС„РѕСЂС‚Р° РґР»СЏ РєР»РёРµРЅС‚Р°, РіРґРµ СѓСЃР»СѓРіРё РєР»РёРЅРёРЅРіР° СЃС‚Р°РЅРѕРІСЏС‚СЃСЏ РЅРµР·Р°РјРµС‚РЅС‹Рј РїРѕРјРѕС‰РЅРёРєРѕРј РІ Р±С‹С‚Сѓ. РњС‹ СЃС‚СЂРµРјРёРјСЃСЏ Рє С‚РѕРјСѓ, С‡С‚РѕР±С‹ РїРѕСЃР»Рµ РЅР°С€РµРіРѕ РІРёР·РёС‚Р° Р·Р°РєР°Р·С‡РёРє РѕС‰СѓС‰Р°Р» РІРёР·СѓР°Р»СЊРЅСѓСЋ С‡РёСЃС‚РѕС‚Сѓ Рё РїСЂРёР»РёРІ СЌРЅРµСЂРіРёРё РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ.</p>
+                <p class="ui-text why-us__text">РќР°С€Сѓ РєР»РёРЅРёРЅРіРѕРІСѓСЋ РєРѕРјРїР°РЅРёСЋ РІ РњРѕСЃРєРІРµ РІС‹Р±РёСЂР°СЋС‚, РїРѕС‚РѕРјСѓ С‡С‚Рѕ Сѓ РЅР°СЃ:</p>
+              </div>
+              <div class="why-us__slider swiper" data-why-us-swiper>
+                <div class="why-us__grid swiper-wrapper">
+                  <div class="why-us__slide swiper-slide">
+                            <article class="feature-card feature-card--compact">
+                              <div class="feature-card__head">
+                                <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                <h3 class="feature-card__title">РЁС‚Р°С‚РЅС‹Р№ СЃРѕСЃС‚Р°РІ РѕРїС‹С‚РЅС‹С… СЂРµР±СЏС‚</h3>
+                              </div>
+                              <p class="feature-card__text">РљР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РїСЂРёРЅС†РёРїРёР°Р»СЊРЅРѕ РЅРµ Р±РµСЂРµС‚ Р»СЋРґРµР№ В«СЃ СѓР»РёС†С‹В», РґРѕРІРµСЂСЏСЏ Р·Р°РєР°Р·С‹ С‚РѕР»СЊРєРѕ РєР»РёРЅРµСЂР°Рј СЃ РѕРїС‹С‚РѕРј. Р­С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ РЅР°Рј Р±С‹С‚СЊ СЃРїРѕРєРѕР№РЅС‹РјРё Р·Р° РєР°С‡РµСЃС‚РІРѕ, РґРёСЃС†РёРїР»РёРЅСѓ РЅР° РѕР±СЉРµРєС‚Рµ Рё СЃРѕС…СЂР°РЅРЅРѕСЃС‚СЊ РєР°Р¶РґРѕР№ РІРµС‰Рё.</p>
+                            </article>
+                  </div>
+                  <div class="why-us__slide swiper-slide">
+                            <article class="feature-card feature-card--compact">
+                              <div class="feature-card__head">
+                                <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                <h3 class="feature-card__title">РљРѕРЅС‚СЂРѕР»СЊ РєР°С‡РµСЃС‚РІР° РїРѕ С‡РµРє-Р»РёСЃС‚Сѓ</h3>
+                              </div>
+                              <p class="feature-card__text">РљР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РїСЂРѕРІРµСЂСЏРµС‚ РєР°Р¶РґС‹Р№ СѓРіРѕР»РѕРє РїРѕ СЃРїРёСЃРєСѓ РґРµР», С‡С‚РѕР±С‹ СЃР»СѓС‡Р°Р№РЅРѕ РЅРµ Р·Р°Р±С‹С‚СЊ РїСЂРѕ РІС‹СЃРѕРєРёРµ СЃС‚Р°РЅРґР°СЂС‚С‹ СЃРµСЂРІРёСЃР°. Р’ РёС‚РѕРіРµ РІС‹ РїСЂРёРЅРёРјР°РµС‚Рµ СЂР°Р±РѕС‚Сѓ, РіРґРµ РЅРµС‚ РїСЂРѕРїСѓСЃРєРѕРІ РґР°Р¶Рµ РІ СЃР°РјС‹С… СЃР»РѕР¶РЅС‹С… РјРµСЃС‚Р°С….</p>
+                            </article>
+                  </div>
+                  <div class="why-us__slide swiper-slide">
+                            <article class="feature-card feature-card--compact">
+                              <div class="feature-card__head">
+                                <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                <h3 class="feature-card__title">РђСЂСЃРµРЅР°Р» Р±РµР·РѕРїР°СЃРЅС‹С… РјРѕСЋС‰РёС… СЃСЂРµРґСЃС‚РІ</h3>
+                              </div>
+                              <p class="feature-card__text">Р’ СЂР°Р±РѕС‚Рµ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РёСЃРїРѕР»СЊР·СѓРµС‚ С‚РѕР»СЊРєРѕ РїСЂРѕРІРµСЂРµРЅРЅС‹Рµ СЃСЂРµРґСЃС‚РІР° РѕС‚ Р»СѓС‡С€РёС… РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№. Р­С‚Рё СЃРѕСЃС‚Р°РІС‹ РЅРµ РІСЂРµРґСЏС‚ Р·РґРѕСЂРѕРІСЊСЋ Рё РїРѕРґС…РѕРґСЏС‚ РґР»СЏ РґРѕРјРѕРІ, РіРґРµ Р¶РёРІСѓС‚ РјР°Р»РµРЅСЊРєРёРµ РґРµС‚Рё РёР»Рё Р»СЋР±РѕРїС‹С‚РЅС‹Рµ РґРѕРјР°С€РЅРёРµ Р¶РёРІРѕС‚РЅС‹Рµ.</p>
+                            </article>
+                  </div>
+                  <div class="why-us__slide swiper-slide why-us__slide--offset-2">
+                            <article class="feature-card feature-card--compact">
+                              <div class="feature-card__head">
+                                <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                <h3 class="feature-card__title">РћС‚РІРµС‚СЃС‚РІРµРЅРЅС‹Р№ РїРѕРґС…РѕРґ Рє РєР°Р¶РґРѕРјСѓ РґРµР»Сѓ</h3>
+                              </div>
+                              <p class="feature-card__text">РњС‹ РЅРµСЃРµРј РѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕСЃС‚СЊ Р·Р° СЂРµР·СѓР»СЊС‚Р°С‚. Р’С‹ РјРѕР¶РµС‚Рµ РЅРµ РїРµСЂРµР¶РёРІР°С‚СЊ Р·Р° СЃРІРѕРё РІРµС‰Рё: РјС‹ РїРѕР»РЅРѕСЃС‚СЊСЋ РѕС‚РІРµС‡Р°РµРј Р·Р° РёС… СЃРѕС…СЂР°РЅРЅРѕСЃС‚СЊ РІРѕ РІСЂРµРјСЏ СѓР±РѕСЂРєРё. РќР°С€Рё РјР°СЃС‚РµСЂР° РЅРµ Р±РѕСЏС‚СЃСЏ СЃР»РѕР¶РЅС‹С… Р·Р°РґР°С‡ Рё С‚РµСЂРїРµР»РёРІРѕ РґРѕРІРѕРґСЏС‚ РґРѕ Р±Р»РµСЃРєР° РІРµСЃСЊ РґРѕРј.</p>
+                            </article>
+                  </div>
+                  <div class="why-us__slide swiper-slide why-us__slide--offset-3">
+                            <article class="feature-card feature-card--compact">
+                              <div class="feature-card__head">
+                                <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                <h3 class="feature-card__title">Р‘РѕРЅСѓСЃС‹ Рё СЃРєРёРґРєРё РґР»СЏ РєР»РёРµРЅС‚РѕРІ</h3>
+                              </div>
+                              <p class="feature-card__text">Р”Р»СЏ РґСЂСѓР·РµР№ РєР»РёСЂРёРЅРіРѕРІРѕР№ РєРѕРјРїР°РЅРёРё РІ РњРѕСЃРєРІРµ РјС‹ РїСЂРёРґСѓРјР°Р»Рё С‡РµСЃС‚РЅСѓСЋ СЃРёСЃС‚РµРјСѓ СЃРєРёРґРѕРє, С‡С‚РѕР±С‹ РєР°Р¶РґС‹Р№ СЃР»РµРґСѓСЋС‰РёР№ РІРёР·РёС‚ Р±С‹Р» РІС‹РіРѕРґРЅРµРµ РїСЂРµРґС‹РґСѓС‰РµРіРѕ. РџРѕСЌС‚РѕРјСѓ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ РІ РёСЃРїРѕР»РЅРµРЅРёРё РєРѕРјР°РЅРґС‹ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ РґРѕСЃС‚СѓРїРЅРµРµ.</p>
+                            </article>
+                  </div>
+                </div>
+              </div><a class="ui-btn ui-btn--primary why-us__action" href="#"><span class="ui-btn__content">Р—Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі РєРІР°СЂС‚РёСЂС‹</span></a>
+            </div>
+          </div>
+        </section>
+        <section class="services-preview services-preview--wide">
+          <div class="_container">
+            <div class="services-preview__wrapper">
+              <div class="services-preview__head ui-section-head ui-section-head--center">
+                <h2 class="ui-title">РќР°С€Рё СѓСЃР»СѓРіРё РїРѕ СѓР±РѕСЂРєРµ</h2>
+                <div class="services-preview__copy" data-read-more>
+                  <div class="services-preview__summary">
+                    <p class="ui-text services-preview__summary-text">Р’РђР™РџвЂ“РљР»РёРЅ СЂР°Р·СЂР°Р±РѕС‚Р°Р» СЂР°Р·РЅС‹Рµ СЂРµС€РµРЅРёСЏ: РѕС‚ РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РЅР°РІРµРґРµРЅРёСЏ РїРѕСЂСЏРґРєР° РґРѕ Р°РєРєСѓСЂР°С‚РЅРѕР№ СѓР±РѕСЂРєРё РїРѕСЃР»Рµ СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІР°. РњС‹ СЂР°Р±РѕС‚Р°РµРј ... 
+                      <button class="services-preview__more" type="button" data-read-more-toggle aria-expanded="false" aria-controls="about-services-preview-text">Р•С‰С‘</button>
+                    </p>
+                  </div>
+                  <div class="services-preview__body" id="about-services-preview-text">
+                    <p class="ui-text">Р’РђР™РџвЂ“РљР»РёРЅ СЂР°Р·СЂР°Р±РѕС‚Р°Р» СЂР°Р·РЅС‹Рµ СЂРµС€РµРЅРёСЏ: РѕС‚ РѕРїРµСЂР°С‚РёРІРЅРѕРіРѕ РЅР°РІРµРґРµРЅРёСЏ РїРѕСЂСЏРґРєР° РґРѕ Р°РєРєСѓСЂР°С‚РЅРѕР№ СѓР±РѕСЂРєРё РїРѕСЃР»Рµ СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІР°. РњС‹ СЂР°Р±РѕС‚Р°РµРј РїРѕ СЃС‚Р°РЅРґР°СЂС‚Р°Рј. Р­С„С„РµРєС‚РёРІРЅРѕ РІС‹РїРѕР»РЅСЏРµРј РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ, РѕС‚ РґРµР·РёРЅС„РµРєС†РёРё СЃР°РЅСѓР·Р»РѕРІ РґРѕ С…РёРјС‡РёСЃС‚РєРё РјРµР±Р»РёСЂРѕРІРєРё Рё РјС‹С‚СЊСЏ РѕРєРѕРЅ. РќР°С€Р° РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РґР»СЏ РєРІР°СЂС‚РёСЂ Р°РґР°РїС‚РёСЂСѓРµС‚ РїР°РєРµС‚ СѓСЃР»СѓРі РєР»РёРЅРёРЅРіР° РїРѕРґ РєРѕРЅРєСЂРµС‚РЅС‹Рµ Р·Р°РґР°С‡Рё Р·Р°РєР°Р·С‡РёРєР°.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="services-preview__grid services-preview__grid--featured"><a class="service-card service-card--lg" href="#" aria-label="РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 3 500 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">РЎСЂРѕС‡РЅР°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 7 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 10 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РґРѕРјРѕРІ Рё РєРѕС‚С‚РµРґР¶РµР№</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 17 000 в‚Ѕ</span></span></span></a>
+              </div>
+              <div class="services-preview__grid services-preview__grid--secondary"><a class="service-card service-card--sm" href="#" aria-label="РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РєРІР°СЂС‚РёСЂ РїРѕ СЃСѓС‚РѕС‡РЅРѕ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 5 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="РњС‹С‚СЊС‘ РѕРєРѕРЅ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">РњС‹С‚СЊС‘ РѕРєРѕРЅ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 2 500 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-office.png" alt="" style="--service-layer-order:4"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РѕС„РёСЃРѕРІ</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 19 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"></span><span class="service-card__body"><span class="service-card__title">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 12 000 в‚Ѕ</span></span></span></a><a class="service-card service-card--sm service-card--after-repair" href="#" aria-label="РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:6"></span><span class="service-card__body"><span class="service-card__title">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</span><span class="service-card__meta"><span class="service-card__label">Р¦РµРЅР°:</span><span class="service-card__price">РѕС‚ 12 000 в‚Ѕ</span></span></span></a>
+              </div>
+              <div class="ui-banner services-preview__note">
+                <p class="ui-text services-preview__note-text">РС‚РѕРіРѕРІР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ Р·Р°РІРёСЃРёС‚ РѕС‚ РїР»РѕС‰Р°РґРё РїРѕРјРµС‰РµРЅРёСЏ, РЅРµРѕР±С…РѕРґРёРјС‹С… СѓСЃР»СѓРі Рё РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹С… РїСЂРµРґРїРѕС‡С‚РµРЅРёР№. Р—Р°РїРѕР»РЅРёС‚Рµ Р·Р°СЏРІРєСѓ РЅР° СЃР°Р№С‚Рµ РёР»Рё СЃРІСЏР¶РёС‚РµСЃСЊ СЃ РЅР°РјРё РїРѕ С‚РµР»РµС„РѕРЅСѓ РёР»Рё РІ РјРµСЃСЃРµРЅРґР¶РµСЂ, С‡С‚РѕР±С‹ РјС‹ СЂР°СЃСЃС‡РёС‚Р°Р»Рё СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёСЂРёРЅРіРѕРІС‹С… СѓСЃР»СѓРі.</p>
+              </div>
+              <div class="services-preview__actions"><a class="ui-btn ui-btn--primary ui-btn--full" href="#"><span class="ui-btn__content">РћР·РЅР°РєРѕРјРёС‚СЊСЃСЏ СЃРѕ РІСЃРµРјРё СѓСЃР»СѓРіР°РјРё</span></a><a class="ui-btn ui-btn--secondary ui-btn--full" href="#"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="reviews-preview reviews-preview--wide">
+          <div class="_container">
+            <div class="reviews-preview__wrapper">
+              <div class="reviews-preview__head ui-section-head ui-section-head--center">
+                <h2 class="ui-title">РћС‚Р·С‹РІС‹ РЅР°С€РёС… Р·Р°РєР°Р·С‡РёРєРѕРІ</h2>
+                <p class="ui-text">РќР°С€Р° РєР»РёСЂРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РІ РњРѕСЃРєРІРµ РґРѕСЂРѕР¶РёС‚ РІР°С€РёРј РјРЅРµРЅРёРµРј. РњС‹ РїСЂРѕРІРµСЂСЏРµРј РєР°Р¶РґСѓСЋ СѓР±РѕСЂРєСѓ. РњС‹ РІСЃРµРіРґР° РїСЂРёСЃР»СѓС€РёРІР°РµРјСЃСЏ Рє РІР°С€РёРј СЃР»РѕРІР°Рј, С‡С‚РѕР±С‹ СЃС‚Р°РЅРѕРІРёС‚СЊСЃСЏ Р»СѓС‡С€Рµ СЃ РєР°Р¶РґС‹Рј РІС‹РµР·РґРѕРј. РљРѕРјР°РЅРґР° СЃС‚Р°СЂР°РµС‚СЃСЏ СЃСЂР°Р·Сѓ РёСЃРїСЂР°РІР»СЏС‚СЊ Р»СЋР±С‹Рµ РЅРµРґРѕС‡РµС‚С‹. РќР°Рј РІР°Р¶РЅРѕ РЅРµ РїСЂРѕСЃС‚Рѕ СѓСЃС‚СЂР°РЅРёС‚СЊ РѕС€РёР±РєСѓ, Р° РёСЃРєСЂРµРЅРЅРµ РІР°СЃ РїРѕСЂР°РґРѕРІР°С‚СЊ.</p>
+              </div>
+              <div class="reviews-preview__slider swiper" data-reviews-preview-swiper>
+                <div class="reviews-preview__track swiper-wrapper">
+                  <div class="reviews-preview__slide swiper-slide">
+                            <article class="review-card">
+                              <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><img class="review-card__rating-stars" src="/static/images/components/review-card/review-card-stars.svg" alt="" aria-hidden="true" width="222" height="50" loading="lazy" decoding="async"></div>
+                              <div class="review-card__body">
+                                <p class="review-card__text">В«Р—Р°РєР°Р·С‹РІР°Р»Р° РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅСѓСЋ СѓР±РѕСЂРєСѓ РїРѕРјРµС‰РµРЅРёР№ РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°. РЁС‚Р°С‚РЅС‹Рµ СЃРѕС‚СЂСѓРґРЅРёРєРё РѕС‚РјС‹Р»Рё РґР°Р¶Рµ С‚Рµ РїСЏС‚РЅР°, РєРѕС‚РѕСЂС‹Рµ РєР°Р·Р°Р»РёСЃСЊ РІРµС‡РЅС‹РјРё. РћС‡РµРЅСЊ РІРµР¶Р»РёРІС‹Р№ РїРµСЂСЃРѕРЅР°Р» Рё РёРґРµР°Р»СЊРЅР°СЏ С‡РёСЃС‚РѕС‚Р° РІ РґРѕРјРµВ».</p>
+                                <p class="review-card__author">РњР°СЂРёРЅР°</p>
+                              </div>
+                            </article>
+                  </div>
+                  <div class="reviews-preview__slide swiper-slide">
+                            <article class="review-card">
+                              <div class="review-card__rating" aria-label="Рейтинг 5 из 5"><img class="review-card__rating-stars" src="/static/images/components/review-card/review-card-stars.svg" alt="" aria-hidden="true" width="222" height="50" loading="lazy" decoding="async"></div>
+                              <div class="review-card__body">
+                                <p class="review-card__text">В«Р’С‹Р·С‹РІР°СЋ СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РґР»СЏ СЂРµРіСѓР»СЏСЂРЅРѕР№ Рё РіРµРЅРµСЂР°Р»СЊРЅРѕР№ СѓР±РѕСЂРєРё РѕС„РёСЃР°, РІСЃРµРіРґР° РІСЃРµ РІРѕРІСЂРµРјСЏ Рё Р±РµР· Р»РёС€РЅРёС… РІРѕРїСЂРѕСЃРѕРІ. Р Р°РґСѓРµС‚ РєРѕРЅС‚СЂРѕР»СЊ РєР°С‡РµСЃС‚РІР° СѓР±РѕСЂРєРё Рё РЅР°Р»РёС‡РёРµ РєСЂСѓС‚РѕР№ С‚РµС…РЅРёРєРёВ».</p>
+                                <p class="review-card__author">РРіРѕСЂСЊ</p>
+                              </div>
+                            </article>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews-preview__footer">
+                <div class="reviews-preview__actions"><a class="ui-btn ui-btn--primary" href="#"><span class="ui-btn__content">РћР·РЅР°РєРѕРјРёС‚СЊСЃСЏ СЃ РґСЂСѓРіРёРјРё РѕС‚Р·С‹РІР°РјРё</span></a><a class="ui-btn ui-btn--secondary" href="#"><span class="ui-btn__content">РћСЃС‚Р°РІРёС‚СЊ РѕС‚Р·С‹РІ Рѕ РєРѕРјРїР°РЅРёРё</span></a>
+                </div>
+                <div class="reviews-preview__nav ui-slider-nav ui-slider-nav--desktop-only">
+                  <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РџСЂРµРґС‹РґСѓС‰РёР№ РѕС‚Р·С‹РІ" data-reviews-preview-prev><span class="ui-btn__content">
+                      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28 18H8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16 10L8 18L16 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></button>
+                  <button class="reviews-preview__nav-btn ui-btn ui-btn--primary ui-slider-nav__btn" type="button" aria-label="РЎР»РµРґСѓСЋС‰РёР№ РѕС‚Р·С‹РІ" data-reviews-preview-next><span class="ui-btn__content">
+                      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 18H28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20 10L28 18L20 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="order-cta">
+          <div class="_container">
+            <div class="order-cta__wrapper">
+              <div class="order-cta__content">
+                <div class="order-cta__head ui-section-head ui-section-head--compact">
+                  <h2 class="order-cta__title ui-title"><span class="order-cta__title-desktop">Р—Р°РєР°Р¶РёС‚Рµ РєР»РёРЅРёРЅРі<br>РІ РњРѕСЃРєРІРµ РїСЂСЏРјРѕ СЃРµР№С‡Р°СЃ</span><span class="order-cta__title-mobile">Р—Р°РєР°Р¶РёС‚Рµ РєР»РёРЅРёРЅРі РІ РњРѕСЃРєРІРµ РїСЂСЏРјРѕ СЃРµР№С‡Р°СЃ</span></h2>
+                  <p class="order-cta__text ui-text">РЈР±РѕСЂРєР° СЃ РіР°СЂР°РЅС‚РёРµР№ РєР°С‡РµСЃС‚РІР° вЂ“ СЌС‚Рѕ РѕС‡РµРЅСЊ РїСЂРѕСЃС‚Рѕ. Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РЅР°РїРёСЃР°С‚СЊ РІ РЅР°С€Сѓ РєР»РёРЅРёРЅРіРѕРІСѓСЋ РєРѕРјРїР°РЅРёСЋ РІ РњРѕСЃРєРІРµ РЅР° СЃР°Р№С‚Рµ РёР»Рё РїСЂРѕСЃС‚Рѕ РїРѕР·РІРѕРЅРёС‚СЊ. РќР°С€ РјРµРЅРµРґР¶РµСЂ РїРµСЂРµР·РІРѕРЅРёС‚ Р·Р° РїР°СЂСѓ РјРёРЅСѓС‚, С‡С‚РѕР±С‹ С‡РµСЃС‚РЅРѕ СЂР°СЃСЃС‡РёС‚Р°С‚СЊ С†РµРЅСѓ Рё РѕР±СЃСѓРґРёС‚СЊ РІСЃРµ РІР°Р¶РЅС‹Рµ РґРµС‚Р°Р»Рё. РњС‹ С†РµРЅРёРј РІР°С€ РіСЂР°С„РёРє Рё РѕС‚РІРµС‡Р°РµРј Р·Р° СЂРµР·СѓР»СЊС‚Р°С‚. РЈСЃР»СѓРіРё РєР»РёРЅРёРЅРіР° Р±СѓРґСѓС‚ РѕСЂРіР°РЅРёР·РѕРІР°РЅС‹ Р±С‹СЃС‚СЂРѕ Рё РІ С‚Рѕ РІСЂРµРјСЏ, РєРѕРіРґР° РІР°Рј СѓРґРѕР±РЅРѕ.</p>
+                </div>
+                <div class="order-cta__actions"><a class="ui-btn order-cta__action ui-btn--primary" href="#"><span class="ui-btn__content">Р—Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі</span></a>
+                </div>
+              </div>
+              <div class="order-cta__visual" aria-hidden="true">
+                <div class="order-cta__visual-media"><img src="/static/images/section/order-cta/order-cta-cleaning-kit.png" alt="РќР°Р±РѕСЂ РґР»СЏ РєР»РёРЅРёРЅРіР° Р’РђР™РџвЂ“РљР»РёРЅ" loading="lazy"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+                <section class="contacts">
+                  <div class="_container">
+                    <div class="contacts__wrapper">
+                      <div class="contacts__head">
+                        <h2 class="ui-title contacts__title">РљРѕРЅС‚Р°РєС‚С‹</h2>
+                        <p class="ui-text contacts__text">РќСѓР¶РЅР° РЅР°РґРµР¶РЅР°СЏ РєР»РёРЅРёРЅРіРѕРІР°СЏ РєРѕРјРїР°РЅРёСЏ РґР»СЏ СѓР±РѕСЂРєРё РєРІР°СЂС‚РёСЂ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅРѕ? РњС‹ РІСЃРµРіРґР° РЅР° СЃРІСЏР·Рё Рё РіРѕС‚РѕРІС‹ РїСЂРѕСЃС‚Рѕ РїРѕ-С‡РµР»РѕРІРµС‡РµСЃРєРё РѕС‚РІРµС‚РёС‚СЊ РЅР° РІРѕРїСЂРѕСЃС‹. РџРёС€РёС‚Рµ РёР»Рё Р·РІРѕРЅРёС‚Рµ, С‡С‚РѕР±С‹ РѕР±СЃСѓРґРёС‚СЊ РїРѕР¶РµР»Р°РЅРёСЏ РёР»Рё СЃРѕСЃС‚Р°РІРёС‚СЊ СѓРґРѕР±РЅС‹Р№ РіСЂР°С„РёРє. Р’РђР™РџвЂ“РљР»РёРЅ вЂ” СЌС‚Рѕ РІР°С€Р° СѓРІРµСЂРµРЅРЅРѕСЃС‚СЊ РІ С‚РѕРј, С‡С‚Рѕ РґРѕРјР° РІСЃРµРіРґР° Р±СѓРґРµС‚ СѓСЋС‚РЅРѕ Рё С‡РёСЃС‚Рѕ.</p>
+                      </div>
+                      <div class="contacts__content">
+                        <div class="contacts__aside">
+                          <div class="contacts__cards">
+                            <div class="contacts__cards-row">
+                                      <div class="contact-card">
+                                        <p class="contact-card__label">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                                      </div>
+                                      <div class="contact-card contact-card--socials">
+                                        <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p>
+                                        <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                                        </div>
+                                      </div>
+                            </div>
+                                    <div class="contact-card">
+                                      <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                                    </div>
+                          </div>
+                        </div>
+                        <div class="contacts__form-block">
+                          <h3 class="contacts__form-title">Р¤РѕСЂРјР° Р·Р°СЏРІРєРё</h3>
+                          <form class="contacts__form ui-form" action="#" method="post" novalidate>
+                            <div class="contacts__fields">
+                              <div class="ui-field contacts__field">
+                                <label class="ui-field__label" for="about-contacts-name">Р’Р°С€Рµ РёРјСЏ</label>
+                                <input class="ui-field__control" id="about-contacts-name" type="text" name="name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ">
+                              </div>
+                              <div class="ui-field contacts__field">
+                                <label class="ui-field__label" for="about-contacts-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                                <input class="ui-field__control" id="about-contacts-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                              </div>
+                            </div>
+                            <div class="contacts__form-actions">
+                              <label class="ui-checkbox contacts__checkbox" for="about-contacts-agreement">
+                                <input class="ui-checkbox__input" id="about-contacts-agreement" type="checkbox" name="agreement"><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                              </label>
+                              <button class="ui-btn ui-btn--primary contacts__submit" type="submit"><span class="ui-btn__content"><span class="contacts__submit-text contacts__submit-text--desktop">РЈР·РЅР°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ РєР»РёРЅРёРЅРіР°</span><span class="contacts__submit-text contacts__submit-text--mobile">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></span></button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+      </div>
+    </main>
+        <div class="popup" data-popup="popup-review" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--review" role="dialog" aria-modal="true" aria-labelledby="popup-review-title" aria-describedby="popup-review-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--review">
+              <div class="popup-form__head">
+                <h2 class="popup-form__title" id="popup-review-title">РћСЃС‚Р°РІСЊС‚Рµ СЃРІРѕР№ РѕС‚Р·С‹РІ Рѕ СЂР°Р±РѕС‚Рµ РєРѕРјРїР°РЅРёРё Р’РђР™Рџ-РљР»РёРЅ</h2>
+                <p class="popup-form__text" id="popup-review-description">Р”Р»СЏ РЅР°СЃ Р±СѓРґРµС‚ РѕС‡РµРЅСЊ С†РµРЅРЅРѕ, РµСЃР»Рё РІС‹ РїРѕРґРµР»РёС‚РµСЃСЊ СЃРІРѕРёРј РѕС‚Р·С‹РІРѕРј Рѕ РЅР°С€РµР№ СЂР°Р±РѕС‚Рµ. РўР°Рє Р¶Рµ Р±СѓРґРµРј СЂР°РґС‹, РµСЃР»Рё Рє СЃРІРѕРµРјСѓ РѕС‚Р·С‹РІСѓ РІС‹ РїСЂРёРєСЂРµРїРёС‚Рµ С„РѕС‚РѕРіСЂР°С„РёРё РёР»Рё РІРёРґРµРѕ.</p>
+              </div>
+              <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                <div class="popup-form__grid popup-form__grid--three">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-name">Р’Р°С€Рµ РёРјСЏ</label>
+                        <input id="popup-review-name" type="text" name="popup-review-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                        <input id="popup-review-phone" type="tel" name="popup-review-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-email">Email</label>
+                        <input id="popup-review-email" type="email" name="popup-review-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                </div>
+                <div class="popup-form__grid popup-form__grid--two">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-message">Р’Р°С€ РѕС‚Р·С‹РІ</label>
+                        <textarea id="popup-review-message" name="popup-review-message" rows="7" placeholder="РћРїРёСЃР°РЅРёРµ РѕС‚Р·С‹РІР° ..." required></textarea>
+                      </div>
+                  <div class="popup-upload" data-popup-upload><span class="ui-field__label popup-upload__label">Р¤РѕС‚Рѕ РёР»Рё РІРёРґРµРѕ</span>
+                    <label class="popup-upload__zone" for="popup-review-files">
+                      <input class="popup-upload__input" id="popup-review-files" type="file" name="files" accept="image/jpeg,image/png,video/mp4" multiple hidden data-popup-upload-input>
+                      <div class="popup-upload__empty" data-popup-upload-empty><span class="popup-upload__badge">
+                              <svg class="popup-upload__badge-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M14.6667 28.3333L20 23M20 23L25.3333 28.3333M20 23V35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M29.7336 29.7168C31.8561 28.559 33.3333 26.3091 33.3333 23.7083C33.3333 19.9257 30.266 16.8583 26.4833 16.8583C26.211 16.8583 25.9424 16.8757 25.6791 16.9093C24.4591 12.7406 20.6151 9.70834 16.0667 9.70834C10.5358 9.70834 6.05001 14.1941 6.05001 19.725C6.05001 20.2205 6.08653 20.7075 6.15699 21.1836C3.99138 21.9417 2.44167 24.0058 2.44167 26.4333C2.44167 29.5033 4.93001 31.9917 8.00001 31.9917H14.6667" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></span>
+                        <div class="popup-upload__copy">
+                          <p class="popup-upload__title">Р”РѕР±Р°РІС‚Рµ РєР°СЂС‚РёРЅРєСѓ РёР»Рё РІРёРґРµРѕ</p>
+                          <p class="popup-upload__text">JPEG, PNG РёР»Рё MP4, РЅРµР±РѕР»СЊС€Рµ 20 mb</p>
+                        </div>
+                      </div>
+                      <div class="popup-upload__preview" hidden data-popup-upload-preview></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="popup-form__actions">
+                      <label class="ui-checkbox popup-form__checkbox" for="popup-review-agreement">
+                        <input class="ui-checkbox__input" id="popup-review-agreement" type="checkbox" name="popup-review-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                      </label>
+                  <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">РћСЃС‚Р°РІРёС‚СЊ РѕС‚Р·С‹РІ</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-order-service" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-order-service-title" aria-describedby="popup-order-service-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--service">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-order-service-title">РҐРѕС‚РёС‚Рµ Р·Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі РґРѕРјРѕР№? РћСЃС‚Р°РІР»СЏР№С‚Рµ Р·Р°СЏРІРєСѓ</h2>
+                  <p class="popup-form__text" id="popup-order-service-description">Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ РЅРёР¶Рµ Рё РЅР°С€Рё РјРµРЅРµРґР¶РµСЂС‹ СЃРІСЏР¶СѓС‚СЃСЏ СЃ РІР°РјРё РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ, С‡С‚РѕР±С‹ РѕР±СЃСѓРґРёС‚СЊ РІСЃРµ РґРµС‚Р°Р»Рё РєР»РёРЅРёРЅРіР° Рё РѕР·РІСѓС‡РёС‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-order-service-name" type="text" name="popup-order-service-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-order-service-phone" type="tel" name="popup-order-service-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-email">Email</label>
+                        <input id="popup-order-service-email" type="email" name="popup-order-service-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-select">Р’С‹Р±РѕСЂ СѓСЃР»СѓРі</label>
+                        <div class="popup-form__select">
+                          <select id="popup-order-service-select" name="popup-order-service-select" required>
+                            <option value="" disabled selected>Р’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅС‹Рµ РІР°Рј СѓСЃР»СѓРіРё</option>
+                            <option value="support-cleaning">РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</option>
+                            <option value="general-cleaning">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</option>
+                            <option value="window-cleaning">РњС‹С‚СЊС‘ РѕРєРѕРЅ</option>
+                            <option value="post-repair">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</option>
+                          </select><span class="popup-form__select-icon" aria-hidden="true">
+                                <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></span>
+                        </div>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-order-service-agreement">
+                          <input class="ui-checkbox__input" id="popup-order-service-agreement" type="checkbox" name="popup-order-service-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Р—Р°РєР°Р·Р°С‚СЊ РєР»РёРЅРёРЅРі</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--order" aria-hidden="true"><img src="/static/images/section/popup-system/popup-order-service-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-calc" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-calc-title" aria-describedby="popup-calc-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--calculator">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-calc-title">РЈР·РЅР°Р№С‚Рµ СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё</h2>
+                  <p class="popup-form__text" id="popup-calc-description">Р—Р°РїРѕР»РЅРёС‚Рµ С„РѕСЂРјСѓ РЅРёР¶Рµ, С‡С‚РѕР±С‹ РјС‹ РѕРїРµСЂР°С‚РёРІРЅРѕ РїРѕСЃС‡РёС‚Р°Р»Рё СЃС‚РѕРёРјРѕСЃС‚СЊ СѓР±РѕСЂРєРё Рё СЃРѕРѕР±С‰РёР»Рё РµРµ РІР°Рј. РќР°С€Рё РјРµРЅРµРґР¶РµСЂС‹ РїРµСЂРµР·РІРѕРЅСЏС‚ РІР°Рј РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <fieldset class="popup-form__fieldset">
+                    <legend class="popup-form__legend">РџР»РѕС‰Р°РґСЊ</legend>
+                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
+                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">РѕРґРЅРѕРєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-С… РєРѕРјРЅР°С‚РЅР°СЏ</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    </div>
+                  </fieldset>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-service">РЈСЃР»СѓРіРё</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-service" name="popup-calc-service" required>
+                              <option value="" disabled>Р’С‹Р±РµСЂРёС‚Рµ СѓСЃР»СѓРіСѓ</option>
+                              <option value="support-cleaning" selected>РџРѕРґРґРµСЂР¶РёРІР°СЋС‰Р°СЏ СѓР±РѕСЂРєР°</option>
+                              <option value="general-cleaning">Р“РµРЅРµСЂР°Р»СЊРЅР°СЏ СѓР±РѕСЂРєР°</option>
+                              <option value="window-cleaning">РњС‹С‚СЊС‘ РѕРєРѕРЅ</option>
+                              <option value="post-repair">РЈР±РѕСЂРєР° РїРѕСЃР»Рµ СЂРµРјРѕРЅС‚Р°</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-frequency">Р РµРіСѓР»СЏСЂРЅРѕСЃС‚СЊ</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-frequency" name="popup-calc-frequency" required>
+                              <option value="" disabled>Р’С‹Р±РµСЂРёС‚Рµ СЂРµРіСѓР»СЏСЂРЅРѕСЃС‚СЊ</option>
+                              <option value="single" selected>Р Р°Р·РѕРІР°СЏ</option>
+                              <option value="weekly">Р•Р¶РµРЅРµРґРµР»СЊРЅРѕ</option>
+                              <option value="twice-month">2 СЂР°Р·Р° РІ РјРµСЃСЏС†</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-calc-name" type="text" name="popup-calc-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-calc-phone" type="tel" name="popup-calc-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-calc-agreement">
+                          <input class="ui-checkbox__input" id="popup-calc-agreement" type="checkbox" name="popup-calc-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--calc" aria-hidden="true"><img src="/static/images/section/popup-system/popup-calc-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-question" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-question-title" aria-describedby="popup-question-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--question">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-question-title">РЈ РІР°СЃ РѕСЃС‚Р°Р»РёСЃСЊ РІРѕРїСЂРѕСЃС‹?</h2>
+                  <p class="popup-form__text" id="popup-question-description">РќР°РїРёС€Рё РЅР° СЃРІРѕР№ РІРѕРїСЂРѕСЃ РІ С„РѕСЂРјРµ РЅРёР¶Рµ. РњС‹ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃ РІР°РјРё СЃРІСЏР¶РµРјСЃСЏ Рё СЂР°СЃСЃРєР°Р¶РµРј РїСЂРѕ РЅР°С€Рё СѓСЃР»СѓРіРё, СѓСЃР»РѕРІРёСЏ Рё СЃС‚РѕРёРјРѕСЃС‚СЊ.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-name">Р’Р°С€Рµ РёРјСЏ</label>
+                          <input id="popup-question-name" type="text" name="popup-question-name" placeholder="Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-phone">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</label>
+                          <input id="popup-question-phone" type="tel" name="popup-question-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-email">Email</label>
+                        <input id="popup-question-email" type="email" name="popup-question-email" placeholder="Р’Р°С€Р° СЌР»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-message">Р’Р°С€ РІРѕРїСЂРѕСЃ</label>
+                        <textarea id="popup-question-message" name="popup-question-message" rows="6" placeholder="РќР°РїРёС€РёС‚Рµ РІР°С€ РІРѕРїСЂРѕСЃ ..." required></textarea>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-question-agreement">
+                          <input class="ui-checkbox__input" id="popup-question-agreement" type="checkbox" name="popup-question-agreement" required><span class="ui-checkbox__label">Р—Р°РїРѕР»РЅСЏСЏ С„РѕСЂРјСѓ РІС‹ РґР°РµС‚Рµ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">РћС‚РїСЂР°РІРёС‚СЊ РІРѕРїСЂРѕСЃ</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--question" aria-hidden="true"><img src="/static/images/section/popup-system/popup-question-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-success" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-success" role="dialog" aria-modal="true" aria-labelledby="popup-status-success-title" aria-describedby="popup-status-success-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--success">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M30 6L35.3 10.9L41.95 11.65L44.65 17.85L50.5 21L49 27.55L52.5 33.25L48.25 38.3L48.8 44.95L42.8 47.65L39.95 53.7L33.35 52.95L28 57L22.7 52.1L16.05 51.35L13.35 45.15L7.5 42L9 35.45L5.5 29.75L9.75 24.7L9.2 18.05L15.2 15.35L18.05 9.3L24.65 10.05L30 6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M20.5 30.5L26.75 36.75L39.5 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-success-title">Р’Р°С€Р° Р·Р°СЏРІРєР° РїСЂРёРЅСЏС‚Р°!</h2>
+                <p class="popup-status__text" id="popup-status-success-description">РњС‹ РїРѕР»СѓС‡РёР»Рё РІР°С€Сѓ Р·Р°СЏРІРєСѓ РЅР° Р·РІРѕРЅРѕРє, РЅР°С€ РјРµРЅРµРґР¶РµСЂ СЃРІСЏР¶РµС‚СЃСЏ СЃ РІР°РјРё РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-error" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-error" role="dialog" aria-modal="true" aria-labelledby="popup-status-error-title" aria-describedby="popup-status-error-description">
+            <button class="popup__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РїРѕРїР°Рї" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--error">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M31.9833 10.3167L48.7667 40.1167C49.1 40.7 49.2667 41.35 49.2667 42C49.2667 44.1667 47.5167 45.9167 45.35 45.9167H11.7833C11.1333 45.9167 10.5 45.75 9.91666 45.4333C8.01666 44.35 7.35 41.9333 8.43333 40.0333L25.2167 10.3167C25.55 9.73334 26.0167 9.25 26.6167 8.91667C28.5167 7.83334 30.9167 8.5 31.9833 10.3167Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M28.5 22V31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                      <path d="M28.5 37H28.525" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-error-title">РћС€РёР±РєР°!</h2>
+                <p class="popup-status__text" id="popup-status-error-description">Р’Р°С€Р° Р·Р°СЏРІРєР° РїРѕ РєР°РєРѕР№-С‚Рѕ РїСЂРёС‡РёРЅРµ Р±С‹Р»Р° РѕС‚РєР»РѕРЅРµРЅР°. РџСЂРѕРІРµСЂСЊС‚Рµ РІР°С€Рё РґР°РЅРЅС‹Рµ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <footer class="footer">
+      <div class="footer__wave" aria-hidden="true"><img src="/static/images/ui/footer-wave.svg" alt=""></div>
+      <div class="footer__body">
+        <div class="_container">
+          <div class="footer__wrapper">
+            <div class="footer__top"><a class="footer__brand" href="index.html" aria-label="РќР° РіР»Р°РІРЅСѓСЋ"><span class="footer__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="footer__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+              <ul class="footer__requisites">
+                <li class="footer__requisite"><strong class="footer__requisite-label">РћРћРћ</strong><span class="footer__requisite-value">В«Р’РђР™РџвЂ“РљР»РёРЅВ»</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РћР“Р Рќ</strong><span class="footer__requisite-value">0000000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РРќРќ</strong><span class="footer__requisite-value">0000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">РљРџРџ</strong><span class="footer__requisite-value">000000000</span></li>
+              </ul>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__nav">
+              <p class="footer__nav-title">РњРµРЅСЋ СЃР°Р№С‚Р°</p>
+              <div class="footer__nav-body">
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="about-us.html">Рћ РєРѕРјРїР°РЅРёРё</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="services.html">РЈСЃР»СѓРіРё</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="prices.html">Р¦РµРЅС‹</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="promotions.html">РђРєС†РёРё</a></li>
+                </ul>
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="reviews.html">РћС‚Р·С‹РІС‹</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="blog.html">Р‘Р»РѕРі</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="faq.html">FAQ</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__contacts">
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                  </div>
+                  <div class="contact-card contact-card--socials footer__contact-card">
+                    <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p>
+                    <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                    </div>
+                  </div>
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                  </div>
+            </div>
+            <div class="footer__bottom">
+              <p class="footer__copyright">В© 2026 - РћС„РёС†РёР°Р»СЊРЅС‹Р№ СЃР°Р№С‚ "Р’РђР™РџвЂ“РљР»РёРЅ"</p>
+              <div class="footer__legal"><a class="footer__legal-link" href="policy.html">РџРѕР»РёС‚РёРєР° РєРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕСЃС‚Рё</a><a class="footer__legal-link" href="policy.html">РЎРѕРіР»Р°СЃРёРµ РћРџР”</a><a class="footer__legal-link" href="policy.html">РЎРѕРіР»Р°СЃРёРµ Cookies</a>
+              </div><a class="footer__made-by" href="https://ds-art.ru/" target="_blank" rel="noopener noreferrer" aria-label="РЎР°Р№С‚ СЂР°Р·СЂР°Р±РѕС‚Р°РЅ РєРѕРјРїР°РЅРёРµР№ DS-ART"><span class="footer__made-by-mark">DS</span><span class="footer__made-by-text">РЎР°Р№С‚ СЂР°Р·СЂР°Р±РѕС‚Р°РЅ РєРѕРјРїР°РЅРёРµР№ DS-ART</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/js/vendor/fancybox.umd.js"></script>
+    <script src="/static/js/vendor/swiper-bundle.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
+  </body>
+</html>

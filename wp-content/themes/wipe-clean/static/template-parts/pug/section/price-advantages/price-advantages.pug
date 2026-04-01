@@ -1,0 +1,51 @@
+include ../../components/feature-card/feature-card
+
+-
+    var priceAdvantagesDefaults = {
+        title: "Наши преимущества",
+        text: "Мы работаем честно и не добавляем лишних сумм в чек, когда уборка уже идет. Вам всегда понятно, за что вы платите, поэтому никаких «сюрпризов» в квитанции точно не будет. Такой подход помогает нам держать стабильные цены на уборку в Москве даже при большой конкуренции.",
+        noteText: "Наш принцип сотрудничества строится на простых правилах:",
+        items: [
+            {
+                title: "Без скрытых доплат",
+                text: "Вы платите ровно ту сумму, которая была озвучена на этапе оформления заявки. Она оглашается нашим менеджером. Мы никогда не навязываем ненужные опции. Мы сохраняем цены на уборку в Москве понятными, прозрачными и доступными для каждого.",
+                icon: "/static/images/section/company-preview/icon-pricing.svg",
+                className: "feature-card--stacked"
+            },
+            {
+                title: "Согласование стоимости заранее",
+                text: "Мы заранее согласовываем расценки с клиентом. И только потом начинаем запланированный клининг на конкретном жилом объекте. Это позволяет вам планировать бюджет. Вы точно знаете, что общая сумма на услуги не изменится в процессе.",
+                icon: "/static/images/section/company-preview/icon-guarantee.svg",
+                className: "feature-card--stacked"
+            },
+            {
+                title: "Контроль качества",
+                text: "После завершения клининга ответственный менеджер проверяет соответствие результата. Он использует внутренние стандарты качества нашей компании. Мы фиксируем цену уборки квартир за м² перед началом работ. Мы гарантируем, что вы останетесь довольны сервисом.",
+                icon: "/static/images/section/company-preview/icon-quality.svg",
+                className: "feature-card--stacked"
+            },
+            {
+                title: "Индивидуальный подход",
+                text: "Мы учитываем особенности объекта и личные пожелания заказчика, создавая по-настоящему эффективный и выгодный план чистоты. Подбираем оптимальный формат взаимодействия, чтобы стоимость уборки квартиры была для вас комфортной и выгодной всегда.",
+                icon: "/static/images/section/company-preview/icon-experience.svg",
+                className: "feature-card--stacked"
+            }
+        ]
+    }
+
+-
+    var priceAdvantagesData = typeof priceAdvantagesSection === "object" && priceAdvantagesSection ? priceAdvantagesSection : {}
+    var priceAdvantagesOptions = Object.assign({}, priceAdvantagesDefaults, priceAdvantagesData)
+
+section.price-advantages
+    ._container
+        .price-advantages__wrapper
+            .price-advantages__head.ui-section-head.ui-section-head--center
+                h2.price-advantages__title.ui-title= priceAdvantagesOptions.title
+                p.price-advantages__text.ui-text= priceAdvantagesOptions.text
+                p.price-advantages__note.ui-text= priceAdvantagesOptions.noteText
+            .price-advantages__slider.swiper(data-price-advantages-swiper)
+                .price-advantages__grid.swiper-wrapper
+                    each item in priceAdvantagesOptions.items
+                        .price-advantages__slide.swiper-slide
+                            +featureCard(item)

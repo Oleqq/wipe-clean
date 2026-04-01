@@ -6,12 +6,22 @@
  */
 
 $section           = $args['section'] ?? wipe_clean_get_front_page_section_defaults( 'reviews_preview' );
-$items             = array_values( wipe_clean_get_front_page_review_items() );
+$items_source      = sanitize_key( (string) ( $section['items_source'] ?? '' ) );
+$custom_items      = ! empty( $section['items'] ) && is_array( $section['items'] ) ? array_values( $section['items'] ) : array();
+$items             = ! empty( $custom_items )
+	? $custom_items
+	: (
+		'reviews_archive_text' === $items_source && function_exists( 'wipe_clean_get_reviews_text_items' )
+			? array_values( wipe_clean_get_reviews_text_items() )
+			: array_values( wipe_clean_get_front_page_review_items() )
+	);
 $primary_action    = wipe_clean_resolve_link( $section['primary_action'] ?? array() );
 $secondary_action  = wipe_clean_resolve_link( $section['secondary_action'] ?? array() );
 $render_items      = $items;
+$extra_classes     = trim( (string) ( $section['class_name'] ?? $section['className'] ?? '' ) );
+$section_class     = trim( 'reviews-preview ' . $extra_classes );
 
-if ( $render_items && count( $render_items ) < 6 ) {
+if ( ! empty( $render_items ) && count( $render_items ) < 6 ) {
 	$index = 0;
 	while ( count( $render_items ) < 6 ) {
 		$render_items[] = $items[ $index % count( $items ) ];
@@ -19,7 +29,7 @@ if ( $render_items && count( $render_items ) < 6 ) {
 	}
 }
 ?>
-<section class="reviews-preview">
+<section class="<?php echo esc_attr( $section_class ); ?>">
 	<div class="_container">
 		<div class="reviews-preview__wrapper">
 			<div class="reviews-preview__head ui-section-head ui-section-head--center">

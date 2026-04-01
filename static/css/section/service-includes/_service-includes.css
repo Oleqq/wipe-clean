@@ -244,6 +244,10 @@
 }
 .service-includes__visual {
   min-width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   height: 100%;
 }
 .service-includes__visual-stage {
@@ -253,6 +257,10 @@
   aspect-ratio: 853/572;
   background: #f2ece5;
   height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 @media (max-width: 650px) {
   .service-includes__visual-stage {

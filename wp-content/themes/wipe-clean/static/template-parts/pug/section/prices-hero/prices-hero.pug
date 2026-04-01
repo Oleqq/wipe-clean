@@ -1,0 +1,54 @@
+include ../../includes/media.pug
+
+-
+    var pricesHeroData = typeof pricesHeroData !== "undefined" ? pricesHeroData : {
+        kicker: "Цены наших услуг",
+        title: "Стоимость клининговых услуг для квартир и домов",
+        text: "Обеспечить комфорт в жилых помещениях Москвы станет намного проще, если изучить прозрачные цены на клининговых услуг без лишних наценок. Наши эксперты возьмут на себя рутину, гарантируя по-настоящему качественный клининг в каждой квартире.",
+        button: {
+            label: "Рассчитать стоимость уборки",
+            href: "#",
+            className: "ui-btn--primary"
+        },
+        media: {
+            leftImageSrc: "/static/images/section/prices-hero/prices-hero-left.png",
+            leftImageWidth: 1436,
+            leftImageHeight: 1952,
+            rightImageSrc: "/static/images/section/prices-hero/prices-hero-right.png",
+            rightImageWidth: 2392,
+            rightImageHeight: 2476
+        }
+    }
+
+section.prices-hero
+    ._container
+        .prices-hero__wrapper
+            .prices-hero__head.ui-section-head
+                span.ui-kicker.prices-hero__kicker= pricesHeroData.kicker
+                h1.ui-title.ui-title--hero.prices-hero__title= pricesHeroData.title
+                p.ui-text.prices-hero__text= pricesHeroData.text
+                a.ui-btn.prices-hero__action(class=pricesHeroData.button.className href=pricesHeroData.button.href)
+                    span.ui-btn__content= pricesHeroData.button.label
+            .prices-hero__media(aria-hidden="true")
+                .prices-hero__image.prices-hero__image--left
+                    +mediaImage({
+                        src: pricesHeroData.media.leftImageSrc,
+                        decorative: true,
+                        width: pricesHeroData.media.leftImageWidth,
+                        height: pricesHeroData.media.leftImageHeight,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 56vw, 32vw"
+                    })
+                .prices-hero__image.prices-hero__image--right
+                    +mediaImage({
+                        src: pricesHeroData.media.rightImageSrc,
+                        decorative: true,
+                        width: pricesHeroData.media.rightImageWidth,
+                        height: pricesHeroData.media.rightImageHeight,
+                        loading: "eager",
+                        decoding: "async",
+                        fetchpriority: "high",
+                        sizes: "(max-width: 650px) 58vw, 34vw"
+                    })

@@ -3,32 +3,28 @@ export const registerReviewsPreviewSwiper = () => {
         return () => {};
     }
 
-    const elements = Array.from(document.querySelectorAll("[data-reviews-preview-swiper]"));
-    const instances = elements.map((element) => {
-        const nextEl = element.parentElement?.querySelector("[data-reviews-preview-next]") || null;
-        const prevEl = element.parentElement?.querySelector("[data-reviews-preview-prev]") || null;
-        const slidesCount = element.querySelectorAll(".swiper-slide").length;
+    const elements = document.querySelectorAll("[data-reviews-preview-swiper]");
+
+    const instances = Array.from(elements).map((element) => {
+        const parent = element.parentElement;
+        const nextEl = parent?.querySelector("[data-reviews-preview-next]");
+        const prevEl = parent?.querySelector("[data-reviews-preview-prev]");
 
         return new window.Swiper(element, {
             speed: 720,
             spaceBetween: 16,
             slidesPerView: "auto",
             centeredSlides: true,
-            loop: slidesCount > 1,
-            loopAdditionalSlides: slidesCount,
-            loopedSlides: slidesCount,
-            watchOverflow: true,
-            watchSlidesProgress: true,
-            slideToClickedSlide: true,
-            resistanceRatio: 0.75,
+            loop: true,
             navigation: nextEl && prevEl ? {
                 nextEl,
                 prevEl
             } : undefined,
             breakpoints: {
                 651: {
+                    spaceBetween: 20,
                     centeredSlides: false,
-                    spaceBetween: 20
+                    slideToClickedSlide: true
                 }
             }
         });

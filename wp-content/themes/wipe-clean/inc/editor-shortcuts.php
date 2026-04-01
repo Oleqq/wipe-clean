@@ -1,6 +1,6 @@
 <?php
 /**
- * Front-end admin tools and quick actions.
+ * Frontend quick admin shortcuts.
  *
  * @package wipe-clean
  */
@@ -9,624 +9,763 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Check whether the current user can access front-end admin tools.
- *
- * @return bool
- */
-function wipe_clean_can_access_frontend_tools() {
-	return ! is_admin() && ! wp_doing_ajax() && ! wp_doing_cron() && ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) || current_user_can( 'edit_theme_options' ) );
+if ( ! function_exists( 'wipe_clean_can_use_editor_toolbar' ) ) {
+	function wipe_clean_can_use_editor_toolbar() {
+		return is_user_logged_in() && current_user_can( 'edit_posts' );
+	}
 }
 
-/**
- * Get current editable object id for front-end shortcuts.
- *
- * @return int
- */
-function wipe_clean_get_editable_object_id() {
-	if ( is_home() && ! is_front_page() ) {
-		return (int) get_option( 'page_for_posts' );
-	}
-
-	$object_id = (int) get_queried_object_id();
-
-	if ( ! $object_id && is_front_page() ) {
-		$object_id = (int) get_option( 'page_on_front' );
-	}
-
-	return $object_id;
-}
-
-/**
- * Get edit link for the current front-end object.
- *
- * @return string
- */
-function wipe_clean_get_frontend_edit_link() {
-	if ( ! wipe_clean_can_access_frontend_tools() ) {
-		return '';
-	}
-
-	$object_id = wipe_clean_get_editable_object_id();
-
-	if ( ! $object_id || ! current_user_can( 'edit_post', $object_id ) ) {
-		return '';
-	}
-
-	$link = get_edit_post_link( $object_id, '' );
-
-	return $link ? (string) $link : '';
-}
-
-/**
- * Get current object label for toolbar subtitle.
- *
- * @return string
- */
-function wipe_clean_get_frontend_tools_context_label() {
-	$object_id = wipe_clean_get_editable_object_id();
-
-	if ( $object_id ) {
-		$title = get_the_title( $object_id );
-
-		if ( $title ) {
-			return wp_strip_all_tags( $title );
-		}
-	}
-
-	if ( is_front_page() ) {
-		return 'Главная страница';
-	}
-
-	if ( is_home() ) {
-		return 'Страница записей';
-	}
-
-	if ( is_archive() ) {
-		return 'Архивная страница';
-	}
-
-	if ( is_404() ) {
-		return 'Страница 404';
-	}
-
-	return 'Текущая страница';
-}
-
-/**
- * Get front-end toolbar actions.
- *
- * @return array<int, array<string, string>>
- */
-function wipe_clean_get_frontend_tools_actions() {
-	$actions = array();
-
-	if ( ! wipe_clean_can_access_frontend_tools() ) {
-		return $actions;
-	}
-
-	$edit_link = wipe_clean_get_frontend_edit_link();
-
-	if ( '' !== $edit_link ) {
-		$actions[] = array(
-			'type'        => 'link',
-			'label'       => 'Редактировать страницу',
-			'description' => 'Открыть редактор текущей страницы и поля ACF.',
-			'url'         => $edit_link,
-			'target'      => '',
-			'icon'        => 'edit',
-			'variant'     => 'primary',
+if ( ! function_exists( 'wipe_clean_is_services_frontend_context' ) ) {
+	function wipe_clean_is_services_frontend_context() {
+		return (
+			( function_exists( 'wipe_clean_is_services_archive_request' ) && wipe_clean_is_services_archive_request() ) ||
+			( function_exists( 'wipe_clean_is_services_single_request' ) && wipe_clean_is_services_single_request() ) ||
+			is_post_type_archive( 'wipe_service' ) ||
+			is_singular( 'wipe_service' )
 		);
 	}
-
-	$actions[] = array(
-		'type'        => 'link',
-		'label'       => 'Открыть админку',
-		'description' => 'Перейти в панель управления WordPress.',
-		'url'         => admin_url(),
-		'target'      => '',
-		'icon'        => 'dashboard',
-		'variant'     => 'secondary',
-	);
-
-	return $actions;
 }
 
-/**
- * Get inline SVG icon markup.
- *
- * @param string $icon Icon key.
- * @return string
- */
-function wipe_clean_get_frontend_tools_icon_markup( $icon ) {
-	switch ( $icon ) {
-		case 'edit':
-			return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20H8L18.5 9.5C19.0304 8.96957 19.3284 8.25014 19.3284 7.5C19.3284 6.74986 19.0304 6.03043 18.5 5.5C17.9696 4.96957 17.2501 4.67157 16.5 4.67157C15.7499 4.67157 15.0304 4.96957 14.5 5.5L4 16V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 6.5L17.5 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-		case 'dashboard':
-			return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13H10V20H4V13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4H20V11H14V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 15H20V20H14V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 4H10V9H4V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-		case 'spark':
-			return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L13.9 8.1L19 10L13.9 11.9L12 17L10.1 11.9L5 10L10.1 8.1L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-		default:
-			return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 8V12L14.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+if ( ! function_exists( 'wipe_clean_is_blog_frontend_context' ) ) {
+	function wipe_clean_is_blog_frontend_context() {
+		return (
+			( function_exists( 'wipe_clean_is_blog_archive_request' ) && wipe_clean_is_blog_archive_request() ) ||
+			( function_exists( 'wipe_clean_is_blog_single_request' ) && wipe_clean_is_blog_single_request() )
+		);
 	}
 }
 
-/**
- * Enqueue toolbar assets.
- *
- * @return void
- */
-function wipe_clean_enqueue_editor_shortcuts_assets() {
-	if ( ! wipe_clean_can_access_frontend_tools() ) {
-		return;
-	}
-
-	wp_register_style( 'wipe-clean-editor-shortcuts', false, array( 'wipe-clean-app' ), WIPE_CLEAN_VERSION );
-	wp_enqueue_style( 'wipe-clean-editor-shortcuts' );
-
-	$css = <<<'CSS'
-.wipe-clean-admin-tools {
-	position: fixed;
-	right: max(18px, env(safe-area-inset-right));
-	bottom: max(18px, env(safe-area-inset-bottom));
-	z-index: 99998;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 14px;
-	pointer-events: none;
-}
-
-.wipe-clean-admin-tools > * {
-	pointer-events: auto;
-}
-
-.wipe-clean-admin-tools__panel {
-	width: min(368px, calc(100vw - 28px));
-	max-height: min(70dvh, 520px);
-	padding: 14px;
-	border: 1px solid rgba(64, 165, 193, 0.28);
-	border-radius: 24px;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 252, 248, 0.94) 100%);
-	box-shadow: 0 22px 50px rgba(21, 15, 49, 0.18), 0 2px 4px rgba(1, 112, 150, 0.12);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	overflow: auto;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(0, 134, 179, 0.5) rgba(64, 165, 193, 0.08);
-	transform: translateY(12px) scale(0.95);
-	transform-origin: right bottom;
-	opacity: 0;
-	pointer-events: none;
-	transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease, visibility 0.24s ease;
-	visibility: hidden;
-}
-
-.wipe-clean-admin-tools.is-open .wipe-clean-admin-tools__panel {
-	transform: translateY(0) scale(1);
-	opacity: 1;
-	pointer-events: auto;
-	visibility: visible;
-}
-
-.wipe-clean-admin-tools__panel-head {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	gap: 16px;
-	margin-bottom: 14px;
-}
-
-.wipe-clean-admin-tools__title {
-	display: block;
-	margin: 0 0 4px;
-	color: #150F31;
-	font-family: "Manrope", "Segoe UI", sans-serif;
-	font-size: 16px;
-	font-weight: 800;
-	line-height: 1.15;
-}
-
-.wipe-clean-admin-tools__subtitle {
-	display: block;
-	margin: 0;
-	color: #5D5779;
-	font-family: "Golos Text", "Segoe UI", sans-serif;
-	font-size: 12px;
-	line-height: 1.45;
-}
-
-.wipe-clean-admin-tools__context {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 6px 9px;
-	border-radius: 999px;
-	background: rgba(27, 158, 116, 0.12);
-	color: #1B9E74;
-	font-family: "Manrope", "Segoe UI", sans-serif;
-	font-size: 11px;
-	font-weight: 800;
-	line-height: 1;
-	white-space: nowrap;
-}
-
-.wipe-clean-admin-tools__list {
-	display: grid;
-	gap: 10px;
-}
-
-.wipe-clean-admin-tools__action {
-	display: grid;
-	grid-template-columns: 44px minmax(0, 1fr) 20px;
-	align-items: center;
-	gap: 12px;
-	padding: 12px;
-	border: 1px solid rgba(64, 165, 193, 0.16);
-	border-radius: 18px;
-	background: rgba(255, 255, 255, 0.96);
-	box-shadow: 0 6px 18px rgba(21, 15, 49, 0.08);
-	color: #150F31;
-	text-decoration: none;
-	transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease, background-color 0.26s ease;
-}
-
-.wipe-clean-admin-tools__action:hover,
-.wipe-clean-admin-tools__action:focus-visible {
-	transform: translateY(-2px);
-	border-color: rgba(64, 165, 193, 0.34);
-	box-shadow: 0 12px 24px rgba(21, 15, 49, 0.12);
-	color: #150F31;
-	text-decoration: none;
-}
-
-.wipe-clean-admin-tools__action-icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 44px;
-	height: 44px;
-	border-radius: 14px;
-	background: linear-gradient(180deg, #1290BC 0%, #0086B3 100%);
-	border: 2px solid #40A5C1;
-	box-shadow: 0 2px 4px rgba(1, 112, 150, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.28);
-	color: #fff;
-}
-
-.wipe-clean-admin-tools__action--secondary .wipe-clean-admin-tools__action-icon {
-	background: linear-gradient(180deg, #1B9E74 0%, #28B789 100%);
-	border-color: #54C39E;
-	box-shadow: 0 2px 4px rgba(27, 158, 116, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.24);
-}
-
-.wipe-clean-admin-tools__action-icon svg,
-.wipe-clean-admin-tools__toggle-glyph svg,
-.wipe-clean-admin-tools__action-arrow svg {
-	display: block;
-	width: 20px;
-	height: 20px;
-}
-
-.wipe-clean-admin-tools__action-body {
-	display: grid;
-	gap: 3px;
-	min-width: 0;
-}
-
-.wipe-clean-admin-tools__action-label {
-	display: block;
-	font-family: "Manrope", "Segoe UI", sans-serif;
-	font-size: 14px;
-	font-weight: 800;
-	line-height: 1.25;
-	color: inherit;
-}
-
-.wipe-clean-admin-tools__action-description {
-	display: block;
-	font-family: "Golos Text", "Segoe UI", sans-serif;
-	font-size: 12px;
-	line-height: 1.4;
-	color: #5D5779;
-}
-
-.wipe-clean-admin-tools__action-arrow {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	color: #0086B3;
-}
-
-.wipe-clean-admin-tools__toggle {
-	display: inline-flex;
-	align-items: center;
-	gap: 12px;
-	padding: 10px 14px 10px 10px;
-	border: 2px solid #40A5C1;
-	border-radius: 999px;
-	background: linear-gradient(180deg, #1290BC 0%, #0086B3 100%);
-	box-shadow: 0 14px 34px rgba(0, 134, 179, 0.24), 0 2px 4px rgba(1, 112, 150, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.24);
-	color: #fff;
-	cursor: pointer;
-	transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, filter 0.3s ease;
-}
-
-.wipe-clean-admin-tools__toggle:hover,
-.wipe-clean-admin-tools__toggle:focus-visible {
-	transform: translateY(-2px);
-	filter: saturate(1.06);
-	box-shadow: 0 18px 40px rgba(0, 134, 179, 0.28), 0 2px 4px rgba(1, 112, 150, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.wipe-clean-admin-tools__toggle-glyph {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 42px;
-	height: 42px;
-	border-radius: 50%;
-	background: linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.08) 100%);
-	box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
-	flex-shrink: 0;
-}
-
-.wipe-clean-admin-tools__toggle-copy {
-	display: grid;
-	gap: 2px;
-	text-align: left;
-}
-
-.wipe-clean-admin-tools__toggle-title {
-	font-family: "Manrope", "Segoe UI", sans-serif;
-	font-size: 14px;
-	font-weight: 800;
-	line-height: 1.1;
-	white-space: nowrap;
-}
-
-.wipe-clean-admin-tools__toggle-hint {
-	font-family: "Golos Text", "Segoe UI", sans-serif;
-	font-size: 11px;
-	line-height: 1.2;
-	opacity: 0.86;
-}
-
-.wipe-clean-admin-tools__toggle-chevron {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 18px;
-	height: 18px;
-	flex-shrink: 0;
-	transition: transform 0.28s ease;
-}
-
-.wipe-clean-admin-tools__toggle-chevron svg {
-	display: block;
-	width: 16px;
-	height: 16px;
-}
-
-.wipe-clean-admin-tools.is-open .wipe-clean-admin-tools__toggle-chevron {
-	transform: rotate(180deg);
-}
-
-.wipe-clean-admin-tools__action,
-.wipe-clean-admin-tools__panel {
-	-webkit-font-smoothing: antialiased;
-}
-
-.wipe-clean-admin-tools.is-open .wipe-clean-admin-tools__action {
-	animation: wipe-clean-admin-tools-item-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.wipe-clean-admin-tools.is-open .wipe-clean-admin-tools__action:nth-child(2) {
-	animation-delay: 0.04s;
-}
-
-.wipe-clean-admin-tools.is-open .wipe-clean-admin-tools__action:nth-child(3) {
-	animation-delay: 0.08s;
-}
-
-@keyframes wipe-clean-admin-tools-item-in {
-	from {
-		opacity: 0;
-		transform: translateY(8px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
+if ( ! function_exists( 'wipe_clean_is_reviews_frontend_context' ) ) {
+	function wipe_clean_is_reviews_frontend_context() {
+		return function_exists( 'wipe_clean_is_reviews_archive_request' ) && wipe_clean_is_reviews_archive_request();
 	}
 }
 
-@media (max-width: 782px) {
-	html.admin-bar .wipe-clean-admin-tools {
-		bottom: max(14px, env(safe-area-inset-bottom));
+if ( ! function_exists( 'wipe_clean_is_promotions_frontend_context' ) ) {
+	function wipe_clean_is_promotions_frontend_context() {
+		return function_exists( 'wipe_clean_is_promotions_archive_request' ) && wipe_clean_is_promotions_archive_request();
 	}
 }
 
-@media (max-width: 650px) {
-	.wipe-clean-admin-tools {
-		right: max(12px, env(safe-area-inset-right));
-		left: max(12px, env(safe-area-inset-left));
-		bottom: max(12px, env(safe-area-inset-bottom));
-		align-items: stretch;
-	}
-
-	.wipe-clean-admin-tools__panel {
-		width: 100%;
-		max-height: min(62dvh, 440px);
-		padding: 12px;
-		border-radius: 20px;
-	}
-
-	.wipe-clean-admin-tools__panel-head {
-		gap: 12px;
-	}
-
-	.wipe-clean-admin-tools__toggle {
-		width: 100%;
-		justify-content: space-between;
-		padding: 9px 12px 9px 9px;
-	}
-
-	.wipe-clean-admin-tools__toggle-glyph {
-		width: 38px;
-		height: 38px;
-	}
-
-	.wipe-clean-admin-tools__toggle-title {
-		font-size: 13px;
-	}
-
-	.wipe-clean-admin-tools__toggle-hint {
-		font-size: 10px;
-	}
-
-	.wipe-clean-admin-tools__action {
-		grid-template-columns: 40px minmax(0, 1fr) 18px;
-		gap: 10px;
-		padding: 11px;
-	}
-
-	.wipe-clean-admin-tools__action-icon {
-		width: 40px;
-		height: 40px;
-		border-radius: 12px;
+if ( ! function_exists( 'wipe_clean_is_error_page_frontend_context' ) ) {
+	function wipe_clean_is_error_page_frontend_context() {
+		return function_exists( 'wipe_clean_is_error_page_request' ) && wipe_clean_is_error_page_request();
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.wipe-clean-admin-tools__panel,
-	.wipe-clean-admin-tools__toggle,
-	.wipe-clean-admin-tools__toggle-chevron,
-	.wipe-clean-admin-tools__action {
-		transition: none;
-		animation: none;
+if ( ! function_exists( 'wipe_clean_get_services_archive_settings_action' ) ) {
+	function wipe_clean_get_services_archive_settings_action() {
+		$url = function_exists( 'wipe_clean_get_services_archive_settings_url' )
+			? wipe_clean_get_services_archive_settings_url()
+			: '';
+
+		if ( ! $url ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Редактировать архив услуг',
+			'url'         => $url,
+			'description' => 'Открыть блоки страницы архива услуг.',
+			'variant'     => 'settings',
+		);
 	}
 }
-CSS;
 
-	wp_add_inline_style( 'wipe-clean-editor-shortcuts', $css );
+if ( ! function_exists( 'wipe_clean_get_blog_archive_settings_action' ) ) {
+	function wipe_clean_get_blog_archive_settings_action() {
+		$url = function_exists( 'wipe_clean_get_blog_archive_settings_url' )
+			? wipe_clean_get_blog_archive_settings_url()
+			: '';
 
-	wp_register_script( 'wipe-clean-editor-shortcuts', '', array(), WIPE_CLEAN_VERSION, true );
-	wp_enqueue_script( 'wipe-clean-editor-shortcuts' );
+		if ( ! $url ) {
+			return array();
+		}
 
-	$js = <<<'JS'
-(function () {
-	function initAdminTools() {
-		const root = document.querySelector('[data-admin-tools]');
+		return array(
+			'label'       => 'Редактор архива блога',
+			'url'         => $url,
+			'description' => 'Открыть блоки страницы архива блога.',
+			'variant'     => 'settings',
+		);
+	}
+}
 
-		if (!root || root.dataset.adminToolsReady === 'true') {
+if ( ! function_exists( 'wipe_clean_get_reviews_archive_settings_action' ) ) {
+	function wipe_clean_get_reviews_archive_settings_action() {
+		$url = function_exists( 'wipe_clean_get_reviews_archive_settings_url' )
+			? wipe_clean_get_reviews_archive_settings_url()
+			: '';
+
+		if ( ! $url ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Редактор архива отзывов',
+			'url'         => $url,
+			'description' => 'Открыть блоки страницы отзывов.',
+			'variant'     => 'settings',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_promotions_archive_settings_action' ) ) {
+	function wipe_clean_get_promotions_archive_settings_action() {
+		$url = function_exists( 'wipe_clean_get_promotions_archive_settings_url' )
+			? wipe_clean_get_promotions_archive_settings_url()
+			: '';
+
+		if ( ! $url ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Редактор архива акций',
+			'url'         => $url,
+			'description' => 'Открыть блоки страницы акций.',
+			'variant'     => 'settings',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_error_page_settings_action' ) ) {
+	function wipe_clean_get_error_page_settings_action() {
+		$url = function_exists( 'wipe_clean_get_error_page_settings_url' )
+			? wipe_clean_get_error_page_settings_url()
+			: '';
+
+		if ( ! $url || ! current_user_can( 'edit_pages' ) ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Настройки 404',
+			'url'         => $url,
+			'description' => 'Открыть редактор контента страницы 404 в разделе Настройки.',
+			'variant'     => 'settings',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_site_shell_settings_action' ) ) {
+	function wipe_clean_get_site_shell_settings_action() {
+		$url = function_exists( 'wipe_clean_get_site_shell_settings_url' )
+			? wipe_clean_get_site_shell_settings_url()
+			: '';
+
+		if ( ! $url || ! current_user_can( 'edit_pages' ) ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Шапка и подвал',
+			'url'         => $url,
+			'description' => 'Открыть общие настройки шапки и подвала.',
+			'variant'     => 'settings',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_leads_hub_action' ) ) {
+	function wipe_clean_get_leads_hub_action() {
+		$url = function_exists( 'wipe_clean_get_leads_hub_url' )
+			? wipe_clean_get_leads_hub_url()
+			: '';
+
+		if ( ! $url || ! current_user_can( 'manage_options' ) ) {
+			return array();
+		}
+
+		return array(
+			'label'       => 'Заявки',
+			'url'         => $url,
+			'description' => 'Открыть хаб заявок, уведомлений и всех форм сайта.',
+			'variant'     => 'admin',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_archive_admin_bar_action' ) ) {
+	function wipe_clean_get_archive_admin_bar_action() {
+		if ( function_exists( 'wipe_clean_is_services_archive_request' ) && wipe_clean_is_services_archive_request() ) {
+			return array(
+				'url'         => function_exists( 'wipe_clean_get_services_archive_settings_url' ) ? wipe_clean_get_services_archive_settings_url() : '',
+				'description' => 'Открыть редактор архива услуг.',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_archive_request' ) && wipe_clean_is_blog_archive_request() ) {
+			return array(
+				'url'         => function_exists( 'wipe_clean_get_blog_archive_settings_url' ) ? wipe_clean_get_blog_archive_settings_url() : '',
+				'description' => 'Открыть редактор архива блога.',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_reviews_archive_request' ) && wipe_clean_is_reviews_archive_request() ) {
+			return array(
+				'url'         => function_exists( 'wipe_clean_get_reviews_archive_settings_url' ) ? wipe_clean_get_reviews_archive_settings_url() : '',
+				'description' => 'Редактор архива отзывов.',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_promotions_archive_request' ) && wipe_clean_is_promotions_archive_request() ) {
+			return array(
+				'url'         => function_exists( 'wipe_clean_get_promotions_archive_settings_url' ) ? wipe_clean_get_promotions_archive_settings_url() : '',
+				'description' => 'Редактор архива акций.',
+			);
+		}
+
+		return array();
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_toolbar_blog_post' ) ) {
+	function wipe_clean_get_toolbar_blog_post() {
+		if ( ! function_exists( 'wipe_clean_get_current_blog_post' ) ) {
+			return null;
+		}
+
+		$post = wipe_clean_get_current_blog_post();
+
+		return $post instanceof WP_Post ? $post : null;
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_toolbar_service_post' ) ) {
+	function wipe_clean_get_toolbar_service_post() {
+		if ( ! function_exists( 'wipe_clean_get_current_service_post' ) ) {
+			return null;
+		}
+
+		$post = wipe_clean_get_current_service_post();
+
+		return $post instanceof WP_Post ? $post : null;
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_editor_toolbar_target_post' ) ) {
+	function wipe_clean_get_editor_toolbar_target_post() {
+		if ( function_exists( 'wipe_clean_is_services_single_request' ) && wipe_clean_is_services_single_request() ) {
+			$post = wipe_clean_get_toolbar_service_post();
+
+			if ( $post instanceof WP_Post ) {
+				return $post;
+			}
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_single_request' ) && wipe_clean_is_blog_single_request() ) {
+			$post = wipe_clean_get_toolbar_blog_post();
+
+			if ( $post instanceof WP_Post ) {
+				return $post;
+			}
+		}
+
+		if ( is_singular() ) {
+			$post = get_queried_object();
+
+			if ( $post instanceof WP_Post ) {
+				return $post;
+			}
+		}
+
+		return null;
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_editor_toolbar_context' ) ) {
+	function wipe_clean_get_editor_toolbar_context() {
+		if ( function_exists( 'wipe_clean_is_services_single_request' ) && wipe_clean_is_services_single_request() ) {
+			$post = wipe_clean_get_toolbar_service_post();
+
+			return array(
+				'eyebrow' => 'Услуга',
+				'title'   => $post instanceof WP_Post ? get_the_title( $post ) : 'Управление услугой',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_single_request' ) && wipe_clean_is_blog_single_request() ) {
+			$post = wipe_clean_get_toolbar_blog_post();
+
+			return array(
+				'eyebrow' => 'Статья блога',
+				'title'   => $post instanceof WP_Post ? get_the_title( $post ) : 'Управление статьёй',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_archive_request' ) && wipe_clean_is_blog_archive_request() ) {
+			return array(
+				'eyebrow' => 'Блог',
+				'title'   => 'Архив статей',
+			);
+		}
+
+		if ( wipe_clean_is_reviews_frontend_context() ) {
+			return array(
+				'eyebrow' => 'Отзывы',
+				'title'   => 'Архив отзывов',
+			);
+		}
+
+		if ( wipe_clean_is_promotions_frontend_context() ) {
+			return array(
+				'eyebrow' => 'Акции',
+				'title'   => 'Архив акций',
+			);
+		}
+
+		if ( wipe_clean_is_error_page_frontend_context() ) {
+			return array(
+				'eyebrow' => '404',
+				'title'   => 'Страница не найдена',
+			);
+		}
+
+		if ( wipe_clean_is_services_frontend_context() ) {
+			return array(
+				'eyebrow' => 'Архив услуг',
+				'title'   => 'Управление контентом',
+			);
+		}
+
+		if ( is_singular() ) {
+			return array(
+				'eyebrow' => 'Страница',
+				'title'   => get_the_title(),
+			);
+		}
+
+		return array(
+			'eyebrow' => 'Админка',
+			'title'   => 'Быстрые действия',
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_normalize_editor_toolbar_actions' ) ) {
+	function wipe_clean_normalize_editor_toolbar_actions( $actions ) {
+		return array_values(
+			array_filter(
+				(array) $actions,
+				static function ( $action ) {
+					return ! empty( $action['label'] ) && ! empty( $action['url'] );
+				}
+			)
+		);
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_get_editor_toolbar_actions' ) ) {
+	function wipe_clean_get_editor_toolbar_actions() {
+		$actions     = array();
+		$target_post = wipe_clean_get_editor_toolbar_target_post();
+		$site_shell_action = wipe_clean_get_site_shell_settings_action();
+
+		if ( $target_post instanceof WP_Post ) {
+			$edit_link = get_edit_post_link( $target_post->ID, '' );
+
+			if ( $edit_link ) {
+				$label = 'Редактор страницы';
+
+				if ( wipe_clean_get_blog_post_type() === $target_post->post_type ) {
+					$label = 'Редактор статьи';
+				} elseif ( 'wipe_service' === $target_post->post_type ) {
+					$label = 'Редактор услуги';
+				}
+
+				$actions[] = array(
+					'label'       => $label,
+					'url'         => $edit_link,
+					'description' => 'Открыть текущую запись в админке WordPress.',
+					'variant'     => 'edit',
+				);
+			}
+		}
+
+		if ( ! empty( $site_shell_action ) ) {
+			$actions[] = $site_shell_action;
+		}
+
+		$leads_hub_action = wipe_clean_get_leads_hub_action();
+
+		if ( ! empty( $leads_hub_action ) ) {
+			$actions[] = $leads_hub_action;
+		}
+
+		if ( function_exists( 'wipe_clean_is_services_single_request' ) && wipe_clean_is_services_single_request() ) {
+			$archive_link = get_post_type_archive_link( 'wipe_service' );
+
+			if ( $archive_link ) {
+				$actions[] = array(
+					'label'       => 'Архив услуг',
+					'url'         => $archive_link,
+					'description' => 'Открыть страницу архива услуг на сайте.',
+					'variant'     => 'view',
+				);
+			}
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_single_request' ) && wipe_clean_is_blog_single_request() ) {
+			$settings_action = wipe_clean_get_blog_archive_settings_action();
+
+			if ( ! empty( $settings_action ) ) {
+				$actions[] = $settings_action;
+			}
+
+			$archive_link = function_exists( 'wipe_clean_get_blog_archive_page_url' )
+				? wipe_clean_get_blog_archive_page_url()
+				: '';
+
+			if ( $archive_link ) {
+				$actions[] = array(
+					'label'       => 'Архив блога',
+					'url'         => $archive_link,
+					'description' => 'Вернуться к архиву статей.',
+					'variant'     => 'view',
+				);
+			}
+
+			$actions[] = array(
+				'label'       => 'Все статьи',
+				'url'         => admin_url( 'edit.php?post_type=' . wipe_clean_get_blog_post_type() ),
+				'description' => 'Открыть список всех статей.',
+				'variant'     => 'list',
+			);
+		}
+
+		if ( wipe_clean_is_services_frontend_context() ) {
+			$actions[] = wipe_clean_get_services_archive_settings_action();
+
+			$actions[] = array(
+				'label'       => 'Все услуги',
+				'url'         => admin_url( 'edit.php?post_type=wipe_service' ),
+				'description' => 'Открыть список всех услуг.',
+				'variant'     => 'list',
+			);
+		}
+
+		if ( function_exists( 'wipe_clean_is_blog_archive_request' ) && wipe_clean_is_blog_archive_request() ) {
+			$actions[] = wipe_clean_get_blog_archive_settings_action();
+
+			$actions[] = array(
+				'label'       => 'Все статьи',
+				'url'         => admin_url( 'edit.php?post_type=' . wipe_clean_get_blog_post_type() ),
+				'description' => 'Открыть список всех статей.',
+				'variant'     => 'list',
+			);
+
+			$actions[] = array(
+				'label'       => 'Новая статья',
+				'url'         => admin_url( 'post-new.php?post_type=' . wipe_clean_get_blog_post_type() ),
+				'description' => 'Создать новую статью.',
+				'variant'     => 'edit',
+			);
+		}
+
+		if ( wipe_clean_is_error_page_frontend_context() ) {
+			$actions[] = wipe_clean_get_error_page_settings_action();
+		}
+
+		$actions[] = array(
+			'label'       => 'Открыть админку',
+			'url'         => admin_url(),
+			'description' => 'Перейти в панель управления WordPress.',
+			'variant'     => 'admin',
+		);
+
+		if ( wipe_clean_is_reviews_frontend_context() ) {
+			$actions[] = wipe_clean_get_reviews_archive_settings_action();
+
+			$actions[] = array(
+				'label'       => 'Все отзывы',
+				'url'         => admin_url( 'edit.php?post_type=' . wipe_clean_get_reviews_post_type() ),
+				'description' => 'Открыть список всех отзывов.',
+				'variant'     => 'list',
+			);
+
+			$actions[] = array(
+				'label'       => 'Новый отзыв',
+				'url'         => admin_url( 'post-new.php?post_type=' . wipe_clean_get_reviews_post_type() ),
+				'description' => 'Создать новый отзыв и выбрать его тип.',
+				'variant'     => 'edit',
+			);
+		}
+
+		if ( wipe_clean_is_promotions_frontend_context() ) {
+			$actions[] = wipe_clean_get_promotions_archive_settings_action();
+
+			$actions[] = array(
+				'label'       => 'Все акции',
+				'url'         => admin_url( 'edit.php?post_type=' . wipe_clean_get_promotions_post_type() ),
+				'description' => 'Открыть список всех акций.',
+				'variant'     => 'list',
+			);
+
+			$actions[] = array(
+				'label'       => 'Новая акция',
+				'url'         => admin_url( 'post-new.php?post_type=' . wipe_clean_get_promotions_post_type() ),
+				'description' => 'Создать новую акцию для карточки и всплывающего окна.',
+				'variant'     => 'edit',
+			);
+		}
+
+		return wipe_clean_normalize_editor_toolbar_actions( $actions );
+	}
+}
+
+if ( ! function_exists( 'wipe_clean_register_archive_edit_admin_bar_node' ) ) {
+	function wipe_clean_register_archive_edit_admin_bar_node( $wp_admin_bar ) {
+		if ( is_admin() || ! wipe_clean_can_use_editor_toolbar() || ! is_admin_bar_showing() || ! $wp_admin_bar instanceof WP_Admin_Bar ) {
 			return;
 		}
 
-		const toggle = root.querySelector('[data-admin-tools-toggle]');
-		const panel = root.querySelector('[data-admin-tools-panel]');
+		$action = wipe_clean_get_archive_admin_bar_action();
 
-		if (!toggle || !panel) {
+		if ( empty( $action['url'] ) ) {
 			return;
 		}
 
-		root.dataset.adminToolsReady = 'true';
-
-		function setOpen(nextState) {
-			root.classList.toggle('is-open', nextState);
-			toggle.setAttribute('aria-expanded', nextState ? 'true' : 'false');
-			panel.setAttribute('aria-hidden', nextState ? 'false' : 'true');
+		if ( method_exists( $wp_admin_bar, 'get_node' ) && $wp_admin_bar->get_node( 'edit' ) ) {
+			return;
 		}
 
-		toggle.addEventListener('click', function () {
-			setOpen(!root.classList.contains('is-open'));
-		});
-
-		document.addEventListener('click', function (event) {
-			if (!root.contains(event.target)) {
-				setOpen(false);
-			}
-		});
-
-		document.addEventListener('keydown', function (event) {
-			if (event.key === 'Escape') {
-				setOpen(false);
-			}
-		});
+		$wp_admin_bar->add_node(
+			array(
+				'id'    => 'edit',
+				'title' => 'Редактировать архив',
+				'href'  => $action['url'],
+				'meta'  => array(
+					'title' => $action['description'] ?? 'Открыть редактор архива.',
+				),
+			)
+		);
 	}
-
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initAdminTools, { once: true });
-	} else {
-		initAdminTools();
-	}
-})();
-JS;
-
-	wp_add_inline_script( 'wipe-clean-editor-shortcuts', $js );
 }
-add_action( 'wp_enqueue_scripts', 'wipe_clean_enqueue_editor_shortcuts_assets', 20 );
+add_action( 'admin_bar_menu', 'wipe_clean_register_archive_edit_admin_bar_node', 80 );
 
-/**
- * Render floating front-end toolbar.
- *
- * @return void
- */
-function wipe_clean_render_frontend_tools() {
-	if ( ! wipe_clean_can_access_frontend_tools() ) {
-		return;
+if ( ! function_exists( 'wipe_clean_register_leads_admin_bar_node' ) ) {
+	function wipe_clean_register_leads_admin_bar_node( $wp_admin_bar ) {
+		if ( ! wipe_clean_can_use_editor_toolbar() || ! is_admin_bar_showing() || ! $wp_admin_bar instanceof WP_Admin_Bar ) {
+			return;
+		}
+
+		$action = wipe_clean_get_leads_hub_action();
+
+		if ( empty( $action['url'] ) ) {
+			return;
+		}
+
+		$wp_admin_bar->add_node(
+			array(
+				'id'    => 'wipe-clean-leads',
+				'title' => 'Заявки',
+				'href'  => $action['url'],
+				'meta'  => array(
+					'title' => $action['description'] ?? 'Открыть хаб заявок.',
+				),
+			)
+		);
 	}
+}
+add_action( 'admin_bar_menu', 'wipe_clean_register_leads_admin_bar_node', 81 );
 
-	$actions       = wipe_clean_get_frontend_tools_actions();
-	$context_label = wipe_clean_get_frontend_tools_context_label();
-	$panel_id      = 'wipe-clean-admin-tools-panel';
-	?>
-	<div class="wipe-clean-admin-tools" data-admin-tools>
-		<div class="wipe-clean-admin-tools__panel" id="<?php echo esc_attr( $panel_id ); ?>" data-admin-tools-panel aria-hidden="true">
-			<div class="wipe-clean-admin-tools__panel-head">
-				<div>
-					<span class="wipe-clean-admin-tools__title"><?php esc_html_e( 'Быстрые действия сайта', 'wipe-clean' ); ?></span>
-					<span class="wipe-clean-admin-tools__subtitle"><?php esc_html_e( 'Быстрый переход к редактированию текущей страницы и панели управления.', 'wipe-clean' ); ?></span>
+if ( ! function_exists( 'wipe_clean_render_editor_toolbar' ) ) {
+	function wipe_clean_render_editor_toolbar() {
+		if ( ! wipe_clean_can_use_editor_toolbar() ) {
+			return;
+		}
+
+		$actions = wipe_clean_get_editor_toolbar_actions();
+
+		if ( empty( $actions ) ) {
+			return;
+		}
+
+		$context = wipe_clean_get_editor_toolbar_context();
+		?>
+		<div class="wipe-admin-dock" data-wipe-admin-dock>
+			<div class="wipe-admin-dock__panel" id="wipe-admin-dock-panel" data-wipe-admin-dock-panel hidden>
+				<div class="wipe-admin-dock__panel-orb wipe-admin-dock__panel-orb--a" aria-hidden="true"></div>
+				<div class="wipe-admin-dock__panel-orb wipe-admin-dock__panel-orb--b" aria-hidden="true"></div>
+				<div class="wipe-admin-dock__head">
+					<div class="wipe-admin-dock__eyebrow"><?php echo esc_html( (string) ( $context['eyebrow'] ?? 'Админка' ) ); ?></div>
+					<div class="wipe-admin-dock__title"><?php echo esc_html( (string) ( $context['title'] ?? 'Быстрые действия' ) ); ?></div>
+					<div class="wipe-admin-dock__line" aria-hidden="true"></div>
 				</div>
-				<span class="wipe-clean-admin-tools__context"><?php echo esc_html( $context_label ); ?></span>
+				<div class="wipe-admin-dock__actions">
+					<?php foreach ( $actions as $index => $action ) : ?>
+						<a class="wipe-admin-dock__action wipe-admin-dock__action--<?php echo esc_attr( (string) ( $action['variant'] ?? 'default' ) ); ?>" href="<?php echo esc_url( (string) $action['url'] ); ?>" style="--wipe-admin-action-index:<?php echo esc_attr( (string) $index ); ?>;">
+							<span class="wipe-admin-dock__action-mark" aria-hidden="true"></span>
+							<span class="wipe-admin-dock__action-copy">
+								<span class="wipe-admin-dock__action-title"><?php echo esc_html( (string) $action['label'] ); ?></span>
+								<?php if ( ! empty( $action['description'] ) ) : ?>
+									<span class="wipe-admin-dock__action-text"><?php echo esc_html( (string) $action['description'] ); ?></span>
+								<?php endif; ?>
+							</span>
+						</a>
+					<?php endforeach; ?>
+				</div>
 			</div>
 
-			<div class="wipe-clean-admin-tools__list">
-				<?php foreach ( $actions as $action ) : ?>
-					<a class="wipe-clean-admin-tools__action wipe-clean-admin-tools__action--<?php echo esc_attr( (string) ( $action['variant'] ?? 'secondary' ) ); ?>" href="<?php echo esc_url( (string) $action['url'] ); ?>"<?php echo ! empty( $action['target'] ) ? ' target="' . esc_attr( (string) $action['target'] ) . '"' : ''; ?>>
-						<span class="wipe-clean-admin-tools__action-icon" aria-hidden="true">
-							<?php echo wipe_clean_get_frontend_tools_icon_markup( (string) ( $action['icon'] ?? '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						</span>
-						<span class="wipe-clean-admin-tools__action-body">
-							<span class="wipe-clean-admin-tools__action-label"><?php echo esc_html( (string) $action['label'] ); ?></span>
-							<span class="wipe-clean-admin-tools__action-description"><?php echo esc_html( (string) $action['description'] ); ?></span>
-						</span>
-						<span class="wipe-clean-admin-tools__action-arrow" aria-hidden="true">
-							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-						</span>
-					</a>
-				<?php endforeach; ?>
-			</div>
+			<button class="wipe-admin-dock__trigger" type="button" data-wipe-admin-dock-toggle aria-expanded="false" aria-controls="wipe-admin-dock-panel">
+				<span class="wipe-admin-dock__trigger-shine" aria-hidden="true"></span>
+				<span class="wipe-admin-dock__trigger-badge" aria-hidden="true">WC</span>
+				<span class="wipe-admin-dock__trigger-copy">
+					<span class="wipe-admin-dock__trigger-eyebrow"><?php echo esc_html( (string) ( $context['eyebrow'] ?? 'Админка' ) ); ?></span>
+					<span class="wipe-admin-dock__trigger-title">Быстрое меню</span>
+				</span>
+			</button>
 		</div>
+		<style>
+			.wipe-admin-dock{--dock-glow-x:76%;--dock-glow-y:18%;position:fixed;right:20px;bottom:20px;z-index:10000;display:grid;justify-items:end;gap:16px}
+			.wipe-admin-dock__trigger,.wipe-admin-dock__panel{position:relative;overflow:hidden}
+			.wipe-admin-dock__trigger{display:flex;align-items:center;gap:12px;min-height:72px;padding:12px 18px 12px 12px;border:0;border-radius:24px;background:
+				radial-gradient(circle at var(--dock-glow-x) var(--dock-glow-y),rgba(255,255,255,.95) 0,rgba(255,255,255,.6) 18%,rgba(255,255,255,0) 44%),
+				linear-gradient(145deg,rgba(255,255,255,.96) 0%,rgba(242,251,255,.94) 45%,rgba(223,246,252,.98) 100%);
+				box-shadow:0 20px 42px rgba(21,15,49,.16),0 0 0 1px rgba(64,165,193,.14),inset 0 1px 0 rgba(255,255,255,.85);
+				cursor:pointer;transform:translateZ(0);transition:transform .28s ease,box-shadow .28s ease,border-radius .28s ease;animation:wipeAdminFloat 4.2s ease-in-out infinite}
+			.wipe-admin-dock__trigger:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 28px 54px rgba(21,15,49,.2),0 0 0 1px rgba(64,165,193,.24),inset 0 1px 0 rgba(255,255,255,.92)}
+			.wipe-admin-dock__trigger-shine{position:absolute;inset:-120% auto auto -20%;width:68%;height:260%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.48) 42%,rgba(255,255,255,0) 100%);transform:rotate(16deg);animation:wipeAdminShine 4.8s ease-in-out infinite}
+			.wipe-admin-dock__trigger-badge{display:grid;place-items:center;width:46px;height:46px;border-radius:16px;background:linear-gradient(180deg,#2db2d7 0%,#0086b3 100%);box-shadow:0 10px 18px rgba(0,134,179,.28),inset 0 -2px 0 rgba(0,0,0,.08);color:#fff;font:800 14px/1 "Manrope",sans-serif;letter-spacing:.04em}
+			.wipe-admin-dock__trigger-copy{position:relative;display:grid;gap:3px;text-align:left}
+			.wipe-admin-dock__trigger-eyebrow{font:700 10px/1.1 "Manrope",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#40a5c1}
+			.wipe-admin-dock__trigger-title{font:800 15px/1.2 "Golos Text",sans-serif;color:#150f31}
+			.wipe-admin-dock__panel{width:min(408px,calc(100vw - 24px));padding:20px;border-radius:30px;background:
+				radial-gradient(circle at var(--dock-glow-x) var(--dock-glow-y),rgba(255,255,255,.94) 0%,rgba(255,255,255,.58) 18%,rgba(255,255,255,0) 46%),
+				linear-gradient(160deg,rgba(255,252,248,.98) 0%,rgba(252,255,255,.96) 55%,rgba(242,251,255,.98) 100%);
+				backdrop-filter:blur(20px);border:1px solid rgba(64,165,193,.16);box-shadow:0 28px 64px rgba(21,15,49,.22),inset 0 1px 0 rgba(255,255,255,.78);
+				transform-origin:100% 100%;opacity:0;transform:translateY(16px) scale(.94) rotateX(8deg);pointer-events:none}
+			.wipe-admin-dock__panel-orb{position:absolute;border-radius:999px;filter:blur(4px);pointer-events:none}
+			.wipe-admin-dock__panel-orb--a{top:-26px;right:-18px;width:108px;height:108px;background:radial-gradient(circle,rgba(64,165,193,.28) 0%,rgba(64,165,193,0) 72%)}
+			.wipe-admin-dock__panel-orb--b{left:-14px;bottom:18px;width:94px;height:94px;background:radial-gradient(circle,rgba(255,193,94,.24) 0%,rgba(255,193,94,0) 74%)}
+			.wipe-admin-dock.is-open .wipe-admin-dock__panel{opacity:1;transform:translateY(0) scale(1) rotateX(0);pointer-events:auto;transition:opacity .28s ease,transform .28s cubic-bezier(.2,.8,.2,1)}
+			.wipe-admin-dock__head{position:relative;display:grid;gap:6px;margin-bottom:16px;padding-right:24px}
+			.wipe-admin-dock__eyebrow{font:700 10px/1.1 "Manrope",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#40a5c1}
+			.wipe-admin-dock__title{font:800 22px/1.08 "Golos Text",sans-serif;color:#150f31;max-width:280px}
+			.wipe-admin-dock__line{width:84px;height:4px;border-radius:999px;background:linear-gradient(90deg,#2db2d7 0%,rgba(45,178,215,.2) 100%);box-shadow:0 8px 20px rgba(45,178,215,.24)}
+			.wipe-admin-dock__actions{display:grid;gap:11px}
+			.wipe-admin-dock__action{position:relative;display:grid;grid-template-columns:16px minmax(0,1fr);gap:13px;align-items:flex-start;padding:15px 16px;border-radius:22px;background:
+				linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(248,252,255,.98) 100%);
+				text-decoration:none;box-shadow:0 12px 24px rgba(21,15,49,.08),inset 0 1px 0 rgba(255,255,255,.76);
+				transform:translateY(14px) scale(.98);opacity:0;transition:transform .26s ease,box-shadow .26s ease,opacity .26s ease,background .26s ease;transition-delay:calc(var(--wipe-admin-action-index,0) * .045s)}
+			.wipe-admin-dock__action::after{content:"";position:absolute;inset:1px;border-radius:21px;background:radial-gradient(circle at 0% 0%,rgba(255,255,255,.55),rgba(255,255,255,0) 48%);opacity:.9;pointer-events:none}
+			.wipe-admin-dock.is-open .wipe-admin-dock__action{transform:translateY(0) scale(1);opacity:1}
+			.wipe-admin-dock__action:hover{transform:translateY(-3px) scale(1.01);box-shadow:0 18px 30px rgba(21,15,49,.12),inset 0 1px 0 rgba(255,255,255,.84)}
+			.wipe-admin-dock__action-mark{display:block;width:16px;height:16px;margin-top:4px;border-radius:999px;background:linear-gradient(180deg,#40a5c1 0%,#0086b3 100%);box-shadow:0 0 0 6px rgba(64,165,193,.12),0 8px 14px rgba(0,134,179,.16)}
+			.wipe-admin-dock__action--edit .wipe-admin-dock__action-mark{background:linear-gradient(180deg,#6c7bff 0%,#4150dd 100%);box-shadow:0 0 0 6px rgba(65,80,221,.12),0 8px 14px rgba(65,80,221,.16)}
+			.wipe-admin-dock__action--settings .wipe-admin-dock__action-mark{background:linear-gradient(180deg,#f5a623 0%,#db8500 100%);box-shadow:0 0 0 6px rgba(245,166,35,.14),0 8px 14px rgba(219,133,0,.16)}
+			.wipe-admin-dock__action--admin .wipe-admin-dock__action-mark{background:linear-gradient(180deg,#150f31 0%,#32275e 100%);box-shadow:0 0 0 6px rgba(21,15,49,.12),0 8px 14px rgba(21,15,49,.16)}
+			.wipe-admin-dock__action-copy{display:grid;gap:4px;min-width:0}
+			.wipe-admin-dock__action-title{font:800 15px/1.18 "Golos Text",sans-serif;color:#150f31}
+			.wipe-admin-dock__action-text{font:500 12px/1.45 "Manrope",sans-serif;color:#5d5779}
+			@keyframes wipeAdminFloat{
+				0%,100%{transform:translateY(0)}
+				50%{transform:translateY(-3px)}
+			}
+			@keyframes wipeAdminShine{
+				0%,18%,100%{transform:translateX(-120%) rotate(16deg)}
+				34%,62%{transform:translateX(190%) rotate(16deg)}
+			}
+			@media (prefers-reduced-motion:reduce){
+				.wipe-admin-dock__trigger,.wipe-admin-dock__action,.wipe-admin-dock__panel{animation:none;transition:none}
+				.wipe-admin-dock__trigger-shine{display:none}
+			}
+			@media (max-width:767px){
+				.wipe-admin-dock{right:12px;left:12px;bottom:12px;justify-items:stretch}
+				.wipe-admin-dock__panel{width:100%}
+				.wipe-admin-dock__trigger{justify-content:flex-start}
+			}
+		</style>
+		<script>
+			(function(){
+				function initDock(){
+					var root=document.querySelector('[data-wipe-admin-dock]');
+					if(!root){return;}
 
-		<button class="wipe-clean-admin-tools__toggle" type="button" data-admin-tools-toggle aria-expanded="false" aria-controls="<?php echo esc_attr( $panel_id ); ?>">
-			<span class="wipe-clean-admin-tools__toggle-glyph" aria-hidden="true">
-				<?php echo wipe_clean_get_frontend_tools_icon_markup( 'spark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			</span>
-			<span class="wipe-clean-admin-tools__toggle-copy">
-				<span class="wipe-clean-admin-tools__toggle-title"><?php esc_html_e( 'Инструменты', 'wipe-clean' ); ?></span>
-				<span class="wipe-clean-admin-tools__toggle-hint"><?php esc_html_e( 'Админ-быстрые действия', 'wipe-clean' ); ?></span>
-			</span>
-			<span class="wipe-clean-admin-tools__toggle-chevron" aria-hidden="true">
-				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</span>
-		</button>
-	</div>
-	<?php
+					var toggle=root.querySelector('[data-wipe-admin-dock-toggle]');
+					var panel=root.querySelector('[data-wipe-admin-dock-panel]');
+					var hideTimer=0;
+
+					if(!toggle||!panel){return;}
+
+					var setGlow=function(event){
+						var rect=(event.currentTarget||root).getBoundingClientRect();
+						var x=((event.clientX-rect.left)/Math.max(rect.width,1))*100;
+						var y=((event.clientY-rect.top)/Math.max(rect.height,1))*100;
+						root.style.setProperty('--dock-glow-x',x.toFixed(2)+'%');
+						root.style.setProperty('--dock-glow-y',y.toFixed(2)+'%');
+					};
+
+					var openPanel=function(){
+						window.clearTimeout(hideTimer);
+						panel.hidden=false;
+						requestAnimationFrame(function(){
+							root.classList.add('is-open');
+							toggle.setAttribute('aria-expanded','true');
+						});
+					};
+
+					var closePanel=function(){
+						root.classList.remove('is-open');
+						toggle.setAttribute('aria-expanded','false');
+						window.clearTimeout(hideTimer);
+						hideTimer=window.setTimeout(function(){
+							if(!root.classList.contains('is-open')){
+								panel.hidden=true;
+							}
+						},280);
+					};
+
+					toggle.addEventListener('click',function(event){
+						event.preventDefault();
+						if(root.classList.contains('is-open')){
+							closePanel();
+							return;
+						}
+						openPanel();
+					});
+
+					toggle.addEventListener('pointermove',setGlow);
+					panel.addEventListener('pointermove',setGlow);
+
+					document.addEventListener('click',function(event){
+						if(!root.contains(event.target)){
+							closePanel();
+						}
+					});
+
+					document.addEventListener('keydown',function(event){
+						if(event.key==='Escape'){
+							closePanel();
+						}
+					});
+				}
+
+				if(document.readyState==='loading'){
+					document.addEventListener('DOMContentLoaded',initDock,{once:true});
+				}else{
+					initDock();
+				}
+			})();
+		</script>
+		<?php
+	}
 }
-add_action( 'wp_footer', 'wipe_clean_render_frontend_tools', 30 );
+add_action( 'wp_footer', 'wipe_clean_render_editor_toolbar', 999 );
+
+if ( ! function_exists( 'wipe_clean_create_services_archive_page' ) ) {
+	function wipe_clean_create_services_archive_page() {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_die( esc_html__( 'Недостаточно прав для выполнения действия.', 'wipe-clean' ) );
+		}
+
+		$url = function_exists( 'wipe_clean_get_services_archive_settings_url' )
+			? wipe_clean_get_services_archive_settings_url()
+			: '';
+
+		wp_safe_redirect( $url ? $url : admin_url() );
+		exit;
+	}
+}
+add_action( 'admin_post_wipe_clean_create_services_archive_page', 'wipe_clean_create_services_archive_page' );

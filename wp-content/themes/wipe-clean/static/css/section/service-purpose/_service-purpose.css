@@ -31,7 +31,7 @@
 @media (max-width: 650px) {
   .service-purpose {
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 1px;
   }
 }
 .service-purpose__wrapper {

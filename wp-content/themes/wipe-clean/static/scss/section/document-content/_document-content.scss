@@ -1,0 +1,35 @@
+@use "../../global/core" as *;
+
+.document-content {
+    @include first-screen-padding(112px, 50px, 88px, 44px, 88px, 25px);
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__title {
+        max-width: 1320px;
+
+        @include below-mobile {
+            font-size: 32px;
+        }
+    }
+
+    &__body {
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+
+        p {
+            max-width: 1320px;
+        }
+    }
+}
+

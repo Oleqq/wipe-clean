@@ -14,6 +14,7 @@ export const registerTeamPreviewSwiper = () => {
             spaceBetween: 16,
             slidesPerView: 1.2,
             watchOverflow: true,
+            loop: true,
             resistanceRatio: 0.75,
             navigation: nextEl && prevEl ? {
                 nextEl,

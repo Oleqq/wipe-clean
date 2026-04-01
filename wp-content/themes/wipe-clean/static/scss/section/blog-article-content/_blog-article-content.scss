@@ -1,0 +1,19 @@
+@use "../../global/core" as *;
+
+.blog-article-content {
+    @include section-padding(30px, 50px, 25px, 44px, 20px, 25px);
+
+    &__wrapper {
+        display: grid;
+    }
+
+    &__article {
+        width: min(100%, 874px);
+        margin: 0 auto;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+}
+

@@ -276,6 +276,7 @@ function wipe_clean_seed_front_page_service_posts() {
 			array(
 				'post_title'   => (string) ( $item['title'] ?? '' ),
 				'post_content' => '',
+				'menu_order'   => (int) ( $item['home_order'] ?? 0 ),
 			)
 		);
 
@@ -283,28 +284,18 @@ function wipe_clean_seed_front_page_service_posts() {
 			continue;
 		}
 
-		$layers = array();
+		$image    = $item['image'] ?? array();
+		$image_id = 0;
 
-		foreach ( (array) ( $item['layers'] ?? array() ) as $layer ) {
-			$image_path = (string) ( $layer['image_path'] ?? '' );
-			$image_id   = $image_path ? wipe_clean_import_theme_asset_attachment( $image_path, (string) ( $item['title'] ?? '' ) ) : 0;
-
-			if ( ! $image_id ) {
-				continue;
-			}
-
-			$layers[] = array(
-				'image'    => $image_id,
-				'modifier' => (string) ( $layer['modifier'] ?? 'fill' ),
-			);
+		if ( is_array( $image ) && ! empty( $image['path'] ) ) {
+			$image_id = wipe_clean_import_theme_asset_attachment( (string) $image['path'], (string) ( $item['title'] ?? '' ) );
 		}
 
-		update_field( 'card_price', (string) ( $item['price'] ?? '' ), $post_id );
-		update_field( 'show_on_home', 1, $post_id );
-		update_field( 'home_group', (string) ( $item['home_group'] ?? 'featured' ), $post_id );
-		update_field( 'home_order', (int) ( $item['home_order'] ?? 10 ), $post_id );
-		update_field( 'card_variant', (string) ( $item['card_variant'] ?? 'standard' ), $post_id );
-		update_field( 'card_layers', $layers, $post_id );
+		update_field( 'service_price_value', (string) ( $item['price'] ?? '' ), $post_id );
+
+		if ( $image_id ) {
+			set_post_thumbnail( $post_id, $image_id );
+		}
 
 		$post_ids[] = $post_id;
 	}

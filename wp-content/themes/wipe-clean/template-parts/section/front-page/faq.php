@@ -13,8 +13,40 @@ $mobile_open       = isset( $section['mobile_initial_open_index'] ) ? (int) $sec
 $desktop_columns   = array_chunk( $items, (int) ceil( max( count( $items ), 1 ) / 2 ) );
 $icon_uri          = wipe_clean_asset_uri( 'static/images/ui/corner-right-down.svg' );
 $faq_heading_class = ! empty( $section['title'] ) ? 'faq__head' : 'faq__head faq__head--hidden';
+$format_answer     = static function ( $answer ) {
+	return function_exists( 'wipe_clean_format_rich_text' )
+		? wipe_clean_format_rich_text( (string) $answer )
+		: wpautop( esc_html( (string) $answer ) );
+};
+$primary_action_raw = $section['primary_action'] ?? array();
 
-$render_faq_item = static function ( $item, $index, $prefix, $is_open ) use ( $icon_uri ) {
+if ( empty( $primary_action_raw ) && ! empty( $section['action'] ) && is_array( $section['action'] ) ) {
+	$primary_action_raw = array(
+		'url'    => (string) ( $section['action']['href'] ?? '' ),
+		'title'  => (string) ( $section['action']['label'] ?? '' ),
+		'target' => (string) ( $section['action']['target'] ?? '' ),
+	);
+}
+
+$primary_action    = wipe_clean_resolve_link( $primary_action_raw );
+$modifier          = sanitize_html_class( (string) ( $section['modifier'] ?? '' ) );
+$section_classes   = array( 'faq' );
+
+if ( '' !== $modifier ) {
+	$section_classes[] = 'faq--' . $modifier;
+}
+
+if ( ! empty( $section['class_name'] ) ) {
+	foreach ( preg_split( '/\s+/', (string) $section['class_name'] ) as $class_name ) {
+		$class_name = sanitize_html_class( $class_name );
+
+		if ( '' !== $class_name ) {
+			$section_classes[] = $class_name;
+		}
+	}
+}
+
+$render_faq_item = static function ( $item, $index, $prefix, $is_open ) use ( $icon_uri, $format_answer ) {
 	$question_id = $prefix . '-question-' . $index;
 	$answer_id   = $prefix . '-answer-' . $index;
 	?>
@@ -27,14 +59,14 @@ $render_faq_item = static function ( $item, $index, $prefix, $is_open ) use ( $i
 		</button>
 		<div class="faq__answer"<?php echo $is_open ? '' : ' hidden'; ?> id="<?php echo esc_attr( $answer_id ); ?>" role="region" aria-labelledby="<?php echo esc_attr( $question_id ); ?>" aria-hidden="<?php echo $is_open ? 'false' : 'true'; ?>" data-faq-answer>
 			<div class="faq__answer-inner">
-				<p class="faq__answer-text"><?php echo esc_html( $item['answer'] ?? '' ); ?></p>
+				<div class="faq__answer-text"><?php echo $format_answer( $item['answer'] ?? '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 			</div>
 		</div>
 	</div>
 	<?php
 };
 ?>
-<section class="faq">
+<section class="<?php echo esc_attr( implode( ' ', array_unique( $section_classes ) ) ); ?>">
 	<div class="_container">
 		<div class="faq__wrapper">
 			<div class="<?php echo esc_attr( $faq_heading_class ); ?>">
@@ -63,6 +95,12 @@ $render_faq_item = static function ( $item, $index, $prefix, $is_open ) use ( $i
 					<?php $render_faq_item( $item, $index, 'faq-mobile', $index === $mobile_open ); ?>
 				<?php endforeach; ?>
 			</div>
+
+			<?php if ( ! empty( $primary_action['url'] ) ) : ?>
+				<a class="ui-btn ui-btn--primary faq__action" href="<?php echo esc_url( $primary_action['url'] ); ?>"<?php echo ! empty( $primary_action['target'] ) ? ' target="' . esc_attr( $primary_action['target'] ) . '"' : ''; ?>>
+					<span class="ui-btn__content"><?php echo esc_html( $primary_action['title'] ); ?></span>
+				</a>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

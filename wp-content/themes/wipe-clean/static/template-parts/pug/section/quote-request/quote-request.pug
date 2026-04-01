@@ -1,0 +1,24 @@
+section.quote-request
+    ._container
+        .quote-request__wrapper
+            .quote-request__visual(aria-hidden="true")
+                .quote-request__visual-media
+                    img(src="/static/images/section/quote-request/Mask group.png" alt="")
+            .quote-request__content
+                .quote-request__head.ui-section-head.ui-section-head--compact
+                    h2.quote-request__title.ui-title Рассчитайте стоимость клининга в Москве уже сейчас
+                    p.quote-request__text.ui-text Оставьте заявку, и наш менеджер свяжется с вами в течение 5–15 минут, уточнит детали и рассчитает точную стоимость клининговых услуг под вашу задачу.
+                form.quote-request__form.ui-form(action="#" method="post" novalidate)
+                    .quote-request__fields
+                        .ui-field.quote-request__field
+                            label.ui-field__label(for="quote-request-name") Ваше имя
+                            input#quote-request-name(type="text" name="name" placeholder="Введите имя и фамилию")
+                        .ui-field.quote-request__field
+                            label.ui-field__label(for="quote-request-phone") Номер телефона
+                            input#quote-request-phone(type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _")
+                    .quote-request__fields
+                        label.ui-checkbox.quote-request__checkbox
+                            input.ui-checkbox__input(type="checkbox" name="agreement")
+                            span.ui-checkbox__label Заполняя форму вы даете согласие на обработку персональных данных
+                        button.ui-btn.ui-btn--primary.ui-btn--full.quote-request__submit(type="submit")
+                            span.ui-btn__content Узнать стоимость клининга

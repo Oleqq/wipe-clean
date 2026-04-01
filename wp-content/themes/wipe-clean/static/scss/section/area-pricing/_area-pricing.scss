@@ -1,0 +1,297 @@
+@use "../../global/core" as *;
+
+.area-pricing {
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+
+    &__wrapper {
+        display: grid;
+        gap: 40px;
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: minmax(0, 650px) minmax(0, 707px);
+        grid-template-areas:
+            "visual head"
+            "visual list";
+        align-items: start;
+        justify-content: space-between;
+        column-gap: 13px;
+        row-gap: 24px;
+
+        @include below-desktop {
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+            column-gap: 32px;
+            row-gap: 20px;
+        }
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "head"
+                "visual"
+                "list";
+            row-gap: 20px;
+        }
+    }
+
+    &__head {
+        grid-area: head;
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
+    &__visual {
+        grid-area: visual;
+        position: relative;
+        width: 100%;
+        padding-bottom: 23px;
+        align-self: end;
+        justify-self: start;
+
+        @include below-tablet {
+            width: min(100%, 420px);
+            margin: 0 auto;
+            padding-bottom: 11px;
+            align-self: start;
+        }
+
+        @include below-mobile {
+            margin: 0 auto -42px;
+            padding-bottom: 0;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        // &::before {
+        //     top: 5px;
+        //     left: 13.7%;
+        //     width: 77.37%;
+        //     aspect-ratio: 549 / 526;
+        //     border-radius: 32px;
+        //     background: linear-gradient(180deg, rgba(27, 158, 116, 0.18) 0%, rgba(40, 183, 137, 0.08) 100%);
+        //     opacity: 0.5;
+        //     transform: rotate(15deg);
+        //     transform-origin: center;
+
+        //     @include below-mobile {
+        //         top: 0;
+        //         left: 17.1%;
+        //         width: 79.44%;
+        //         border-radius: 20px;
+        //     }
+        // }
+
+        &::after {
+            bottom: 0;
+            left: 7.21%;
+            width: 79.17%;
+            height: 33.53%;
+            border-radius: 50%;
+            background: rgba(202, 234, 224, 0.8);
+            filter: blur(18px);
+            opacity: 0.65;
+
+            @include below-mobile {
+                left: 17.5%;
+                width: 67.37%;
+                height: 29.17%;
+                filter: blur(12px);
+            }
+        }
+    }
+
+    &__visual-media {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 707 / 687;
+        border-radius: 24px;
+
+        @include below-mobile {
+            aspect-ratio: 306 / 298;
+            border-radius: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        color: $color-heading-hero-start;
+
+        @include below-mobile {
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &__text {
+        color: rgba($color-heading-hero-start, 0.8);
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__list {
+        grid-area: list;
+        gap: 8px;
+        padding: 20px;
+        border-width: 1px;
+        border-radius: $radius-lg;
+        position: relative;
+        z-index: 2;
+
+        @include below-mobile {
+            margin-top: -10px;
+            padding: 12px;
+            border-radius: $radius-xl;
+        }
+    }
+
+    &__row {
+        gap: 24px;
+        padding: 0 0 12px;
+        border-bottom-color: rgba($color-heading-hero-start, 0.2);
+
+        @include below-mobile {
+            align-items: flex-start;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__label,
+    &__value {
+        font-family: $font-body;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__label {
+        color: $color-heading-hero-start;
+
+        @include below-mobile {
+            // max-width: 162px;
+        }
+    }
+
+    &__value {
+        flex-shrink: 0;
+        background: none;
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        color: #22aa7f;
+        text-align: right;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+        }
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__card {
+        gap: 16px;
+        min-height: 217px;
+        padding: 20px;
+        border-width: 1px;
+        border-radius: $radius-lg;
+
+        @include below-mobile {
+            min-height: 0;
+            gap: 10px;
+            padding: 16px;
+        }
+    }
+
+    &__card-title {
+        margin: 0;
+        color: $color-heading-hero-start;
+        font-family: $font-heading;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+
+        @include below-mobile {
+            font-size: 20px;
+        }
+    }
+
+    &__card-text {
+        color: rgba($color-heading-hero-start, 0.8);
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__card-accents {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px 40px;
+
+        @include below-mobile {
+            display: grid;
+            gap: 8px;
+        }
+    }
+
+    &__card-accent {
+        margin: 0;
+        background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-family: $font-body;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+
+        @include below-mobile {
+            font-size: 16px;
+            letter-spacing: -0.04em;
+        }
+    }
+}
+

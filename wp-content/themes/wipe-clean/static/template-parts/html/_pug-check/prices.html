@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wipe Clean</title>
+    <link rel="preload" href="/static/fonts/Involve-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/static/css/vendor/fancybox.css">
+    <link rel="stylesheet" href="/static/css/vendor/swiper-bundle.css">
+    <link rel="stylesheet" href="/static/css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="_container">
+        <div class="header__wrapper"><a class="header__brand" href="index.html" aria-label="На главную"><span class="header__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="header__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+          <nav class="header__nav" id="header-nav" data-header-nav aria-label="Основная навигация">
+            <button class="header__nav-backdrop" type="button" data-header-close aria-label="Закрыть меню"></button>
+            <div class="header__nav-panel">
+              <ul class="header__menu">
+                <li class="header__item"><a class="header__link" href="about-us.html" data-header-link>О компании</a></li>
+                <li class="header__item header__item--has-children" data-header-item>
+                  <div class="header__item-row"><a class="header__link header__link--parent" href="services.html" data-header-link data-header-parent-link>Услуги</a>
+                    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="header-services-submenu" aria-label="Показать подменю раздела Услуги" data-header-submenu-toggle>
+                          <svg class="header__submenu-toggle-icon" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M2 2L8 6L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                    </button>
+                  </div>
+                  <div class="header__submenu" id="header-services-submenu" data-header-submenu aria-hidden="true">
+                    <div class="header__submenu-panel">
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Поддерживающая уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Срочная уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="apartment-cleaning.html" data-header-link><span class="header__submenu-link-text">Уборка квартир</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка домов и коттеджей</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка квартир по суточно</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                      <ul class="header__submenu-column">
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Мытьё окон</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка офисов</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Генеральная уборка</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                        <li class="header__submenu-item"><a class="header__submenu-link" href="services.html" data-header-link><span class="header__submenu-link-text">Уборка после ремонта</span><span class="header__submenu-arrow">
+                                  <svg class="header__submenu-arrow-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M21 2L28 9L21 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M2 9H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item"><a class="header__link" href="prices.html" data-header-link>Цены</a></li>
+                <li class="header__item"><a class="header__link" href="promotions.html" data-header-link>Акции</a></li>
+                <li class="header__item"><a class="header__link" href="reviews.html" data-header-link>Отзывы</a></li>
+                <li class="header__item"><a class="header__link" href="contacts.html" data-header-link>Контакты</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="blog.html" data-header-link>Блог</a></li>
+                <li class="header__item header__item--desktop-hidden"><a class="header__link" href="faq.html" data-header-link>FAQ</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="header__actions"><a class="ui-btn ui-btn--primary ui-btn--icon header__phone" href="tel:+79801636101" aria-label="Позвонить"><span class="ui-btn__content"><span class="header__action-icon">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M22 20.2448V23.667C22 24.2858 21.7542 24.8793 21.3167 25.3167C20.8793 25.7542 20.2858 26 19.667 26C15.2332 25.7304 10.9848 23.8476 7.81016 20.673C4.63555 17.4983 2.75276 13.2499 2.48315 8.81616C2.48315 8.19735 2.72899 7.60389 3.16642 7.16644C3.60386 6.729 4.19731 6.48315 4.81612 6.48315H8.23831C8.65696 6.47904 9.06282 6.6286 9.37925 6.90325C9.69567 7.17789 9.90063 7.55849 9.95565 7.97353C10.0583 8.7517 10.2488 9.51583 10.523 10.2511C10.6378 10.557 10.6642 10.889 10.599 11.2092C10.5338 11.5294 10.3796 11.8248 10.1541 12.0614L8.70538 13.5101C10.3298 16.3668 12.6991 18.7361 15.5558 20.3605L17.0045 18.9118C17.2411 18.6863 17.5365 18.5321 17.8567 18.4669C18.1769 18.4017 18.5089 18.4281 18.8148 18.5429C19.5501 18.8171 20.3142 19.0076 21.0924 19.1103C21.5115 19.166 21.8954 19.375 22.1704 19.6973C22.4453 20.0197 22.5928 20.432 22.5854 20.855L22 20.2448Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></span></a><a class="ui-btn ui-btn--primary header__cta" href="contacts.html"><span class="ui-btn__content">Связаться с нами</span></a>
+            <button class="ui-btn ui-btn--primary ui-btn--icon header__menu-toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="Открыть меню" data-header-toggle><span class="ui-btn__content"><span class="header__action-icon header__action-icon--menu">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 14H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M4 20H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span><span class="header__action-icon header__action-icon--close">
+                      <svg class="header__action-icon-svg" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 8L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M20 8L8 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg></span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="prices-page">
+        <section class="prices-hero">
+          <div class="_container">
+            <div class="prices-hero__wrapper">
+              <div class="prices-hero__head ui-section-head"><span class="ui-kicker prices-hero__kicker">Цены наших услуг</span>
+                <h1 class="ui-title ui-title--hero prices-hero__title">Стоимость клининговых услуг для квартир и домов</h1>
+                <p class="ui-text prices-hero__text">Обеспечить комфорт в жилых помещениях Москвы станет намного проще, если изучить прозрачные цены на клининговых услуг без лишних наценок. Наши эксперты возьмут на себя рутину, гарантируя по-настоящему качественный клининг в каждой квартире.</p><a class="ui-btn prices-hero__action ui-btn--primary" href="#"><span class="ui-btn__content">Рассчитать стоимость уборки</span></a>
+              </div>
+              <div class="prices-hero__media" aria-hidden="true">
+                <div class="prices-hero__image prices-hero__image--left">
+                          <picture>
+                            <source type="image/webp" srcset="/static/webp-images/section/prices-hero/prices-hero-left-768.webp 768w, /static/webp-images/section/prices-hero/prices-hero-left-1536.webp 1536w" sizes="(max-width: 650px) 46vw, 20vw"><img src="/static/images/section/prices-hero/prices-hero-left.png" alt="" loading="eager" decoding="async" width="1536" height="1024" fetchpriority="high" srcset="/static/images/section/prices-hero/prices-hero-left-768.png 768w, /static/images/section/prices-hero/prices-hero-left.png 1536w" sizes="(max-width: 650px) 46vw, 20vw" aria-hidden="true">
+                          </picture>
+                </div>
+                <div class="prices-hero__image prices-hero__image--right">
+                          <picture>
+                            <source type="image/webp" srcset="/static/webp-images/section/prices-hero/prices-hero-right-768.webp 768w, /static/webp-images/section/prices-hero/prices-hero-right-1536.webp 1536w" sizes="(max-width: 650px) 46vw, 20vw"><img src="/static/images/section/prices-hero/prices-hero-right.png" alt="" loading="eager" decoding="async" width="1536" height="1024" fetchpriority="high" srcset="/static/images/section/prices-hero/prices-hero-right-768.png 768w, /static/images/section/prices-hero/prices-hero-right.png 1536w" sizes="(max-width: 650px) 46vw, 20vw" aria-hidden="true">
+                          </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="ui-wave-group">
+          <section class="services-preview services-preview--prices">
+            <div class="_container">
+              <div class="services-preview__wrapper">
+                <div class="services-preview__head ui-section-head ui-section-head--center">
+                  <h2 class="ui-title">Стоимость наведения порядка в Москве</h2>
+                  <p class="ui-text">Оформить заявку на чистоту в столице станет легче, если ориентироваться на открытый прайс без лишних комиссий. Наши доступные цены на уборку в Москве гарантируют вам профессиональный клининг, а продуманный подход строится на индивидуальном расчете стоимости.</p>
+                </div>
+                <div class="services-preview__grid services-preview__grid--featured"><a class="service-card service-card--lg" href="#" aria-label="Поддерживающая уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">Поддерживающая уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 3 500 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Срочная уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"></span><span class="service-card__body"><span class="service-card__title">Срочная уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 7 000 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Уборка квартир"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">Уборка квартир</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 10 000 ₽</span></span></span></a><a class="service-card service-card--lg" href="#" aria-label="Уборка домов и коттеджей"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"></span><span class="service-card__body"><span class="service-card__title">Уборка домов и коттеджей</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 17 000 ₽</span></span></span></a>
+                </div>
+                <div class="services-preview__grid services-preview__grid--secondary"><a class="service-card service-card--sm" href="#" aria-label="Уборка квартир по суточно"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">Уборка квартир по суточно</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 5 000 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Мытьё окон"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:3"></span><span class="service-card__body"><span class="service-card__title">Мытьё окон</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 2 500 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Уборка офисов"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-apartments.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-daily.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-office.png" alt="" style="--service-layer-order:4"></span><span class="service-card__body"><span class="service-card__title">Уборка офисов</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 19 000 ₽</span></span></span></a><a class="service-card service-card--sm" href="#" aria-label="Генеральная уборка"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"></span><span class="service-card__body"><span class="service-card__title">Генеральная уборка</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 12 000 ₽</span></span></span></a><a class="service-card service-card--sm service-card--after-repair" href="#" aria-label="Уборка после ремонта"><span class="service-card__media" aria-hidden="true"><img class="service-card__layer service-card__layer--shift-top" src="/static/images/services/service-preview-base.png" alt="" style="--service-layer-order:1"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-urgent.png" alt="" style="--service-layer-order:2"><img class="service-card__layer service-card__layer--shift-right" src="/static/images/services/service-preview-houses.png" alt="" style="--service-layer-order:3"><img class="service-card__layer service-card__layer--flip" src="/static/images/services/service-preview-windows.png" alt="" style="--service-layer-order:4"><img class="service-card__layer service-card__layer--overlay" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:5"><img class="service-card__layer service-card__layer--fill" src="/static/images/services/service-preview-after-repair.png" alt="" style="--service-layer-order:6"></span><span class="service-card__body"><span class="service-card__title">Уборка после ремонта</span><span class="service-card__meta"><span class="service-card__label">Цена:</span><span class="service-card__price">от 12 000 ₽</span></span></span></a>
+                </div>
+                <div class="ui-banner services-preview__note">
+                  <p class="ui-text services-preview__note-text">Итоговая стоимость зависит от площади помещения, необходимых услуг и индивидуальных предпочтений. Заполните заявку на сайте или свяжитесь с нами по телефону или в мессенджер, чтобы мы рассчитали стоимость клиринговых услуг.</p>
+                </div>
+                <div class="services-preview__actions"><a class="ui-btn ui-btn--primary ui-btn--full" href="#"><span class="ui-btn__content">Рассчитать стоимость уборки</span></a><a class="ui-btn ui-btn--secondary ui-btn--full" href="#"><span class="ui-btn__content">Все услуги</span></a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="area-pricing">
+            <div class="_container">
+              <div class="area-pricing__wrapper">
+                <div class="area-pricing__main">
+                  <div class="area-pricing__visual" aria-hidden="true">
+                    <div class="area-pricing__visual-media"><img src="/static/images/section/area-pricing/area-pricing-visual-placeholder.png" alt="Цены уборки в зависимости от метража жилья" loading="lazy"></div>
+                  </div>
+                  <div class="area-pricing__content">
+                    <div class="area-pricing__head ui-section-head ui-section-head--compact">
+                      <h2 class="area-pricing__title ui-title">Цены уборки в зависимости от метража жилья</h2>
+                      <p class="area-pricing__text ui-text">Цена зависит от указанных клиентом параметров: чем точнее размер, тем проще рассчитать стоимость уборки без лишних наценок. Мы учитываем планировку, предлагая честные цены клининговых услуг, а для больших объектов и клининга домовладений стоимость за квадрат выходит еще выгоднее.</p>
+                    </div>
+                    <ul class="area-pricing__list ui-price-list">
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Уборка квартир</span><span class="area-pricing__value ui-price-list__value">от 80 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Уборка домов и коттеджей</span><span class="area-pricing__value ui-price-list__value">от 80 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Уборка офисов</span><span class="area-pricing__value ui-price-list__value">от 30 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Генеральная уборка</span><span class="area-pricing__value ui-price-list__value">от 140 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Уборка после ремонта</span><span class="area-pricing__value ui-price-list__value">от 160 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Поддерживающая уборка</span><span class="area-pricing__value ui-price-list__value">от 80 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Срочная уборка</span><span class="area-pricing__value ui-price-list__value">от 140 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Уборка перед въездом / после переезда</span><span class="area-pricing__value ui-price-list__value">от 80 руб./м²</span></li>
+                      <li class="area-pricing__row ui-price-list__row"><span class="area-pricing__label ui-price-list__label">Мытьё окон</span><span class="area-pricing__value ui-price-list__value">от 300 руб./м²</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="area-pricing__cards">
+                  <div class="area-pricing__card ui-card ui-card--compact">
+                    <h3 class="area-pricing__card-title">Выезд в Московскую область</h3>
+                    <p class="area-pricing__card-text ui-text">Мы работаем не только в Москве, но и в Московской области. К стоимости заказа добавляется 500 рублей — эта сумма компенсирует транспортные расходы и логистику при выезде за МКАД. Так мы сохраняем высокое качество уборки вне зависимости от расстояния.</p>
+                    <p class="area-pricing__card-accent">Доплата 500 рублей к услуге</p>
+                  </div>
+                  <div class="area-pricing__card ui-card ui-card--compact">
+                    <h3 class="area-pricing__card-title">Крупный инвентарь: как организуем</h3>
+                    <p class="area-pricing__card-text ui-text">Бытовая химия входит в стоимость услуги. Для масштабных задач (пылесос, стремянка и подобное) предлагаем два варианта: использовать ваш инвентарь или наш. Доставка нашего оборудования стоит 3 000 рублей в Москве и 4 000 рублей в области. Точные условия оговариваем при бронировании.</p>
+                    <div class="area-pricing__card-accents">
+                      <p class="area-pricing__card-accent">По Москве - 3000 рублей</p>
+                      <p class="area-pricing__card-accent">По МО - 4000 рублей</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="price-factors">
+            <div class="_container">
+              <div class="price-factors__wrapper">
+                <div class="price-factors__head ui-section-head ui-section-head--compact">
+                  <h2 class="price-factors__title ui-title">Что влияет на цену за уборку</h2>
+                  <p class="price-factors__text ui-text">Многие клиенты задаются вопросом, из чего складывается итоговый чек уборки? Им интересно почему на одинаковые по площади объекты цена клининга часто различается. Мы всегда объясняем заказчикам, что все зависит от параметров жилплощади и специфики клининга, которые стоят перед нашими мастерами.</p>
+                </div>
+                <div class="price-factors__slider swiper" data-price-factors-swiper>
+                  <div class="price-factors__grid swiper-wrapper">
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">01</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Площадь помещения</h3>
+                                    <p class="number-card__text ui-text">Это фундаментальный критерий, от которого напрямую зависит время работы бригады и общее количество используемого инвентаря на выезде. Логично, что актуальные расценки на клининговые услуги для просторной студии и загородного особняка будут отличаться.</p>
+                                  </div>
+                                </article>
+                    </div>
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">02</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Тип уборки</h3>
+                                    <p class="number-card__text ui-text">Поддерживающий клининг обходится дешевле, тогда как генеральные работы или наведение порядка после стройки требуют гораздо больших ресурсов. Выбирая формат, помните, что итоговая стоимость клининга всегда коррелирует с глубиной и тщательностью очистки.</p>
+                                  </div>
+                                </article>
+                    </div>
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">03</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Уровень загрязнений</h3>
+                                    <p class="number-card__text ui-text">Если жилплощадь долго не убирали или требуется удаления сложных пятен, это значительно увеличивает общую трудоемкость процесса. Стоимость рассчитывается индивидуально и учитывает реальное состояние объекта, чтобы обеспечить честный клининг.</p>
+                                  </div>
+                                </article>
+                    </div>
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">04</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Количество санузлов</h3>
+                                    <p class="number-card__text ui-text">Данные зоны являются самыми сложными. Им требуется глубокая дезинфекция и борьба с известковым налетом на кафеле. Чем больше таких узлов в помещении, тем выше будет итоговая стоимость клининга в вашем конкретном случае при оформлении заказа.</p>
+                                  </div>
+                                </article>
+                    </div>
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">05</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Дополнительные работы</h3>
+                                    <p class="number-card__text ui-text">Химическая чистка мягкой обивки, мытье бытовой техники внутри или чистка жалюзи оплачиваются отдельно от основного выбранного пакета. Такие клининговые услуги цены, на которые зафиксированы в прайсе, позволяют гибко настроить индивидуальный расчёт.</p>
+                                  </div>
+                                </article>
+                    </div>
+                    <div class="price-factors__slide swiper-slide">
+                                <article class="number-card ui-card"><span class="number-card__number ui-title--number">06</span>
+                                  <div class="number-card__body">
+                                    <h3 class="number-card__title">Срочность</h3>
+                                    <p class="number-card__text ui-text">Если вам нужно навести идеальную чистоту прямо сейчас, мы быстро отправим к вам мобильную бригаду. Учтите, что расценки клининга при срочном выезде могут немного вырасти. Это обусловлено нагрузкой на персонал и темпом уборки.</p>
+                                  </div>
+                                </article>
+                    </div>
+                  </div>
+                </div><a class="price-factors__action ui-btn ui-btn--primary" href="#"><span class="ui-btn__content">Хочу индивидуальный рассчет</span></a>
+              </div>
+            </div>
+          </section>
+          <section class="price-advantages">
+            <div class="_container">
+              <div class="price-advantages__wrapper">
+                <div class="price-advantages__head ui-section-head ui-section-head--center">
+                  <h2 class="price-advantages__title ui-title">Наши преимущества</h2>
+                  <p class="price-advantages__text ui-text">Мы работаем честно и не добавляем лишних сумм в чек, когда уборка уже идет. Вам всегда понятно, за что вы платите, поэтому никаких «сюрпризов» в квитанции точно не будет. Такой подход помогает нам держать стабильные цены на уборку в Москве даже при большой конкуренции.</p>
+                  <p class="price-advantages__note ui-text">Наш принцип сотрудничества строится на простых правилах:</p>
+                </div>
+                <div class="price-advantages__slider swiper" data-price-advantages-swiper>
+                  <div class="price-advantages__grid swiper-wrapper">
+                    <div class="price-advantages__slide swiper-slide">
+                                <article class="feature-card feature-card--stacked">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-star-green.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">Без скрытых доплат</h3>
+                                  </div>
+                                  <p class="feature-card__text">Вы платите ровно ту сумму, которая была озвучена на этапе оформления заявки. Она оглашается нашим менеджером. Мы никогда не навязываем ненужные опции. Мы сохраняем цены на уборку в Москве понятными, прозрачными и доступными для каждого.</p>
+                                </article>
+                    </div>
+                    <div class="price-advantages__slide swiper-slide">
+                                <article class="feature-card feature-card--stacked">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-shield-green.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">Согласование стоимости заранее</h3>
+                                  </div>
+                                  <p class="feature-card__text">Мы заранее согласовываем расценки с клиентом. И только потом начинаем запланированный клининг на конкретном жилом объекте. Это позволяет вам планировать бюджет. Вы точно знаете, что общая сумма на услуги не изменится в процессе.</p>
+                                </article>
+                    </div>
+                    <div class="price-advantages__slide swiper-slide">
+                                <article class="feature-card feature-card--stacked">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-medal-green.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">Контроль качества</h3>
+                                  </div>
+                                  <p class="feature-card__text">После завершения клининга ответственный менеджер проверяет соответствие результата. Он использует внутренние стандарты качества нашей компании. Мы фиксируем цену уборки квартир за м² перед началом работ. Мы гарантируем, что вы останетесь довольны сервисом.</p>
+                                </article>
+                    </div>
+                    <div class="price-advantages__slide swiper-slide">
+                                <article class="feature-card feature-card--stacked">
+                                  <div class="feature-card__head">
+                                    <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/ui/feature-card-medal-green.png" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                    <h3 class="feature-card__title">Индивидуальный подход</h3>
+                                  </div>
+                                  <p class="feature-card__text">Мы учитываем особенности объекта и личные пожелания заказчика, создавая по-настоящему эффективный и выгодный план чистоты. Подбираем оптимальный формат взаимодействия, чтобы стоимость уборки квартиры была для вас комфортной и выгодной всегда.</p>
+                                </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="company-highlight">
+          <div class="_container">
+            <div class="company-highlight__wrapper">
+              <div class="company-highlight__content">
+                <div class="company-highlight__head">
+                  <h2 class="ui-title company-highlight__title">ВАЙП–Клин, ваш надежный помощник</h2>
+                </div>
+                <div class="company-highlight__copy" data-read-more>
+                  <div class="company-highlight__summary" data-read-more-summary>
+                    <p class="ui-text ui-text--sm company-highlight__summary-text">В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны... 
+                      <button class="company-highlight__more" type="button" data-read-more-toggle aria-expanded="false" aria-controls="company-highlight-body">Ещё</button>
+                    </p>
+                  </div>
+                  <div class="company-highlight__body" id="company-highlight-body" data-read-more-body>
+                    <p class="ui-text company-highlight__text">В ВАЙП–Клин мы ценим ваше время, избавляя от бесконечной борьбы с пылью в ритме мегаполиса. Наша миссия — взять клининг на себя, предоставляя качественные клининговые услуги цены, на которые доступны. Мы заботимся, чтобы каждый визит мастера приносил в ваш дом долгожданный уют и спокойствие. Заранее согласовываем стоимость и учитываем особенности жилья.</p>
+                    <p class="ui-text company-highlight__text">Мы строим работу на заботе о деталях, чтобы вам было комфортно общаться с нами на любом этапе. Нам важно поддерживать вас во всем: от оформления заявки до финальной проверки чистоты в доме. Мы постоянно улучшаем сервис, чтобы стоимость клининга всегда соответствовала вашим высоким ожиданиям. Наши цены на уборку квартир остаются стабильными.</p>
+                  </div>
+                </div>
+                <div class="company-highlight__note">
+                  <p class="company-highlight__note-text">Для нас клининг — это не разовая уборка, а ваш ежедневный комфорт и залог долгих отношений. Регулярная поддержка порядка помогает содержать жилье в идеале весь год без лишних усилий. Доверьтесь профи из ВАЙП–Клин, и вы увидите, как цены на клининговые услуги сочетаются с качеством. Мы гарантируем, что честная стоимость и прозрачный подход станут основой нашей крепкой дружбы.</p>
+                </div>
+              </div>
+              <div class="company-highlight__media">
+                <div class="company-highlight__media-main"><img src="/static/images/section/company-highlight/company-highlight-main.png" alt="Инвентарь ВАЙП–Клин для уборки" loading="lazy"></div>
+                <div class="company-highlight__media-badge"><img src="/static/images/section/company-highlight/company-highlight-badge.png" alt="Фирменный знак ВАЙП–Клин" loading="lazy"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+                <section class="contacts">
+                  <div class="_container">
+                    <div class="contacts__wrapper">
+                      <div class="contacts__head">
+                        <h2 class="ui-title contacts__title">Рассчитать стоимость клининга</h2>
+                        <p class="ui-text contacts__text">Мы рассчитываем стоимость на клининг под ваш объект — от маленькой студии до огромного дома. Команда быстро примет заявку, чтобы вы скорее насладились чистотой без долгих ожиданий. С нами вы получаете не только личный подход, но и полную уверенность в качестве результата. Мы стремимся к лучшим ценам клининговых услуг и уборки в Москве, сохраняя честность с каждым клиентом.</p>
+                      </div>
+                      <div class="contacts__content">
+                        <div class="contacts__aside">
+                          <div class="contacts__cards">
+                            <div class="contacts__cards-row">
+                                      <div class="contact-card">
+                                        <p class="contact-card__label">Номер телефона</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                                      </div>
+                                      <div class="contact-card contact-card--socials">
+                                        <p class="contact-card__label">Электронная почта</p>
+                                        <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                                        </div>
+                                      </div>
+                            </div>
+                                    <div class="contact-card">
+                                      <p class="contact-card__label">Электронная почта</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                                    </div>
+                          </div>
+                        </div>
+                        <div class="contacts__form-block">
+                          <h3 class="contacts__form-title">Форма заявки</h3>
+                          <form class="contacts__form ui-form" action="#" method="post" novalidate>
+                            <div class="contacts__fields">
+                              <div class="ui-field contacts__field">
+                                <label class="ui-field__label" for="prices-contacts-name">Ваше имя</label>
+                                <input class="ui-field__control" id="prices-contacts-name" type="text" name="name" placeholder="Введите имя и фамилию">
+                              </div>
+                              <div class="ui-field contacts__field">
+                                <label class="ui-field__label" for="prices-contacts-phone">Номер телефона</label>
+                                <input class="ui-field__control" id="prices-contacts-phone" type="tel" name="phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _">
+                              </div>
+                            </div>
+                            <div class="contacts__form-actions">
+                              <label class="ui-checkbox contacts__checkbox" for="prices-contacts-agreement">
+                                <input class="ui-checkbox__input" id="prices-contacts-agreement" type="checkbox" name="agreement"><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                              </label>
+                              <button class="ui-btn ui-btn--primary contacts__submit" type="submit"><span class="ui-btn__content"><span class="contacts__submit-text contacts__submit-text--desktop">Узнать стоимость клининга</span><span class="contacts__submit-text contacts__submit-text--mobile">Рассчитать стоимость</span></span></button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+      </div>
+    </main>
+        <div class="popup" data-popup="popup-review" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--review" role="dialog" aria-modal="true" aria-labelledby="popup-review-title" aria-describedby="popup-review-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--review">
+              <div class="popup-form__head">
+                <h2 class="popup-form__title" id="popup-review-title">Оставьте свой отзыв о работе компании ВАЙП-Клин</h2>
+                <p class="popup-form__text" id="popup-review-description">Для нас будет очень ценно, если вы поделитесь своим отзывом о нашей работе. Так же будем рады, если к своему отзыву вы прикрепите фотографии или видео.</p>
+              </div>
+              <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                <div class="popup-form__grid popup-form__grid--three">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-name">Ваше имя</label>
+                        <input id="popup-review-name" type="text" name="popup-review-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-phone">Номер телефона</label>
+                        <input id="popup-review-phone" type="tel" name="popup-review-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-email">Email</label>
+                        <input id="popup-review-email" type="email" name="popup-review-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                </div>
+                <div class="popup-form__grid popup-form__grid--two">
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-review-message">Ваш отзыв</label>
+                        <textarea id="popup-review-message" name="popup-review-message" rows="7" placeholder="Описание отзыва ..." required></textarea>
+                      </div>
+                  <div class="popup-upload" data-popup-upload><span class="ui-field__label popup-upload__label">Фото или видео</span>
+                    <label class="popup-upload__zone" for="popup-review-files">
+                      <input class="popup-upload__input" id="popup-review-files" type="file" name="files" accept="image/jpeg,image/png,video/mp4" multiple hidden data-popup-upload-input>
+                      <div class="popup-upload__empty" data-popup-upload-empty><span class="popup-upload__badge">
+                              <svg class="popup-upload__badge-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M14.6667 28.3333L20 23M20 23L25.3333 28.3333M20 23V35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M29.7336 29.7168C31.8561 28.559 33.3333 26.3091 33.3333 23.7083C33.3333 19.9257 30.266 16.8583 26.4833 16.8583C26.211 16.8583 25.9424 16.8757 25.6791 16.9093C24.4591 12.7406 20.6151 9.70834 16.0667 9.70834C10.5358 9.70834 6.05001 14.1941 6.05001 19.725C6.05001 20.2205 6.08653 20.7075 6.15699 21.1836C3.99138 21.9417 2.44167 24.0058 2.44167 26.4333C2.44167 29.5033 4.93001 31.9917 8.00001 31.9917H14.6667" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></span>
+                        <div class="popup-upload__copy">
+                          <p class="popup-upload__title">Добавте картинку или видео</p>
+                          <p class="popup-upload__text">JPEG, PNG или MP4, небольше 20 mb</p>
+                        </div>
+                      </div>
+                      <div class="popup-upload__preview" hidden data-popup-upload-preview></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="popup-form__actions">
+                      <label class="ui-checkbox popup-form__checkbox" for="popup-review-agreement">
+                        <input class="ui-checkbox__input" id="popup-review-agreement" type="checkbox" name="popup-review-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                      </label>
+                  <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Оставить отзыв</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-order-service" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-order-service-title" aria-describedby="popup-order-service-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--service">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-order-service-title">Хотите заказать клининг домой? Оставляйте заявку</h2>
+                  <p class="popup-form__text" id="popup-order-service-description">Заполните форму ниже и наши менеджеры свяжутся с вами в ближайшее время, чтобы обсудить все детали клининга и озвучить стоимость.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-name">Ваше имя</label>
+                          <input id="popup-order-service-name" type="text" name="popup-order-service-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-order-service-phone">Номер телефона</label>
+                          <input id="popup-order-service-phone" type="tel" name="popup-order-service-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-email">Email</label>
+                        <input id="popup-order-service-email" type="email" name="popup-order-service-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-order-service-select">Выбор услуг</label>
+                        <div class="popup-form__select">
+                          <select id="popup-order-service-select" name="popup-order-service-select" required>
+                            <option value="" disabled selected>Выберите нужные вам услуги</option>
+                            <option value="support-cleaning">Поддерживающая уборка</option>
+                            <option value="general-cleaning">Генеральная уборка</option>
+                            <option value="window-cleaning">Мытьё окон</option>
+                            <option value="post-repair">Уборка после ремонта</option>
+                          </select><span class="popup-form__select-icon" aria-hidden="true">
+                                <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></span>
+                        </div>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-order-service-agreement">
+                          <input class="ui-checkbox__input" id="popup-order-service-agreement" type="checkbox" name="popup-order-service-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Заказать клининг</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--order" aria-hidden="true"><img src="/static/images/section/popup-system/popup-order-service-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-calc" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-calc-title" aria-describedby="popup-calc-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--calculator">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-calc-title">Узнайте стоимость уборки</h2>
+                  <p class="popup-form__text" id="popup-calc-description">Заполните форму ниже, чтобы мы оперативно посчитали стоимость уборки и сообщили ее вам. Наши менеджеры перезвонят вам в ближайшее время.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <fieldset class="popup-form__fieldset">
+                    <legend class="popup-form__legend">Площадь</legend>
+                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
+                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
+                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    </div>
+                  </fieldset>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-service">Услуги</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-service" name="popup-calc-service" required>
+                              <option value="" disabled>Выберите услугу</option>
+                              <option value="support-cleaning" selected>Поддерживающая уборка</option>
+                              <option value="general-cleaning">Генеральная уборка</option>
+                              <option value="window-cleaning">Мытьё окон</option>
+                              <option value="post-repair">Уборка после ремонта</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-frequency">Регулярность</label>
+                          <div class="popup-form__select">
+                            <select id="popup-calc-frequency" name="popup-calc-frequency" required>
+                              <option value="" disabled>Выберите регулярность</option>
+                              <option value="single" selected>Разовая</option>
+                              <option value="weekly">Еженедельно</option>
+                              <option value="twice-month">2 раза в месяц</option>
+                            </select><span class="popup-form__select-icon" aria-hidden="true">
+                                  <svg class="popup-form__select-icon-svg" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1 1.25L6 6.25L11 1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg></span>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-name">Ваше имя</label>
+                          <input id="popup-calc-name" type="text" name="popup-calc-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-calc-phone">Номер телефона</label>
+                          <input id="popup-calc-phone" type="tel" name="popup-calc-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-calc-agreement">
+                          <input class="ui-checkbox__input" id="popup-calc-agreement" type="checkbox" name="popup-calc-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Рассчитать стоимость</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--calc" aria-hidden="true"><img src="/static/images/section/popup-system/popup-calc-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-question" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--wide" role="dialog" aria-modal="true" aria-labelledby="popup-question-title" aria-describedby="popup-question-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-form popup-form--split popup-form--question">
+              <div class="popup-form__content">
+                <div class="popup-form__head">
+                  <h2 class="popup-form__title" id="popup-question-title">У вас остались вопросы?</h2>
+                  <p class="popup-form__text" id="popup-question-description">Напиши на свой вопрос в форме ниже. Мы обязательно с вами свяжемся и расскажем про наши услуги, условия и стоимость.</p>
+                </div>
+                <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
+                  <div class="popup-form__grid popup-form__grid--two">
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-name">Ваше имя</label>
+                          <input id="popup-question-name" type="text" name="popup-question-name" placeholder="Введите имя и фамилию" required autocomplete="name">
+                        </div>
+                        <div class="ui-field popup-form__field">
+                          <label class="ui-field__label" for="popup-question-phone">Номер телефона</label>
+                          <input id="popup-question-phone" type="tel" name="popup-question-phone" placeholder="+7 _ _ _ _ _ _ _ _ _ _" required autocomplete="tel-national" inputmode="tel">
+                        </div>
+                  </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-email">Email</label>
+                        <input id="popup-question-email" type="email" name="popup-question-email" placeholder="Ваша электронная почта" required autocomplete="email" inputmode="email">
+                      </div>
+                      <div class="ui-field popup-form__field">
+                        <label class="ui-field__label" for="popup-question-message">Ваш вопрос</label>
+                        <textarea id="popup-question-message" name="popup-question-message" rows="6" placeholder="Напишите ваш вопрос ..." required></textarea>
+                      </div>
+                  <div class="popup-form__actions">
+                        <label class="ui-checkbox popup-form__checkbox" for="popup-question-agreement">
+                          <input class="ui-checkbox__input" id="popup-question-agreement" type="checkbox" name="popup-question-agreement" required><span class="ui-checkbox__label">Заполняя форму вы даете согласие на обработку персональных данных</span>
+                        </label>
+                    <button class="ui-btn ui-btn--primary popup-form__submit" type="submit"><span class="ui-btn__content">Отправить вопрос</span></button>
+                  </div>
+                </form>
+              </div>
+              <div class="popup-form__visual popup-form__visual--question" aria-hidden="true"><img src="/static/images/section/popup-system/popup-question-visual.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-success" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-success" role="dialog" aria-modal="true" aria-labelledby="popup-status-success-title" aria-describedby="popup-status-success-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--success">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M30 6L35.3 10.9L41.95 11.65L44.65 17.85L50.5 21L49 27.55L52.5 33.25L48.25 38.3L48.8 44.95L42.8 47.65L39.95 53.7L33.35 52.95L28 57L22.7 52.1L16.05 51.35L13.35 45.15L7.5 42L9 35.45L5.5 29.75L9.75 24.7L9.2 18.05L15.2 15.35L18.05 9.3L24.65 10.05L30 6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M20.5 30.5L26.75 36.75L39.5 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-success-title">Ваша заявка принята!</h2>
+                <p class="popup-status__text" id="popup-status-success-description">Мы получили вашу заявку на звонок, наш менеджер свяжется с вами в ближайшее время.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup" data-popup="popup-status-error" hidden aria-hidden="true">
+          <button class="popup__backdrop" type="button" tabindex="-1" aria-hidden="true" data-popup-close></button>
+          <div class="popup__dialog  popup__dialog--status popup__dialog--status-error" role="dialog" aria-modal="true" aria-labelledby="popup-status-error-title" aria-describedby="popup-status-error-description">
+            <button class="popup__close" type="button" aria-label="Закрыть попап" data-popup-close>
+                  <svg class="popup__close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+            </button>
+            <div class="popup-status popup-status--error">
+              <div class="popup-status__badge">
+                    <svg class="popup-status__badge-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M31.9833 10.3167L48.7667 40.1167C49.1 40.7 49.2667 41.35 49.2667 42C49.2667 44.1667 47.5167 45.9167 45.35 45.9167H11.7833C11.1333 45.9167 10.5 45.75 9.91666 45.4333C8.01666 44.35 7.35 41.9333 8.43333 40.0333L25.2167 10.3167C25.55 9.73334 26.0167 9.25 26.6167 8.91667C28.5167 7.83334 30.9167 8.5 31.9833 10.3167Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                      <path d="M28.5 22V31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                      <path d="M28.5 37H28.525" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
+                    </svg>
+              </div>
+              <div class="popup-status__content">
+                <h2 class="popup-status__title" id="popup-status-error-title">Ошибка!</h2>
+                <p class="popup-status__text" id="popup-status-error-description">Ваша заявка по какой-то причине была отклонена. Проверьте ваши данные.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <footer class="footer">
+      <div class="footer__wave" aria-hidden="true"><img src="/static/images/ui/footer-wave.svg" alt=""></div>
+      <div class="footer__body">
+        <div class="_container">
+          <div class="footer__wrapper">
+            <div class="footer__top"><a class="footer__brand" href="index.html" aria-label="На главную"><span class="footer__brand-mark"><img src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt=""></span><span class="footer__brand-type"><img src="/static/images/section/company-preview/company-preview-logo-type.svg" alt=""></span></a>
+              <ul class="footer__requisites">
+                <li class="footer__requisite"><strong class="footer__requisite-label">ООО</strong><span class="footer__requisite-value">«ВАЙП–Клин»</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">ОГРН</strong><span class="footer__requisite-value">0000000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">ИНН</strong><span class="footer__requisite-value">0000000000</span></li>
+                <li class="footer__requisite"><strong class="footer__requisite-label">КПП</strong><span class="footer__requisite-value">000000000</span></li>
+              </ul>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__nav">
+              <p class="footer__nav-title">Меню сайта</p>
+              <div class="footer__nav-body">
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="about-us.html">О компании</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="services.html">Услуги</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="prices.html">Цены</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="promotions.html">Акции</a></li>
+                </ul>
+                <ul class="footer__nav-column">
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="reviews.html">Отзывы</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="blog.html">Блог</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="faq.html">FAQ</a></li>
+                  <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__contacts">
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">Номер телефона</p><a class="contact-card__value contact-card__value--link" href="tel:+79801636101">+7 980 163 6101</a>
+                  </div>
+                  <div class="contact-card contact-card--socials footer__contact-card">
+                    <p class="contact-card__label">Электронная почта</p>
+                    <div class="contact-card__socials"><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="Telegram"><span class="ui-btn__content"><img src="/static/images/section/contacts/akar-icons_telegram-fill.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="WhatsApp"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector.png" alt="" aria-hidden="true" loading="lazy"></span></a><a class="contact-card__social-link ui-btn ui-btn--primary" href="#" aria-label="VK"><span class="ui-btn__content"><img src="/static/images/section/contacts/Vector (1).png" alt="" aria-hidden="true" loading="lazy"></span></a>
+                    </div>
+                  </div>
+                  <div class="contact-card footer__contact-card">
+                    <p class="contact-card__label">Электронная почта</p><a class="contact-card__value contact-card__value--link" href="mailto:mailbox@wipeclean.ru">MAILBOX@WIPECLEAN.RU</a>
+                  </div>
+            </div>
+            <div class="footer__bottom">
+              <p class="footer__copyright">© 2026 - Официальный сайт "ВАЙП–Клин"</p>
+              <div class="footer__legal"><a class="footer__legal-link" href="policy.html">Политика конфиденциальности</a><a class="footer__legal-link" href="policy.html">Согласие ОПД</a><a class="footer__legal-link" href="policy.html">Согласие Cookies</a>
+              </div><a class="footer__made-by" href="https://ds-art.ru/" target="_blank" rel="noopener noreferrer" aria-label="Сайт разработан компанией DS-ART"><span class="footer__made-by-mark">DS</span><span class="footer__made-by-text">Сайт разработан компанией DS-ART</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/static/js/vendor/fancybox.umd.js"></script>
+    <script src="/static/js/vendor/swiper-bundle.js"></script>
+    <script type="module" src="/static/js/script.js"></script>
+  </body>
+</html>

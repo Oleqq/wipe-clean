@@ -1,0 +1,96 @@
+include ../../components/feature-card/feature-card
+include ../../components/check-list-item/check-list-item
+
+-
+    var servicesBenefits = {
+        title: "Почему стоит заказать уборку в нашей компании",
+        text: "Нашей клининговой компании в Москве важен безопасный сервис. Мы внедряем стандарты чистоты. В работе всегда применяется только проверенное оборудование. У нас безопасная химия. Выбирая наш профессиональный клининг, вы обретаете надежного партнера.",
+        cards: [
+            {
+                title: "Поэтапный контроль качества",
+                text: "Уборка по чек-листу подразумевает проверку пунктов менеджером перед сдачей.",
+                icon: "/static/images/section/company-preview/icon-quality.svg",
+                className: "feature-card--compact"
+            },
+            {
+                title: "Безопасные моющие средства для дома и семьи",
+                text: "Мы учитываем особенности объекта. Мы применяем составы, которые не вызывают аллергии.",
+                icon: "/static/images/section/company-preview/icon-chemistry.svg",
+                className: "feature-card--compact"
+            },
+            {
+                title: "Клинеры с опытом и проверенной репутацией",
+                text: "Все сотрудники проходят отбор. Это гарантирует профессионализм и честность.",
+                icon: "/static/images/section/company-preview/icon-experience.svg",
+                className: "feature-card--compact"
+            },
+            {
+                title: "Фиксированная цена итоговой сметы",
+                text: "Стоимость услуг клининга утверждается заранее. Она не подлежит изменению.",
+                icon: "/static/images/section/company-preview/icon-pricing.svg",
+                className: "feature-card--compact"
+            }
+        ],
+        offer: {
+            title: "Заказывайте клининг в Москве сейчас и получите специальные предложения",
+            text: "При формировании стоимости мы обязательно учтем размер комнат и ваши личные пожелания по наведению порядка. Для выгодного заказа клининга и получения скидки просто обсудите детали уборки с нашим менеджером. Мы всегда на связи. Мы готовы уточнить цену и подобрать удобное время для визита.",
+            button: {
+                label: "Оставить заявку",
+                href: "#",
+                className: "ui-btn--primary"
+            }
+        },
+        checklist: {
+            title: "Что важно знать перед вызовом клининга",
+            text: "Перед тем как заказать клининг в Москве, важно определить объем работ. Также мы обсуждаем загрязнения в помещениях. Мы ценим доверие. Поэтому гарантируем прозрачные условия:",
+            items: [
+                {
+                    text: "специалисты приезжают со своим инвентарем и нужной химией.",
+                    icon: "/static/images/ui/check-badge-icon.png"
+                },
+                {
+                    text: "вы можете находиться дома во время работ или уйти по делам.",
+                    icon: "/static/images/ui/check-badge-icon.png"
+                },
+                {
+                    text: "оплата производится после завершения и вашей личной проверки.",
+                    icon: "/static/images/ui/check-badge-icon.png"
+                },
+                {
+                    text: "мы несем ответственность за доверенные нам вещи и отделку.",
+                    icon: "/static/images/ui/check-badge-icon.png"
+                }
+            ]
+        }
+    }
+
+section.services-benefits
+    ._container
+        .services-benefits__wrapper
+            .services-benefits__intro
+                .services-benefits__head.ui-section-head
+                    h2.ui-title.services-benefits__title= servicesBenefits.title
+                    p.ui-text.services-benefits__text= servicesBenefits.text
+                .services-benefits__slider.swiper(data-services-benefits-swiper)
+                    .services-benefits__cards.swiper-wrapper
+                        each item in servicesBenefits.cards
+                            .services-benefits__slide.swiper-slide
+                                +featureCard(item)
+            .services-benefits__details
+                .services-benefits__offer
+                    .services-benefits__offer-content
+                        h3.ui-title.services-benefits__offer-title= servicesBenefits.offer.title
+                        p.ui-text.services-benefits__offer-text= servicesBenefits.offer.text
+                    a.ui-btn.services-benefits__offer-action(class=servicesBenefits.offer.button.className href=servicesBenefits.offer.button.href)
+                        span.ui-btn__content= servicesBenefits.offer.button.label
+                .services-benefits__checklist
+                    h3.ui-title.services-benefits__checklist-title= servicesBenefits.checklist.title
+                    p.ui-text.services-benefits__checklist-text= servicesBenefits.checklist.text
+                    ul.services-benefits__checklist-list
+                        each item in servicesBenefits.checklist.items
+                            +checkListItem(item)
+                .services-benefits__visual(aria-hidden="true")
+                    //- .services-benefits__visual-decor
+                    //-     img(src="/static/images/section/services-benefits/services-benefits-offer-decor.png" alt="")
+                    .services-benefits__visual-image
+                        img(src="/static/images/section/services-benefits/services-benefits-offer-person.png" alt="" loading="lazy")

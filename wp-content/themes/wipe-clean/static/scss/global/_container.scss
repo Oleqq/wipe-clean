@@ -1,0 +1,24 @@
+@use "./core" as *;
+
+._container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-right: $container-padding-desktop;
+  padding-left: $container-padding-desktop;
+}
+
+@media (max-width: 1400px) {
+  ._container {
+    padding-right: $container-padding-tablet;
+    padding-left: $container-padding-tablet;
+  }
+}
+
+@media (max-width: 650px) {
+  ._container {
+    padding-right: $container-padding-mobile;
+    padding-left: $container-padding-mobile;
+  }
+}
+

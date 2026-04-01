@@ -74,8 +74,8 @@
 }
 .price-advantages__slider {
   min-width: 0;
-  overflow: hidden;
   margin: 0;
+  overflow: visible;
 }
 @media (max-width: 650px) {
   .price-advantages__slider {

@@ -1,0 +1,11 @@
+@use "global";
+@use "vendor";
+@use "section";
+
+
+
+header > div > div > div > a.ui-btn.ui-btn--primary.ui-btn--icon.header__phone > span > span > svg {
+    left: 1px;
+    position: relative;
+    top: -1px;
+}

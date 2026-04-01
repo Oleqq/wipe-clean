@@ -86,10 +86,12 @@
 }
 @media (max-width: 650px) {
   .company-requisites-band__item {
-    display: -ms-grid;
-    display: grid;
-    gap: 2px;
     letter-spacing: -0.04em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    font-size: 20px;
   }
 }
 .company-requisites-band__label {

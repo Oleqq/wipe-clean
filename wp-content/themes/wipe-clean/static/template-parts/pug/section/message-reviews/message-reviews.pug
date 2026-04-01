@@ -1,0 +1,93 @@
+include ../../components/message-review-card/message-review-card
+
+-
+    var messageReviewsPlaceholder = "/static/images/section/message-reviews/message-review-placeholder.svg"
+
+    var createMessageReviewItem = function(index, size, desktopColumn, mobileColumn, mobileOrder) {
+        return {
+            id: "message-review-" + index,
+            size: size,
+            desktopColumn: desktopColumn,
+            desktopOrder: index,
+            mobileColumn: mobileColumn,
+            mobileOrder: mobileOrder,
+            imageSrc: messageReviewsPlaceholder,
+            lightboxSrc: messageReviewsPlaceholder,
+            alt: "Скриншот рекомендации клиента из переписки №" + index,
+            caption: "Рекомендация клиента из переписки №" + index
+        }
+    }
+
+    var messageReviewsDefaults = {
+        title: "Рекомендации наших клиентов из переписок",
+        buttonLabel: "Больше отзывов",
+        initialDesktop: 10,
+        initialMobile: 6,
+        stepDesktop: 4,
+        stepMobile: 2,
+        items: [
+            createMessageReviewItem(1, "tall", 1, 1, 3),
+            createMessageReviewItem(2, "tall", 1, 1, 7),
+            createMessageReviewItem(3, "short", 2, 1, 1),
+            createMessageReviewItem(4, "short", 2, 1, 5),
+            createMessageReviewItem(5, "tall", 2, 2, 10),
+            createMessageReviewItem(6, "tall", 3, 2, 2),
+            createMessageReviewItem(7, "short", 3, 2, 4),
+            createMessageReviewItem(8, "short", 3, 2, 8),
+            createMessageReviewItem(9, "short", 4, 2, 12),
+            createMessageReviewItem(10, "tall", 4, 2, 6),
+            createMessageReviewItem(11, "short", 1, 1, 9),
+            createMessageReviewItem(12, "tall", 2, 2, 14),
+            createMessageReviewItem(13, "short", 3, 1, 15),
+            createMessageReviewItem(14, "short", 4, 1, 17),
+            createMessageReviewItem(15, "tall", 1, 1, 11),
+            createMessageReviewItem(16, "short", 2, 1, 13),
+            createMessageReviewItem(17, "tall", 3, 2, 16),
+            createMessageReviewItem(18, "tall", 4, 2, 18)
+        ]
+    }
+
+-
+    var messageReviewsData = typeof messageReviewsSection === "object" && messageReviewsSection ? messageReviewsSection : {}
+    var messageReviewsOptions = Object.assign({}, messageReviewsDefaults, messageReviewsData)
+    var messageReviewsItems = Array.isArray(messageReviewsData.items) && messageReviewsData.items.length ? messageReviewsData.items : messageReviewsDefaults.items
+    var messageReviewsColumns = [1, 2, 3, 4]
+
+section.message-reviews(
+    data-message-reviews
+    data-initial-desktop=messageReviewsOptions.initialDesktop
+    data-initial-mobile=messageReviewsOptions.initialMobile
+    data-step-desktop=messageReviewsOptions.stepDesktop
+    data-step-mobile=messageReviewsOptions.stepMobile
+    data-columns-desktop="4"
+    data-columns-mobile="2"
+)
+    ._container
+        .message-reviews__wrapper
+            .message-reviews__head
+                h2.message-reviews__title.ui-title= messageReviewsOptions.title
+
+            .message-reviews__grid(data-message-reviews-grid)
+                each columnIndex in messageReviewsColumns
+                    .message-reviews__column(data-message-reviews-column)
+
+                .message-reviews__source(hidden aria-hidden="true")
+                    each item, index in messageReviewsItems
+                        -
+                            var messageReviewsItemClassName = "message-reviews__item message-reviews__item--" + item.size
+                        div(
+                            class=messageReviewsItemClassName
+                            data-message-review-item
+                            data-item-index=index
+                            data-desktop-column=item.desktopColumn
+                            data-desktop-order=item.desktopOrder
+                            data-mobile-column=item.mobileColumn
+                            data-mobile-order=item.mobileOrder
+                        )
+                            +messageReviewCard(item)
+
+            .message-reviews__footer(data-message-reviews-footer)
+                .message-reviews__loader(data-message-reviews-loader aria-hidden="true")
+                    img(src="/static/images/section/blog-archive/blog-archive-loader.svg" alt="" loading="lazy")
+                button.message-reviews__more.ui-btn.ui-btn--primary(type="button" data-message-reviews-more)
+                    span.ui-btn__content= messageReviewsOptions.buttonLabel

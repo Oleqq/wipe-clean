@@ -18,4 +18,4 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wipe-clean' ); ?></a>
-	<?php wipe_clean_render_static_markup( 'layout/header' ); ?>
+	<?php wipe_clean_render_site_header(); ?>

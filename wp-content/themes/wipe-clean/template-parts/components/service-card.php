@@ -1,6 +1,6 @@
 <?php
 /**
- * Service card component.
+ * Карточка услуги.
  *
  * @package wipe-clean
  */
@@ -17,28 +17,33 @@ if ( ! empty( $card['className'] ) ) {
 	$classes[] = (string) $card['className'];
 }
 
-$href = ! empty( $card['href'] ) ? wipe_clean_resolve_static_url( (string) $card['href'] ) : '#';
+$href   = ! empty( $card['href'] ) ? wipe_clean_resolve_static_url( (string) $card['href'] ) : ( ! empty( $card['url'] ) ? wipe_clean_resolve_static_url( (string) $card['url'] ) : '#' );
+$image  = $card['image'] ?? array();
+$layers = isset( $card['layers'] ) && is_array( $card['layers'] ) ? array_values( $card['layers'] ) : array();
+
+if ( empty( $layers ) && ! empty( $image ) ) {
+	$layers = array(
+		array(
+			'media'    => $image,
+			'modifier' => 'fill',
+		),
+	);
+}
 ?>
 <a class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" href="<?php echo esc_url( $href ); ?>" aria-label="<?php echo esc_attr( $card['title'] ?? '' ); ?>">
 	<span class="service-card__media" aria-hidden="true">
-		<?php foreach ( (array) ( $card['layers'] ?? array() ) as $index => $layer ) : ?>
+		<?php foreach ( $layers as $index => $layer ) : ?>
 			<?php
-			$layer_classes = array( 'service-card__layer' );
-
-			if ( ! empty( $layer['modifier'] ) ) {
-				$layer_classes[] = 'service-card__layer--' . sanitize_html_class( (string) $layer['modifier'] );
-			}
-
-			$image_html = wipe_clean_render_media(
-				$layer['image'] ?? array(),
+			$modifier = ! empty( $layer['modifier'] ) ? ' service-card__layer--' . sanitize_html_class( (string) $layer['modifier'] ) : '';
+			$media    = $layer['media'] ?? $layer['image'] ?? $layer['src'] ?? array();
+			echo wipe_clean_render_media( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$media,
 				array(
-					'class' => implode( ' ', $layer_classes ),
-					'style' => '--service-layer-order:' . ( (int) $index + 1 ),
+					'class' => 'service-card__layer' . $modifier,
 					'alt'   => '',
+					'style' => '--service-layer-order:' . ( $index + 1 ),
 				)
 			);
-
-			echo $image_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		<?php endforeach; ?>
 	</span>

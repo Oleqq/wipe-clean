@@ -1,0 +1,50 @@
+include ../contact-card/contact-card
+
+mixin contactsSection(data)
+    -
+        var sectionClassName = "contacts";
+        var idPrefix = data.idPrefix || "contacts";
+        var nameFieldId = idPrefix + "-name";
+        var phoneFieldId = idPrefix + "-phone";
+        var agreementFieldId = idPrefix + "-agreement";
+        var formAction = data.formAction || "#";
+        var formMethod = data.formMethod || "post";
+        var submitTextMobile = data.submitTextMobile || data.submitText;
+        var hasIntro = !!data.text;
+
+        if (data.modifier) {
+            sectionClassName += " contacts--" + data.modifier;
+        }
+
+    section(class=sectionClassName)
+        ._container
+            .contacts__wrapper
+                .contacts__head
+                    h2.ui-title.contacts__title= data.title
+                    if hasIntro
+                        p.ui-text.contacts__text= data.text
+                .contacts__content
+                    .contacts__aside
+                        .contacts__cards
+                            .contacts__cards-row
+                                +contactCard(data.phoneCard)
+                                +contactCard(data.socialCard)
+                            +contactCard(data.emailCard)
+                    .contacts__form-block
+                        h3.contacts__form-title= data.formTitle
+                        form.contacts__form.ui-form(action=formAction method=formMethod novalidate)
+                            .contacts__fields
+                                .ui-field.contacts__field
+                                    label.ui-field__label(for=nameFieldId)= data.nameLabel
+                                    input.ui-field__control(id=nameFieldId type="text" name="name" placeholder=data.namePlaceholder)
+                                .ui-field.contacts__field
+                                    label.ui-field__label(for=phoneFieldId)= data.phoneLabel
+                                    input.ui-field__control(id=phoneFieldId type="tel" name="phone" placeholder=data.phonePlaceholder)
+                            .contacts__form-actions
+                                label.ui-checkbox.contacts__checkbox(for=agreementFieldId)
+                                    input.ui-checkbox__input(id=agreementFieldId type="checkbox" name="agreement")
+                                    span.ui-checkbox__label= data.agreementText
+                                button.ui-btn.ui-btn--primary.contacts__submit(type="submit")
+                                    span.ui-btn__content
+                                        span.contacts__submit-text.contacts__submit-text--desktop= data.submitText
+                                        span.contacts__submit-text.contacts__submit-text--mobile= submitTextMobile

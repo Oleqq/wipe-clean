@@ -1,0 +1,47 @@
+include ../contact-card/contact-card
+
+mixin contactPanel(data, className)
+    -
+        var contactPanelClassName = "contact-panel";
+        var idPrefix = data.idPrefix || "contact-panel";
+        var nameFieldId = idPrefix + "-name";
+        var phoneFieldId = idPrefix + "-phone";
+        var agreementFieldId = idPrefix + "-agreement";
+        var formAction = data.formAction || "#";
+        var formMethod = data.formMethod || "post";
+        var submitTextMobile = data.submitTextMobile || data.submitText;
+
+        if (data.modifier) {
+            contactPanelClassName += " contact-panel--" + data.modifier;
+        }
+
+        if (className) {
+            contactPanelClassName += " " + className;
+        }
+
+    div(class=contactPanelClassName)
+        .contact-panel__aside
+            h2.ui-title.contact-panel__title= data.title
+            .contact-panel__cards
+                .contact-panel__cards-row
+                    +contactCard(data.phoneCard, "contact-panel__card")
+                    +contactCard(data.socialCard, "contact-panel__card")
+                +contactCard(data.emailCard, "contact-panel__card")
+        .contact-panel__form-block
+            h3.contact-panel__form-title= data.formTitle
+            form.contact-panel__form.ui-form(action=formAction method=formMethod novalidate)
+                .contact-panel__fields
+                    .ui-field.contact-panel__field
+                        label.ui-field__label(for=nameFieldId)= data.nameLabel
+                        input.ui-field__control(id=nameFieldId type="text" name="name" placeholder=data.namePlaceholder)
+                    .ui-field.contact-panel__field
+                        label.ui-field__label(for=phoneFieldId)= data.phoneLabel
+                        input.ui-field__control(id=phoneFieldId type="tel" name="phone" placeholder=data.phonePlaceholder)
+                .contact-panel__form-actions
+                    label.ui-checkbox.contact-panel__checkbox(for=agreementFieldId)
+                        input.ui-checkbox__input(id=agreementFieldId type="checkbox" name="agreement")
+                        span.ui-checkbox__label= data.agreementText
+                    button.ui-btn.ui-btn--primary.contact-panel__submit(type="submit")
+                        span.ui-btn__content
+                            span.contact-panel__submit-text.contact-panel__submit-text--desktop= data.submitText
+                            span.contact-panel__submit-text.contact-panel__submit-text--mobile= submitTextMobile

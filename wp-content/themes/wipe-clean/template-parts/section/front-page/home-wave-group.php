@@ -105,25 +105,7 @@ $second_link  = wipe_clean_resolve_link( $price['secondary_button'] ?? array() )
 							<p class="quote-request__text ui-text"><?php echo esc_html( $quote['text'] ); ?></p>
 						<?php endif; ?>
 					</div>
-					<form class="quote-request__form ui-form" action="#" method="post" novalidate>
-						<div class="quote-request__fields">
-							<div class="ui-field quote-request__field">
-								<label class="ui-field__label" for="quote-request-name"><?php echo esc_html( $quote['name_label'] ?? '' ); ?></label>
-								<input class="ui-field__control" id="quote-request-name" type="text" name="name" placeholder="<?php echo esc_attr( $quote['name_placeholder'] ?? '' ); ?>">
-							</div>
-							<div class="ui-field quote-request__field">
-								<label class="ui-field__label" for="quote-request-phone"><?php echo esc_html( $quote['phone_label'] ?? '' ); ?></label>
-								<input class="ui-field__control" id="quote-request-phone" type="tel" name="phone" placeholder="<?php echo esc_attr( $quote['phone_placeholder'] ?? '' ); ?>">
-							</div>
-						</div>
-						<label class="ui-checkbox quote-request__checkbox" for="quote-request-agreement">
-							<input class="ui-checkbox__input" id="quote-request-agreement" type="checkbox" name="agreement">
-							<span class="ui-checkbox__label"><?php echo esc_html( $quote['agreement_text'] ?? '' ); ?></span>
-						</label>
-						<button class="ui-btn ui-btn--primary ui-btn--full quote-request__submit" type="submit">
-							<span class="ui-btn__content"><?php echo esc_html( $quote['submit_text'] ?? '' ); ?></span>
-						</button>
-					</form>
+					<?php echo wipe_clean_render_managed_cf7_form( 'quote_request' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>
 		</div>

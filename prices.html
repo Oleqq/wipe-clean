@@ -291,7 +291,7 @@
                       <div class="price-advantages__slide swiper-slide">
                                     <article class="feature-card feature-card--stacked">
                                       <div class="feature-card__head">
-                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-pricing.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-experience.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
                                         <h3 class="feature-card__title">Без скрытых доплат</h3>
                                       </div>
                                       <p class="feature-card__text">Вы платите ровно ту сумму, которая была озвучена на этапе оформления заявки. Она оглашается нашим менеджером. Мы никогда не навязываем ненужные опции. Мы сохраняем цены на уборку в Москве понятными, прозрачными и доступными для каждого.</p>
@@ -300,7 +300,7 @@
                       <div class="price-advantages__slide swiper-slide">
                                     <article class="feature-card feature-card--stacked">
                                       <div class="feature-card__head">
-                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-guarantee.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-experience.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
                                         <h3 class="feature-card__title">Согласование стоимости заранее</h3>
                                       </div>
                                       <p class="feature-card__text">Мы заранее согласовываем расценки с клиентом. И только потом начинаем запланированный клининг на конкретном жилом объекте. Это позволяет вам планировать бюджет. Вы точно знаете, что общая сумма на услуги не изменится в процессе.</p>
@@ -309,7 +309,7 @@
                       <div class="price-advantages__slide swiper-slide">
                                     <article class="feature-card feature-card--stacked">
                                       <div class="feature-card__head">
-                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-quality.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
+                                        <div class="feature-card__icon"><span class="feature-card__icon-box"><img src="/static/images/section/company-preview/icon-experience.svg" alt="" aria-hidden="true" loading="lazy"></span></div>
                                         <h3 class="feature-card__title">Контроль качества</h3>
                                       </div>
                                       <p class="feature-card__text">После завершения клининга ответственный менеджер проверяет соответствие результата. Он использует внутренние стандарты качества нашей компании. Мы фиксируем цену уборки квартир за м² перед началом работ. Мы гарантируем, что вы останетесь довольны сервисом.</p>
@@ -605,11 +605,13 @@
                 <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
                   <fieldset class="popup-form__fieldset">
                     <legend class="popup-form__legend">Площадь</legend>
-                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
-                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    <div class="popup-form__choice-slider swiper" data-popup-choice-swiper>
+                      <div class="ui-choice-group popup-form__choice-group swiper-wrapper" data-popup-choice-group>
+                        <button class="ui-choice popup-form__choice swiper-slide ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                      </div>
                     </div>
                   </fieldset>
                   <div class="popup-form__grid popup-form__grid--two">

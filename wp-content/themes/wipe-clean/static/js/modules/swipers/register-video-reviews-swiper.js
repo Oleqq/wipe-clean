@@ -11,10 +11,13 @@ export const registerVideoReviewsSwiper = () => {
 
         return new window.Swiper(element, {
             speed: 500,
-            spaceBetween: 20,
+            spaceBetween: 24,
             slidesPerView: "auto",
+            
             watchOverflow: true,
             resistanceRatio: 0.75,
+            loop: true,
+            centeredSlides: false,
             navigation: nextEl && prevEl ? {
                 nextEl,
                 prevEl

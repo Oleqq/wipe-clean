@@ -9,12 +9,21 @@ $section      = $args['section'] ?? wipe_clean_get_front_page_section_defaults( 
 $social_links = ! empty( $section['social_links'] ) ? $section['social_links'] : array();
 $phone_href   = 'tel:' . preg_replace( '/[^+\d]/', '', (string) ( $section['phone_value'] ?? '' ) );
 $email_href   = 'mailto:' . sanitize_email( strtolower( (string) ( $section['email_value'] ?? '' ) ) );
+$raw_prefix   = (string) ( $section['id_prefix'] ?? $section['idPrefix'] ?? 'contacts' );
+$section_id   = sanitize_title( $raw_prefix );
+$field_prefix = sanitize_html_class( $raw_prefix );
+$form_key     = ! empty( $section['managed_form_key'] )
+	? sanitize_key( (string) $section['managed_form_key'] )
+	: ( 'promotions-contacts' === $raw_prefix ? 'promotions_contacts' : 'front_contacts' );
 ?>
-<section class="contacts">
+<section class="contacts"<?php echo '' !== $section_id ? ' id="' . esc_attr( $section_id ) . '"' : ''; ?>>
 	<div class="_container">
 		<div class="contacts__wrapper">
 			<div class="contacts__head">
 				<h2 class="ui-title contacts__title"><?php echo esc_html( $section['title'] ?? '' ); ?></h2>
+				<?php if ( ! empty( $section['text'] ) ) : ?>
+					<p class="ui-text contacts__text"><?php echo esc_html( $section['text'] ); ?></p>
+				<?php endif; ?>
 			</div>
 
 			<div class="contacts__content">
@@ -54,33 +63,7 @@ $email_href   = 'mailto:' . sanitize_email( strtolower( (string) ( $section['ema
 
 				<div class="contacts__form-block">
 					<h3 class="contacts__form-title"><?php echo esc_html( $section['form_title'] ?? '' ); ?></h3>
-					<form class="contacts__form ui-form" action="#" method="post" novalidate>
-						<div class="contacts__fields">
-							<div class="ui-field contacts__field">
-								<label class="ui-field__label" for="home-contacts-name"><?php echo esc_html( $section['form_name_label'] ?? '' ); ?></label>
-								<input class="ui-field__control" id="home-contacts-name" type="text" name="name" placeholder="<?php echo esc_attr( $section['form_name_placeholder'] ?? '' ); ?>" autocomplete="name">
-							</div>
-
-							<div class="ui-field contacts__field">
-								<label class="ui-field__label" for="home-contacts-phone"><?php echo esc_html( $section['form_phone_label'] ?? '' ); ?></label>
-								<input class="ui-field__control" id="home-contacts-phone" type="tel" name="phone" placeholder="<?php echo esc_attr( $section['form_phone_placeholder'] ?? '' ); ?>" autocomplete="tel-national" inputmode="tel">
-							</div>
-						</div>
-
-						<div class="contacts__form-actions">
-							<label class="ui-checkbox contacts__checkbox" for="home-contacts-agreement">
-								<input class="ui-checkbox__input" id="home-contacts-agreement" type="checkbox" name="agreement">
-								<span class="ui-checkbox__label"><?php echo esc_html( $section['agreement_text'] ?? '' ); ?></span>
-							</label>
-
-							<button class="ui-btn ui-btn--primary contacts__submit" type="submit">
-								<span class="ui-btn__content">
-									<span class="contacts__submit-text contacts__submit-text--desktop"><?php echo esc_html( $section['submit_text'] ?? '' ); ?></span>
-									<span class="contacts__submit-text contacts__submit-text--mobile"><?php echo esc_html( $section['submit_text_mobile'] ?? '' ); ?></span>
-								</span>
-							</button>
-						</div>
-					</form>
+					<?php echo wipe_clean_render_managed_cf7_form( $form_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>
 		</div>

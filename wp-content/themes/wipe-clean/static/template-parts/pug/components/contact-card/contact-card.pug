@@ -1,0 +1,38 @@
+mixin contactCard(card, className)
+    -
+        var contactCardClassName = "contact-card";
+
+        if (card && card.type == "socials") {
+            contactCardClassName += " contact-card--socials";
+        }
+
+        if (className) {
+            contactCardClassName += " " + className;
+        }
+
+    if card && card.type == "socials"
+        div(class=contactCardClassName)
+            p.contact-card__label= card.label
+            .contact-card__socials
+                each social in card.items
+                    -
+                        var socialAttrs = {
+                            href: social.href || "#",
+                            "aria-label": social.label
+                        };
+
+                        if (socialAttrs.href !== "#") {
+                            socialAttrs.target = "_blank";
+                            socialAttrs.rel = "noopener noreferrer";
+                        }
+
+                    a.contact-card__social-link.ui-btn.ui-btn--primary&attributes(socialAttrs)
+                        span.ui-btn__content
+                            img(src=social.iconSrc alt="" aria-hidden="true" loading="lazy")
+    else if card
+        div(class=contactCardClassName)
+            p.contact-card__label= card.label
+            if card.href
+                a.contact-card__value.contact-card__value--link(href=card.href)= card.value
+            else
+                p.contact-card__value= card.value

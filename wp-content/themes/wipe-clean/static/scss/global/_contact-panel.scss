@@ -1,0 +1,180 @@
+@use "./core" as *;
+
+.contact-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 610px) minmax(315px, 650px);
+    gap: 60px;
+    align-items: start;
+
+    @include below-desktop {
+        gap: 40px;
+    }
+
+    @include below-tablet {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    @include below-mobile {
+        gap: 24px;
+    }
+
+    &__aside {
+        display: grid;
+        gap: 32px;
+        min-width: 0;
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__title {
+        max-width: 650px;
+
+        @include below-mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        gap: 24px;
+        max-width: 610px;
+
+        @include below-mobile {
+            gap: 12px;
+            max-width: none;
+        }
+    }
+
+    &__cards-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        @include below-mobile {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+    }
+
+    &__card {
+        height: 100%;
+
+        &.contact-card--socials {
+            min-height: 130px;
+
+            @include below-mobile {
+                min-height: 0;
+            }
+        }
+    }
+
+    &__form-block {
+        display: grid;
+        gap: 76px;
+        min-width: 0;
+
+        @include below-tablet {
+            gap: 28px;
+        }
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__form-title {
+        margin: 0;
+        @include text-title(28px);
+
+        @include below-mobile {
+            font-size: 20px;
+        }
+    }
+
+    &__form {
+        gap: 24px;
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        @include below-mobile-lg {
+            grid-template-columns: 1fr;
+        }
+
+        @include below-mobile {
+            gap: 12px;
+        }
+    }
+
+    &__field {
+        min-width: 0;
+
+        .ui-field__label {
+            margin-left: 18px;
+        }
+
+        .ui-field__control {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    &__form-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 315px) 315px;
+        gap: 20px;
+        align-items: center;
+
+        @include below-mobile-lg {
+            grid-template-columns: 1fr;
+        }
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__checkbox {
+        max-width: 315px;
+
+        @include below-mobile-lg {
+            max-width: none;
+        }
+
+        .ui-checkbox__label {
+            @include below-mobile {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &__submit {
+        width: 100%;
+    }
+
+    &__submit-text {
+        &--mobile {
+            display: none;
+        }
+
+        @include below-mobile {
+            &--desktop {
+                display: none;
+            }
+
+            &--mobile {
+                display: inline;
+            }
+        }
+    }
+}
+

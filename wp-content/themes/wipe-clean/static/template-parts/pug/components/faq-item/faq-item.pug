@@ -1,0 +1,14 @@
+mixin faqItem(item, index, idPrefix, isInitiallyOpen)
+    -
+        var safePrefix = idPrefix || "faq";
+        var answerId = safePrefix + "-answer-" + index;
+        var buttonId = safePrefix + "-question-" + index;
+
+    .faq__item(data-faq-item data-faq-initially-open=isInitiallyOpen ? "true" : null)
+        button.faq__toggle(type="button" id=buttonId aria-expanded="false" aria-controls=answerId data-faq-toggle)
+            span.faq__question= item.question
+            span.faq__icon(aria-hidden="true")
+                img(src="/static/images/ui/corner-right-down.svg" alt="" width="24" height="24")
+        .faq__answer(hidden id=answerId role="region" aria-labelledby=buttonId aria-hidden="true" data-faq-answer)
+            .faq__answer-inner
+                p.faq__answer-text= item.answer

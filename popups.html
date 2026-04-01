@@ -368,11 +368,13 @@
                 <form class="popup-form__form" action="#" method="post" novalidate data-popup-demo-form data-popup-success="popup-status-success" data-popup-error="popup-status-error">
                   <fieldset class="popup-form__fieldset">
                     <legend class="popup-form__legend">Площадь</legend>
-                    <div class="ui-choice-group popup-form__choice-group" data-popup-choice-group>
-                      <button class="ui-choice popup-form__choice ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
-                      <button class="ui-choice popup-form__choice" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                    <div class="popup-form__choice-slider swiper" data-popup-choice-swiper>
+                      <div class="ui-choice-group popup-form__choice-group swiper-wrapper" data-popup-choice-group>
+                        <button class="ui-choice popup-form__choice swiper-slide ui-choice--active" type="button" aria-pressed="true" data-popup-choice><span class="ui-choice__label">однокомнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">2-х комнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">3/4-х комнатная</span></button>
+                        <button class="ui-choice popup-form__choice swiper-slide" type="button" aria-pressed="false" data-popup-choice><span class="ui-choice__label">_ _ _ _ M<sup>2</sup></span></button>
+                      </div>
                     </div>
                   </fieldset>
                   <div class="popup-form__grid popup-form__grid--two">

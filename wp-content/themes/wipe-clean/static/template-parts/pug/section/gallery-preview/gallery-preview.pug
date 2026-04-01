@@ -1,0 +1,126 @@
+include ../../components/gallery-preview-item/gallery-preview-item
+
+-
+    var galleryVideoPath = "/static/images/section/gallery-preview/test-video.mp4";
+
+    var galleryTopRowItems = [
+        {
+            id: "gallery-top-1",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-1.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-1-photo-1-500.png 500w, /static/images/section/gallery-preview/gallery-row-1-photo-1.png 1000w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-1-photo-1-500.webp 500w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-1-1000.webp 1000w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-1.png",
+            width: 1000,
+            height: 667,
+            alt: "Уборка кухни крупным планом",
+            caption: "Работа команды ВАЙП–Клин"
+        },
+        {
+            id: "gallery-top-2",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-2.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-1-photo-2-640.png 640w, /static/images/section/gallery-preview/gallery-row-1-photo-2.png 1280w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-1-photo-2-640.webp 640w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-2-1280.webp 1280w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-2.png",
+            width: 1280,
+            height: 720,
+            alt: "Влажная уборка дома",
+            caption: "Уборка квартир и домов"
+        },
+        {
+            id: "gallery-top-3",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-1-photo-3.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-1-photo-3-320.png 320w, /static/images/section/gallery-preview/gallery-row-1-photo-3.png 640w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-1-photo-3-320.webp 320w, /static/webp-images/section/gallery-preview/gallery-row-1-photo-3-640.webp 640w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-1-photo-3.png",
+            width: 640,
+            height: 288,
+            alt: "Светлая гостиная после клининга",
+            caption: "Результат уборки квартиры"
+        },
+        {
+            id: "gallery-top-4",
+            type: "video",
+            src: "/static/images/section/gallery-preview/gallery-row-1-video-poster.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-1-video-poster-960.png 960w, /static/images/section/gallery-preview/gallery-row-1-video-poster.png 1920w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-1-video-poster-960.webp 960w, /static/webp-images/section/gallery-preview/gallery-row-1-video-poster-1920.webp 1920w",
+            lightboxSrc: galleryVideoPath,
+            width: 1920,
+            height: 1225,
+            alt: "Видео процесса уборки",
+            caption: "Видео процесса уборки"
+        }
+    ];
+
+-
+    var galleryBottomRowItems = [
+        {
+            id: "gallery-bottom-1",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-1.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-2-photo-1-341.png 341w, /static/images/section/gallery-preview/gallery-row-2-photo-1.png 683w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-2-photo-1-341.webp 341w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-1-683.webp 683w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-1.png",
+            width: 683,
+            height: 512,
+            alt: "Гостиная после уборки",
+            caption: "Чистый интерьер после клининга"
+        },
+        {
+            id: "gallery-bottom-2",
+            type: "video",
+            src: "/static/images/section/gallery-preview/gallery-row-2-video-poster.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-2-video-poster-284.png 284w, /static/images/section/gallery-preview/gallery-row-2-video-poster.png 568w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-2-video-poster-284.webp 284w, /static/webp-images/section/gallery-preview/gallery-row-2-video-poster-568.webp 568w",
+            lightboxSrc: galleryVideoPath,
+            width: 568,
+            height: 388,
+            alt: "Видео работы клинеров",
+            caption: "Видео работы команды ВАЙП–Клин"
+        },
+        {
+            id: "gallery-bottom-3",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-2.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-2-photo-2-1000.png 1000w, /static/images/section/gallery-preview/gallery-row-2-photo-2.png 2000w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-2-photo-2-1000.webp 1000w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-2-2000.webp 2000w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-2.png",
+            width: 2000,
+            height: 1333,
+            alt: "Химчистка мягкой мебели",
+            caption: "Химчистка и глубокая уборка"
+        },
+        {
+            id: "gallery-bottom-4",
+            type: "photo",
+            src: "/static/images/section/gallery-preview/gallery-row-2-photo-3.png",
+            srcset: "/static/images/section/gallery-preview/gallery-row-2-photo-3-540.png 540w, /static/images/section/gallery-preview/gallery-row-2-photo-3.png 1080w",
+            webpSrcset: "/static/webp-images/section/gallery-preview/gallery-row-2-photo-3-540.webp 540w, /static/webp-images/section/gallery-preview/gallery-row-2-photo-3-1080.webp 1080w",
+            lightboxSrc: "/static/images/section/gallery-preview/gallery-row-2-photo-3.png",
+            width: 1080,
+            height: 731,
+            alt: "Инвентарь для клининга",
+            caption: "Профессиональный инвентарь и безопасная химия"
+        }
+    ];
+
+section.gallery-preview
+    ._container
+        .gallery-preview__wrapper
+            .gallery-preview__head
+                h2.ui-title.gallery-preview__title Галерея наших работ по уборке квартир, домов и офисов
+            .gallery-preview__marquees
+                .gallery-preview__row(data-gallery-marquee-row data-direction="-1" data-speed="36")
+                    .gallery-preview__track(data-gallery-marquee-track)
+                        each item in galleryTopRowItems
+                            +galleryPreviewItem(item, false)
+                        each item in galleryTopRowItems
+                            +galleryPreviewItem(item, true)
+                .gallery-preview__row.gallery-preview__row--reverse(data-gallery-marquee-row data-direction="1" data-speed="38")
+                    .gallery-preview__track(data-gallery-marquee-track)
+                        each item in galleryBottomRowItems
+                            +galleryPreviewItem(item, false)
+                        each item in galleryBottomRowItems
+                            +galleryPreviewItem(item, true)

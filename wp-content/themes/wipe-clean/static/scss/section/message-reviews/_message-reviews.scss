@@ -1,0 +1,187 @@
+@use "../../global/core" as *;
+
+.message-reviews {
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__title {
+        max-width: 482px;
+        text-align: center;
+
+        @include below-mobile {
+            max-width: 360px;
+            font-size: 24px;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        align-items: start;
+
+        @include below-mobile {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+    }
+
+    &__column {
+        display: grid;
+        align-content: start;
+        gap: 28px;
+
+        &[hidden] {
+            display: none;
+        }
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+
+        &[hidden] {
+            display: none;
+        }
+
+        &.is-revealed {
+            animation: message-reviews-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+            animation-delay: var(--message-reviews-delay, 0s);
+        }
+
+        &--tall {
+            height: 360px;
+
+            @include below-mobile {
+                height: 240px;
+            }
+        }
+
+        &--short {
+            height: 260px;
+
+            @include below-mobile {
+                height: 172px;
+            }
+        }
+    }
+
+    &__footer {
+        display: grid;
+        justify-items: center;
+        min-height: 50px;
+
+        @include below-mobile {
+            padding-top: 8px;
+            min-height: 44px;
+        }
+
+        &.is-loading {
+            .message-reviews__loader {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+
+                img {
+                    animation: message-reviews-loader-spin 0.9s linear infinite;
+                }
+            }
+
+            .message-reviews__more {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(8px);
+            }
+        }
+    }
+
+    &__loader {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.92);
+        transition: opacity $transition-base, transform $transition-base, visibility $transition-base;
+        grid-area: 1 / 1;
+
+        @include below-mobile {
+            width: 40px;
+            height: 40px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__more {
+        width: 200px;
+        grid-area: 1 / 1;
+        transition: opacity $transition-base, transform $transition-base, visibility $transition-base;
+
+        &.is-loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        &.is-exhausted {
+            opacity: 0;
+            transform: translateY(8px);
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    &__source {
+        display: none;
+    }
+}
+
+@keyframes message-reviews-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes message-reviews-loader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

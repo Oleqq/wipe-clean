@@ -1,0 +1,44 @@
+-
+    var companyHighlightDefaults = {
+        title: "ВАЙП–Клин, ВАШ НАДЕЖНЫЙ ПОМОЩНИК",
+        summaryText: "В ВАЙП–Клин мы ценим ваше время и берем на себя все заботы о чистоте. Мы создаем сервис, в котором легко заказать уборку, заранее понимать стоимость и быть уверенным в результате...",
+        paragraphs: [
+            "В ВАЙП–Клин мы ценим ваше время и берем на себя все заботы о чистоте. Мы создаем сервис, в котором легко заказать уборку, заранее понимать стоимость и быть уверенным в результате. Наша задача — не просто навести порядок, а сделать ваш дом по-настоящему комфортным, свежим и приятным для жизни.",
+            "Мы выстраиваем работу так, чтобы вам было удобно на каждом этапе: от оформления заявки до финальной проверки результата. Команда приезжает вовремя, учитывает особенности жилья и работает аккуратно, чтобы качество уборки было стабильным, а сервис — понятным и предсказуемым."
+        ],
+        noteText: "Для нас клининг — это не разовая услуга, а надежная поддержка вашего ежедневного комфорта. Регулярная уборка помогает поддерживать дом в идеальном состоянии без лишних усилий, а честный подход и внимание к деталям становятся основой доверия между нами и клиентом.",
+        bodyId: "company-highlight-body",
+        mediaImageSrc: "/static/images/section/company-highlight/company-highlight-full.png",
+        mediaImageAlt: "Инвентарь ВАЙП–Клин для уборки"
+    }
+
+-
+    var companyHighlightData = typeof companyHighlightSection === "object" && companyHighlightSection ? companyHighlightSection : {}
+    var companyHighlightOptions = Object.assign({}, companyHighlightDefaults, companyHighlightData)
+    var companyHighlightMediaSrc = companyHighlightOptions.mediaImageSrc || companyHighlightOptions.mainImageSrc || companyHighlightDefaults.mediaImageSrc
+    var companyHighlightMediaAlt = companyHighlightOptions.mediaImageAlt || companyHighlightOptions.mainImageAlt || companyHighlightDefaults.mediaImageAlt
+
+section.company-highlight
+    ._container
+        .company-highlight__wrapper
+            .company-highlight__content
+                .company-highlight__head
+                    h2.ui-title.company-highlight__title= companyHighlightOptions.title
+
+                .company-highlight__copy(data-read-more)
+                    .company-highlight__summary(data-read-more-summary)
+                        p.ui-text.ui-text--sm.company-highlight__summary-text
+                            = companyHighlightOptions.summaryText
+                            |  
+                            button.company-highlight__more(type="button" data-read-more-toggle aria-expanded="false" aria-controls=companyHighlightOptions.bodyId) Ещё
+
+                    .company-highlight__body(id=companyHighlightOptions.bodyId data-read-more-body)
+                        each paragraph in companyHighlightOptions.paragraphs
+                            p.ui-text.company-highlight__text= paragraph
+
+                .company-highlight__note
+                    p.company-highlight__note-text= companyHighlightOptions.noteText
+
+            .company-highlight__media
+                .company-highlight__media-image
+                    img(src=companyHighlightMediaSrc alt=companyHighlightMediaAlt loading="lazy")

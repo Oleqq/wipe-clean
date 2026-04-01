@@ -1,0 +1,35 @@
+-
+    var companyRequisitesBandDefaults = {
+        items: [
+            {
+                label: "ООО",
+                value: "«ВАЙП–Клин»"
+            },
+            {
+                label: "ОГРН",
+                value: "0000000000000"
+            },
+            {
+                label: "ИНН",
+                value: "0000000000"
+            },
+            {
+                label: "КПП",
+                value: "000000000"
+            }
+        ]
+    };
+
+-
+    var companyRequisitesBandData = typeof companyRequisitesBandSection === "object" && companyRequisitesBandSection ? companyRequisitesBandSection : {};
+    var companyRequisitesBandOptions = Object.assign({}, companyRequisitesBandDefaults, companyRequisitesBandData);
+    var companyRequisitesBandItems = Array.isArray(companyRequisitesBandData.items) && companyRequisitesBandData.items.length ? companyRequisitesBandData.items : companyRequisitesBandDefaults.items;
+
+section.company-requisites-band
+    ._container
+        .company-requisites-band__wrapper
+            ul.company-requisites-band__list
+                each item in companyRequisitesBandItems
+                    li.company-requisites-band__item
+                        strong.company-requisites-band__label= item.label
+                        span.company-requisites-band__value= item.value

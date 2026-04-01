@@ -5,7 +5,9 @@
  * @package wipe-clean
  */
 
-wipe_clean_render_static_markup( 'layout/footer' );
+wipe_clean_render_site_footer();
+
+get_template_part( 'template-parts/layout/site-popups' );
 ?>
 </div>
 <?php wp_footer(); ?>

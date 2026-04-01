@@ -59,11 +59,11 @@ function wipe_clean_get_front_page_acf_layouts() {
  * @return void
  */
 function wipe_clean_register_front_page_acf_fields() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+	if ( ! function_exists( 'wipe_clean_sync_acf_field_group' ) ) {
 		return;
 	}
 
-	acf_add_local_field_group(
+	wipe_clean_sync_acf_field_group(
 		array(
 			'key'      => 'group_wipe_clean_front_page',
 			'title'    => 'Главная страница: блоки',

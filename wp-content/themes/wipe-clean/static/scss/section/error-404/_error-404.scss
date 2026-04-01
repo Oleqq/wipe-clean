@@ -1,0 +1,106 @@
+@use "../../global/core" as *;
+
+.error-404 {
+    @include first-screen-padding(112px, 80px, 88px, 64px, 88px, 40px);
+
+    &__wrapper {
+        display: grid;
+        gap: 120px;
+
+        @include below-tablet {
+            gap: 88px;
+        }
+
+        @include below-mobile {
+            gap: 48px;
+        }
+    }
+
+    &__hero {
+        display: grid;
+        grid-template-columns: minmax(0, 645px) minmax(360px, 648px);
+        gap: 40px;
+        align-items: end;
+
+        @include below-tablet {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @include below-mobile {
+            gap: 24px;
+        }
+    }
+
+    &__head {
+        max-width: 645px;
+        align-self: start;
+
+        @include below-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__title {
+        @include below-mobile {
+            font-size: 32px;
+        }
+    }
+
+    &__text {
+        color: rgba($color-heading-hero-start, 0.8);
+
+        @include below-mobile {
+            max-width: 240px;
+            font-size: 12px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 28px;
+
+        @include below-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 8px;
+        }
+    }
+
+    &__action {
+        width: 220px;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+
+    &__visual {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-width: 0;
+
+        @include below-tablet {
+            max-width: 648px;
+        }
+
+        @include below-mobile {
+            justify-content: flex-start;
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        max-width: 648px;
+        height: auto;
+
+        @include below-mobile {
+            max-width: 312px;
+        }
+    }
+}
+

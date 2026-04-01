@@ -1,0 +1,91 @@
+include ../../components/contact-card/contact-card
+
+-
+    var contactsHeroDefaults = {
+        kicker: "Наши контакты",
+        title: "Наши контакты",
+        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        idPrefix: "contacts-page",
+        nameLabel: "Ваше имя",
+        namePlaceholder: "Введите имя и фамилию",
+        phoneLabel: "Номер телефона",
+        phonePlaceholder: "+7 _ _ _ _ _ _ _ _ _ _",
+        agreementText: "Заполняя форму вы даете согласие на обработку персональных данных",
+        submitText: "Узнать стоимость клининга",
+        submitTextMobile: "Рассчитать стоимость",
+        phoneCard: {
+            label: "Номер телефона",
+            value: "+7 980 163 6101",
+            href: "tel:+79801636101"
+        },
+        socialCard: {
+            type: "socials",
+            label: "Электронная почта",
+            items: [
+                {
+                    label: "Telegram",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/akar-icons_telegram-fill.png"
+                },
+                {
+                    label: "WhatsApp",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/Vector.png"
+                },
+                {
+                    label: "VK",
+                    href: "#",
+                    iconSrc: "/static/images/section/contacts/Vector (1).png"
+                }
+            ]
+        },
+        emailCard: {
+            label: "Электронная почта",
+            value: "MAILBOX@WIPECLEAN.RU",
+            href: "mailto:mailbox@wipeclean.ru"
+        }
+    };
+
+-
+    var contactsHeroData = typeof contactsHeroSection === "object" && contactsHeroSection ? contactsHeroSection : {};
+    var contactsHeroPhoneCard = typeof contactsHeroData.phoneCard === "object" && contactsHeroData.phoneCard ? contactsHeroData.phoneCard : {};
+    var contactsHeroSocialCard = typeof contactsHeroData.socialCard === "object" && contactsHeroData.socialCard ? contactsHeroData.socialCard : {};
+    var contactsHeroEmailCard = typeof contactsHeroData.emailCard === "object" && contactsHeroData.emailCard ? contactsHeroData.emailCard : {};
+    var contactsHeroOptions = Object.assign({}, contactsHeroDefaults, contactsHeroData);
+
+    contactsHeroOptions.phoneCard = Object.assign({}, contactsHeroDefaults.phoneCard, contactsHeroPhoneCard);
+    contactsHeroOptions.socialCard = Object.assign({}, contactsHeroDefaults.socialCard, contactsHeroSocialCard);
+    contactsHeroOptions.emailCard = Object.assign({}, contactsHeroDefaults.emailCard, contactsHeroEmailCard);
+
+    var contactsHeroNameFieldId = contactsHeroOptions.idPrefix + "-name";
+    var contactsHeroPhoneFieldId = contactsHeroOptions.idPrefix + "-phone";
+    var contactsHeroAgreementFieldId = contactsHeroOptions.idPrefix + "-agreement";
+
+section.contacts-hero
+    ._container
+        .contacts-hero__wrapper
+            .contacts-hero__layout
+                .contacts-hero__head.ui-section-head.ui-section-head--compact
+                    span.ui-kicker.contacts-hero__kicker= contactsHeroOptions.kicker
+                    h1.ui-title.ui-title--hero.contacts-hero__title= contactsHeroOptions.title
+                    p.ui-text.contacts-hero__text= contactsHeroOptions.text
+                form.contacts-hero__form.ui-form(action="#" method="post" novalidate)
+                    .contacts-hero__fields
+                        .ui-field.contacts-hero__field
+                            label.ui-field__label(for=contactsHeroNameFieldId)= contactsHeroOptions.nameLabel
+                            input.ui-field__control(id=contactsHeroNameFieldId type="text" name="name" placeholder=contactsHeroOptions.namePlaceholder)
+                        .ui-field.contacts-hero__field
+                            label.ui-field__label(for=contactsHeroPhoneFieldId)= contactsHeroOptions.phoneLabel
+                            input.ui-field__control(id=contactsHeroPhoneFieldId type="tel" name="phone" placeholder=contactsHeroOptions.phonePlaceholder)
+                    .contacts-hero__actions
+                        label.ui-checkbox.contacts-hero__checkbox(for=contactsHeroAgreementFieldId)
+                            input.ui-checkbox__input(id=contactsHeroAgreementFieldId type="checkbox" name="agreement")
+                            span.ui-checkbox__label= contactsHeroOptions.agreementText
+                        button.ui-btn.ui-btn--primary.contacts-hero__submit(type="submit")
+                            span.ui-btn__content
+                                span.contacts-hero__submit-text.contacts-hero__submit-text--desktop= contactsHeroOptions.submitText
+                                span.contacts-hero__submit-text.contacts-hero__submit-text--mobile= contactsHeroOptions.submitTextMobile
+            .contacts-hero__cards
+                +contactCard(contactsHeroOptions.phoneCard, "contacts-hero__card")
+                +contactCard(contactsHeroOptions.socialCard, "contacts-hero__card")
+                +contactCard(contactsHeroOptions.emailCard, "contacts-hero__card")

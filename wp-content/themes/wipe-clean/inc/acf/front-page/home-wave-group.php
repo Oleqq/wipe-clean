@@ -9,7 +9,76 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function wipe_clean_get_home_wave_group_valid_acf_field( $field ) {
+	if ( function_exists( 'acf_get_valid_field' ) ) {
+		$field = acf_get_valid_field( $field );
+	}
+
+	$field            = is_array( $field ) ? $field : array();
+	$field['wrapper'] = wp_parse_args(
+		isset( $field['wrapper'] ) && is_array( $field['wrapper'] ) ? $field['wrapper'] : array(),
+		array(
+			'width' => '',
+			'class' => '',
+			'id'    => '',
+		)
+	);
+	$field['class']   = isset( $field['class'] ) ? (string) $field['class'] : '';
+
+	return $field;
+}
+
+function wipe_clean_get_home_wave_group_work_steps_item_fields() {
+	return array(
+		wipe_clean_get_home_wave_group_valid_acf_field( wipe_clean_acf_field( 'text', 'number', 'Номер' ) ),
+		wipe_clean_get_home_wave_group_valid_acf_field( wipe_clean_acf_field( 'text', 'title', 'Заголовок этапа' ) ),
+		wipe_clean_get_home_wave_group_valid_acf_field( wipe_clean_acf_field( 'textarea', 'text', 'Короткое описание', array( 'rows' => 3 ) ) ),
+	);
+}
+
+function wipe_clean_normalize_home_wave_group_work_steps_items_field( $field ) {
+	$work_steps_item_fields = wipe_clean_get_home_wave_group_work_steps_item_fields();
+
+	$field                  = wipe_clean_get_home_wave_group_valid_acf_field( $field );
+	$field['sub_fields']    = $work_steps_item_fields;
+	$field['instructions']  = 'Для каждого этапа заполните номер, заголовок и короткое описание карточки.';
+	$field['layout']        = 'block';
+	$field['button_label']  = 'Добавить этап';
+	$field['collapsed']     = $work_steps_item_fields[1]['key'];
+
+	return $field;
+}
+
+function wipe_clean_filter_home_wave_group_work_steps_items_field( $field ) {
+	$is_target_field = isset( $field['type'], $field['name'] ) && 'repeater' === $field['type'] && 'items' === $field['name'];
+
+	if ( ! $is_target_field ) {
+		return $field;
+	}
+
+	$matches_layout = isset( $field['parent_layout'] ) && 'layout_home_wave_group' === $field['parent_layout'];
+	$matches_label  = isset( $field['label'] ) && 'Этапы' === $field['label'];
+
+	if ( ! $matches_layout && ! $matches_label ) {
+		return $field;
+	}
+
+	return wipe_clean_normalize_home_wave_group_work_steps_items_field( $field );
+}
+add_filter( 'acf/load_field/name=items', 'wipe_clean_filter_home_wave_group_work_steps_items_field', 20 );
+
+function wipe_clean_get_home_wave_group_work_steps_items_repeater() {
+	return wipe_clean_normalize_home_wave_group_work_steps_items_field(
+		wipe_clean_acf_repeater(
+			'items',
+			'Этапы',
+			wipe_clean_get_home_wave_group_work_steps_item_fields()
+		)
+	);
+}
+
 function wipe_clean_get_front_page_acf_layout_home_wave_group() {
+
 	return array(
 		'key'        => 'layout_home_wave_group',
 		'name'       => 'home_wave_group',
@@ -49,15 +118,7 @@ function wipe_clean_get_front_page_acf_layout_home_wave_group() {
 					'sub_fields' => array(
 						wipe_clean_acf_field( 'text', 'title', 'Заголовок' ),
 						wipe_clean_acf_field( 'textarea', 'text', 'Описание', array( 'rows' => 3 ) ),
-						wipe_clean_acf_repeater(
-							'items',
-							'Этапы',
-							array(
-								wipe_clean_acf_field( 'text', 'number', 'Номер' ),
-								wipe_clean_acf_field( 'text', 'title', 'Заголовок' ),
-								wipe_clean_acf_field( 'textarea', 'text', 'Описание', array( 'rows' => 3 ) ),
-							)
-						),
+						wipe_clean_get_home_wave_group_work_steps_items_repeater(),
 					),
 				)
 			),

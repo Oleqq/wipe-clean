@@ -1,0 +1,104 @@
+@use "../../global/core" as *;
+
+.why-us {
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+
+    @media (min-width:768px) {
+        padding-bottom: 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+        min-width: 0;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        max-width: 790px;
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 12px;
+        }
+    }
+
+    &__title {
+        @include below-mobile {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        @include below-mobile {
+            font-size: 14px;
+        }
+    }
+
+    &__slider {
+        min-width: 0;
+        margin: 0;
+         overflow: hidden;
+
+        @include below-mobile {
+           
+            overflow: visible;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px 20px;
+        align-items: stretch;
+
+        @include below-desktop {
+            gap: 20px 16px;
+        }
+
+        @include below-mobile {
+            display: flex;
+            gap: 0;
+        }
+    }
+
+    &__slide {
+        min-width: 0;
+        height: auto;
+
+        &--offset-2 {
+            grid-column: 2;
+        }
+
+        &--offset-3 {
+            grid-column: 3;
+        }
+
+        @include below-mobile {
+            width: 280px;
+        }
+    }
+
+    &__action {
+        width: 427px;
+        position: relative;
+        z-index: 10;
+
+        @media (min-width:1340px) {
+            position: relative;
+            top: -86px;
+        }
+
+        @include below-tablet {
+            width: 360px;
+        }
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+}
+

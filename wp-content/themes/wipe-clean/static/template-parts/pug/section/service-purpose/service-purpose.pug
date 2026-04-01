@@ -1,0 +1,64 @@
+include ../../components/check-list-item/check-list-item
+
+-
+    var servicePurposeData = typeof servicePurposeData !== "undefined" ? servicePurposeData : {
+        title: "Зачем заказывать уборку квартиры?",
+        summaryText: "Профессиональной уборкой квартир под ключ чаще пользуются люди, которым жаль тратить ...",
+        introText: "Профессиональной уборкой квартир под ключ чаще пользуются люди, которым жаль тратить свободные часы на скучную возню с пылесосом. Здесь наведение чистоты превращается в четкий процесс под присмотром опытных исполнителей. Это освобождает от бытовой рутины, позволяя спокойно заниматься своими делами, пока дома наводят порядок.",
+        noteText: "Такой сервис — спасение для родителей, владельцев пушистых питомцев и всех, у кого график расписан по минутам. С бытовой химией из супермаркета и веником не добиться того эффекта, который дает мощная спецтехника. Хорошая клининговая уборка квартиры не просто выметает сор, но и сбережет напольные покрытия от преждевременного износа.",
+        leadText: "Главные причины выбрать наш сервис:",
+        reasons: [
+            {
+                text: "Колоссальная экономия времени и физических сил собственника",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "Достижение профессионального результата за счет опыта мастеров",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "Максимальное удобство, так как доступна уборка квартир под ключ",
+                icon: "/static/images/ui/check-badge-icon.png"
+            },
+            {
+                text: "Индивидуальный подход, учитывающий все особенности помещений",
+                mobileText: "мы несем ответственность за доверенные нам вещи и отделку.",
+                icon: "/static/images/ui/check-badge-icon.png"
+            }
+        ],
+        endingText: "Грамотно организованный клининг квартир становится идеальным решением также для арендаторов и арендодателей. Регулярная забота о чистоте исключает накопление стойких загрязнений.",
+        imageSrc: "/static/images/section/service-purpose/service-purpose-image.png",
+        imageAlt: "Причины заказать уборку квартиры"
+    }
+
+section.service-purpose
+    ._container
+        .service-purpose__wrapper
+            .service-purpose__content
+                .service-purpose__head
+                    h2.ui-title.service-purpose__title= servicePurposeData.title
+
+                .service-purpose__copy(data-read-more)
+                    .service-purpose__summary(data-read-more-summary)
+                        p.ui-text.ui-text--sm.service-purpose__summary-text
+                            | #{servicePurposeData.summaryText}
+                            button.service-purpose__more(type="button" data-read-more-toggle aria-expanded="false" aria-controls="service-purpose-body") Ещё
+
+                    .service-purpose__body#service-purpose-body(data-read-more-body)
+                        p.ui-text.service-purpose__text= servicePurposeData.introText
+
+                .service-purpose__note
+                    p.service-purpose__note-text= servicePurposeData.noteText
+
+                .service-purpose__lead
+                    p.ui-text.service-purpose__lead-text= servicePurposeData.leadText
+
+                ul.service-purpose__list
+                    each item in servicePurposeData.reasons
+                        +checkListItem(item)
+
+                .service-purpose__ending
+                    p.ui-text.service-purpose__text= servicePurposeData.endingText
+
+            .service-purpose__media
+                img(src=servicePurposeData.imageSrc alt=servicePurposeData.imageAlt loading="lazy")

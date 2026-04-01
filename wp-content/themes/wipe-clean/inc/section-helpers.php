@@ -51,6 +51,13 @@ function wipe_clean_resolve_link( $link ) {
 	return $normalized;
 }
 
+function wipe_clean_force_link_url( $link, $url ) {
+	$link        = wipe_clean_resolve_link( $link );
+	$link['url'] = (string) $url;
+
+	return $link;
+}
+
 function wipe_clean_render_media( $media, $attributes = array() ) {
 	if ( empty( $media ) ) {
 		return '';
@@ -105,8 +112,9 @@ function wipe_clean_render_media( $media, $attributes = array() ) {
 		return '';
 	}
 
-	$attributes['src'] = $url;
-	$attributes['alt'] = isset( $attributes['alt'] ) && '' !== $attributes['alt'] ? (string) $attributes['alt'] : $alt;
+	$attribute_alt      = array_key_exists( 'alt', $attributes ) ? (string) $attributes['alt'] : '';
+	$attributes['src']  = $url;
+	$attributes['alt']  = '' !== $attribute_alt ? $attribute_alt : $alt;
 
 	$parts = array();
 
@@ -133,6 +141,20 @@ function wipe_clean_format_text( $text ) {
 
 	if ( '' === $text ) {
 		return '';
+	}
+
+	return wpautop( esc_html( $text ) );
+}
+
+function wipe_clean_format_rich_text( $text ) {
+	$text = trim( (string) $text );
+
+	if ( '' === trim( wp_strip_all_tags( $text ) ) ) {
+		return '';
+	}
+
+	if ( $text !== wp_strip_all_tags( $text ) ) {
+		return wp_kses_post( $text );
 	}
 
 	return wpautop( esc_html( $text ) );

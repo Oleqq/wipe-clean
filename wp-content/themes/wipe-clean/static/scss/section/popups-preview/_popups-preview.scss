@@ -1,0 +1,86 @@
+@use "../../global/core" as *;
+
+.popups-preview {
+    
+    @include first-screen-padding;
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+    }
+
+    &__head {
+        max-width: 860px;
+    }
+
+    &__text {
+        max-width: 760px;
+    }
+
+    &__groups {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__group {
+        display: grid;
+        gap: 24px;
+        padding: 28px;
+    }
+
+    &__group-head {
+        display: grid;
+        gap: 12px;
+    }
+
+    &__group-title {
+        @include text-title(24px, 800);
+    }
+
+    &__group-text {
+        @include text-body(16px, $color-text, 400);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    @include below-mobile-lg {
+        &__groups {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include below-mobile {
+        &__wrapper {
+            gap: 24px;
+        }
+
+        &__group {
+            gap: 20px;
+            padding: 20px;
+        }
+
+        &__group-title {
+            font-size: 20px;
+        }
+
+        &__group-text {
+            @include text-body(14px, $color-text, 400);
+        }
+
+        &__actions {
+            flex-direction: column;
+            align-items: stretch;
+            height: fit-content;
+
+            .ui-btn {
+                width: 100%;
+            }
+        }
+    }
+}
+

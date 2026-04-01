@@ -1,4 +1,10 @@
 <?php
+require_once __DIR__ . '/data/services-page.php';
+require_once __DIR__ . '/services-page-cpt.php';
+require_once __DIR__ . '/services-page.php';
+require_once __DIR__ . '/service-routing.php';
+require_once __DIR__ . '/service-single.php';
+require_once __DIR__ . '/services-archive.php';
 /**
  * Front-page section registry and rendering.
  *
@@ -66,7 +72,25 @@ function wipe_clean_merge_section_with_fallback( $defaults, $section ) {
 		}
 
 		if ( wipe_clean_array_is_list_compatible( $defaults ) ) {
-			return ! empty( $section ) ? array_values( $section ) : $defaults;
+			$defaults_list = array_values( $defaults );
+			$section_list  = array_values( $section );
+
+			if ( empty( $section_list ) ) {
+				return $defaults_list;
+			}
+
+			$merged_list = array();
+
+			foreach ( $section_list as $index => $value ) {
+				if ( array_key_exists( $index, $defaults_list ) ) {
+					$merged_list[] = wipe_clean_merge_section_with_fallback( $defaults_list[ $index ], $value );
+					continue;
+				}
+
+				$merged_list[] = $value;
+			}
+
+			return $merged_list;
 		}
 
 		$merged = $defaults;
@@ -109,8 +133,28 @@ function wipe_clean_get_front_page_sections() {
 	}
 
 	foreach ( wipe_clean_get_front_page_layout_order() as $layout ) {
-		$defaults              = wipe_clean_get_front_page_section_defaults( $layout );
-		$normalized_sections[] = wipe_clean_merge_section_with_fallback( $defaults, $acf_sections[ $layout ] ?? array() );
+		$defaults = wipe_clean_get_front_page_section_defaults( $layout );
+		$section  = wipe_clean_merge_section_with_fallback( $defaults, $acf_sections[ $layout ] ?? array() );
+
+		if ( 'services_preview' === $layout ) {
+			$section['secondary_action'] = wipe_clean_force_link_url( $section['secondary_action'] ?? array(), '#popup-calc' );
+		}
+
+		if ( 'home_wave_group' === $layout ) {
+			$price_preview = isset( $section['price_preview'] ) && is_array( $section['price_preview'] )
+				? $section['price_preview']
+				: array();
+
+			$price_preview['secondary_button'] = wipe_clean_force_link_url( $price_preview['secondary_button'] ?? array(), '#popup-order-service' );
+			$section['price_preview']          = $price_preview;
+		}
+
+		if ( 'reviews_preview' === $layout ) {
+			$section['primary_action']   = wipe_clean_force_link_url( $section['primary_action'] ?? array(), home_url( '/reviews/' ) );
+			$section['secondary_action'] = wipe_clean_force_link_url( $section['secondary_action'] ?? array(), '#popup-review' );
+		}
+
+		$normalized_sections[] = $section;
 	}
 
 	return $normalized_sections;

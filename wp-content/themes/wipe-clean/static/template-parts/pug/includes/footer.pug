@@ -1,0 +1,42 @@
+include ../components/contact-card/contact-card
+include ../data/includes/footer-data
+
+footer.footer
+    .footer__wave(aria-hidden="true")
+        img(src="/static/images/ui/footer-wave.svg" alt="")
+    .footer__body
+        ._container
+            .footer__wrapper
+                .footer__top
+                    a.footer__brand(href="index.html" aria-label="На главную")
+                        span.footer__brand-mark
+                            img(src="/static/images/section/company-preview/company-preview-logo-mark.svg" alt="")
+                        span.footer__brand-type
+                            img(src="/static/images/section/company-preview/company-preview-logo-type.svg" alt="")
+                    ul.footer__requisites
+                        each item in footerRequisites
+                            li.footer__requisite
+                                strong.footer__requisite-label= item.label
+                                span.footer__requisite-value= item.value
+                .footer__divider
+                .footer__nav
+                    p.footer__nav-title Меню сайта
+                    .footer__nav-body
+                        each column in footerMenuColumns
+                            ul.footer__nav-column
+                                each item in column
+                                    li.footer__nav-item
+                                        a.footer__nav-link(href=item.href)= item.label
+                .footer__divider
+                .footer__contacts
+                    +contactCard(footerPhoneCard, "footer__contact-card")
+                    +contactCard(footerSocialCard, "footer__contact-card")
+                    +contactCard(footerEmailCard, "footer__contact-card")
+                .footer__bottom
+                    p.footer__copyright © 2026 - Официальный сайт "ВАЙП–Клин"
+                    .footer__legal
+                        each item in footerLegalLinks
+                            a.footer__legal-link(href=item.href)= item.label
+                    a.footer__made-by(href="https://ds-art.ru/" target="_blank" rel="noopener noreferrer" aria-label="Сайт разработан компанией DS-ART")
+                        span.footer__made-by-mark DS
+                        span.footer__made-by-text Сайт разработан компанией DS-ART

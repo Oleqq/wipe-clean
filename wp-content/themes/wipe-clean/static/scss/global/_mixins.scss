@@ -1,0 +1,305 @@
+@use "sass:math";
+@use "sass:map";
+@use "./variables" as *;
+
+@mixin adaptive-font($min-size, $max-size, $min-width: 360, $max-width: 1440) {
+  $slope: math.div($max-size - $min-size, $max-width - $min-width);
+  $intersect: $min-size - $slope * $min-width;
+
+  font-size: clamp(
+    #{$min-size}px,
+    calc(#{$slope * 100}vw + #{$intersect}px),
+    #{$max-size}px
+  );
+}
+
+@mixin below-desktop {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin below-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin below-mobile-lg {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin below-mobile {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin text-body($size: 16px, $color: $color-text, $weight: 400) {
+  font-family: $font-body;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  color: $color;
+}
+
+@mixin text-title($size: 36px, $weight: 800) {
+  font-family: $font-heading;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $color-heading;
+}
+
+@mixin accent-value($size: 20px, $line-height: 1.4, $letter-spacing: -0.04em) {
+  font-family: $font-heading;
+  font-size: $size;
+  font-weight: 700;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin section-space($top: $section-space-desktop, $bottom: $section-space-desktop) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+
+  @include below-tablet {
+    padding-top: $section-space-tablet;
+    padding-bottom: $section-space-tablet;
+  }
+
+  @include below-mobile {
+    padding-top: $section-space-mobile;
+    padding-bottom: $section-space-mobile;
+  }
+}
+
+@mixin section-padding(
+  $desktop-top,
+  $desktop-bottom,
+  $tablet-top: null,
+  $tablet-bottom: null,
+  $mobile-top: null,
+  $mobile-bottom: null
+) {
+  padding-top: $desktop-top;
+  padding-bottom: $desktop-bottom;
+
+  @include below-tablet {
+    padding-top: if($tablet-top != null, $tablet-top, $desktop-top);
+    padding-bottom: if($tablet-bottom != null, $tablet-bottom, $desktop-bottom);
+  }
+
+  @include below-mobile {
+    padding-top: if($mobile-top != null, $mobile-top, if($tablet-top != null, $tablet-top, $desktop-top));
+    padding-bottom: if($mobile-bottom != null, $mobile-bottom, if($tablet-bottom != null, $tablet-bottom, $desktop-bottom));
+  }
+}
+
+@mixin section-gap-split($desktop-gap, $tablet-gap: null, $mobile-gap: null) {
+  @include section-padding(
+    math.div($desktop-gap, 2),
+    math.div($desktop-gap, 2),
+    if($tablet-gap != null, math.div($tablet-gap, 2), null),
+    if($tablet-gap != null, math.div($tablet-gap, 2), null),
+    if($mobile-gap != null, math.div($mobile-gap, 2), null),
+    if($mobile-gap != null, math.div($mobile-gap, 2), null)
+  );
+}
+
+@mixin first-screen-space($desktop: 112px, $tablet: 88px, $mobile: 88px) {
+  padding-top: $desktop;
+
+  @include below-tablet {
+    padding-top: $tablet;
+  }
+
+  @include below-mobile {
+    padding-top: $mobile;
+  }
+}
+
+@mixin first-screen-padding(
+  $desktop-top: 112px,
+  $desktop-bottom: 40px,
+  $tablet-top: 88px,
+  $tablet-bottom: null,
+  $mobile-top: 88px,
+  $mobile-bottom: null
+) {
+  @include section-padding(
+    $desktop-top,
+    $desktop-bottom,
+    $tablet-top,
+    if($tablet-bottom != null, $tablet-bottom, $desktop-bottom),
+    $mobile-top,
+    if($mobile-bottom != null, $mobile-bottom, if($tablet-bottom != null, $tablet-bottom, $desktop-bottom))
+  );
+}
+
+@mixin ui-card-surface($radius: $radius-2xl) {
+  background: linear-gradient(180deg, $color-surface 0%, $color-bg-soft 100%);
+  border: 2px solid $color-border-soft;
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+}
+
+@mixin ui-card-hover-outline(
+  $radius: $radius-2xl,
+  $hover-lift: -6px,
+  $hover-shadow: 0 18px 48px rgba(21, 15, 49, 0.11)
+) {
+  --ui-card-outline-motion: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  --ui-card-outline-contour-speed: 3.4s;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform var(--ui-card-outline-motion), box-shadow var(--ui-card-outline-motion);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -62%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    background:
+      conic-gradient(
+        from 180deg,
+        rgba($color-primary, 0) 0deg,
+        rgba($color-primary, 0) 84deg,
+        rgba($color-primary, 0.1) 106deg,
+        rgba($color-primary, 0.75) 126deg,
+        rgba($color-accent, 0.28) 142deg,
+        rgba($color-primary, 0.14) 160deg,
+        rgba($color-primary, 0) 196deg,
+        rgba($color-primary, 0) 360deg
+      );
+    filter: blur(10px);
+    transform: rotate(0deg);
+    transition: opacity var(--ui-card-outline-motion);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, $color-surface 0%, $color-bg-soft 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include hover {
+    transform: translate3d(0, $hover-lift, 0);
+    box-shadow: $hover-shadow;
+
+    &::before {
+      opacity: 1;
+      animation: ui-card-contour-run var(--ui-card-outline-contour-speed) linear infinite;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition:
+      transform var(--motion-duration-fast) var(--motion-ease-standard),
+      box-shadow var(--motion-duration-fast) var(--motion-ease-standard);
+
+    &::before {
+      transition: opacity var(--motion-duration-fast) var(--motion-ease-standard);
+      animation: none;
+    }
+
+    &::after {
+      transition: none;
+    }
+  }
+}
+
+@mixin ui-field-surface($radius: $radius-pill) {
+  background-color: $color-surface;
+  border: 2px solid $color-border-field;
+  border-radius: $radius;
+  box-shadow: $shadow-field;
+}
+
+
+
+// ========================================
+// ADAPTIVE VALUES MIXIN (Improved version)
+// ========================================
+
+@mixin adaptive-value($property, $start-size, $min-size, $width-from: 1920px, $width-to: 320px) {
+  // Проверка на отрицательные значения
+  @if $min-size <= 0 {
+    $min-size: 0.0001;
+  }
+  @if $start-size <= 0 {
+    $start-size: 0.0001;
+  }
+
+  // Преобразуем в rem
+  $start-size-rem: math.div($start-size, 16);
+  $min-size-rem: math.div($min-size, 16);
+  $width-from-rem: math.div($width-from, 16);
+  $width-to-rem: math.div($width-to, 16);
+
+  // Формула для адаптивного значения
+  $slope: math.div($start-size - $min-size, $width-from - $width-to);
+  $y-intersection: -$width-to * $slope + $min-size;
+
+  // Плавное изменение размера
+  $fly-value: calc(#{$y-intersection} + #{$slope * 100} * 1vw);
+  $property-value: clamp(#{$min-size-rem}rem, #{$fly-value}, #{$start-size-rem}rem);
+
+  // Применяем адаптивное значение
+  @media (min-width: $width-from) {
+    #{$property}: $start-size;
+  }
+
+  @media (min-width: $width-to) and (max-width: $width-from) {
+    @supports (#{$property}: #{$property-value}) {
+      #{$property}: $property-value;
+    }
+    @supports not (#{$property}: #{$property-value}) {
+      #{$property}: calc(#{$min-size} + (100vw - #{$width-to}) * #{$slope});
+    }
+  }
+
+  @media (max-width: $width-to) {
+    #{$property}: $min-size;
+  }
+}
+
+@keyframes ui-card-contour-run {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

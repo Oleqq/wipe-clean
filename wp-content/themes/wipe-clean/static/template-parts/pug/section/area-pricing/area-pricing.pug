@@ -1,0 +1,68 @@
+-
+    var areaPricingDefaults = {
+        title: "Цены уборки в зависимости от метража жилья",
+        text: "Цена зависит от указанных клиентом параметров: чем точнее размер, тем проще рассчитать стоимость уборки без лишних наценок. Мы учитываем планировку, предлагая честные цены клининговых услуг, а для больших объектов и клининга домовладений стоимость за квадрат выходит еще выгоднее.",
+        image: {
+            src: "/static/images/section/area-pricing/area-pricing-visual-placeholder.png",
+            alt: "Цены уборки в зависимости от метража жилья"
+        },
+        items: [
+            { label: "Уборка квартир", value: "от 80 руб./м²" },
+            { label: "Уборка домов и коттеджей", value: "от 80 руб./м²" },
+            { label: "Уборка офисов", value: "от 30 руб./м²" },
+            { label: "Генеральная уборка", value: "от 140 руб./м²" },
+            { label: "Уборка после ремонта", value: "от 160 руб./м²" },
+            { label: "Поддерживающая уборка", value: "от 80 руб./м²" },
+            { label: "Срочная уборка", value: "от 140 руб./м²" },
+            { label: "Уборка перед въездом / после переезда", value: "от 80 руб./м²" },
+            { label: "Мытьё окон", value: "от 300 руб./м²" }
+        ],
+        cards: [
+            {
+                title: "Выезд в Московскую область",
+                text: "Мы работаем не только в Москве, но и в Московской области. К стоимости заказа добавляется 500 рублей — эта сумма компенсирует транспортные расходы и логистику при выезде за МКАД. Так мы сохраняем высокое качество уборки вне зависимости от расстояния.",
+                accent: "Доплата 500 рублей к услуге"
+            },
+            {
+                title: "Крупный инвентарь: как организуем",
+                text: "Бытовая химия входит в стоимость услуги. Для масштабных задач, где нужен пылесос, стремянка и другой инвентарь, предлагаем два варианта: использовать ваш комплект или наш. Условия и логистику заранее согласовываем при бронировании.",
+                accents: [
+                    "По Москве - 3000 рублей",
+                    "По МО - 4000 рублей"
+                ]
+            }
+        ]
+    }
+
+-
+    var areaPricingData = typeof areaPricingSection === "object" && areaPricingSection ? areaPricingSection : {}
+    var areaPricingImageData = typeof areaPricingData.image === "object" && areaPricingData.image ? areaPricingData.image : {}
+    var areaPricingOptions = Object.assign({}, areaPricingDefaults, areaPricingData)
+    var areaPricingImage = Object.assign({}, areaPricingDefaults.image, areaPricingImageData)
+
+section.area-pricing
+    ._container
+        .area-pricing__wrapper
+            .area-pricing__main
+                .area-pricing__head.ui-section-head.ui-section-head--compact
+                    h2.area-pricing__title.ui-title= areaPricingOptions.title
+                    p.area-pricing__text.ui-text= areaPricingOptions.text
+                .area-pricing__visual(aria-hidden="true")
+                    .area-pricing__visual-media
+                        img(src=areaPricingImage.src alt=areaPricingImage.alt loading="lazy")
+                ul.area-pricing__list.ui-price-list
+                    each item in areaPricingOptions.items
+                        li.area-pricing__row.ui-price-list__row
+                            span.area-pricing__label.ui-price-list__label= item.label
+                            span.area-pricing__value.ui-price-list__value= item.value
+            .area-pricing__cards
+                each card in areaPricingOptions.cards
+                    .area-pricing__card.ui-card.ui-card--compact
+                        h3.area-pricing__card-title= card.title
+                        p.area-pricing__card-text.ui-text= card.text
+                        if card.accent
+                            p.area-pricing__card-accent= card.accent
+                        if card.accents
+                            .area-pricing__card-accents
+                                each accent in card.accents
+                                    p.area-pricing__card-accent= accent

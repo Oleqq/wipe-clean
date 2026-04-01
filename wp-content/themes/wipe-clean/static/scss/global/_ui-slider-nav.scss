@@ -1,0 +1,23 @@
+@use "./core" as *;
+
+.ui-slider-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &--desktop-only {
+        @include below-mobile {
+            display: none;
+        }
+    }
+
+    &__btn {
+        .ui-btn__content {
+            width: 60px;
+            min-height: 44px;
+            padding: 4px 12px;
+            color: #ffffff;
+        }
+    }
+}
+

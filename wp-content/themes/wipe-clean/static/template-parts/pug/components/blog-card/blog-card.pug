@@ -1,0 +1,21 @@
+mixin blogCard(item)
+    -
+        var blogCardHref = item.href || "#"
+        var blogCardImageAlt = item.imageAlt || item.title
+        var blogCardDateTime = item.dateTime || ""
+
+    article.blog-card
+        a.blog-card__inner(href=blogCardHref aria-label=item.title)
+            .blog-card__media
+                img(src=item.imageSrc alt=blogCardImageAlt loading="lazy")
+            .blog-card__body
+                .blog-card__content
+                    h3.blog-card__title= item.title
+                    p.blog-card__excerpt= item.excerpt
+                .blog-card__meta
+                    time.blog-card__date(datetime=blogCardDateTime)= item.dateLabel
+                    span.blog-card__link
+                        span.blog-card__link-label Читать
+                        span.blog-card__link-icon
+                            span.blog-card__link-icon-inner
+                                img(src="/static/images/section/blog-archive/blog-card-arrow.svg" alt="" aria-hidden="true" loading="lazy")

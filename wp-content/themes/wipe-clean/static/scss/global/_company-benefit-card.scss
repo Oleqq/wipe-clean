@@ -1,0 +1,78 @@
+@use "./core" as *;
+
+.company-benefit-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+    min-height: 118px;
+    width: 100%;
+    padding: 20px;
+    @include ui-card-surface();
+    @include ui-card-hover-outline();
+
+    @include below-mobile {
+        gap: 16px;
+        min-height: 114px;
+        padding: 12px;
+        border-radius: $radius-xl;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__icon-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        padding: 2px;
+        border-radius: 12px;
+        background-color: $color-accent-dark;
+        box-shadow: $shadow-accent;
+
+        @include below-mobile {
+            border-radius: 12px;
+        }
+
+        img {
+            display: block;
+            width: 56px;
+            height: 56px;
+            padding: 8px;
+            border: 2px solid $color-accent;
+            border-radius: 10px;
+            background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+            object-fit: contain;
+            box-sizing: border-box;
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: 8px;
+        align-content: center;
+        min-width: 0;
+    }
+
+    &__title {
+        margin: 0;
+        @include text-title(22px);
+
+        @include below-mobile {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        @include text-body();
+
+        @include below-mobile {
+            font-size: 14px;
+        }
+    }
+}
+

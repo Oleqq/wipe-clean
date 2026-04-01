@@ -107,6 +107,7 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding: 20px 0 20px 20px;
 }
 .service-benefits__summary-text {
   margin: 0;

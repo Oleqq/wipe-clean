@@ -11,7 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $wipe_clean_cpt_acf_files = array(
 	__DIR__ . '/acf/cpt/service.php',
+	__DIR__ . '/acf/cpt/service-single.php',
 	__DIR__ . '/acf/cpt/review.php',
+	__DIR__ . '/acf/cpt/promotion.php',
 );
 
 foreach ( $wipe_clean_cpt_acf_files as $wipe_clean_cpt_acf_file ) {

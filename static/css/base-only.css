@@ -439,6 +439,14 @@ body.is-popup-active .main {
     opacity: 0.98;
   }
 }
+body {
+  overflow-x: hidden;
+}
+
+.f-button {
+  margin: 16px !important;
+}
+
 ._container {
   width: 100%;
   max-width: 1440px;
@@ -574,6 +582,8 @@ body.is-popup-active .main {
   line-height: 0.9;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0px -2px 1px #2abe8e;
 }
 
 .ui-accent-value {
@@ -1902,7 +1912,7 @@ form[data-popup-demo-form].is-disabled {
 .ui-checkbox__input:checked::after {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 3px;
   left: 6px;
   width: 4px;
   height: 8px;

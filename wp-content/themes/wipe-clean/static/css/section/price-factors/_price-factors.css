@@ -73,7 +73,7 @@
 }
 .price-factors__slider {
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
   margin: 0;
 }
 @media (max-width: 650px) {

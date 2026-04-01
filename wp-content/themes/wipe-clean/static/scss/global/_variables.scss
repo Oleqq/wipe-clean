@@ -1,0 +1,70 @@
+$font-body: "Golos Text", "Segoe UI", sans-serif;
+$font-heading: "Manrope", "Segoe UI", sans-serif;
+$font-display: "Involve", "Segoe UI", sans-serif;
+$font-main: $font-body;
+
+$color-bg: #fffaf3;
+$color-bg-soft: #fffcf8;
+$color-surface: #ffffff;
+$color-surface-muted: #f8f0e6;
+$color-wave: #caeae0;
+
+$color-heading: #150f31;
+$color-heading-hero-start: #002e3d;
+$color-heading-hero-end: #006180;
+$color-text: rgba(21, 15, 49, 0.8);
+$color-text-soft: #6d6d6d;
+$color-placeholder: #a2a2a2;
+
+$color-primary: #017096;
+$color-primary-top: #0086b3;
+$color-primary-border: #40a5c1;
+$color-primary-shadow: rgba(1, 112, 150, 0.6);
+
+$color-accent: #28b789;
+$color-accent-top: #1b9e74;
+$color-accent-dark: #188260;
+$color-accent-shadow: rgba(24, 130, 96, 0.6);
+
+$color-border-soft: #f3eee7;
+$color-border-field: #caeae0;
+$color-border-strong: rgba(21, 15, 49, 0.14);
+$color-secondary-border: #f5e7d3;
+
+$shadow-soft: 0 2px 4px rgba(228, 228, 228, 0.6);
+$shadow-field: 0 2px 4px rgba(0, 0, 0, 0.08);
+$shadow-primary: 0 2px 4px $color-primary-shadow;
+$shadow-accent: 0 2px 4px $color-accent-shadow;
+
+$radius-pill: 999px;
+$radius-2xl: 28px;
+$radius-xl: 20px;
+$radius-lg: 16px;
+$radius-md: 12px;
+$radius-sm: 10px;
+$radius-xs: 6px;
+
+$container-width: 1440px;
+$container-padding-desktop: 60px;
+$container-padding-tablet: 20px;
+$container-padding-mobile: 16px;
+
+$section-space-desktop: 140px;
+$section-space-tablet: 110px;
+$section-space-mobile: 80px;
+$section-space-mobile-compact: 50px;
+$section-space-mobile-tight: 40px;
+
+$gap-xl: 32px;
+$gap-lg: 24px;
+$gap-md: 20px;
+$gap-sm: 16px;
+$gap-xs: 12px;
+$gap-2xs: 8px;
+
+$bp-desktop: 1200px;
+$bp-tablet: 991px;
+$bp-mobile-lg: 768px;
+$bp-mobile: 650px;
+
+$transition-base: 0.34s cubic-bezier(0.18, 0.88, 0.24, 1);

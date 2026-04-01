@@ -1,0 +1,15 @@
+mixin reviewCard(item)
+    article.review-card
+        .review-card__rating(aria-label="Рейтинг 5 из 5")
+            img.review-card__rating-stars(
+                src="/static/images/components/review-card/review-card-stars.svg"
+                alt=""
+                aria-hidden="true"
+                width="222"
+                height="50"
+                loading="lazy"
+                decoding="async"
+            )
+        .review-card__body
+            p.review-card__text= item.text
+            p.review-card__author= item.author

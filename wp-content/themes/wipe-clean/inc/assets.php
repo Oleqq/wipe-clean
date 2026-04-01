@@ -33,14 +33,34 @@ function wipe_clean_get_preferred_asset_path( $path ) {
 	$path = ltrim( $path, '/' );
 
 	if ( preg_match( '/\.min\.(css|js)$/', $path ) ) {
-		return $path;
+		$minified_file_path = wipe_clean_asset_path( $path );
+		$source_path        = preg_replace( '/\.min\.(css|js)$/', '.$1', $path );
+		$source_file_path   = wipe_clean_asset_path( $source_path );
+
+		clearstatcache( true, $minified_file_path );
+		clearstatcache( true, $source_file_path );
+
+		if ( file_exists( $minified_file_path ) ) {
+			if ( ! $source_path || ! file_exists( $source_file_path ) || filemtime( $minified_file_path ) > filemtime( $source_file_path ) ) {
+				return $path;
+			}
+		}
+
+		return $source_path;
 	}
 
 	if ( preg_match( '/\.(css|js)$/', $path, $matches ) ) {
-		$minified_path = preg_replace( '/\.' . preg_quote( $matches[1], '/' ) . '$/', '.min.' . $matches[1], $path );
+		$minified_path      = preg_replace( '/\.' . preg_quote( $matches[1], '/' ) . '$/', '.min.' . $matches[1], $path );
+		$source_file_path   = wipe_clean_asset_path( $path );
+		$minified_file_path = wipe_clean_asset_path( $minified_path );
 
-		if ( $minified_path && file_exists( wipe_clean_asset_path( $minified_path ) ) ) {
-			return $minified_path;
+		clearstatcache( true, $source_file_path );
+		clearstatcache( true, $minified_file_path );
+
+		if ( $minified_path && file_exists( $minified_file_path ) ) {
+			if ( ! file_exists( $source_file_path ) || filemtime( $minified_file_path ) > filemtime( $source_file_path ) ) {
+				return $minified_path;
+			}
 		}
 	}
 
@@ -50,8 +70,21 @@ function wipe_clean_get_preferred_asset_path( $path ) {
 function wipe_clean_asset_version( $path ) {
 	$file_path = wipe_clean_asset_path( $path );
 
+	clearstatcache( true, $file_path );
+
 	if ( file_exists( $file_path ) ) {
 		return (string) filemtime( $file_path );
+	}
+
+	if ( preg_match( '/\.min\.(css|js)$/', $path ) ) {
+		$fallback_path      = preg_replace( '/\.min\.(css|js)$/', '.$1', $path );
+		$fallback_file_path = wipe_clean_asset_path( $fallback_path );
+
+		clearstatcache( true, $fallback_file_path );
+
+		if ( $fallback_path && file_exists( $fallback_file_path ) ) {
+			return (string) filemtime( $fallback_file_path );
+		}
 	}
 
 	return WIPE_CLEAN_VERSION;

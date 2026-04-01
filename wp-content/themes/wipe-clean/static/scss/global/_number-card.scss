@@ -1,0 +1,58 @@
+@use "./core" as *;
+
+.number-card {
+    gap: 16px;
+    min-height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: $radius-2xl;
+
+    @include below-mobile {
+        gap: 12px;
+        padding: 16px;
+        border-radius: $radius-xl;
+    }
+
+    &__number {
+        width: 100%;
+        font-size: 48px;
+        line-height: 0.9;
+        letter-spacing: 0.02em;
+
+        @include below-mobile {
+            font-size: 40px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: 8px;
+
+        @include below-mobile {
+            gap: 6px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        color: $color-heading;
+        font-family: $font-heading;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+
+        @include below-mobile {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+}
+

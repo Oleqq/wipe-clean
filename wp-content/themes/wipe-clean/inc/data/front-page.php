@@ -86,15 +86,15 @@ function wipe_clean_get_front_page_default_sections_map() {
 			'cleaner_image'     => wipe_clean_theme_image( 'static/images/section/home-hero/hero-cleaner.png', '', 928, 1232 ),
 			'benefits'          => array(
 				array(
-					'icon'  => wipe_clean_theme_image( 'static/images/ui/home-hero-benefit-offers.svg', 'Выгодные предложения', 40, 40 ),
+					'icon'  => wipe_clean_theme_image( 'static/images/ui/feature-card-star-green.png', 'Выгодные предложения', 40, 40 ),
 					'title' => 'Выгодные предложения',
 				),
 				array(
-					'icon'  => wipe_clean_theme_image( 'static/images/ui/home-hero-benefit-team.svg', 'Квалифицированная команда', 40, 40 ),
+					'icon'  => wipe_clean_theme_image( 'static/images/ui/feature-card-shield-green.png', 'Квалифицированная команда', 40, 40 ),
 					'title' => 'Квалифицированная команда',
 				),
 				array(
-					'icon'  => wipe_clean_theme_image( 'static/images/ui/home-hero-benefit-discounts.svg', 'Скидки постоянным клиентам', 40, 40 ),
+					'icon'  => wipe_clean_theme_image( 'static/images/ui/feature-card-medal-green.png', 'Скидки постоянным клиентам', 40, 40 ),
 					'title' => 'Скидки постоянным клиентам',
 				),
 			),

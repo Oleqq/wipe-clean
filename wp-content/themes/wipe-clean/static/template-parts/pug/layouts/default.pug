@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+    head
+        include ../includes/head
+        block styles
+    body
+        block header
+            include ../includes/header
+        #smooth-wrapper.smooth-wrapper
+            #smooth-content.smooth-content
+                main.main
+                    block content
+                block footer
+                    include ../includes/footer
+        block popups
+            include ../includes/popups
+        script(src="/static/js/vendor/gsap.min.js")
+        script(src="/static/js/vendor/ScrollTrigger.min.js")
+        script(src="/static/js/vendor/ScrollSmoother.min.js")
+        script(src="/static/js/vendor/fancybox.umd.js")
+        script(src="/static/js/vendor/swiper-bundle.js")
+        script(type="module" src="/static/js/script.js")
+        block scripts

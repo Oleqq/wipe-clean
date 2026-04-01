@@ -1,0 +1,87 @@
+@use "../../global/core" as *;
+
+.other-services {
+    @include section-padding(50px, 50px, 44px, 44px, 25px, 25px);
+
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+
+        @include below-mobile {
+            gap: 20px;
+        }
+    }
+
+    &__head {
+        max-width: 850px;
+        margin: 0 auto;
+        gap: 16px;
+
+        @include below-mobile {
+            gap: 10px;
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        @include below-mobile {
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        @include below-mobile {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px 20px;
+
+        @include below-tablet {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 12px;
+        }
+    }
+
+    &__card {
+        @include below-mobile {
+            .service-card__media {
+                height: 120px;
+            }
+        }
+    }
+
+    &__action {
+        width: 320px;
+        margin: 0 auto;
+
+        @include below-mobile {
+            width: 100%;
+        }
+    }
+
+    &__action-label {
+        &--mobile {
+            display: none;
+
+            @include below-mobile {
+                display: inline;
+            }
+        }
+
+        &--desktop {
+            @include below-mobile {
+                display: none;
+            }
+        }
+    }
+}
+

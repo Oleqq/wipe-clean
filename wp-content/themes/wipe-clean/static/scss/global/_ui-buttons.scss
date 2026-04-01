@@ -1,0 +1,177 @@
+@use "./core" as *;
+
+.ui-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 2px;
+  border-radius: $radius-pill;
+  border: 0;
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base,
+    opacity $transition-base,
+    filter $transition-base;
+
+  @include hover {
+    transform: translateY(-2px);
+
+    .ui-btn__content {
+      transform: translate3d(0, -1px, 0);
+      filter: saturate(1.04) brightness(1.02);
+    }
+
+    .ui-btn__content::before {
+      opacity: 1;
+      transform: translate3d(26%, 0, 0);
+    }
+  }
+
+  &:active {
+    transform: translateY(1px) scale(0.99);
+
+    .ui-btn__content {
+      transform: translate3d(0, 1px, 0) scale(0.996);
+      filter: saturate(0.98) brightness(0.99);
+    }
+  }
+}
+
+.ui-btn__content {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 4px 24px 6px;
+  border-radius: $radius-pill;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base,
+    filter $transition-base,
+    border-color $transition-base,
+    background $transition-base;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(#ffffff, 0) 16%, rgba(#ffffff, 0.16) 50%, rgba(#ffffff, 0) 84%);
+    opacity: 0;
+    transform: translate3d(-42%, 0, 0);
+    transition:
+      opacity calc(#{$transition-base} * 1.15),
+      transform calc(#{$transition-base} * 1.35);
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.ui-btn--primary {
+  background-color: $color-primary;
+  box-shadow: $shadow-primary;
+
+  @include hover {
+    box-shadow:
+      0 12px 22px rgba(1, 112, 150, 0.18),
+      $shadow-primary;
+  }
+}
+
+.ui-btn--primary .ui-btn__content {
+  border: 2px solid $color-primary-border;
+  background: linear-gradient(180deg, $color-primary-top 0%, $color-primary-border 100%);
+  text-shadow: 0 2px 4px rgba(1, 112, 150, 0.4);
+  @include text-body(16px, #ffffff, 600);
+}
+
+.ui-btn--secondary {
+  background-color: $color-surface-muted;
+
+  @include hover {
+    box-shadow: 0 10px 18px rgba(32, 57, 78, 0.08);
+  }
+}
+
+.ui-btn--secondary .ui-btn__content {
+  border: 2px solid $color-secondary-border;
+  background: linear-gradient(180deg, $color-surface 0%, $color-bg 100%);
+  @include text-body(16px, #5b5b5b, 400);
+}
+
+.ui-btn--accent {
+  background-color: $color-accent-dark;
+  box-shadow: $shadow-accent;
+
+  @include hover {
+    box-shadow:
+      0 12px 22px rgba(57, 151, 92, 0.18),
+      $shadow-accent;
+  }
+}
+
+.ui-btn--accent .ui-btn__content {
+  border: 2px solid $color-accent;
+  background: linear-gradient(180deg, $color-accent-top 0%, $color-accent 100%);
+  @include text-body(16px, #ffffff, 600);
+}
+
+.ui-btn--small .ui-btn__content {
+  min-height: 42px;
+  padding: 8px 14px 10px;
+  @include text-body(14px, inherit, 600);
+}
+
+.ui-btn--full {
+  width: 100%;
+}
+
+.ui-btn--icon {
+  padding: 2px;
+  border-radius: $radius-md;
+}
+
+header .ui-btn--icon .ui-btn__content {
+  border-radius: 100%;
+}
+
+header .ui-btn--icon {
+  border-radius: 100%;
+}
+
+.ui-btn--icon .ui-btn__content {
+  width: 44px;
+  min-height: 44px;
+  height: 44px;
+  padding: 8px;
+  border-radius: $radius-sm;
+}
+
+.ui-link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  @include text-body(14px, $color-primary, 600);
+}
+
+.ui-link-inline__icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: $color-primary;
+}
+

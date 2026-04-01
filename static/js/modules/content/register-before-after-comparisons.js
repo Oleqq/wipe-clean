@@ -28,6 +28,16 @@ const setCardPosition = (card, input, value) => {
     }
 };
 
+const getPointerPosition = (card, clientX) => {
+    var rect = card.getBoundingClientRect();
+
+    if (!rect.width) {
+        return 50;
+    }
+
+    return ((clientX - rect.left) / rect.width) * 100;
+};
+
 export const registerBeforeAfterComparisons = () => {
     var cards = Array.from(document.querySelectorAll("[data-before-after]"));
 
@@ -39,6 +49,9 @@ export const registerBeforeAfterComparisons = () => {
 
     var cleanups = cards.map(function(card) {
         var input = card.querySelector("[data-before-after-range]");
+        var media = card.querySelector(".before-after-card__media");
+        var dragPointerId = null;
+        var dragTarget = null;
 
         if (!input) {
             return null;
@@ -70,6 +83,46 @@ export const registerBeforeAfterComparisons = () => {
             card.classList.remove("is-dragging");
         };
 
+        var startDrag = function(event) {
+            if (event.pointerType === "mouse" && event.button !== 0) {
+                return;
+            }
+
+            dragPointerId = event.pointerId;
+            dragTarget = event.currentTarget;
+            card.classList.add("is-dragging");
+            card.dataset.interacted = "true";
+            setCardPosition(card, input, getPointerPosition(card, event.clientX));
+
+            if (dragTarget && typeof dragTarget.setPointerCapture === "function") {
+                dragTarget.setPointerCapture(event.pointerId);
+            }
+        };
+
+        var moveDrag = function(event) {
+            if (dragPointerId !== event.pointerId) {
+                return;
+            }
+
+            card.classList.add("is-dragging");
+            card.dataset.interacted = "true";
+            setCardPosition(card, input, getPointerPosition(card, event.clientX));
+        };
+
+        var endDrag = function(event) {
+            if (dragPointerId !== event.pointerId) {
+                return;
+            }
+
+            if (dragTarget && typeof dragTarget.releasePointerCapture === "function" && dragTarget.hasPointerCapture(event.pointerId)) {
+                dragTarget.releasePointerCapture(event.pointerId);
+            }
+
+            dragPointerId = null;
+            dragTarget = null;
+            card.classList.remove("is-dragging");
+        };
+
         var handleMediaChange = function() {
             if (card.dataset.interacted === "true") {
                 return;
@@ -83,6 +136,16 @@ export const registerBeforeAfterComparisons = () => {
         input.addEventListener("focus", handleFocus);
         input.addEventListener("blur", handleBlur);
         input.addEventListener("pointerup", handlePointerUp);
+        input.addEventListener("pointerdown", startDrag);
+        input.addEventListener("pointermove", moveDrag);
+        input.addEventListener("pointercancel", endDrag);
+
+        if (media) {
+            media.addEventListener("pointerdown", startDrag);
+            media.addEventListener("pointermove", moveDrag);
+            media.addEventListener("pointerup", endDrag);
+            media.addEventListener("pointercancel", endDrag);
+        }
 
         if (typeof mobileMedia.addEventListener === "function") {
             mobileMedia.addEventListener("change", handleMediaChange);
@@ -96,6 +159,16 @@ export const registerBeforeAfterComparisons = () => {
             input.removeEventListener("focus", handleFocus);
             input.removeEventListener("blur", handleBlur);
             input.removeEventListener("pointerup", handlePointerUp);
+            input.removeEventListener("pointerdown", startDrag);
+            input.removeEventListener("pointermove", moveDrag);
+            input.removeEventListener("pointercancel", endDrag);
+
+            if (media) {
+                media.removeEventListener("pointerdown", startDrag);
+                media.removeEventListener("pointermove", moveDrag);
+                media.removeEventListener("pointerup", endDrag);
+                media.removeEventListener("pointercancel", endDrag);
+            }
 
             if (typeof mobileMedia.removeEventListener === "function") {
                 mobileMedia.removeEventListener("change", handleMediaChange);

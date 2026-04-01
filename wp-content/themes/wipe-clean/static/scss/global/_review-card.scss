@@ -1,0 +1,77 @@
+@use "./core" as *;
+
+.review-card {
+    display: grid;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 28px;
+    text-align: center;
+    @include ui-card-surface();
+    @include ui-card-hover-outline();
+
+    &:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+    @include below-mobile {
+        gap: 10px;
+        padding: 14px 14px 18px;
+        border-width: 1.75px;
+        border-radius: 18px;
+        box-shadow: 0 1.75px 3.5px rgba(228, 228, 228, 0.6);
+    }
+
+    &__rating {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__rating-stars {
+        display: block;
+        width: 222px;
+        height: 50px;
+        flex-shrink: 0;
+
+        @include below-mobile {
+            width: 156px;
+            height: 35px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        gap: 20px;
+
+        @include below-mobile {
+            gap: 14px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        @include text-body();
+
+        @include below-mobile {
+            font-size: 12.3px;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__author {
+        margin: 0;
+        font-family: $font-heading;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $color-heading;
+
+        @include below-mobile {
+            font-size: 14px;
+        }
+    }
+}
